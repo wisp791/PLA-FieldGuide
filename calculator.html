@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Team Builder | Pokemon Legends: Arceus Field Guide</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="calculator">
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Pokemon Legends Arceus Field Guide home"><span><strong>Pokemon Legends: Arceus Field Guide</strong><small>Pokemon Legends: Arceus</small></span></a>
+    <form class="global-search" role="search"><input id="globalSearch" type="search" autocomplete="off" placeholder="Search Pokemon, maps, requests, items..."><div id="searchResults" class="search-results"></div></form>
+    <nav class="top-nav" aria-label="Primary"><a href="guide.html">Guide</a><a href="tips.html">Tips and Tricks</a><a href="pokemon.html">Pokemon</a><a href="maps.html">Maps</a><a href="resources.html">Resources</a><a href="calculator.html">Team Builder</a></nav>
+  </header>
+  <main class="page-main">
+    <section class="page-hero"><p class="eyebrow">Team builder</p><h1>Build a team and check its matchup coverage across Hisui.</h1></section>
+    <section class="guide-section">
+      <h2>Team Builder</h2>
+      <p>Add up to six Pokemon and choose moves learned by level up or from Zisu. The calculator uses each selected move's type for coverage.</p>
+      <div class="team-builder-actions">
+        <input id="teamName" type="text" placeholder="Team name">
+        <button class="button primary" id="saveTeam" type="button">Save team</button>
+        <select id="savedTeams" aria-label="Saved teams"><option value="">Saved teams</option></select>
+        <button class="button" id="loadTeam" type="button">Load</button>
+        <button class="button" id="deleteTeam" type="button">Delete</button>
+        <button class="button primary" id="addTeamSlot" type="button">Add Pokemon</button>
+        <button class="button" id="clearTeam" type="button">Clear team</button>
+      </div>
+      <div class="team-builder-layout">
+        <div id="teamBuilder" class="team-builder"></div>
+        <aside class="coverage-sidebar" aria-label="Move recommendations">
+          <h3>Move recommendations</h3>
+          <div id="moveRecommendations"></div>
+        </aside>
+      </div>
+      <div class="coverage-summary" id="coverageSummary"></div>
+      <div class="coverage-panels">
+        <article>
+          <h3>Offensive coverage</h3>
+          <div id="offenseBreakdown" class="coverage-breakdown"></div>
+        </article>
+        <article>
+          <h3>Defensive profile</h3>
+          <p class="coverage-note">Problem weakness means an attacking type hits more selected team members super-effectively than your team resists or is immune to.</p>
+          <div id="defenseBreakdown" class="coverage-breakdown"></div>
+        </article>
+      </div>
+      <div class="table-wrap"><table id="coverageTable"></table></div>
+    </section>
+  </main>
+  <footer><p>Fan-made guide. Type data checked against Pokemon Database.</p></footer>
+  <script src="pla-learnsets.js"></script>
+  <script src="pla-move-details.js"></script>
+  <script src="pla-base-stats.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

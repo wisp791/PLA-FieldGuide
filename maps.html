@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Maps | Pokemon Legends: Arceus Field Guide</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="maps">
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Pokemon Legends Arceus Field Guide home"><span><strong>Pokemon Legends: Arceus Field Guide</strong><small>Pokemon Legends: Arceus</small></span></a>
+    <form class="global-search" role="search"><input id="globalSearch" type="search" autocomplete="off" placeholder="Search Pokemon, maps, requests, items..."><div id="searchResults" class="search-results"></div></form>
+    <nav class="top-nav" aria-label="Primary"><a href="guide.html">Guide</a><a href="tips.html">Tips and Tricks</a><a href="pokemon.html">Pokemon</a><a href="maps.html">Maps</a><a href="resources.html">Resources</a><a href="calculator.html">Team Builder</a></nav>
+  </header>
+  <main class="page-main">
+    <section class="page-hero"><p class="eyebrow">Field maps</p><h1>Regional alpha, request, story, legendary, and farming markers.</h1></section>
+    <section class="guide-section">
+      <h2>Interactive Regional Maps</h2>
+      <div class="region-buttons" id="regionButtons" aria-label="Region shortcuts"></div>
+      <div class="map-controls">
+        <select id="regionSelect" aria-label="Region"><option>Obsidian Fieldlands</option><option>Crimson Mirelands</option><option>Cobalt Coastlands</option><option>Coronet Highlands</option><option>Alabaster Icelands</option><option>Jubilife Village</option></select>
+        <label><input type="checkbox" value="Alpha" checked> Alphas</label>
+        <label><input type="checkbox" value="Camp" checked> Camps</label>
+        <label><input type="checkbox" value="Gate" checked> Fast travel</label>
+        <label><input type="checkbox" value="Subarea" checked> Subareas</label>
+        <label><input type="checkbox" value="Wisp"> Wisp routes</label>
+        <label><input type="checkbox" value="Request" checked> Requests</label>
+        <label><input type="checkbox" value="Story"> Story spoilers</label>
+        <label><input type="checkbox" value="Legendary" checked> Legendary</label>
+        <label><input type="checkbox" value="Farm" checked> Farming</label>
+      </div>
+      <div class="map-tools" aria-label="Map zoom controls">
+        <button class="button" id="mapZoomOut" type="button">-</button>
+        <span id="mapZoomLabel">100%</span>
+        <button class="button" id="mapZoomIn" type="button">+</button>
+        <button class="button" id="mapReset" type="button">Reset</button>
+      </div>
+      <p class="coverage-note">Story markers are off by default because they include Noble and late-story locations. Wisp route markers are route zones for Spiritomb sweeps, not one-for-one collectible pins.</p>
+      <div class="map-shell"><div id="regionMap" class="region-map" aria-label="Interactive region map"></div><aside id="mapDetails" class="map-details"></aside></div>
+    </section>
+    <section class="guide-section"><h2>Regional Notes</h2><div class="cards" id="regionCards"></div></section>
+  </main>
+  <footer><p>Fan-made guide. Data checked against Pokemon Database, Serebii, Bulbapedia, Game8, and RotomLabs.</p></footer>
+  <script src="app.js"></script>
+</body>
+</html>
