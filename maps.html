@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Maps | Hisui Field Guide</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="maps">
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Hisui Field Guide home"><span class="brand-mark">H</span><span><strong>Hisui Field Guide</strong><small>Pokemon Legends: Arceus</small></span></a>
+    <form class="global-search" role="search"><input id="globalSearch" type="search" autocomplete="off" placeholder="Search Pokemon, maps, requests, items..."><div id="searchResults" class="search-results"></div></form>
+    <nav class="top-nav" aria-label="Primary"><a href="guide.html">Guide</a><a href="pokemon.html">Pokemon</a><a href="maps.html">Maps</a><a href="calculator.html">Coverage</a></nav>
+  </header>
+  <main class="page-main">
+    <section class="page-hero"><p class="eyebrow">Field maps</p><h1>Regional alpha, request, story, legendary, and farming markers.</h1></section>
+    <section class="guide-section">
+      <h2>Interactive Regional Maps</h2>
+      <div class="map-controls">
+        <select id="regionSelect" aria-label="Region"><option>Obsidian Fieldlands</option><option>Crimson Mirelands</option><option>Cobalt Coastlands</option><option>Coronet Highlands</option><option>Alabaster Icelands</option><option>Jubilife Village</option></select>
+        <label><input type="checkbox" value="Alpha" checked> Alphas</label>
+        <label><input type="checkbox" value="Request" checked> Requests</label>
+        <label><input type="checkbox" value="Story" checked> Story</label>
+        <label><input type="checkbox" value="Legendary" checked> Legendary</label>
+        <label><input type="checkbox" value="Farm" checked> Farming</label>
+      </div>
+      <div class="map-shell"><div id="regionMap" class="region-map" aria-label="Interactive region map"></div><aside id="mapDetails" class="map-details"></aside></div>
+    </section>
+    <section class="guide-section"><h2>Regional Notes</h2><div class="cards" id="regionCards"></div></section>
+  </main>
+  <footer><p>Fan-made guide. Data checked against Pokemon Database, Serebii, Bulbapedia, Game8, and RotomLabs.</p></footer>
+  <script src="app.js"></script>
+</body>
+</html>

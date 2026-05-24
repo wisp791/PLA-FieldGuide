@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pokemon | Hisui Field Guide</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="pokemon">
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Hisui Field Guide home"><span class="brand-mark">H</span><span><strong>Hisui Field Guide</strong><small>Pokemon Legends: Arceus</small></span></a>
+    <form class="global-search" role="search"><input id="globalSearch" type="search" autocomplete="off" placeholder="Search Pokemon, maps, requests, items..."><div id="searchResults" class="search-results"></div></form>
+    <nav class="top-nav" aria-label="Primary"><a href="guide.html">Guide</a><a href="pokemon.html">Pokemon</a><a href="maps.html">Maps</a><a href="calculator.html">Coverage</a></nav>
+  </header>
+  <main class="page-main">
+    <section class="page-hero"><p class="eyebrow">Pokemon index</p><h1>Viable teams, Hisuian forms, evolution methods, and all 242 typings.</h1></section>
+    <section class="guide-section" id="pokemonDetail"></section>
+    <section class="guide-section"><h2>Starters</h2><div class="cards" id="starterCards"></div></section>
+    <section class="guide-section">
+      <h2>Meta Team & Viable Movesets</h2>
+      <p>PLA has no competitive ladder, so "meta" here means efficient story, alpha, Volo, and Arceus performance.</p>
+      <div class="controls"><input id="metaSearch" type="search" placeholder="Filter viable Pokemon"><select id="metaRole" aria-label="Role filter"><option value="all">All roles</option><option value="Early">Early-game</option><option value="Sweeper">Sweeper</option><option value="Bulky">Bulky</option><option value="Coverage">Coverage</option></select></div>
+      <div class="cards stat-cards" id="metaCards"></div>
+    </section>
+    <section class="guide-section"><h2>Hisuian Forms & New Evolutions</h2><div class="table-wrap"><table id="hisuianTable"></table></div></section>
+    <section class="guide-section"><h2>Evolution Methods & Items</h2><div class="table-wrap"><table id="evolutionTable"></table></div></section>
+    <section class="guide-section"><h2>Full Hisui Pokedex Typing Index</h2><div class="controls"><input id="dexSearch" type="search" placeholder="Search all 242 Pokemon"><select id="dexType" aria-label="Type filter"></select></div><div class="pokedex-grid" id="pokedexGrid"></div></section>
+  </main>
+  <footer><p>Fan-made guide. Data checked against Pokemon Database, Serebii, Bulbapedia, Game8, and RotomLabs.</p></footer>
+  <script src="app.js"></script>
+</body>
+</html>
