@@ -26,11 +26,11 @@ const TYPE_CHART = {
 };
 
 const MAP_IMAGES = {
-  "Obsidian Fieldlands": "https://archives.bulbagarden.net/wiki/Special:Redirect/file/Hisui_Obsidian_Fieldlands_Map.png",
+  "Obsidian Fieldlands": "Obsidian Fieldlands Map.jpg",
   "Crimson Mirelands": "Crimson Mirelands Map.jpg",
   "Cobalt Coastlands": "Cobalt Coastlands Map.jpg",
   "Coronet Highlands": "Coronet Highlands Map.jpg",
-  "Alabaster Icelands": "https://archives.bulbagarden.net/wiki/Special:Redirect/file/Hisui_Alabaster_Icelands_Map.png",
+  "Alabaster Icelands": "Alabaster Icelands-Map.jpg",
   "Jubilife Village": "Jubilife Village Map.jpg"
 };
 
@@ -167,6 +167,12 @@ const RANDOM_TEAM_POOL = [
   "Hisuian Goodra", "Garchomp", "Hisuian Zoroark", "Mamoswine", "Weavile", "Gliscor", "Yanmega", "Hisuian Braviary",
   "Clefable", "Blissey"
 ];
+
+const RANDOM_TEAM_EXCLUSIONS = new Set([
+  "Spiritomb", "Uxie", "Mesprit", "Azelf", "Heatran", "Regigigas", "Cresselia",
+  "Tornadus", "Thundurus", "Landorus", "Enamorus", "Dialga", "Palkia", "Giratina",
+  "Arceus", "Phione", "Manaphy", "Shaymin", "Darkrai", "Unown"
+]);
 
 const POKEDEX_TSV = `1	Rowlet	Grass/Flying
 2	Dartrix	Grass/Flying
@@ -417,6 +423,7 @@ const POKEDEX = POKEDEX_TSV.trim().split("\n").map(row => {
 });
 
 const TEAM_STORAGE_KEY = "plaSavedTeams";
+const TEAM_AUTOSAVE_KEY = "plaCurrentTeam";
 let selectedRecommendationSlot = 0;
 const mapViewState = {region:"", scale:1, x:0, y:0, dragging:false, startX:0, startY:0, originX:0, originY:0};
 
@@ -459,10 +466,10 @@ const recipes = [
   ["Potion","Heal","1 Oran Berry + 1 Medicinal Leek"],
   ["Super Potion","Heal","1 Potion + 1 Pep-Up Plant"],
   ["Hyper Potion","Heal","1 Super Potion + 1 Vivichoke"],
-  ["Max Potion","Heal","1 Sitrus Berry + 1 Kings Leaf"],
+  ["Max Potion","Heal","1 Sitrus Berry + 1 King's Leaf"],
   ["Full Restore","Heal","1 Max Potion + 1 Full Heal"],
   ["Revive","Heal","1 Vivichoke + 2 Medicinal Leeks"],
-  ["Max Revive","Heal","1 Revive + 2 Kings Leaf"],
+  ["Max Revive","Heal","1 Revive + 2 King's Leaf"],
   ["Remedy","Heal","2 Bugwort"],
   ["Fine Remedy","Heal","1 Remedy + 1 Pep-Up Plant"],
   ["Superb Remedy","Heal","1 Fine Remedy + 1 Vivichoke"],
@@ -1300,9 +1307,16 @@ const screenshotMapMarkers = {
   ]
 };
 
+const originalNamedMapMarkerIndex = Object.fromEntries(Object.entries(mapData).map(([region, points]) => [region, points]));
+
 Object.entries(screenshotMapMarkers).forEach(([region, points]) => {
   mapData[region] = points;
 });
+
+const namedMapMarkerIndex = Object.fromEntries(Object.entries(mapData).map(([region, points]) => {
+  const combined = [...(originalNamedMapMarkerIndex[region] || []), ...points];
+  return [region, combined.filter(point => typeof point[1] === "string" && typeof point[4] === "number" && typeof point[5] === "number")];
+}));
 
 const exactMapMarkerText = {
   Alpha:["Alpha Pokemon", "Fixed alpha or alpha-class marker."],
@@ -1454,6 +1468,55 @@ exactMapMarkerGroups["Alabaster Icelands"].Subarea.push(
   ["Hibernal Cave",39,40,"Northwest cave passage."]
 );
 
+const fallbackMarkerNames = {
+  "Obsidian Fieldlands":{
+    Legendary:["Mesprit","Landorus","Shaymin"],
+    Noble:["Kleavor"],
+    Arena:["Grandtree Arena"],
+    Farm:["Alpha Blissey XP route","Horseshoe Plains research loop","Ramanas Island alpha loop"]
+  },
+  "Crimson Mirelands":{
+    Legendary:["Azelf","Enamorus"],
+    Noble:["Hisuian Lilligant"],
+    Arena:["Brava Arena"],
+    Farm:["Scarlet Bog Ursaluna digging route"]
+  },
+  "Cobalt Coastlands":{
+    Legendary:["Heatran","Thundurus","Manaphy and Phione"],
+    Noble:["Hisuian Arcanine"],
+    Arena:["Molten Arena"],
+    Farm:["Seagrass Haven pearl route","Growlithe route"]
+  },
+  "Coronet Highlands":{
+    Legendary:["Cresselia","Darkrai"],
+    Noble:["Hisuian Electrode"],
+    Arena:["Moonview Arena"],
+    Farm:["Ancient Quarry alpha loop","Fabled Spring night route"]
+  },
+  "Alabaster Icelands":{
+    Legendary:["Uxie","Regigigas","Giratina","Tornadus"],
+    Noble:["Hisuian Avalugg"],
+    Arena:["Icepeak Arena"],
+    Farm:["Alpha Garchomp and Lucario loop","Avalanche Slopes alpha loop"]
+  }
+};
+
+function nearestNamedMarker(region, kind, x, y, maxDistance = 16) {
+  const candidates = (namedMapMarkerIndex[region] || []).filter(point => point[0] === kind);
+  if (!candidates.length) return null;
+  const nearest = candidates
+    .map(point => ({point, distance:Math.hypot(point[4] - x, point[5] - y)}))
+    .sort((a,b) => a.distance - b.distance)[0];
+  return nearest && nearest.distance <= maxDistance ? nearest.point : null;
+}
+
+function fallbackMarkerName(region, kind, index, label, x, y) {
+  const fixedName = fallbackMarkerNames[region]?.[kind]?.[index];
+  if (fixedName) return fixedName;
+  const nearbyArea = nearestNamedMarker(region, "Subarea", x, y, 1000);
+  return nearbyArea ? `${nearbyArea[1]} ${label}` : `${region} ${label} ${index + 1}`;
+}
+
 function buildExactMapMarkers(region, groups) {
   return Object.entries(groups).flatMap(([kind, coords]) => {
     const [label, detail] = exactMapMarkerText[kind] || [kind, "Map marker."];
@@ -1461,11 +1524,13 @@ function buildExactMapMarkers(region, groups) {
       const named = typeof entry[0] === "string";
       const x = named ? entry[1] : entry[0];
       const y = named ? entry[2] : entry[1];
+      const nearest = named ? null : nearestNamedMarker(region, kind, x, y);
+      const fallbackName = fallbackMarkerName(region, kind, index, label, x, y);
       return [
         kind,
-        named ? entry[0] : `${label} ${String(index + 1).padStart(2, "0")}`,
-        region,
-        named && entry[3] ? entry[3] : detail,
+        named ? entry[0] : (nearest?.[1] || fallbackName),
+        named ? region : (nearest?.[2] || region),
+        named && entry[3] ? entry[3] : (nearest?.[3] || detail),
         x,
         y
       ];
@@ -1564,7 +1629,58 @@ function spriteName(input) {
 }
 
 function spriteUrl(input) {
-  return `https://img.pokemondb.net/sprites/legends-arceus/normal/2x/${spriteName(input)}.jpg`;
+  return `https://img.pokemondb.net/sprites/home/normal/${spriteName(input)}.png`;
+}
+
+function spriteFallbackUrl(input) {
+  return `https://img.pokemondb.net/sprites/scarlet-violet/normal/${spriteName(input)}.png`;
+}
+
+window.plaSwapImageFallback = function plaSwapImageFallback(img) {
+  const fallbacks = (img.dataset.fallbacks || "").split("|").filter(Boolean);
+  if (!fallbacks.length) return;
+  const [next, ...remaining] = fallbacks;
+  img.dataset.fallbacks = remaining.join("|");
+  img.src = next;
+};
+
+function fallbackImageAttrs(sources) {
+  const cleanSources = sources.filter(Boolean);
+  const [first, ...rest] = cleanSources;
+  return `src="${first}"${rest.length ? ` data-fallbacks="${rest.join("|")}" onerror="window.plaSwapImageFallback && window.plaSwapImageFallback(this)"` : ""}`;
+}
+
+function pokemonSpriteAttrs(input) {
+  return fallbackImageAttrs([spriteUrl(input), spriteFallbackUrl(input)]);
+}
+
+function pokemonLinkTarget(name) {
+  if (!name) return null;
+  const direct = findPokemonByName(name);
+  if (direct) return direct;
+  const stripped = name.replace(/^Hisuian\s+/i, "");
+  return stripped !== name ? findPokemonByName(stripped) : null;
+}
+
+function pokemonLink(name, className = "") {
+  const pokemon = pokemonLinkTarget(name);
+  if (!pokemon) return name;
+  const classes = className ? ` class="${className}"` : "";
+  return `<a${classes} href="pokemon.html?pokemon=${encodeURIComponent(pokemon.name)}">${name}</a>`;
+}
+
+function pokemonListLinks(text) {
+  return String(text).split(/(\s*(?:\/|->|;|,|\+|\band\b)\s*)/i).map(part => {
+    const trimmed = part.trim();
+    if (!trimmed || /^(\/|->|;|,|\+|and)$/i.test(trimmed)) return part;
+    return pokemonLinkTarget(trimmed) ? part.replace(trimmed, pokemonLink(trimmed, "pokemon-inline-link")) : part;
+  }).join("");
+}
+
+function pokemonTitleLinks(text) {
+  const title = String(text);
+  const prefixed = title.match(/^(Alpha|Noble)\s+(.+)$/);
+  return prefixed ? `${prefixed[1]} ${pokemonListLinks(prefixed[2])}` : pokemonListLinks(title);
 }
 
 function statTotal(stats) {
@@ -1616,8 +1732,8 @@ function renderTable(id, headers, rows) {
 }
 
 function renderCards() {
-  if ($("starterCards")) $("starterCards").innerHTML = starters.map(p => `<article class="card starter-card"><header><img src="${spriteUrl(p.name)}" alt="${p.name} sprite"><div><h3>${p.name}</h3>${typeChips(p.types)}</div></header>${statChart(p.stats)}<p>${p.text}</p></article>`).join("");
-  if ($("nobleCards")) $("nobleCards").innerHTML = nobles.map(n => `<article class="card"><h3>${n[0]}</h3>${typeChips(n[1].split("/"))}<p><strong>Battle answers:</strong> ${n[2]}</p><p>${n[3]}</p></article>`).join("");
+  if ($("starterCards")) $("starterCards").innerHTML = starters.map(p => `<article class="card starter-card"><header><img ${pokemonSpriteAttrs(p.name)} alt="${p.name} sprite"><div><h3>${pokemonLink(p.name, "pokemon-name-link")}</h3>${typeChips(p.types)}</div></header>${statChart(p.stats)}<p>${p.text}</p></article>`).join("");
+  if ($("nobleCards")) $("nobleCards").innerHTML = nobles.map(n => `<article class="card"><h3>${pokemonLink(n[0], "pokemon-name-link")}</h3>${typeChips(n[1].split("/"))}<p><strong>Battle answers:</strong> ${n[2]}</p><p>${n[3]}</p></article>`).join("");
   if ($("regionCards")) $("regionCards").innerHTML = regions.map(r => `<article class="card"><h3>${r[0]}</h3><p>${r[1]}</p></article>`).join("");
 }
 
@@ -1640,7 +1756,7 @@ function renderMeta() {
     return text.includes(q) && (role === "all" || p.role.includes(role));
   }).map(p => {
     const moves = recommendedMovesetForPokemon(p.name).join(", ") || p.moves;
-    return `<article class="card viable-card"><header><img src="${spriteUrl(p.name)}" alt="${p.name} sprite"><div><h3>${p.name}</h3>${typeChips(p.types)}<br>${p.role.split(" ").map(r => `<span class="tag">${r}</span>`).join("")}</div></header>${statChart(p.stats)}<p><strong>Moves:</strong> ${moves}</p><p>${p.note}</p></article>`;
+    return `<article class="card viable-card"><header><img ${pokemonSpriteAttrs(p.name)} alt="${p.name} sprite"><div><h3>${pokemonLink(p.name, "pokemon-name-link")}</h3>${typeChips(p.types)}<br>${p.role.split(" ").map(r => `<span class="tag">${r}</span>`).join("")}</div></header>${statChart(p.stats)}<p><strong>Moves:</strong> ${moves}</p><p>${p.note}</p></article>`;
   }).join("");
 }
 
@@ -1653,9 +1769,68 @@ function itemSpriteName(name) {
     .replace(/^-|-$/g, "");
 }
 
+function pokemonDbItemSpriteName(name) {
+  return name
+    .toLowerCase()
+    .replace(/pok[eé]/g, "poke")
+    .replace(/xp-candy/g, "exp-candy")
+    .replace(/king's/g, "kings")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+
+function archiveItemName(name) {
+  return name
+    .replace(/^Poke /, "Pok\u00e9 ")
+    .replace(/^XP Candy /, "Exp. Candy ")
+    .replace(/['\u2019]/g, "")
+    .replace(/\s+/g, "_");
+}
+
+function archiveItemSpriteUrl(name, version) {
+  const file = `Bag_${archiveItemName(name)}_${version}_Sprite.png`;
+  return `https://archives.bulbagarden.net/wiki/Special:Redirect/file/${encodeURIComponent(file)}`;
+}
+
+const ITEM_DIRECT_SPRITES = {
+  "Potion":"https://archives.bulbagarden.net/media/upload/e/e8/Bag_Potion_LA_Sprite.png",
+  "Super Potion":"https://archives.bulbagarden.net/media/upload/5/51/Bag_Super_Potion_LA_Sprite.png",
+  "Hyper Potion":"https://archives.bulbagarden.net/media/upload/f/f4/Bag_Hyper_Potion_LA_Sprite.png",
+  "Heavy Ball":"https://archives.bulbagarden.net/media/upload/c/c9/Bag_Heavy_Ball_LA_Sprite.png",
+  "Leaden Ball":"https://archives.bulbagarden.net/media/upload/e/ed/Bag_Leaden_Ball_LA_Sprite.png",
+  "Smoke Bomb":"https://archives.bulbagarden.net/media/upload/1/1c/Bag_Smoke_Bomb_LA_Sprite.png",
+  "Scatter Bang":"https://archives.bulbagarden.net/media/upload/3/32/Bag_Scatter_Bang_LA_Sprite.png",
+  "Sticky Glob":"https://archives.bulbagarden.net/media/upload/9/99/Bag_Sticky_Glob_LA_Sprite.png",
+  "Mushroom Cake":"https://archives.bulbagarden.net/media/upload/c/cc/Bag_Mushroom_Cake_LA_Sprite.png",
+  "Honey Cake":"https://archives.bulbagarden.net/media/upload/7/71/Bag_Honey_Cake_LA_Sprite.png",
+  "Grain Cake":"https://archives.bulbagarden.net/media/upload/9/91/Bag_Grain_Cake_LA_Sprite.png",
+  "Bean Cake":"https://archives.bulbagarden.net/media/upload/d/d7/Bag_Bean_Cake_LA_Sprite.png",
+  "Salt Cake":"https://archives.bulbagarden.net/media/upload/e/e0/Bag_Salt_Cake_LA_Sprite.png"
+};
+
+const ITEM_ALIAS_SPRITES = {
+  "Leaden Ball":"heavy-ball",
+  "Smoke Bomb":"smoke-ball",
+  "Scatter Bang":"poke-ball",
+  "Sticky Glob":"sticky-barb",
+  "Mushroom Cake":"tiny-mushroom",
+  "Honey Cake":"honey",
+  "Grain Cake":"grain",
+  "Bean Cake":"bean",
+  "Salt Cake":"salt"
+};
+
 function itemSpriteHtml(name) {
   if (!name || name === "Move condition") return `<span class="item-cell no-sprite"><span class="item-fallback">?</span><span>${name}</span></span>`;
-  return `<span class="item-cell"><img src="https://img.pokemondb.net/sprites/items/${itemSpriteName(name)}.png" alt="" loading="lazy"><span>${name}</span></span>`;
+  const sources = [
+    ITEM_DIRECT_SPRITES[name],
+    archiveItemSpriteUrl(name, "LA"),
+    archiveItemSpriteUrl(name, "SV"),
+    `https://img.pokemondb.net/sprites/items/${pokemonDbItemSpriteName(name)}.png`,
+    ITEM_ALIAS_SPRITES[name] ? `https://img.pokemondb.net/sprites/items/${ITEM_ALIAS_SPRITES[name]}.png` : "",
+    "https://img.pokemondb.net/sprites/items/poke-ball.png"
+  ];
+  return `<span class="item-cell"><img ${fallbackImageAttrs(sources)} alt=""><span>${name}</span></span>`;
 }
 
 function renderRecipes() {
@@ -1678,7 +1853,7 @@ function renderDex() {
     const stats = pokemonStats(p.name);
     const total = stats.length ? statTotal(stats) : "-";
     return `<a class="dex-card" href="pokemon.html?pokemon=${encodeURIComponent(p.name)}">
-      <img src="${spriteUrl(p)}" alt="${p.name} sprite" loading="lazy">
+      <img ${pokemonSpriteAttrs(p)} alt="${p.name} sprite" loading="lazy">
       <span><strong>#${String(p.num).padStart(3,"0")} ${p.name}</strong>${typeChips(p.types)}<small>BST ${total} / ${roleForPokemon(p, stats)}</small></span>
     </a>`;
   }).join("");
@@ -1828,11 +2003,11 @@ function hasRecommendationException(move, details) {
 }
 
 function passesRecommendationRules(member, move, details, profileIncludes = false) {
-  if (details.accuracy < 85) return false;
+  if (details.accuracy < 80) return false;
   if (!details.power && !isSupportMove(move, details)) return false;
   if (details.power && usesClearlyWeakerAttack(member, details)) return false;
   if (details.power && details.power < 70 && !hasRecommendationException(move, details)) return false;
-  if (details.power && details.accuracy < 95 && details.power < 90 && !profileIncludes && !hasRecommendationException(move, details)) return false;
+  if (details.power && details.accuracy < 90 && details.power < 100 && !profileIncludes && !hasRecommendationException(move, details)) return false;
   return true;
 }
 
@@ -1894,6 +2069,23 @@ function moveDetails(move) {
     power: details.power || 0,
     accuracy: details.accuracy || MOVE_ACCURACY[move] || 100
   };
+}
+
+function moveEffectSummary(move) {
+  if (MOVE_EFFECT_NOTES[move]) return MOVE_EFFECT_NOTES[move];
+  if (isStatusSupport(move)) return "catch/status support";
+  if (isSetupSupport(move)) return "stat setup";
+  if (HIGH_CRIT_MOVES.has(move)) return "high critical-hit ratio";
+  if (STATUS_PAYOFF_MOVES.has(move)) return "stronger into status";
+  if (SPECIAL_EFFECT_ATTACKS.has(move)) return "added effect";
+  return "";
+}
+
+function moveSummaryText(move, details) {
+  const attackType = details.category === "Status" ? `${details.type} Status` : `${details.type} ${details.category}`;
+  const damage = details.power ? `${details.power} dmg` : "status";
+  const accuracy = `${details.accuracy} acc`;
+  return [attackType, damage, accuracy, moveEffectSummary(move)].filter(Boolean).join(" / ");
 }
 
 function moveOptionHtml(move) {
@@ -1984,6 +2176,8 @@ function updateSelectedPokemon(slot, pokemonName) {
     sprite.hidden = !pokemon;
     if (pokemon) {
       sprite.src = spriteUrl(pokemon);
+      sprite.dataset.fallbacks = spriteFallbackUrl(pokemon);
+      sprite.onerror = () => window.plaSwapImageFallback && window.plaSwapImageFallback(sprite);
       sprite.alt = `${pokemon.name} sprite`;
     }
   }
@@ -2003,6 +2197,16 @@ function markSelectedTeamSlot() {
   });
 }
 
+function duplicateMoveInSlot(row, move) {
+  const slot = row.closest(".team-slot");
+  if (!slot || !move) return false;
+  return [...slot.querySelectorAll(".move-row")].some(otherRow => {
+    if (otherRow === row) return false;
+    const otherMove = otherRow.dataset.move || otherRow.querySelector(".move-name")?.value.trim() || "";
+    return normalizeLookup(otherMove) === normalizeLookup(move);
+  });
+}
+
 function applyMoveTypeLock(row, clearInvalid = false) {
   const moveName = row.querySelector(".move-name").value.trim();
   const typeInput = row.querySelector(".move-type");
@@ -2018,12 +2222,18 @@ function applyMoveTypeLock(row, clearInvalid = false) {
   if (status) status.textContent = "";
   if (!moveName) return;
   if (move && details.type) {
+    if (duplicateMoveInSlot(row, move)) {
+      row.classList.add("invalid-move");
+      if (status) status.textContent = "Move already selected for this Pokemon.";
+      if (clearInvalid) moveInput.value = "";
+      return;
+    }
     if (clearInvalid || normalizeLookup(moveName) === normalizeLookup(move)) moveInput.value = move;
     row.dataset.move = move;
     typeInput.value = details.type;
     row.classList.add("selected-move");
     moveInput.style.setProperty("--move-color", TYPE_COLORS[details.type] || "");
-    if (status) status.textContent = `${clearInvalid ? "Using" : "Matched"} ${move}: ${details.type} ${details.category}${details.power ? ` / ${details.power} power` : ""}`;
+    if (status) status.textContent = moveSummaryText(move, details);
     return;
   }
   if (clearInvalid) {
@@ -2052,6 +2262,35 @@ function collectTeamState() {
     pokemon: slot.querySelector(".team-pokemon")?.value.trim() || "",
     moves: [...slot.querySelectorAll(".move-name")].map(input => input.value.trim())
   }));
+}
+
+function hasTeamState(state) {
+  return Array.isArray(state) && state.some(slot => slot.pokemon || slot.moves?.some(move => move));
+}
+
+function readCurrentTeamDraft() {
+  try {
+    return JSON.parse(localStorage.getItem(TEAM_AUTOSAVE_KEY) || "null");
+  } catch {
+    return null;
+  }
+}
+
+function writeCurrentTeamDraft() {
+  if (!$("teamBuilder")) return;
+  const draft = {
+    teamName:$("teamName")?.value.trim() || "",
+    slots:collectTeamState()
+  };
+  localStorage.setItem(TEAM_AUTOSAVE_KEY, JSON.stringify(draft));
+}
+
+function restoreCurrentTeamDraft() {
+  if (!$("teamBuilder")) return;
+  const draft = readCurrentTeamDraft();
+  if (!draft || !hasTeamState(draft.slots)) return;
+  if ($("teamName")) $("teamName").value = draft.teamName || "";
+  applyTeamState(draft.slots);
 }
 
 function renderSavedTeams() {
@@ -2090,6 +2329,7 @@ function saveCurrentTeam() {
   writeSavedTeams(teams);
   renderSavedTeams();
   $("savedTeams").value = name;
+  writeCurrentTeamDraft();
 }
 
 function loadSelectedTeam() {
@@ -2099,6 +2339,7 @@ function loadSelectedTeam() {
   if (!state) return;
   if ($("teamName")) $("teamName").value = name;
   applyTeamState(state);
+  writeCurrentTeamDraft();
 }
 
 function deleteSelectedTeam() {
@@ -2110,6 +2351,7 @@ function deleteSelectedTeam() {
   writeSavedTeams(teams);
   if ($("teamName")) $("teamName").value = "";
   renderSavedTeams();
+  writeCurrentTeamDraft();
 }
 
 function offensiveCoverageCount(moveTypes) {
@@ -2168,9 +2410,9 @@ function moveRecommendationsForMember(member, currentMoveTypes) {
       .filter(move => !selectedMoves.has(normalizeLookup(move)))
       .map(move => {
         const details = moveDetails(move);
-        if (!details.type || details.accuracy < 85) return null;
+        if (!details.type || details.accuracy < 80) return null;
         if (!details.power && !isSupportMove(move, details)) return null;
-        if (details.power && details.power < 50 && !hasRecommendationException(move, details)) return null;
+        if (details.power && details.power < 70 && !hasRecommendationException(move, details)) return null;
         const nextTypes = [...new Set([...baseTypes, details.type])];
         const gain = offensiveCoverageCount(nextTypes) - baseScore;
         return {...details, move, gain, support:isSupportMove(move, details), stab:member.pokemon.types.includes(details.type), score:recommendationScoreForEntry(member, move, details, gain, workingEntries) - 90, fallback:true};
@@ -2196,8 +2438,21 @@ function recommendedMovesetForPokemon(name) {
     .filter(move => learnableMovesForPokemon(pokemon.name).some(candidate => normalizeLookup(candidate) === normalizeLookup(move)))
     .filter(move => !NEVER_RECOMMENDED_MOVES.has(move))
     .filter(move => passesRecommendationRules(member, move, moveDetails(move), true));
-  const merged = [...validProfileMoves, ...generated.map(rec => rec.move)];
-  return [...new Set(merged)].slice(0, 4);
+  const picked = [];
+  const workingMember = {pokemon, moves:[], slotIndex:0};
+  const addCandidate = (move, allowRedundant = false) => {
+    if (!move || picked.includes(move)) return;
+    const details = moveDetails(move);
+    const entries = picked.map(name => ({move:name, details:moveDetails(name)}));
+    if (!allowRedundant && isRedundantMove(workingMember, move, details, entries)) return;
+    picked.push(move);
+    workingMember.moves.push({name:move, type:details.type});
+  };
+  [...validProfileMoves, ...generated.map(rec => rec.move)].forEach(move => addCandidate(move));
+  [...validProfileMoves, ...generated.map(rec => rec.move)].forEach(move => {
+    if (picked.length < 4) addCandidate(move, true);
+  });
+  return picked.slice(0, 4);
 }
 
 function shuffle(values) {
@@ -2209,57 +2464,110 @@ function shuffle(values) {
   return copy;
 }
 
-function randomMovesetForPokemon(name) {
+function bumpTypeCount(counts, type, amount = 1) {
+  if (!type) return;
+  counts.set(type, (counts.get(type) || 0) + amount);
+}
+
+function randomMoveTypePenalty(type, teamMoveTypeCounts) {
+  return (teamMoveTypeCounts?.get(type) || 0) * 55;
+}
+
+function randomTeamCandidates() {
+  return POKEDEX
+    .filter(pokemon => !RANDOM_TEAM_EXCLUSIONS.has(pokemon.name))
+    .filter(pokemon => learnableMovesForPokemon(pokemon.name).length)
+    .filter(pokemon => {
+      const stats = pokemonStats(pokemon.name);
+      return stats.length && statTotal(stats) > 460;
+    });
+}
+
+function randomTeamPokemonScore(pokemon, teamTypeCounts) {
+  const stats = pokemonStats(pokemon.name);
+  const preferred = RANDOM_TEAM_POOL.some(name => findPokemonByName(name)?.name === pokemon.name) ? 95 : 0;
+  const offense = Math.max(stats[1] || 0, stats[3] || 0);
+  const speed = stats[5] || 0;
+  const bulk = (stats[0] || 0) + (stats[2] || 0) + (stats[4] || 0);
+  const duplicateTypePenalty = pokemon.types.reduce((sum, type) => sum + (teamTypeCounts.get(type) || 0) * 48, 0);
+  return statTotal(stats) + preferred + offense * .5 + speed * .25 + bulk * .12 - duplicateTypePenalty + Math.random() * 110;
+}
+
+function randomMovesetForPokemon(name, teamMoveTypeCounts = new Map()) {
   const pokemon = findPokemonByName(name);
   if (!pokemon) return [];
   const profile = MOVE_PROFILE_HINTS[pokemon.name] || [];
   const suggested = recommendedMovesetForPokemon(pokemon.name);
   const member = {pokemon, moves:[], slotIndex:0};
-  const pool = learnableMovesForPokemon(pokemon.name)
+  const learnable = learnableMovesForPokemon(pokemon.name);
+  const learnableByKey = new Map(learnable.map(move => [normalizeLookup(move), move]));
+  const pool = learnable
     .filter(move => !NEVER_RECOMMENDED_MOVES.has(move))
     .map(move => {
       const details = moveDetails(move);
-      if (!details.type || details.accuracy < 85) return null;
-      if (details.power && details.power < 50 && !hasRecommendationException(move, details)) return null;
+      if (!details.type || details.accuracy < 80) return null;
+      if (details.power && details.power < 70 && !hasRecommendationException(move, details)) return null;
       if (!details.power && !isSupportMove(move, details)) return null;
       const gain = offensiveCoverageCount([details.type]);
-      return {...details, move, gain, score:recommendationScoreForEntry(member, move, details, gain, []) + (profile.includes(move) ? 100 : 0) + Math.random() * 18};
+      const teamPenalty = randomMoveTypePenalty(details.type, teamMoveTypeCounts);
+      return {...details, move, gain, score:recommendationScoreForEntry(member, move, details, gain, []) + (profile.includes(move) ? 100 : 0) - teamPenalty + Math.random() * 18};
     })
     .filter(Boolean)
     .sort((a,b) => b.score - a.score || b.power - a.power);
   const picked = [];
   const addMove = move => {
-    if (!move || picked.includes(move)) return;
+    const canonical = learnableByKey.get(normalizeLookup(move));
+    if (!canonical || picked.includes(canonical)) return;
+    move = canonical;
     const details = moveDetails(move);
-    if (isRedundantMove(member, move, details, picked.map(name => ({move:name, details:moveDetails(name)}))) && picked.length >= 2) return;
+    if (isRedundantMove(member, move, details, picked.map(name => ({move:name, details:moveDetails(name)})))) return;
     picked.push(move);
     member.moves.push({name:move, type:details.type});
+    bumpTypeCount(teamMoveTypeCounts, details.type);
   };
-  shuffle([...suggested, ...profile]).forEach(addMove);
+  const forceAddMove = move => {
+    const canonical = learnableByKey.get(normalizeLookup(move));
+    if (!canonical || picked.includes(canonical)) return;
+    const details = moveDetails(canonical);
+    picked.push(canonical);
+    member.moves.push({name:canonical, type:details.type});
+    bumpTypeCount(teamMoveTypeCounts, details.type);
+  };
+  [...new Set([...suggested, ...profile])]
+    .sort((a,b) => randomMoveTypePenalty(moveDetails(a).type, teamMoveTypeCounts) - randomMoveTypePenalty(moveDetails(b).type, teamMoveTypeCounts))
+    .forEach(addMove);
   pool.forEach(entry => {
     if (picked.length >= 4) return;
     addMove(entry.move);
   });
   pool.forEach(entry => {
     if (picked.length >= 4 || picked.includes(entry.move)) return;
-    picked.push(entry.move);
+    forceAddMove(entry.move);
   });
   return picked.slice(0, 4);
 }
 
 function randomizeTeam() {
   if (!$("teamBuilder")) return;
-  const viablePool = RANDOM_TEAM_POOL
-    .map(name => findPokemonByName(name))
-    .filter(Boolean)
-    .filter(pokemon => {
-      const stats = pokemonStats(pokemon.name);
-      return stats.length && statTotal(stats) >= 455;
-    });
-  const state = shuffle(viablePool)
-    .slice(0, 6)
-    .map(pokemon => ({pokemon:pokemon.name, moves:randomMovesetForPokemon(pokemon.name)}));
+  const remaining = shuffle(randomTeamCandidates());
+  const selected = [];
+  const teamTypeCounts = new Map();
+  while (selected.length < 6 && remaining.length) {
+    const ranked = remaining
+      .map(pokemon => ({pokemon, score:randomTeamPokemonScore(pokemon, teamTypeCounts)}))
+      .sort((a,b) => b.score - a.score);
+    const shortList = ranked.slice(0, Math.min(7, ranked.length));
+    const choice = shortList[Math.floor(Math.random() * shortList.length)].pokemon;
+    selected.push(choice);
+    choice.types.forEach(type => bumpTypeCount(teamTypeCounts, type));
+    const index = remaining.findIndex(pokemon => pokemon.name === choice.name);
+    if (index !== -1) remaining.splice(index, 1);
+  }
+  const teamMoveTypeCounts = new Map();
+  const state = selected
+    .map(pokemon => ({pokemon:pokemon.name, moves:randomMovesetForPokemon(pokemon.name, teamMoveTypeCounts)}));
   applyTeamState(state);
+  writeCurrentTeamDraft();
 }
 
 function renderMoveRecommendations(team, moveTypes) {
@@ -2276,8 +2584,8 @@ function renderMoveRecommendations(team, moveTypes) {
     const damage = rec.power ? `${rec.power} dmg` : rec.category;
     const accuracy = rec.accuracy === 100 ? "100 acc" : `${rec.accuracy} acc`;
     const stab = rec.stab ? `<em>STAB</em>` : "";
-    const effect = MOVE_EFFECT_NOTES[rec.move] ? `<small class="move-effect">${MOVE_EFFECT_NOTES[rec.move]}</small>` : "";
-    return `<li title="${gain}"><span>${typeChips([rec.type])}<strong>${rec.move}</strong>${stab}<small>${rec.type} / ${damage} / ${accuracy}</small>${effect}</span><button class="recommendation-button" type="button" data-slot="${selected.slotIndex}" data-move="${rec.move}">Add</button></li>`;
+    const effect = moveEffectSummary(rec.move);
+    return `<li title="${gain}"><span>${typeChips([rec.type])}<strong>${rec.move}</strong>${stab}<small>${[`${rec.type} ${rec.category}`, damage, accuracy, effect].filter(Boolean).join(" / ")}</small></span><button class="recommendation-button" type="button" data-slot="${selected.slotIndex}" data-move="${rec.move}">Add</button></li>`;
   }).join("") : `<li><span><strong>No available move suggestions</strong><small>Accurate damaging recommendations are already represented or unavailable.</small></span></li>`;
   mount.innerHTML = `<article class="recommendation-card"><h4>${selected.pokemon.name}</h4><p class="muted-text">Recommendations use learnset, STAB, category fit, coverage gain, power, and accuracy.</p><ul>${items}</ul></article>`;
 }
@@ -2390,6 +2698,15 @@ function mapMarkerLabel(point) {
   return point[0][0];
 }
 
+function mapKindName(kind) {
+  return exactMapMarkerText[kind]?.[0] || kind;
+}
+
+function mapCountsHtml(region, enabled, visibleCount) {
+  const rows = [...enabled].map(kind => `<span>${mapKindName(kind)} : ${mapData[region].filter(point => point[0] === kind).length}</span>`).join("");
+  return `<div class="map-counts"><strong>${visibleCount} markers visible</strong>${rows}</div>`;
+}
+
 function clampMapView() {
   const map = $("regionMap");
   if (!map) return;
@@ -2483,8 +2800,7 @@ function renderMap() {
       return;
     }
     document.querySelectorAll(".marker").forEach((m,i) => m.classList.toggle("active", i === index));
-    const counts = [...enabled].map(kind => `${kind}: ${mapData[region].filter(x => x[0] === kind).length}`).join(" / ");
-    $("mapDetails").innerHTML = `<span class="tag">${p[0]}</span><h3>${p[1]}</h3><p><strong>${p[2]}</strong></p><p>${p[3]}</p><p class="map-counts">${points.length} markers visible. ${counts}</p><div class="map-list">${points.map((x,i) => `<button data-list-index="${i}">${x[1]} <span class="tag">${x[0]}</span></button>`).join("")}</div>`;
+    $("mapDetails").innerHTML = `<span class="tag">${p[0]}</span><h3>${pokemonTitleLinks(p[1])}</h3><p><strong>${p[2]}</strong></p><p>${p[3]}</p>${mapCountsHtml(region, enabled, points.length)}<div class="map-list">${points.map((x,i) => `<button data-list-index="${i}">${x[1]} <span class="tag">${x[0]}</span></button>`).join("")}</div>`;
     document.querySelectorAll("[data-list-index]").forEach(btn => btn.addEventListener("click", () => setDetail(+btn.dataset.listIndex)));
   };
   document.querySelectorAll(".marker").forEach(btn => btn.addEventListener("click", () => setDetail(+btn.dataset.index)));
@@ -2510,12 +2826,12 @@ function renderRegionButtons() {
 function renderStaticTables() {
   renderTable("ballTable", ["Ball","Family","Craft cost","Best use"], balls);
   renderTable("rankTable", ["Rank","Obedience level","Notable unlocks"], ranks);
-  renderTable("hisuianTable", ["Pokemon","Type","Location","Method / notes"], hisuian);
-  renderTable("evolutionTable", ["Item / method","Evolutions","Source / condition"], evolutions.map(row => [itemSpriteHtml(row[0]), row[1], row[2]]));
+  renderTable("hisuianTable", ["Pokemon","Type","Location","Method / notes"], hisuian.map(row => [pokemonListLinks(row[0]), row[1], row[2], row[3]]));
+  renderTable("evolutionTable", ["Item / method","Evolutions","Source / condition"], evolutions.map(row => [itemSpriteHtml(row[0]), pokemonListLinks(row[1]), row[2]]));
   renderNatures();
   renderTypeChart();
   renderTable("requestTable", ["No.","Request","Region","Why it matters"], requests);
-  renderTable("legendaryTable", ["Pokemon","Location","Method / correction"], legendaries);
+  renderTable("legendaryTable", ["Pokemon","Location","Method / correction"], legendaries.map(row => [pokemonListLinks(row[0]), row[1], row[2]]));
   renderTable("shinyTable", ["Condition","Rolls","Approx odds"], shinyRows);
 }
 
@@ -2565,22 +2881,21 @@ function renderPokemonDetail() {
     return `<li>${typeChips([details.type])}<strong>${move}</strong><span>${details.category}${details.power ? ` / ${details.power} power` : ""} / ${details.accuracy} acc${effect}</span></li>`;
   }).join("") : `<li><span>Use its STAB moves and reliable coverage from Zisu if building it for battle.</span></li>`;
   mount.innerHTML = `<div class="pokemon-detail">
-    <img src="${spriteUrl(dex)}" alt="${dex.name} sprite">
+    <img ${pokemonSpriteAttrs(dex)} alt="${dex.name} sprite">
     <div>
       <p class="eyebrow">Hisui #${String(dex.num).padStart(3,"0")}</p>
       <h2>${dex.name}</h2>
       <p>${typeChips(dex.types)}</p>
       <p><strong>Role:</strong> ${role}</p>
       ${viable ? `<p>${viable.note}</p>` : ""}
+      ${detailStats}
       <div class="pokemon-facts">
         <p><strong>Weak to:</strong> ${matchupText(profile.weaknesses)}</p>
         <p><strong>Resists:</strong> ${matchupText(profile.resists)}</p>
         <p><strong>Immune to:</strong> ${profile.immunities.length ? profile.immunities.map(([t]) => t).join(", ") : "None"}</p>
         <p><strong>STAB hits super-effectively:</strong> ${offensive.length ? offensive.map(([t,m]) => `${t} ${m}x`).join(", ") : "No single-type target super-effectively by STAB alone"}</p>
-        <p><strong>Ability handling:</strong> ${abilitySummary(dex)}</p>
       </div>
       <div class="pokemon-move-summary"><h3>Useful moves</h3><ul>${moveList}</ul></div>
-      ${detailStats}
     </div>
   </div>`;
 }
@@ -2667,6 +2982,7 @@ function wireSearch() {
         applyMoveTypeLock(row, true);
       }
       renderCoverage();
+      writeCurrentTeamDraft();
     });
     $("teamBuilder").addEventListener("input", e => {
       selectRecommendationSlot(e.target.closest(".team-slot"));
@@ -2677,18 +2993,21 @@ function wireSearch() {
         applyMoveTypeLock(row);
       }
       renderCoverage();
+      writeCurrentTeamDraft();
     });
     $("teamBuilder").addEventListener("focusout", e => {
       if (!e.target.matches(".move-name")) return;
       const row = e.target.closest(".move-row");
       applyMoveTypeLock(row, true);
       renderCoverage();
+      writeCurrentTeamDraft();
     });
     $("teamBuilder").addEventListener("keydown", e => {
       if (!e.target.matches(".move-name") || e.key !== "Enter") return;
       const row = e.target.closest(".move-row");
       applyMoveTypeLock(row, true);
       renderCoverage();
+      writeCurrentTeamDraft();
     });
   }
   if ($("moveRecommendations")) $("moveRecommendations").addEventListener("click", event => {
@@ -2701,13 +3020,19 @@ function wireSearch() {
     targetMove.value = button.dataset.move;
     applyMoveTypeLock(targetMove.closest(".move-row"), true);
     renderCoverage();
+    writeCurrentTeamDraft();
   });
   if ($("saveTeam")) $("saveTeam").addEventListener("click", saveCurrentTeam);
   if ($("loadTeam")) $("loadTeam").addEventListener("click", loadSelectedTeam);
   if ($("deleteTeam")) $("deleteTeam").addEventListener("click", deleteSelectedTeam);
   if ($("randomTeam")) $("randomTeam").addEventListener("click", randomizeTeam);
+  if ($("jumpToCoverage")) $("jumpToCoverage").addEventListener("click", () => {
+    const target = $("coverageTable") || $("coverageSummary");
+    if (target) target.scrollIntoView({behavior:"smooth", block:"end"});
+  });
   if ($("savedTeams")) $("savedTeams").addEventListener("change", () => {
     if ($("teamName")) $("teamName").value = $("savedTeams").value;
+    writeCurrentTeamDraft();
   });
   if ($("clearTeam")) $("clearTeam").addEventListener("click", () => {
     $("teamBuilder").innerHTML = Array.from({length: 6}, (_, index) => teamSlotHtml(index)).join("");
@@ -2715,6 +3040,7 @@ function wireSearch() {
     markSelectedTeamSlot();
     renderMoveDatalist();
     renderCoverage();
+    writeCurrentTeamDraft();
   });
   if ($("addTeamSlot")) $("addTeamSlot").addEventListener("click", () => {
     const count = document.querySelectorAll(".team-slot").length;
@@ -2722,8 +3048,10 @@ function wireSearch() {
       $("teamBuilder").insertAdjacentHTML("beforeend", teamSlotHtml(count));
       renderMoveDatalist();
       renderCoverage();
+      writeCurrentTeamDraft();
     }
   });
+  window.addEventListener("beforeunload", writeCurrentTeamDraft);
   wireGlobalSearch();
 }
 
@@ -2738,6 +3066,7 @@ function init() {
   renderTeamBuilder();
   renderMoveDatalist();
   renderSavedTeams();
+  restoreCurrentTeamDraft();
   if ($("dexType")) $("dexType").innerHTML = `<option value="all">All types</option>` + TYPES.map(t => `<option>${t}</option>`).join("");
   const regionParam = new URLSearchParams(location.search).get("region");
   if (regionParam && $("regionSelect") && mapData[regionParam]) $("regionSelect").value = regionParam;

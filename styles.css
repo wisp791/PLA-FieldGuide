@@ -26,7 +26,7 @@
 
 @font-face {
   font-family: "KyoMadoka";
-  src: url("OnlineWebFonts_COM_6fef7165de80b5a86049fa8b100c87f2/KyoMadoka/Web Fonts/89b94e3a0ac085875bf7972d0936e11c.woff2") format("woff2");
+  src: url("OnlineWebFonts_COM_6fef7165de80b5a86049fa8b100c87f2/KyoMadoka/KyoMadoka.ttf") format("truetype");
   font-display: swap;
 }
 
@@ -216,6 +216,7 @@ a:hover { text-decoration: underline; }
   justify-content: center;
   min-height: 36px;
   padding: 8px 12px;
+  transition: background .18s ease, border-color .18s ease, box-shadow .18s ease, filter .18s ease, transform .18s ease;
 }
 
 .top-nav a:hover,
@@ -223,7 +224,9 @@ a:hover { text-decoration: underline; }
 .button:hover {
   background: #26322d;
   border-color: rgba(223, 185, 95, .58);
+  box-shadow: 0 0 0 2px rgba(223, 185, 95, .13), 0 6px 16px rgba(0, 0, 0, .28);
   text-decoration: none;
+  transform: translateY(-1px);
 }
 
 .top-nav a[aria-current="page"] {
@@ -307,7 +310,7 @@ a:hover { text-decoration: underline; }
   margin: 8px 0 22px;
   max-width: 980px;
   text-shadow: 0 5px 24px rgba(0, 0, 0, .72), 0 0 1px #f7f0df;
-  transform: scaleX(.82);
+  transform: scaleX(.76);
   transform-origin: left center;
 }
 
@@ -512,6 +515,12 @@ article:nth-child(3n),
   font-weight: 800;
   list-style: none;
   padding: 14px 16px;
+  transition: background .18s ease, box-shadow .18s ease;
+}
+
+.spoiler-block summary:hover {
+  background: rgba(223, 185, 95, .08);
+  box-shadow: inset 0 -1px 0 rgba(223, 185, 95, .16);
 }
 
 .spoiler-block summary::-webkit-details-marker {
@@ -545,6 +554,11 @@ article:nth-child(3n),
 .timeline-spoiler article,
 .spoiler-content {
   margin: 0 16px 16px;
+}
+
+.spoiler-block[open] > .cards {
+  margin: 0 16px 18px;
+  padding: 8px 0 2px;
 }
 
 .timeline-spoiler article {
@@ -630,6 +644,7 @@ td {
   min-height: 44px;
   padding: 11px 12px;
   text-align: left;
+  transition: background .18s ease, border-color .18s ease, box-shadow .18s ease, transform .18s ease;
 }
 
 .region-button span {
@@ -640,6 +655,7 @@ td {
 .region-button.active {
   background: #26322d;
   border-color: rgba(223, 185, 95, .62);
+  box-shadow: 0 0 0 2px rgba(223, 185, 95, .12), 0 7px 16px rgba(0, 0, 0, .24);
 }
 
 .controls input {
@@ -973,8 +989,14 @@ td {
 
 .map-counts {
   color: #e4d3a5;
+  display: grid;
   font-size: 13px;
+  gap: 4px;
   margin: 12px 0 0;
+}
+
+.map-counts strong {
+  color: var(--text);
 }
 
 .map-list button {
@@ -986,6 +1008,14 @@ td {
   font: inherit;
   padding: 9px 10px;
   text-align: left;
+  transition: background .18s ease, border-color .18s ease, box-shadow .18s ease, transform .18s ease;
+}
+
+.map-list button:hover {
+  background: rgba(223, 185, 95, .08);
+  border-color: rgba(223, 185, 95, .48);
+  box-shadow: 0 0 0 2px rgba(223, 185, 95, .1);
+  transform: translateY(-1px);
 }
 
 .type-buttons {
@@ -1004,6 +1034,14 @@ td {
   font-size: 13px;
   font-weight: 900;
   padding: 8px 10px;
+  transition: box-shadow .18s ease, filter .18s ease, opacity .18s ease, transform .18s ease;
+}
+
+.type-button:hover {
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, .2);
+  filter: brightness(1.08);
+  opacity: 1;
+  transform: translateY(-1px);
 }
 
 .type-button:not(.selected) {
@@ -1136,6 +1174,14 @@ td {
   font-weight: 800;
   min-width: 54px;
   padding: 7px 9px;
+  transition: background .18s ease, border-color .18s ease, box-shadow .18s ease, transform .18s ease;
+}
+
+.recommendation-button:hover {
+  background: rgba(223, 185, 95, .25);
+  border-color: rgba(223, 185, 95, .72);
+  box-shadow: 0 0 0 2px rgba(223, 185, 95, .14);
+  transform: translateY(-1px);
 }
 
 .coverage-note,
@@ -1465,6 +1511,7 @@ footer {
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   margin-top: 18px;
+  margin-bottom: 36px;
   padding: clamp(18px, 3vw, 28px);
   width: calc(100% - clamp(36px, 8vw, 80px));
 }
@@ -1623,6 +1670,19 @@ footer {
   font-size: 13px;
 }
 
+.pokemon-name-link,
+.pokemon-inline-link {
+  color: #f2dfb0;
+  text-decoration: none;
+  transition: color .18s ease, text-shadow .18s ease;
+}
+
+.pokemon-name-link:hover,
+.pokemon-inline-link:hover {
+  color: #ffe6a3;
+  text-shadow: 0 0 14px rgba(223, 185, 95, .28);
+}
+
 .collapsible-section summary {
   align-items: center;
   cursor: pointer;
@@ -1630,6 +1690,12 @@ footer {
   gap: 16px;
   justify-content: space-between;
   list-style: none;
+  transition: background .18s ease, box-shadow .18s ease;
+}
+
+.collapsible-section summary:hover {
+  background: rgba(223, 185, 95, .07);
+  box-shadow: inset 0 -1px 0 rgba(223, 185, 95, .14);
 }
 
 .collapsible-section summary::-webkit-details-marker {
