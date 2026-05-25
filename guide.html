@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Guide | Hisui Field Guide</title>
+  <title>Guide | Pokemon Legends: Arceus Field Guide</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body data-page="guide">
   <header class="site-header">
-    <a class="brand" href="index.html" aria-label="Hisui Field Guide home"><span class="brand-mark">H</span><span><strong>Hisui Field Guide</strong><small>Pokemon Legends: Arceus</small></span></a>
+    <a class="brand" href="index.html" aria-label="Pokemon Legends Arceus Field Guide home"><span><strong>Pokemon Legends: Arceus Field Guide</strong><small>Pokemon Legends: Arceus</small></span></a>
     <form class="global-search" role="search"><input id="globalSearch" type="search" autocomplete="off" placeholder="Search Pokemon, maps, requests, items..."><div id="searchResults" class="search-results"></div></form>
-    <nav class="top-nav" aria-label="Primary"><a href="guide.html">Guide</a><a href="pokemon.html">Pokemon</a><a href="maps.html">Maps</a><a href="calculator.html">Coverage</a></nav>
+    <nav class="top-nav" aria-label="Primary"><a href="guide.html">Guide</a><a href="tips.html">Tips and Tricks</a><a href="pokemon.html">Pokemon</a><a href="maps.html">Maps</a><a href="resources.html">Resources</a><a href="calculator.html">Team Builder</a></nav>
   </header>
   <main class="page-main">
-    <section class="page-hero"><p class="eyebrow">Core guide</p><h1>Walkthrough, catching, ranks, battle flow, and practical tips.</h1></section>
-    <section class="page-tabs"><a href="items.html">Items & crafting</a><a href="requests.html">Requests & post-game</a><a href="pokemon.html">Pokemon pages</a></section>
+    <section class="page-hero"><p class="eyebrow">Core guide</p><h1>Walkthrough, catching, ranks, and battle flow.</h1></section>
+    <section class="page-tabs"><a href="tips.html">Tips and Tricks</a><a href="items.html">Items & crafting</a><a href="requests.html">Requests & post-game</a><a href="pokemon.html">Pokemon pages</a></section>
     <section class="guide-section">
       <h2>Game Overview & Core Differences</h2>
       <div class="grid two">
@@ -26,8 +26,8 @@
       <h2>Story Walkthrough</h2>
       <div class="timeline">
         <article><span>Act 1</span><h3>Joining the Galaxy Team</h3><p>Learn catching, battling, crafting, and research reporting in Jubilife Village and Obsidian Fieldlands. Fast early research: Bidoof, Starly, Shinx, Wurmple, Kricketot, and Buizel.</p></article>
-        <article><span>Act 2</span><h3>The five Nobles</h3><p>Kleavor, Hisuian Lilligant, Hisuian Arcanine, Hisuian Electrode, and Hisuian Avalugg gate region progress. Ride unlock order is Wyrdeer, Ursaluna, Basculegion, Sneasler, then Hisuian Braviary.</p></article>
-        <article><span>Act 3</span><h3>Volo and Giratina</h3><p>Volo uses Spiritomb, Roserade, Hisuian Arcanine, Togekiss, Lucario, and Garchomp, then Giratina Altered and Origin. Bring level 65-70+ Pokemon, Max Revives, and Fairy/Ice coverage.</p></article>
+        <details class="spoiler-block timeline-spoiler"><summary><span>Act 2</span><strong>Story spoiler. Click to reveal.</strong></summary><article><h3>The five Nobles</h3><p>Kleavor, Hisuian Lilligant, Hisuian Arcanine, Hisuian Electrode, and Hisuian Avalugg gate region progress. Ride unlock order is Wyrdeer, Ursaluna, Basculegion, Sneasler, then Hisuian Braviary.</p></article></details>
+        <details class="spoiler-block timeline-spoiler"><summary><span>Act 3</span><strong>Late story spoiler. Click to reveal.</strong></summary><article><h3>Volo and Giratina</h3><p>Volo uses Spiritomb, Roserade, Togekiss, Hisuian Arcanine, Lucario, and Garchomp, then Giratina Altered and Origin. Bring level 65-70+ Pokemon, Max Revives, and Fairy/Ice coverage.</p></article></details>
       </div>
     </section>
     <section class="guide-section">
@@ -40,8 +40,7 @@
     </section>
     <section class="guide-section"><h2>Battle System</h2><div class="grid two"><article><h3>Styles</h3><ul><li>Normal: standard power and timing.</li><li>Agile: lower power, faster action speed, higher PP cost.</li><li>Strong: higher power, slower action speed, higher PP cost.</li></ul></article><article><h3>Use cases</h3><ul><li>Agile for status, finishing targets, or stealing turns.</li><li>Strong for one-hit KOs when the counterattack risk is acceptable.</li><li>Read the timeline before committing.</li></ul></article></div></section>
     <section class="guide-section"><h2>Star Rank</h2><p>Research points apply only after reporting to Laventon.</p><div class="table-wrap"><table id="rankTable"></table></div></section>
-    <section class="guide-section"><h2>Noble Boss Guide</h2><div class="cards" id="nobleCards"></div></section>
-    <section class="guide-section"><h2>General Tips</h2><div class="grid two"><article><h3>Do this</h3><ul><li>Carry Smoke Bombs, Sticky Globs, Revives, and several ball families.</li><li>Use Zisu's Training Grounds to patch movepools.</li><li>Enter distortions unless you are protecting a shiny spawn.</li></ul></article><article><h3>Avoid this</h3><ul><li>Forgetting research reports.</li><li>Assuming held items, trades, or abilities work like mainline games.</li><li>Using Strong Style before checking turn order.</li></ul></article></div></section>
+    <section class="guide-section"><h2>Noble Boss Guide</h2><details class="spoiler-block"><summary>Five Noble boss spoilers. Click to reveal.</summary><div class="cards" id="nobleCards"></div></details></section>
   </main>
   <footer><p>Fan-made guide. Data checked against Pokemon Database, Serebii, Bulbapedia, Game8, and RotomLabs.</p></footer>
   <script src="app.js"></script>

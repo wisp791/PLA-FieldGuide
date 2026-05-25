@@ -3,17 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hisui Field Guide | Pokemon Legends: Arceus Wiki</title>
-  <link rel="preconnect" href="https://img.pokemondb.net">
-  <link rel="preconnect" href="https://legends.arceus.pokemon.com">
+  <title>Pokemon Legends: Arceus Field Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body data-page="home">
   <header class="site-header">
-    <a class="brand" href="index.html" aria-label="Hisui Field Guide home">
-      <span class="brand-mark">H</span>
+    <a class="brand" href="index.html" aria-label="Pokemon Legends Arceus Field Guide home">
       <span>
-        <strong>Hisui Field Guide</strong>
+        <strong>Pokemon Legends: Arceus Field Guide</strong>
         <small>Pokemon Legends: Arceus</small>
       </span>
     </a>
@@ -23,9 +22,11 @@
     </form>
     <nav class="top-nav" aria-label="Primary">
       <a href="guide.html">Guide</a>
+      <a href="tips.html">Tips and Tricks</a>
       <a href="pokemon.html">Pokemon</a>
       <a href="maps.html">Maps</a>
-      <a href="calculator.html">Coverage</a>
+      <a href="resources.html">Resources</a>
+      <a href="calculator.html">Team Builder</a>
     </nav>
   </header>
 
@@ -33,22 +34,27 @@
     <section class="hero">
       <div class="hero-bg" aria-hidden="true"></div>
       <div class="hero-copy">
-        <p class="eyebrow">Survey Corps reference desk</p>
-        <h1>Pokemon Legends: Arceus guide for fast research, strong teams, and cleaner Hisui routes.</h1>
-        <p>Search like PokemonDB, then jump straight to focused pages instead of digging through one huge scroll.</p>
+        <p class="eyebrow">Field guide</p>
+        <h1>Pokemon Legends: Arceus</h1>
+        <p>Pokemon Legends: Arceus is an action RPG set in ancient Hisui, where you explore open regions, study wild Pokemon, complete the first regional Pokedex, and battle using a faster style-based turn system.</p>
+        <p>The game focuses on field research, catching, crafting, requests, and discovering how familiar Pokemon fit into a much earlier era of the Sinnoh region.</p>
         <div class="hero-actions">
-          <a class="button primary" href="pokemon.html">Browse Pokemon</a>
-          <a class="button" href="maps.html">Open maps</a>
+          <a class="button primary" href="guide.html">Guide</a>
+          <a class="button" href="tips.html">Tips and Tricks</a>
+          <a class="button" href="pokemon.html">Pokemon</a>
+          <a class="button" href="items.html">Items</a>
+          <a class="button" href="resources.html">Resources</a>
+          <a class="button" href="requests.html">Requests</a>
         </div>
       </div>
-      <img class="hero-pokemon" alt="Scizor sprite" src="https://img.pokemondb.net/sprites/scarlet-violet/normal/scizor.png">
+    </section>
+
+    <section class="site-summary">
+      <p>This field guide collects walkthrough help, Pokemon data, maps, request notes, crafting references, shiny odds, and team tools in one place for quick lookup while playing.</p>
+      <p>Use the search bar to jump directly to Pokemon pages, guide categories, tips, map entries, requests, balls, recipes, and calculators.</p>
     </section>
 
     <section class="home-grid-wrap">
-      <div class="section-heading">
-        <h2>Choose a page</h2>
-        <p>Each page is scoped around a category, with its own tables and tools.</p>
-      </div>
       <div class="home-grid" id="homeCards"></div>
     </section>
   </main>
