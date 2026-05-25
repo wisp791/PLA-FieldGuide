@@ -25,17 +25,13 @@ const TYPE_CHART = {
   Fairy:{Fire:.5,Fighting:2,Poison:.5,Dragon:2,Dark:2,Steel:.5}
 };
 
-const SPRITE_OVERRIDES = {
-  Togekiss: "https://img.pokemondb.net/sprites/sword-shield/normal/togekiss.png",
-  Roserade: "https://img.pokemondb.net/sprites/sword-shield/normal/roserade.png"
-};
-
 const MAP_IMAGES = {
-  "Obsidian Fieldlands": "250px-Obsidian_Fieldlands_Map.png",
+  "Obsidian Fieldlands": "https://archives.bulbagarden.net/wiki/Special:Redirect/file/Hisui_Obsidian_Fieldlands_Map.png",
   "Crimson Mirelands": "Crimson Mirelands Map.jpg",
   "Cobalt Coastlands": "Cobalt Coastlands Map.jpg",
   "Coronet Highlands": "Coronet Highlands Map.jpg",
-  "Alabaster Icelands": "Alabaster Icelands-Map.jpg"
+  "Alabaster Icelands": "https://archives.bulbagarden.net/wiki/Special:Redirect/file/Hisui_Alabaster_Icelands_Map.png",
+  "Jubilife Village": "Jubilife Village Map.jpg"
 };
 
 const MAP_ASPECTS = {
@@ -89,6 +85,10 @@ const NEVER_RECOMMENDED_MOVES = new Set(["Giga Impact", "Hyper Beam"]);
 const MOVE_PROFILE_HINTS = {
   Decidueye:["Leaf Blade","Triple Arrows","Psycho Cut","Brave Bird"],
   "Hisuian Decidueye":["Leaf Blade","Triple Arrows","Psycho Cut","Brave Bird"],
+  Samurott:["Ceaseless Edge","Aqua Tail","Ice Beam","Poison Jab"],
+  "Hisuian Samurott":["Ceaseless Edge","Aqua Tail","Ice Beam","Poison Jab"],
+  Typhlosion:["Infernal Parade","Flamethrower","Shadow Ball","Mystical Fire"],
+  "Hisuian Typhlosion":["Infernal Parade","Flamethrower","Shadow Ball","Mystical Fire"],
   Luxray:["Thunder Wave","Wild Charge","Crunch","Ice Fang"],
   Staraptor:["Brave Bird","Close Combat","Roost","Aerial Ace"],
   Gyarados:["Aqua Tail","Crunch","Ice Fang","Water Pulse"],
@@ -110,12 +110,46 @@ const STATUS_SUPPORT_MOVES = new Set(["Thunder Wave", "Hypnosis", "Sleep Powder"
 const SETUP_SUPPORT_MOVES = new Set(["Swords Dance", "Calm Mind", "Nasty Plot", "Bulk Up", "Victory Dance", "Focus Energy", "Shelter", "Power Shift"]);
 const HIGH_CRIT_MOVES = new Set(["Leaf Blade", "Psycho Cut", "Night Slash", "Shadow Claw", "Stone Edge", "Cross Poison", "Spacial Rend"]);
 const STATUS_PAYOFF_MOVES = new Set(["Hex", "Infernal Parade", "Venoshock"]);
+const DRAWBACK_MOVES = new Set(["Brave Bird", "Close Combat", "Double-Edge", "Draco Meteor", "Flare Blitz", "Head Smash", "Headlong Rush", "Hydro Pump", "Leaf Storm", "Overheat", "Raging Fury", "Self-Destruct", "Steel Beam", "Take Heart", "Volt Tackle", "Wave Crash", "Wild Charge", "Wood Hammer"]);
 const SPECIAL_EFFECT_ATTACKS = new Set([
   "Triple Arrows", "Ceaseless Edge", "Stone Axe", "Infernal Parade", "Bitter Malice", "Dire Claw", "Barb Barrage",
   "Mystical Fire", "Mystical Power", "Esper Wing", "Ominous Wind", "Silver Wind", "Ancient Power", "Hex", "Venoshock",
   "Thunder Fang", "Ice Fang", "Fire Fang", "Spark", "Water Pulse", "Charge Beam", "Icy Wind", "Snarl",
   "Acid Spray", "Bulldoze", "Rock Smash", "Aqua Jet", "Shadow Sneak", "Quick Attack", "Draining Kiss"
 ]);
+
+const MOVE_EFFECT_NOTES = {
+  "Aerial Ace":"never misses",
+  "Aqua Jet":"priority",
+  "Barb Barrage":"strong-style evolution utility; better with poison",
+  "Bitter Malice":"can lower offensive pressure",
+  "Ceaseless Edge":"sets jagged splinters",
+  "Dire Claw":"can poison, paralyze, or drowsy",
+  "Drain Punch":"heals from damage dealt",
+  "Draining Kiss":"heals from damage dealt",
+  "Esper Wing":"high crit; may raise action speed",
+  "Hex":"stronger into statused targets",
+  "Infernal Parade":"stronger into statused targets",
+  "Mystical Fire":"can lower target offense",
+  "Poison Jab":"can poison",
+  "Psycho Cut":"high crit",
+  "Leaf Blade":"high crit",
+  "Shadow Claw":"high crit",
+  "Stone Axe":"sets jagged splinters",
+  "Triple Arrows":"raises crit chance and can lower Defense",
+  "Victory Dance":"boosts offense and defense",
+  "Thunder Wave":"paralysis support for catching and speed control",
+  "Hypnosis":"drowsy support for catching",
+  "Sleep Powder":"drowsy support for catching",
+  "Stun Spore":"paralysis support for catching",
+  "Spore":"drowsy support for catching",
+  "Shelter":"boosts defenses and evasion",
+  "Swords Dance":"boosts Attack",
+  "Calm Mind":"boosts special offense and special defense",
+  "Bulk Up":"boosts physical offense and defense",
+  "Nasty Plot":"boosts special offense",
+  "Focus Energy":"raises critical-hit chance"
+};
 
 const STARTER_MOVESETS = {
   "Decidueye":["Triple Arrows","Leaf Blade","Brave Bird","Shadow Claw"],
@@ -125,6 +159,14 @@ const STARTER_MOVESETS = {
   "Samurott":["Ceaseless Edge","Aqua Tail","Ice Beam","Poison Jab"],
   "Hisuian Samurott":["Ceaseless Edge","Aqua Tail","Ice Beam","Poison Jab"]
 };
+
+const RANDOM_TEAM_POOL = [
+  "Staraptor", "Luxray", "Rapidash", "Snorlax", "Scyther", "Gyarados", "Crobat", "Roserade", "Gardevoir", "Gallade",
+  "Hisuian Lilligant", "Rhyperior", "Togekiss", "Gengar", "Machamp", "Magnezone", "Electivire", "Magmortar",
+  "Hisuian Arcanine", "Overqwil", "Basculegion", "Infernape", "Torterra", "Empoleon", "Ursaring", "Ursaluna",
+  "Hisuian Goodra", "Garchomp", "Hisuian Zoroark", "Mamoswine", "Weavile", "Gliscor", "Yanmega", "Hisuian Braviary",
+  "Clefable", "Blissey"
+];
 
 const POKEDEX_TSV = `1	Rowlet	Grass/Flying
 2	Dartrix	Grass/Flying
@@ -941,9 +983,503 @@ Object.entries(trustedMapOverlays).forEach(([region, points]) => {
   mapData[region].push(...points);
 });
 
+const screenshotMapMarkers = {
+  "Obsidian Fieldlands":[
+    ["Subarea","Floaro Gardens","Northwest flowers","Shinx line, Shaymin request area, and western alpha checks.",26,18],
+    ["Subarea","Aspiration Hill","Northwest entry hill","Early tutorial route and first field gathering loop.",43,23],
+    ["Subarea","Horseshoe Plains","North plains","Bidoof, Starly, Shinx, Ponyta, and early research.",63,22],
+    ["Subarea","Grueling Grove","Northeast grove","Bug-type route and alpha Heracross area.",85,14],
+    ["Subarea","Deertrack Path","Central high route","Main path between the first camp routes and Deertrack Heights.",55,39],
+    ["Subarea","Deertrack Heights","Central eastern cliffs","Heights Camp route and early Geodude/Kricketot checks.",64,48],
+    ["Subarea","Windswept Run","Central riverbank","Floatzel and river-crossing route.",51,57],
+    ["Subarea","Nature's Pantry","Central woods","Cherubi tree checks and alpha Parasect/Kricketune route.",61,69],
+    ["Subarea","Worn Bridge","Eastern river crossing","Floatzel, Bibarel, and bridge route.",79,35],
+    ["Subarea","Obsidian Falls","Eastern falls","Alpha Blissey XP route and waterfall checks.",88,52],
+    ["Subarea","Oreburrow Tunnel","East tunnel","Cave route toward Obsidian Falls.",92,62],
+    ["Subarea","The Heartwood","Southeast forest","Bug and Grass routes near the Grandtree approach.",83,82],
+    ["Subarea","Tidewater Dam","South central dam","Water route and Bibarel checks.",68,79],
+    ["Subarea","Sandgem Flats","Southwest flats","Snorlax, Alakazam, and ore route.",23,75],
+    ["Subarea","Ramanas Island","South island","Post-game alpha loop and Landorus route.",39,82],
+    ["Subarea","Lake Verity","Western lake","Mesprit route and water checks.",19,43],
+    ["Camp","Fieldlands Camp","Aspiration Hill entrance","Main Obsidian Fieldlands entry camp.",42,11],
+    ["Camp","Heights Camp","Deertrack Heights","Second Obsidian camp.",65,50],
+    ["Gate","Fieldlands fast travel","Aspiration Hill entrance","Fast travel point near the starting camp.",41,10],
+    ["Gate","Heights fast travel","Deertrack Heights","Fast travel point beside Heights Camp.",64,50],
+    ["Gate","Grandtree Arena fast travel","Southeast Heartwood route","Fast travel anchor near the first Noble arena.",86,86],
+    ["Gate","Lake Verity fast travel","Western lake","Fast travel anchor near Lake Verity.",20,43],
+    ["Gate","Ramanas Island fast travel","Southern island","Post-game fast travel anchor.",37,79],
+    ["Transition","Fieldlands entry transition","Aspiration Hill entrance","Transition marker from Jubilife.",40,9],
+    ["Transition","Lake Verity transition","Western lake island","Lake cavern transition.",20,43],
+    ["Transition","Oreburrow transition","Oreburrow Tunnel","Tunnel transition marker.",91,62],
+    ["Transition","Grandtree transition","Grandtree Arena route","Arena transition marker.",87,86],
+    ["Cave","Oreburrow Tunnel","Eastern tunnel","Tunnel route through the eastern cliffs.",92,62],
+    ["Alpha","Alpha Luxio","Floaro Gardens","Electric alpha in Shinx territory.",26,17],
+    ["Alpha","Alpha Rapidash","Horseshoe Plains","Early high-level Fire alpha.",72,26],
+    ["Alpha","Alpha Heracross","Grueling Grove","Bug/Fighting alpha in the northeast grove.",86,14],
+    ["Alpha","Alpha Floatzel","Worn Bridge","Fast Water alpha by the bridge.",79,35],
+    ["Alpha","Alpha Snorlax","Sandgem Flats","Bulky Normal alpha on the western flats.",70,44],
+    ["Alpha","Alpha Kricketune","Windswept Run","Bug alpha near central river route.",52,58],
+    ["Alpha","Alpha Parasect","Nature's Pantry","Bug/Grass alpha in the woods.",62,72],
+    ["Alpha","Alpha Bibarel","Tidewater Dam","Water/Normal alpha near the dam.",70,79],
+    ["Alpha","Alpha Gyarados","Lake Verity","Water alpha at the western lake.",20,43],
+    ["Alpha","Alpha Lopunny","The Heartwood approach","Normal alpha on the eastern forest route.",91,61],
+    ["Alpha","Alpha Infernape","Ramanas Island","Post-game Fire/Fighting alpha.",38,80],
+    ["Alpha","Alpha Blissey","Obsidian Falls","High-HP XP farm target.",88,55],
+    ["Alpha","Alpha Torterra","Southeast Heartwood","Post-game Grass/Ground alpha.",89,86],
+    ["Alpha","Alpha Scyther","Grandtree route","Bug/Flying alpha near the arena route.",88,91],
+    ["Story","Kleavor arena","Grandtree Arena","First Noble fight location.",88,86],
+    ["Legendary","Mesprit","Lake Verity","Post-game lake guardian.",19,43],
+    ["Legendary","Landorus","Ramanas Island","Appears after Request 94 starts.",40,82],
+    ["Legendary","Shaymin","Floaro Gardens","Request 92 with Sword/Shield save data.",26,18],
+    ["Farm","Alpha Blissey XP route","Obsidian Falls","Farm with a Fighting attacker and refresh by leaving the region.",88,55],
+    ["Farm","Early research loop","Horseshoe Plains","Bidoof, Starly, Shinx, Wurmple, Ponyta, and materials.",58,25],
+    ["Farm","Ramanas post-game loop","Ramanas Island","High-level alpha loop after post-game access.",39,82],
+    ["Wisp","Floaro wisp","Floaro Gardens","Spiritomb wisp collectible.",34,18],
+    ["Wisp","Lake Verity wisp","Lake Verity rim","Spiritomb wisp collectible.",25,36],
+    ["Wisp","Windswept Run wisp","Central island","Spiritomb wisp collectible.",48,66],
+    ["Wisp","Deertrack Heights wisp","Central cliff route","Spiritomb wisp collectible.",57,49],
+    ["Wisp","Nature's Pantry wisp","Nature's Pantry","Spiritomb wisp collectible.",63,69],
+    ["Wisp","Worn Bridge wisp","East river","Spiritomb wisp collectible.",77,30],
+    ["Wisp","Obsidian Falls wisp","Eastern falls","Spiritomb wisp collectible.",88,44],
+    ["Wisp","Oreburrow wisp","East tunnel route","Spiritomb wisp collectible.",93,58],
+    ["Wisp","Heartwood wisp","Southeast forest","Spiritomb wisp collectible.",76,80],
+    ["Wisp","Ramanas wisp","Ramanas Island","Spiritomb wisp collectible.",39,78],
+    ["Wisp","South shore wisp","South coast","Spiritomb wisp collectible.",54,95],
+    ["Wisp","Southeast shore wisp","Southeast coast","Spiritomb wisp collectible.",66,94]
+  ],
+  "Jubilife Village":[
+    ["Subarea","Galaxy Hall","Village north center","Research reports, rank ups, and request board.",53,24],
+    ["Subarea","Training Grounds","Northwest village","Move tutoring and Ingo battles.",43,15],
+    ["Subarea","Craftworks","Northwest services","Recipe unlocks and crafting supply route.",37,18],
+    ["Subarea","Trading Post","North services","Merit Points and evolution items.",46,19],
+    ["Subarea","General Store","North market","Purchased basics and item sales.",60,22],
+    ["Subarea","Pastures","West field","Storage and bulk release for Grit.",33,35],
+    ["Subarea","Farm","South field","Farm upgrades and harvests.",33,76],
+    ["Camp","Front Gate","South gate","Expedition departure point.",54,47],
+    ["Gate","Training Grounds fast travel","Northwest village","Fast travel point near the training area.",43,15],
+    ["Gate","Farm fast travel","South fields","Fast travel point near the farm.",61,75],
+    ["Transition","Front Gate transition","South gate","Region select transition.",54,47],
+    ["Wisp","Northwest village wisp","Northwest services","Spiritomb wisp collectible.",31,6],
+    ["Wisp","Central village wisp","Central bridge route","Spiritomb wisp collectible.",49,32],
+    ["Wisp","West village wisp","West fields","Spiritomb wisp collectible.",25,34],
+    ["Wisp","South gate wisp","South path","Spiritomb wisp collectible.",35,82],
+    ["Request","Galaxy request board","Galaxy Hall","Main request board location.",53,24],
+    ["Farm","Ingo battle farm","Training Grounds","Repeat battles and move mastery.",43,15]
+  ],
+  "Crimson Mirelands":[
+    ["Subarea","Cloudpool Ridge","Northwest ridge","Onix and Roserade alpha route.",32,20],
+    ["Subarea","Shrouded Ruins","North ruins","Spiritomb and request routing.",58,13],
+    ["Subarea","Diamond Heath","North center","Route toward Diamond Settlement.",55,26],
+    ["Subarea","Diamond Settlement","North east-center","Diamond Clan hub.",64,30],
+    ["Subarea","Solaceon Ruins","Center-west ruins","Unown and story route.",49,42],
+    ["Subarea","Golden Lowlands","West lowlands","Starting field and early Mirelands research.",26,54],
+    ["Subarea","Gapejaw Bog","Southwest bog","Tangela, Carnivine, Croagunk, and request routes.",36,69],
+    ["Subarea","Scarlet Bog","Center marsh","Skuntank, digging route, and Enamorus zone.",56,58],
+    ["Subarea","Sludge Mound","South center","Hippowdon and mud route.",59,81],
+    ["Subarea","Bolderoll Slope","East-center slope","Rhyhorn and rocky route.",71,49],
+    ["Subarea","Lake Valor","Northeast lake","Azelf and lake route.",82,23],
+    ["Subarea","Cottonsedge Prairie","East prairie","Togepi and Togekiss route.",87,64],
+    ["Subarea","Droning Meadow","Southeast meadow","Yanma and Yanmega route.",88,76],
+    ["Subarea","Ursa's Ring","Southeast ring","Teddiursa, Ursaring, and Peat Block planning.",76,86],
+    ["Subarea","Holm of Trials","South island","Torterra, Sliggoo, and Toxicroak route.",43,90],
+    ["Camp","Mirelands Camp","Western entry","Main Crimson Mirelands entry camp.",22,38],
+    ["Camp","Bogbound Camp","Solaceon Ruins approach","Central camp near the bog route.",40,45],
+    ["Gate","Mirelands fast travel","Western entry","Fast travel point near the starting camp.",21,38],
+    ["Gate","Bogbound fast travel","Center-west ruins","Fast travel point near Bogbound Camp.",40,45],
+    ["Gate","Diamond Settlement fast travel","Diamond Settlement","Fast travel point near the settlement.",64,30],
+    ["Gate","Lake Valor fast travel","Lake Valor","Fast travel anchor near the lake.",82,26],
+    ["Transition","Lake Valor transition","Lake Valor cavern","Lake cavern transition.",82,26],
+    ["Cave","Solaceon Ruins","Center-west ruins","Ruin interior transition.",49,42],
+    ["Alpha","Alpha Onix","Cloudpool Ridge","Large Rock/Ground alpha.",32,20],
+    ["Alpha","Alpha Roserade","Cloudpool Ridge","Grass/Poison alpha on the ridge.",36,19],
+    ["Alpha","Alpha Vespiquen","North woods","Bug/Flying alpha north of Diamond Heath.",58,11],
+    ["Alpha","Alpha Lickilicky","Shrouded Ruins","Bulky Normal alpha near the ruins.",58,23],
+    ["Alpha","Alpha Whiscash","Lake Valor waters","Water/Ground alpha at Lake Valor.",82,31],
+    ["Alpha","Alpha Raichu","Golden Lowlands","Electric alpha in western lowlands.",37,54],
+    ["Alpha","Alpha Pachirisu","Golden Lowlands","Electric alpha tied to request routing.",18,68],
+    ["Alpha","Alpha Carnivine","Gapejaw Bog","Grass alpha in the southwest bog.",24,78],
+    ["Alpha","Alpha Tangrowth","Gapejaw Bog","Large Grass alpha near wetland routes.",40,84],
+    ["Alpha","Alpha Hippowdon","Sludge Mound","Ground alpha near the mound.",59,78],
+    ["Alpha","Alpha Skuntank","Scarlet Bog","Poison/Dark alpha in the central marsh.",61,60],
+    ["Alpha","Alpha Ursaring","Ursa's Ring","Useful alpha for Ursaluna planning.",76,86],
+    ["Alpha","Alpha Yanmega","Droning Meadow","Bug/Flying alpha in the southeast meadow.",88,75],
+    ["Alpha","Alpha Togekiss","Cottonsedge Prairie","Airborne Fairy/Flying alpha.",87,63],
+    ["Alpha","Alpha Torterra","Holm of Trials","Grass/Ground alpha on the south island.",46,87],
+    ["Alpha","Alpha Toxicroak","Holm of Trials","Poison/Fighting alpha on the south island.",41,95],
+    ["Story","Brava Arena","Northeast highlands","Hisuian Lilligant Noble arena.",75,33],
+    ["Legendary","Azelf","Lake Valor","Post-game lake guardian.",82,26],
+    ["Legendary","Enamorus","Scarlet Bog","Appears after the other Forces of Nature are caught.",56,58],
+    ["Farm","Ursaluna digging route","Scarlet Bog to Ursa's Ring","Peat Blocks, shards, stones, and sellables.",62,69],
+    ["Wisp","Cloudpool wisp","Northwest ridge","Spiritomb wisp collectible.",31,7],
+    ["Wisp","Golden Lowlands west wisp","Western lowlands","Spiritomb wisp collectible.",18,55],
+    ["Wisp","Golden Lowlands east wisp","Western lowlands","Spiritomb wisp collectible.",34,55],
+    ["Wisp","Solaceon wisp","Solaceon Ruins","Spiritomb wisp collectible.",48,42],
+    ["Wisp","Diamond Settlement wisp","Diamond route","Spiritomb wisp collectible.",63,31],
+    ["Wisp","Bolderoll wisp","Bolderoll Slope","Spiritomb wisp collectible.",74,49],
+    ["Wisp","Lake Valor south wisp","Lake Valor","Spiritomb wisp collectible.",82,36],
+    ["Wisp","Cottonsedge wisp","Cottonsedge Prairie","Spiritomb wisp collectible.",89,62],
+    ["Wisp","Droning Meadow wisp","Southeast meadow","Spiritomb wisp collectible.",94,92],
+    ["Wisp","Holm west wisp","Holm of Trials","Spiritomb wisp collectible.",27,92],
+    ["Wisp","Holm east wisp","Holm of Trials","Spiritomb wisp collectible.",65,91],
+    ["Wisp","Gapejaw wisp","Gapejaw Bog","Spiritomb wisp collectible.",31,74]
+  ],
+  "Cobalt Coastlands":[
+    ["Subarea","Spring Path","Northwest ridge","Highland route and alpha checks.",18,24],
+    ["Subarea","Islespy Shore","North shore","Empoleon and northern shoreline.",35,16],
+    ["Subarea","Windbreak Stand","West ridge","Hisuian Growlithe checks.",25,39],
+    ["Subarea","Veilstone Cape","North center ridge","Machamp, Vulpix, and Growlithe routes.",56,38],
+    ["Subarea","Castaway Shore","Center shore","Machoke and Octillery routes.",45,44],
+    ["Subarea","Tranquility Cove","Central bay","Mantyke, Qwilfish, and sea routing.",58,63],
+    ["Subarea","Seagrass Haven","North sea","Lumineon and pearl route.",70,24],
+    ["Subarea","Lunker's Lair","East sea","Tentacruel and water alpha route.",92,41],
+    ["Subarea","Sand's Reach","Southeast sandbar","Gyarados and Thundurus weather route.",81,76],
+    ["Subarea","Deadwood Haunt","South route","Duskull, Dusclops, and Dusknoir at night.",73,84],
+    ["Subarea","Tombolo Walk","Southeast beach","Chansey and Manaphy route.",91,89],
+    ["Subarea","Ginkgo Landing","West beach","Entry beach and Ginter check route.",28,62],
+    ["Subarea","Crossing Slope","West slope","Purugly and early Coastlands route.",20,70],
+    ["Subarea","Aipom Hill","Southwest hill","Aipom and Ambipom routing.",32,82],
+    ["Subarea","Bathers' Lagoon","Southwest lagoon","Golduck and southern water route.",44,88],
+    ["Subarea","Firespit Island","Northeast volcano","Heatran, Magmar line, and Noble route.",87,14],
+    ["Camp","Beachside Camp","Ginkgo Landing","Main Coastlands entry camp.",11,63],
+    ["Camp","Coastlands Camp","Sand's Reach","Second Coastlands camp for sea routes.",75,76],
+    ["Gate","Beachside fast travel","Ginkgo Landing","Fast travel point near Beachside Camp.",11,63],
+    ["Gate","Coastlands fast travel","Sand's Reach","Fast travel point near Coastlands Camp.",75,76],
+    ["Gate","Firespit fast travel","Firespit Island","Fast travel point on Firespit Island after story progress.",86,14],
+    ["Gate","Seagrass fast travel","Seagrass Haven","Fast travel anchor near the northern sea route.",68,32],
+    ["Gate","Seaside Hollow fast travel","East sea cave","Fast travel anchor for Manaphy route.",93,63],
+    ["Transition","Firespit transition","Firespit Island","Volcano transition marker.",86,14],
+    ["Cave","Seaside Hollow","East sea cave","Manaphy and Phione request cave.",93,63],
+    ["Alpha","Alpha Purugly","Crossing Slope","Normal alpha near the entry route.",20,71],
+    ["Alpha","Alpha Walrein","Ginkgo Landing coast","Ice/Water alpha on the western beach.",29,61],
+    ["Alpha","Alpha Ambipom","Aipom Hill","Fast Normal alpha near the hill route.",32,80],
+    ["Alpha","Alpha Mothim","Spring Path","Bug/Flying alpha near Spring Path.",18,25],
+    ["Alpha","Alpha Machoke","Castaway Shore","Fighting alpha near the center shore.",45,44],
+    ["Alpha","Alpha Octillery","Castaway Shore","Water alpha near the center shore.",49,41],
+    ["Alpha","Alpha Empoleon","Islespy Shore","Water/Steel alpha at northern shore.",35,17],
+    ["Alpha","Alpha Qwilfish","Tranquility Cove","Dark/Poison alpha in sea routes.",52,39],
+    ["Alpha","Alpha Tentacruel","Lunker's Lair","Water/Poison alpha in the eastern sea.",92,41],
+    ["Alpha","Alpha Dusknoir","Deadwood Haunt","Night Ghost alpha.",72,84],
+    ["Alpha","Alpha Chansey","Tombolo Walk","Rare bulky Normal alpha.",90,89],
+    ["Alpha","Alpha Ninetales","Firespit Island","Fire alpha on the volcano island.",88,13],
+    ["Alpha","Alpha Gyarados","Sand's Reach waters","High-level sea alpha.",81,76],
+    ["Alpha","Alpha Lumineon","Seagrass Haven","Water alpha in northern sea route.",70,24],
+    ["Story","Molten Arena","Firespit Island","Hisuian Arcanine Noble arena.",86,15],
+    ["Legendary","Heatran","Firespit Island","Post-game plate mission.",86,14],
+    ["Legendary","Thundurus","Sand's Reach waters","Storm weather after Incarnate Forces begins.",78,76],
+    ["Legendary","Manaphy and Phione","Seaside Hollow","Request 66 after the evening sea-spire trigger.",93,63],
+    ["Farm","Pearl route","Seagrass Haven to Lunker's Lair","Pearls, Water types, and sea catches.",71,33],
+    ["Farm","Growlithe checks","Windbreak Stand / Veilstone Cape","Hisuian Growlithe route and Fire Stone planning.",27,38],
+    ["Wisp","Spring Path wisp","Northwest ridge","Spiritomb wisp collectible.",14,25],
+    ["Wisp","Islespy wisp","North shore","Spiritomb wisp collectible.",34,7],
+    ["Wisp","Veilstone west wisp","Center ridge","Spiritomb wisp collectible.",53,26],
+    ["Wisp","Veilstone east wisp","Center ridge","Spiritomb wisp collectible.",56,29],
+    ["Wisp","Castaway wisp","Center shore","Spiritomb wisp collectible.",58,50],
+    ["Wisp","Ginkgo wisp","Ginkgo Landing","Spiritomb wisp collectible.",19,62],
+    ["Wisp","Crossing Slope wisp","Entry slope","Spiritomb wisp collectible.",22,70],
+    ["Wisp","Aipom Hill wisp","Southwest hill","Spiritomb wisp collectible.",39,76],
+    ["Wisp","Bathers' Lagoon wisp","Southwest lagoon","Spiritomb wisp collectible.",50,80],
+    ["Wisp","Deadwood wisp","South route","Spiritomb wisp collectible.",73,71],
+    ["Wisp","Tombolo wisp","Southeast beach","Spiritomb wisp collectible.",88,90],
+    ["Wisp","Firespit wisp","Firespit Island","Spiritomb wisp collectible.",88,14]
+  ],
+  "Coronet Highlands":[
+    ["Subarea","Temple of Sinnoh","Northwest summit","Late-story and Arceus route.",25,8],
+    ["Subarea","Cloudcap Pass","Northwest pass","High-elevation route toward the summit.",34,22],
+    ["Subarea","Sacred Plaza","West-center plaza","High-level alpha and story route.",27,50],
+    ["Subarea","Stonetooth Rows","West rows","Electric and Ghost checks.",12,57],
+    ["Subarea","Bolderoll Ravine","Southwest ravine","Golem, ore, and rocky route.",17,68],
+    ["Subarea","Fabled Spring","Southwest spring","Cleffa, Clefairy, and Clefable night route.",20,88],
+    ["Subarea","Celestica Ruins","North east-center ruins","Hisuian Voltorb and upper route.",57,40],
+    ["Subarea","Primeval Grotto","Center grotto","Probopass and ore-heavy routes.",45,50],
+    ["Subarea","Celestica Trail","Center trail","Steelix and cliff routing.",47,64],
+    ["Subarea","Sonorous Path","Southeast path","Mountain Camp approach.",62,73],
+    ["Subarea","Ancient Quarry","South center quarry","Bronzong, Goodra, and ore route.",52,85],
+    ["Subarea","Wayward Wood","South woods","Mothim and lower route checks.",55,94],
+    ["Subarea","Heavenward Lookout","Southeast lookout","Early Highlands route.",88,90],
+    ["Subarea","Clamberclaw Cliffs","East cliffs","Gible line, Gligar, and Darkrai request route.",83,57],
+    ["Subarea","Lonely Spring","Far east spring","Carnivine and water route.",90,61],
+    ["Camp","Highlands Camp","Heavenward Lookout","Main Highlands entry camp.",90,92],
+    ["Camp","Mountain Camp","Sonorous Path","Central/southeast mountain camp.",78,82],
+    ["Camp","Summit Camp","Cloudcap Pass","Upper mountain camp near summit routes.",36,25],
+    ["Gate","Highlands fast travel","Heavenward Lookout","Fast travel point near Highlands Camp.",90,92],
+    ["Gate","Mountain fast travel","Sonorous Path","Fast travel point near Mountain Camp.",78,82],
+    ["Gate","Summit fast travel","Cloudcap Pass","Fast travel point near the upper route.",36,25],
+    ["Gate","Temple fast travel","Temple of Sinnoh","Fast travel point near the summit.",26,13],
+    ["Gate","Moonview fast travel","North summit route","Fast travel anchor for Electrode route.",37,8],
+    ["Transition","Temple transition","Temple of Sinnoh","Summit transition marker.",25,8],
+    ["Cave","Wayward Cave","Southeast river cave","Cave route and Gible line routing.",78,82],
+    ["Cave","Ancient Quarry","South center quarry","Quarry interior transition.",52,85],
+    ["Alpha","Alpha Electivire","Cloudcap Pass","Electric alpha near the upper route.",36,34],
+    ["Alpha","Alpha Luxray","Sacred Plaza","Electric alpha near plaza routes.",28,53],
+    ["Alpha","Alpha Mothim","Wayward Wood approach","Bug/Flying alpha on lower route.",16,66],
+    ["Alpha","Alpha Bronzong","Ancient Quarry","Steel/Psychic alpha inside quarry route.",52,85],
+    ["Alpha","Alpha Goodra","Ancient Quarry lake route","Steel/Dragon alpha and strong defensive catch.",60,85],
+    ["Alpha","Alpha Rhyperior","Sacred Plaza ridge","Bulky Ground/Rock alpha.",42,58],
+    ["Alpha","Alpha Probopass","Primeval Grotto","Rock/Steel alpha near ore-heavy route.",50,57],
+    ["Alpha","Alpha Mismagius","Celestica Ruins","Ghost alpha, often checked at night.",65,46],
+    ["Alpha","Alpha Gligar","Clamberclaw Cliffs","Ground/Flying alpha on cliff routes.",83,51],
+    ["Alpha","Alpha Gliscor","Clamberclaw Cliffs high route","Ground/Flying alpha near cliff climbs.",90,49],
+    ["Alpha","Alpha Gabite","Wayward Cave route","Dragon/Ground alpha and Gible line route.",78,83],
+    ["Alpha","Alpha Golem","Bolderoll Ravine","Rock/Ground alpha near ore routes.",17,66],
+    ["Alpha","Alpha Steelix","Celestica Trail","Large Steel/Ground alpha near mountain paths.",43,59],
+    ["Alpha","Alpha Clefable","Fabled Spring","Night Fairy alpha.",21,90],
+    ["Story","Moonview Arena","North summit route","Hisuian Electrode Noble arena and Cresselia route.",37,8],
+    ["Legendary","Cresselia","Moonview Arena","Post-game plate mission.",37,8],
+    ["Legendary","Darkrai","Clamberclaw Cliffs","Request 93 with BDSP save data.",84,58],
+    ["Farm","Gible and ore route","Wayward Cave / Ancient Quarry","Gible line, Tumblestones, and Iron Chunks.",76,82],
+    ["Farm","Cleffa night checks","Fabled Spring","Cleffa, Clefairy, Moon Stone, and Shiny Stone routing.",20,88],
+    ["Wisp","Cloudcap west wisp","Northwest cliffs","Spiritomb wisp collectible.",17,39],
+    ["Wisp","Cloudcap center wisp","Cloudcap Pass","Spiritomb wisp collectible.",34,40],
+    ["Wisp","Sacred Plaza wisp","Sacred Plaza","Spiritomb wisp collectible.",26,53],
+    ["Wisp","Bolderoll wisp","Bolderoll Ravine","Spiritomb wisp collectible.",14,70],
+    ["Wisp","Fabled Spring wisp","Fabled Spring","Spiritomb wisp collectible.",22,86],
+    ["Wisp","Celestica Trail wisp","Celestica Trail","Spiritomb wisp collectible.",48,55],
+    ["Wisp","Primeval Grotto wisp","Primeval Grotto","Spiritomb wisp collectible.",49,50],
+    ["Wisp","Clamberclaw west wisp","East cliffs","Spiritomb wisp collectible.",79,45],
+    ["Wisp","Lonely Spring wisp","Far east spring","Spiritomb wisp collectible.",91,61],
+    ["Wisp","Ancient Quarry wisp","South quarry","Spiritomb wisp collectible.",60,84],
+    ["Wisp","Heavenward wisp","Southeast lookout","Spiritomb wisp collectible.",87,82]
+  ],
+  "Alabaster Icelands":[
+    ["Subarea","Lake Acuity","North lake","Uxie and lake route.",48,18],
+    ["Subarea","Glacier Terrace","Northwest terrace","Lake Acuity approach.",21,27],
+    ["Subarea","Snowfall Hot Spring","West spring","Gallade/Gardevoir route and healing landmark.",14,39],
+    ["Subarea","Avalugg's Legacy","Center ice formation","Ice landmark and central route.",49,49],
+    ["Subarea","Pearl Settlement","East-center settlement","Pearl Clan hub.",68,33],
+    ["Subarea","Heart's Crag","East crag","Gardevoir, Froslass, and Snorunt route.",82,40],
+    ["Subarea","Bonechill Wastes","South center wastes","Mamoswine, Zorua tunnels, and Tornadus zone.",52,73],
+    ["Subarea","Whiteout Valley","South route","Starting snow route and Snowfields Camp area.",55,88],
+    ["Subarea","Arena's Approach","Southwest route","Machamp and late story arena route.",21,68],
+    ["Subarea","Avalanche Slopes","Southwest slopes","Abomasnow, Glaceon, Garchomp, and Piloswine route.",15,81],
+    ["Subarea","Icebound Falls","Southwest falls","Lucario and Electabuzz route.",30,94],
+    ["Subarea","Icepeak Arena","Northeast arena","Hisuian Avalugg Noble arena.",65,3],
+    ["Subarea","Snowpoint Temple","North temple","Regigigas and temple route.",66,3],
+    ["Camp","Snowfields Camp","Whiteout Valley","Main Icelands entry camp.",63,93],
+    ["Camp","Icepeak Camp","Central north route","Second Icelands camp for lake, temple, and arena routes.",39,34],
+    ["Gate","Snowfields fast travel","Whiteout Valley","Fast travel point near Snowfields Camp.",63,93],
+    ["Gate","Icepeak fast travel","Central north route","Fast travel point near Icepeak Camp.",39,34],
+    ["Gate","Lake Acuity fast travel","North lake","Fast travel anchor near the lake.",48,18],
+    ["Gate","Snowpoint Temple fast travel","North temple","Fast travel anchor near the temple.",66,3],
+    ["Gate","Icepeak Arena fast travel","Northeast arena","Fast travel anchor near Avalugg's arena.",65,3],
+    ["Transition","Lake Acuity transition","Lake Acuity cavern","Lake cavern transition.",48,18],
+    ["Transition","Icepeak Arena transition","Northeast arena","Arena transition marker.",65,3],
+    ["Cave","Hibernal Cave","Glacier Terrace","Cave route near the lake.",41,34],
+    ["Cave","Bonechill cave","Bonechill Wastes","Hisuian Zorua and Zoroark tunnel route.",52,73],
+    ["Alpha","Alpha Abomasnow","Avalugg's Legacy route","Grass/Ice alpha near central ice route.",49,51],
+    ["Alpha","Alpha Glalie","Bonechill Wastes","Ice alpha near Snorunt area.",36,58],
+    ["Alpha","Alpha Froslass","Heart's Crag","Ice/Ghost alpha in eastern route.",82,40],
+    ["Alpha","Alpha Glaceon","Avalanche Slopes","Ice alpha and Eevee evolution reference.",18,80],
+    ["Alpha","Alpha Garchomp","Avalanche Slopes","One of the highest fixed alpha levels.",25,88],
+    ["Alpha","Alpha Gallade","Snowpoint Temple route","Psychic/Fighting alpha near the temple route.",65,3],
+    ["Alpha","Alpha Gardevoir","Heart's Crag","Psychic/Fairy alpha on late route.",80,38],
+    ["Alpha","Alpha Mamoswine","Bonechill Wastes","Ice/Ground physical alpha.",51,73],
+    ["Alpha","Alpha Lucario","Icebound Falls","Strong Fighting/Steel alpha.",29,94],
+    ["Alpha","Alpha Machamp","Arena's Approach","Fighting alpha near arena route.",22,68],
+    ["Alpha","Alpha Hisuian Zoroark","Bonechill Wastes tunnels","Normal/Ghost alpha and high-value team option.",53,82],
+    ["Alpha","Alpha Electabuzz","Icebound Falls route","Electric alpha near frozen paths.",30,93],
+    ["Alpha","Alpha Piloswine","Avalanche Slopes lower route","Ice/Ground alpha near Swinub groups.",15,97],
+    ["Story","Icepeak Arena","Northeast arena","Hisuian Avalugg Noble arena.",65,3],
+    ["Legendary","Uxie","Lake Acuity","Post-game lake guardian; eye answer is 60131.",48,18],
+    ["Legendary","Regigigas","Snowpoint Temple","Requires Icicle, Stone, and Iron Plates.",66,3],
+    ["Legendary","Giratina","Turnback Cave path","After the late-story boss sequence.",52,82],
+    ["Legendary","Tornadus","Bonechill Wastes","Appears during blizzard weather after Request 94 starts.",52,73],
+    ["Farm","Zorua tunnels","Bonechill Wastes","Hisuian Zorua/Zoroark and late-game Ice types.",52,82],
+    ["Farm","Avalanche alpha loop","Avalanche Slopes","Glaceon, Garchomp, Piloswine, and Ice-type research.",18,80],
+    ["Wisp","Glacier Terrace wisp","Northwest terrace","Spiritomb wisp collectible.",30,23],
+    ["Wisp","Acuity west wisp","Lake Acuity approach","Spiritomb wisp collectible.",39,24],
+    ["Wisp","Acuity east wisp","Lake Acuity route","Spiritomb wisp collectible.",49,23],
+    ["Wisp","Snowpoint wisp","North temple route","Spiritomb wisp collectible.",66,4],
+    ["Wisp","Pearl Settlement wisp","East settlement","Spiritomb wisp collectible.",65,38],
+    ["Wisp","Heart's Crag wisp","East crag","Spiritomb wisp collectible.",86,52],
+    ["Wisp","Avalugg west wisp","Central snowfield","Spiritomb wisp collectible.",35,47],
+    ["Wisp","Avalugg east wisp","Central snowfield","Spiritomb wisp collectible.",53,58],
+    ["Wisp","Bonechill wisp","Bonechill Wastes","Spiritomb wisp collectible.",46,73],
+    ["Wisp","Whiteout wisp","Whiteout Valley","Spiritomb wisp collectible.",55,84],
+    ["Wisp","Avalanche wisp","Avalanche Slopes","Spiritomb wisp collectible.",18,75],
+    ["Wisp","Icebound Falls wisp","Icebound Falls","Spiritomb wisp collectible.",8,91]
+  ]
+};
+
+Object.entries(screenshotMapMarkers).forEach(([region, points]) => {
+  mapData[region] = points;
+});
+
+const exactMapMarkerText = {
+  Alpha:["Alpha Pokemon", "Fixed alpha or alpha-class marker."],
+  Subarea:["Subarea", "Named subarea or landmark."],
+  Wisp:["Wisp", "Spiritomb wisp collectible marker."],
+  Unown:["Unown", "Unown letter marker."],
+  Point:["Point", "Travel, route, or point-of-interest marker."],
+  Story:["Story", "Main story or progression marker."],
+  Character:["Character", "NPC or character marker."],
+  Camp:["Camp", "Base camp marker."],
+  Gate:["Fast travel", "Fast travel marker."],
+  Transition:["Transition", "Area transition marker."],
+  Cave:["Cave", "Cave or interior marker."],
+  Arena:["Arena", "Boss or arena marker."],
+  Noble:["Noble", "Noble Pokemon marker."],
+  Request:["Request", "Request or field-note marker."],
+  Legendary:["Legendary", "Legendary or mythical Pokemon marker."],
+  Farm:["Farm", "Useful farming route or reset point."]
+};
+
+const exactMapMarkerGroups = {
+  "Obsidian Fieldlands":{
+    Wisp:[[71.7,11.8],[34.6,21.2],[91.1,24.3],[76.7,32],[25.9,36.5],[90.8,41.4],[53.3,49.5],[82.5,52.6],[63.4,55.1],[96.7,57.7],[46.5,64.4],[60.7,67.7],[21.5,69.4],[81.5,70.7],[71.5,80.8],[37.9,83.5],[60.9,90.3]],
+    Subarea:[["Floaro Gardens",18,17,"Shinx line, Shaymin request area, and western alpha checks."],["Aspiration Hill",43,23,"Early tutorial route and first field gathering loop."],["Horseshoe Plains",63,22,"Bidoof, Starly, Shinx, Ponyta, and early research."],["Grueling Grove",85,14,"Bug-type route and alpha Heracross area."],["Deertrack Path",55,39,"Main path between the first camp routes and Deertrack Heights."],["Deertrack Heights",64,48,"Heights Camp route and early Geodude/Kricketot checks."],["Windswept Run",51,57,"Floatzel and river-crossing route."],["Nature's Pantry",61,69,"Cherubi tree checks and alpha Parasect/Kricketune route."],["Worn Bridge",79,35,"Floatzel, Bibarel, and bridge route."],["Obsidian Falls",88,52,"Alpha Blissey XP route and waterfall checks."],["Oreburrow Tunnel",92,62,"Cave route toward Obsidian Falls."],["The Heartwood",83,82,"Bug and Grass routes near the Grandtree approach."],["Tidewater Dam",68,79,"Water route and Bibarel checks."],["Sandgem Flats",23,75,"Snorlax, Alakazam, and ore route."],["Ramanas Island",39,82,"Post-game alpha loop and Landorus route."],["Lake Verity",19,43,"Mesprit route and water checks."]],
+    Alpha:[[67.4,13.4],[86.2,14.5],[25.9,23.5],[71.5,29.1],[95.8,34.2],[71.3,42.3],[19.1,44.5],[39.3,44.6],[72.7,52.7],[52.3,56.1],[89,60.6],[95.9,63.4],[59.9,71.3],[20.1,72.2],[87.8,87.8],[47.1,91]],
+    Unown:[[96.6,15.8],[95.8,42.1],[94.9,47.8],[91.9,83.2]],
+    Story:[[79.3,27.9],[58.2,35.6],[51.1,39.6],[31.7,77.4]],
+    Character:[[69.4,56.8]],
+    Camp:[[38.5,12.3],[64,50.6]],
+    Gate:[[38.5,12.3],[64,50.6],[21.9,44.5],[31.7,77.4],[89,81.2]],
+    Transition:[[39.6,14.8],[94.9,47.8],[89,81.2]],
+    Cave:[[94.9,47.8]],
+    Arena:[[82.6,86.5]],
+    Noble:[[89,81.2]],
+    Request:[[34.6,21.2]],
+    Legendary:[[19,43],[40,82],[18,17]],
+    Farm:[[88,55],[58,25],[39,82]]
+  },
+  "Jubilife Village":{
+    Wisp:[[28.1,5.8],[42.6,20.1],[59.8,24.7],[46.1,32.8],[26.6,32.9],[29.5,74]],
+    Subarea:[["Galaxy Hall",53,24,"Research reports, rank ups, and request board."],["Training Grounds",43,15,"Move tutoring and Ingo battles."],["Craftworks",37,18,"Recipe unlocks and crafting supply route."],["Trading Post",46,19,"Merit Points and evolution items."],["General Store",60,22,"Purchased basics and item sales."],["Pastures",33,35,"Storage and bulk release for Grit."],["Farm",33,76,"Farm upgrades and harvests."],["Front Gate",54,47,"Village exit and expedition gate."]],
+    Point:[[40.7,2.1],[51.5,6.9],[33,8.8],[41.9,11.3],[56.3,12],[61.9,12],[37.9,12.4],[47.3,12.5],[51.5,13.4],[73.6,14.4],[70.2,15.6],[48.2,18],[65.9,18.3],[54.5,18.7],[57.9,18.7],[61.8,18.7],[32.9,33.3],[64.6,69],[68.4,70.5],[32.6,77]],
+    Story:[[48.1,8.8],[68.7,18.1]],
+    Character:[[68.8,13.1],[46.6,21],[63.3,27.6],[44.4,29.8],[42.2,34.7],[54.3,36.2],[52.4,42.7]],
+    Camp:[[54,47]],
+    Gate:[[32.6,77],[40.7,2.1],[51.5,6.9]],
+    Transition:[[54,47]],
+    Request:[[48.1,8.8],[68.7,18.1]],
+    Farm:[[43,15],[33,76]]
+  },
+  "Crimson Mirelands":{
+    Wisp:[[59.4,7.1],[44.4,13.3],[27.1,13.7],[36.3,15.7],[29.5,25.4],[52.9,30.9],[72.8,35.6],[44.7,41.2],[56.6,41.5],[67.8,45.3],[30.5,52],[18.4,52.3],[71.5,52.9],[68.6,59.4],[24.2,64.9],[91.7,68.3],[27.4,69.5],[63.5,77.9],[26.4,82.6],[57.6,87.1],[41.1,88.3],[77.9,90.7]],
+    Subarea:[["Cloudpool Ridge",32,20,"Onix and Roserade alpha route."],["Shrouded Ruins",58,13,"Spiritomb and request routing."],["Diamond Heath",55,26,"Route toward Diamond Settlement."],["Diamond Settlement",64,30,"Diamond Clan hub."],["Solaceon Ruins",49,42,"Unown and story route."],["Golden Lowlands",26,54,"Starting field and early Mirelands research."],["Gapejaw Bog",36,69,"Tangela, Carnivine, Croagunk, and request routes."],["Scarlet Bog",56,58,"Skuntank, digging route, and Enamorus zone."],["Sludge Mound",59,81,"Hippowdon and mud route."],["Bolderoll Slope",71,49,"Rhyhorn and rocky route."],["Lake Valor",82,23,"Azelf and lake route."],["Cottonsedge Prairie",87,64,"Togepi and Togekiss route."],["Droning Meadow",88,76,"Yanma and Yanmega route."],["Ursa's Ring",76,86,"Teddiursa, Ursaring, and Peat Block planning."],["Holm of Trials",43,90,"Torterra, Sliggoo, and Toxicroak route."]],
+    Alpha:[[51.6,9.4],[52.2,23.9],[21.6,29.8],[54.1,37.9],[78.4,44.3],[37.2,50.9],[53.5,57.8],[59.5,59.6],[18.5,61.7],[84.5,69.3],[20.5,71.6],[50.4,72.8],[35.4,76.2]],
+    Unown:[[56.4,17.3],[62.6,27.1],[57.8,78.8]],
+    Point:[[58.8,30.4],[20.7,37.8],[24.2,39.9]],
+    Story:[[29.4,29.3],[43.6,44.8],[77,78.3],[35.2,87.7]],
+    Character:[[25.1,25.8],[44.3,32.3],[26,38.4],[46.2,43.5],[62.1,68.6]],
+    Camp:[[20.7,37.8],[24.2,39.9]],
+    Gate:[[20.7,37.8],[24.2,39.9],[58.8,30.4],[82,26]],
+    Transition:[[82,26]],
+    Arena:[[77,78.3]],
+    Noble:[[77,78.3]],
+    Request:[[59.4,7.1],[24.2,64.9],[63.5,77.9]],
+    Legendary:[[82,26],[56,58]],
+    Farm:[[62,69]]
+  },
+  "Cobalt Coastlands":{
+    Wisp:[[62.5,4.6],[33.8,8.6],[77.2,10.5],[86.6,17.2],[31.3,21.8],[26.6,24.6],[15.6,25.4],[46.8,27],[92.1,28.5],[50,29.2],[57.3,37.8],[17.3,60],[97.4,62.3],[21.7,67.7],[72.8,68.1],[43.2,73.7],[89,81.8],[35.4,85.4],[64.6,91.6]],
+    Subarea:[["Spring Path",18,24,"Highland route and alpha checks."],["Islespy Shore",35,16,"Empoleon and northern shoreline."],["Windbreak Stand",25,39,"Hisuian Growlithe checks."],["Veilstone Cape",56,38,"Machamp, Vulpix, and Growlithe routes."],["Castaway Shore",45,44,"Machoke and Octillery routes."],["Tranquility Cove",58,63,"Mantyke, Qwilfish, and sea routing."],["Seagrass Haven",70,24,"Lumineon and pearl route."],["Lunker's Lair",92,41,"Tentacruel and water alpha route."],["Sand's Reach",81,76,"Gyarados and Thundurus weather route."],["Deadwood Haunt",73,84,"Duskull, Dusclops, and Dusknoir at night."],["Tombolo Walk",91,89,"Chansey and Manaphy route."],["Ginkgo Landing",28,62,"Entry beach and Ginter check route."],["Crossing Slope",20,70,"Purugly and early Coastlands route."],["Aipom Hill",32,82,"Aipom and Ambipom routing."],["Bathers' Lagoon",44,88,"Golduck and southern water route."],["Firespit Island",87,14,"Heatran, Magmar line, and Noble route."]],
+    Alpha:[[37.2,13.9],[62.5,16.2],[50.9,17.1],[37.2,18.1],[88.9,19.3],[18.6,28.4],[67.9,29.7],[92.1,34.1],[64.3,35.4],[32.3,45.8],[26.2,50],[91.1,50.4],[63.3,50.6],[31.8,65.8],[77.3,77.6],[55.4,81.1],[92.3,83.9],[43.9,85]],
+    Unown:[[84.1,19],[21.1,24.8],[72.9,76.1]],
+    Point:[[88.4,11.1],[67.1,39.2],[12.7,58.2],[9.5,61.5],[83.2,73.7]],
+    Story:[[34.5,23.3],[43.6,78.1]],
+    Camp:[[12.7,58.2],[83.2,73.7]],
+    Gate:[[12.7,58.2],[83.2,73.7],[88.4,11.1],[67.1,39.2],[9.5,61.5]],
+    Transition:[[88.4,11.1]],
+    Cave:[[97.4,62.3]],
+    Arena:[[88.4,11.1]],
+    Noble:[[88.4,11.1]],
+    Request:[[77.2,10.5],[31.3,21.8],[43.2,73.7]],
+    Legendary:[[86,14],[78,76],[93,63]],
+    Farm:[[71,33],[27,38]]
+  },
+  "Coronet Highlands":{
+    Wisp:[[26.1,7.2],[17.1,35.8],[33.7,39.5],[44,40.2],[86.9,46.4],[71.3,46.6],[44.6,47.8],[44,53.4],[35.4,57.4],[71.3,58.2],[83.7,60.4],[68.2,66.3],[32.1,66.7],[13.5,67.6],[93.3,70],[41.2,70.9],[60.9,80.8],[77.4,80.9],[25.6,82.5],[17.5,83.7],[35.7,88.5],[71.1,91.6]],
+    Subarea:[["Temple of Sinnoh",25,8,"Late-story and Arceus route."],["Cloudcap Pass",34,22,"High-elevation route toward the summit."],["Sacred Plaza",27,50,"High-level alpha and story route."],["Stonetooth Rows",12,57,"Electric and Ghost checks."],["Bolderoll Ravine",17,68,"Golem, ore, and rocky route."],["Fabled Spring",20,88,"Cleffa, Clefairy, and Clefable night route."],["Celestica Ruins",57,40,"Hisuian Voltorb and upper route."],["Primeval Grotto",45,50,"Probopass and ore-heavy routes."],["Celestica Trail",47,64,"Steelix and cliff routing."],["Sonorous Path",62,73,"Mountain Camp approach."],["Ancient Quarry",52,85,"Bronzong, Goodra, and ore route."],["Wayward Wood",55,94,"Mothim and lower route checks."],["Heavenward Lookout",88,90,"Early Highlands route."],["Clamberclaw Cliffs",83,57,"Gible line, Gligar, and Darkrai request route."],["Lonely Spring",90,61,"Carnivine and water route."]],
+    Alpha:[[34.8,33.6],[61.7,41.4],[40.1,45.1],[56.5,47.1],[84.4,49.1],[59.8,52.7],[22.7,54.4],[32.7,58.1],[45.4,58.2],[66.5,61.3],[17.4,64.2],[52.7,80.4],[63.9,85.9],[22,89.1]],
+    Unown:[[58.7,81],[24.7,86.1]],
+    Point:[[27.7,16.1],[39.9,27.7],[14.1,39.1],[90.6,86.6],[93.3,90]],
+    Story:[[58.3,36.4],[23.9,39],[27.7,60.8],[96.9,92.1]],
+    Character:[[78.6,55],[59.6,86.8]],
+    Camp:[[90.6,86.6],[78.6,55],[39.9,27.7]],
+    Gate:[[90.6,86.6],[78.6,55],[39.9,27.7],[27.7,16.1],[93.3,90]],
+    Transition:[[26.1,7.2]],
+    Cave:[[78.6,55],[59.6,86.8]],
+    Arena:[[26.1,7.2]],
+    Noble:[[26.1,7.2]],
+    Request:[[26.1,7.2],[44,40.2],[86.9,46.4],[17.5,83.7]],
+    Legendary:[[37,8],[84,58]],
+    Farm:[[76,82],[20,88]]
+  },
+  "Alabaster Icelands":{
+    Wisp:[[60.5,7.2],[62.9,10.6],[72.5,20.6],[28,25.7],[39,26.8],[59.9,39],[79.5,50],[68.8,51.7],[17.2,54.9],[31.4,56.2],[66.5,61.3],[40.5,70.5],[24.8,70.6],[16.6,72.7],[38.1,75.4],[44.2,78.5],[57.3,85.5],[7,86.1]],
+    Subarea:[["Lake Acuity",48,18,"Uxie and lake route."],["Glacier Terrace",21,27,"Lake Acuity approach."],["Snowfall Hot Spring",14,39,"Gallade/Gardevoir route and healing landmark."],["Avalugg's Legacy",49,49,"Ice landmark and central route."],["Pearl Settlement",68,33,"Pearl Clan hub."],["Heart's Crag",82,40,"Gardevoir, Froslass, and Snorunt route."],["Bonechill Wastes",52,73,"Mamoswine, Zorua tunnels, and Tornadus zone."],["Whiteout Valley",55,88,"Starting snow route and Snowfields Camp area."],["Arena's Approach",21,68,"Machamp and late story arena route."],["Avalanche Slopes",15,81,"Abomasnow, Glaceon, Garchomp, and Piloswine route."],["Icebound Falls",30,94,"Lucario and Electabuzz route."],["Icepeak Arena",65,3,"Hisuian Avalugg Noble arena."],["Snowpoint Temple",66,3,"Regigigas and temple route."]],
+    Alpha:[[41,23.4],[75.3,32.9],[78,40.7],[58.2,44.5],[46.7,45],[28.4,50.6],[60.9,55.5],[44.5,57.3],[53.8,60.5],[32.9,62.3],[29.1,76.7],[27.8,88],[12.2,90.9]],
+    Unown:[[22.1,42.2],[53.6,42.5],[85.1,43.9],[23.5,83.5],[34.1,84.7],[20.8,86.4]],
+    Point:[[59.2,11.6],[9.9,49.1],[19.2,54.6],[46.2,54.7],[63.8,61.6],[20.3,75]],
+    Character:[[46.7,30.5],[70.3,35.3],[34.9,49.2],[42.7,76],[48.7,87.8]],
+    Camp:[[9.9,49.1],[63.8,61.6]],
+    Gate:[[59.2,11.6],[9.9,49.1],[63.8,61.6],[20.3,75]],
+    Transition:[[59.2,11.6],[62.9,10.6]],
+    Cave:[[42.7,76]],
+    Arena:[[62.9,10.6]],
+    Noble:[[62.9,10.6]],
+    Request:[[47.6,23.1],[38.1,75.4]],
+    Legendary:[[48,18],[66,3],[52,82],[52,73]],
+    Farm:[[52,82],[18,80]]
+  }
+};
+
+exactMapMarkerGroups["Obsidian Fieldlands"].Subarea.push(
+  ["Grandtree Arena",89,86,"Kleavor's Noble arena."],
+  ["Moss Rock",71,86,"Leafeon evolution landmark."],
+  ["Verity Cavern",20,43,"Lake guardian cavern."]
+);
+exactMapMarkerGroups["Crimson Mirelands"].Subarea.push(
+  ["Brava Arena",77,78,"Hisuian Lilligant's Noble arena."],
+  ["Valor Cavern",82,26,"Lake guardian cavern."]
+);
+exactMapMarkerGroups["Cobalt Coastlands"].Subarea.push(
+  ["Molten Arena",88,11,"Hisuian Arcanine's Noble arena."],
+  ["Tidal Passage",62,22,"Northern sea passage."],
+  ["Seaside Hollow",96,62,"Coastlands cave route."],
+  ["Lava Dome Sanctum",87,14,"Heatran chamber inside Firespit Island."],
+  ["Turnback Cave",18,24,"Giratina post-game cave route."]
+);
+exactMapMarkerGroups["Coronet Highlands"].Subarea.push(
+  ["Moonview Arena",26,7,"Hisuian Electrode's Noble arena."],
+  ["Wayward Cave",42,59,"Cave route with Gible line checks."],
+  ["Stone Portal",35,33,"Highlands route landmark."]
+);
+exactMapMarkerGroups["Alabaster Icelands"].Subarea.push(
+  ["Icepeak Cavern",63,9,"Cave route near Icepeak Arena."],
+  ["Acuity Cavern",48,18,"Lake guardian cavern."],
+  ["Ice Column Chamber",66,3,"Snowpoint Temple chamber."],
+  ["Ice Rock",48,49,"Glaceon evolution landmark."],
+  ["Secret Hollow",26,73,"Hidden cave in the southern route."],
+  ["Hibernal Cave",39,40,"Northwest cave passage."]
+);
+
+function buildExactMapMarkers(region, groups) {
+  return Object.entries(groups).flatMap(([kind, coords]) => {
+    const [label, detail] = exactMapMarkerText[kind] || [kind, "Map marker."];
+    return coords.map((entry, index) => {
+      const named = typeof entry[0] === "string";
+      const x = named ? entry[1] : entry[0];
+      const y = named ? entry[2] : entry[1];
+      return [
+        kind,
+        named ? entry[0] : `${label} ${String(index + 1).padStart(2, "0")}`,
+        region,
+        named && entry[3] ? entry[3] : detail,
+        x,
+        y
+      ];
+    });
+  });
+}
+
+Object.entries(exactMapMarkerGroups).forEach(([region, groups]) => {
+  mapData[region] = buildExactMapMarkers(region, groups);
+});
+
 const nobles = [
-  ["Kleavor","Bug/Rock","Water or Rock","Dodge through axe swings. Throw balms after jump-stomp recovery."],
-  ["Hisuian Lilligant","Grass/Fighting","Flying, Psychic, Fire, Fairy","Flying is 4x effective. Throw after dash and dance recovery."],
+  ["Kleavor","Bug/Rock","Water, Rock, Steel","Dodge through axe swings. Throw balms after jump-stomp recovery."],
+  ["Hisuian Lilligant","Grass/Fighting","Flying, Psychic, Fire, Poison, Ice, Fairy","Flying is 4x effective. Throw after dash and dance recovery."],
   ["Hisuian Arcanine","Fire/Rock","Water, Ground, Fighting","Avoid corners on the arena edge. Water is the cleanest battle answer."],
   ["Hisuian Electrode","Electric/Grass","Fire, Ice, Poison, Bug","Ground is immune to Electric but not super-effective into Grass. Use cover, punish explosion recovery."],
   ["Hisuian Avalugg","Ice/Rock","Fighting, Steel, Rock, Water, Grass, Ground","Fighting and Steel are 4x effective. Long recoveries give the safest balm windows."]
@@ -1008,22 +1544,69 @@ const regions = [
 
 function $(id){ return document.getElementById(id); }
 
-function typeChips(types) {
-  return types.map(type => `<span class="type-chip" data-type="${type}" style="background:${TYPE_COLORS[type]}">${type}</span>`).join("");
+function typeChips(types, compact = false) {
+  const abbr = {Normal:"NOR", Fire:"FIR", Water:"WTR", Electric:"ELC", Grass:"GRS", Ice:"ICE", Fighting:"FGT", Poison:"PSN", Ground:"GRD", Flying:"FLY", Psychic:"PSY", Bug:"BUG", Rock:"RCK", Ghost:"GST", Dragon:"DRG", Dark:"DRK", Steel:"STL", Fairy:"FAI"};
+  return types.map(type => `<span class="type-chip${compact ? " compact" : ""}" data-type="${type}" title="${type}" style="background:${TYPE_COLORS[type]}">${compact ? abbr[type] : type}</span>`).join("");
 }
 
-function spriteName(name) {
-  const map = {
-    "Hisuian Decidueye":"decidueye-hisuian","Hisuian Typhlosion":"typhlosion-hisuian","Hisuian Samurott":"samurott-hisuian",
-    "Hisuian Zoroark":"zoroark-hisuian","Hisuian Goodra":"goodra-hisuian","Hisuian Lilligant":"lilligant-hisuian",
-    "Hisuian Arcanine":"arcanine-hisuian"
+const HISUIAN_SPRITE_BY_DEX = {
+  3:"decidueye-hisuian", 6:"typhlosion-hisuian", 9:"samurott-hisuian",
+  84:"qwilfish-hisuian", 85:"overqwil", 94:"lilligant-hisuian", 116:"sliggoo-hisuian", 117:"goodra-hisuian",
+  150:"growlithe-hisuian", 151:"arcanine-hisuian", 192:"voltorb-hisuian", 193:"electrode-hisuian",
+  202:"sneasel-hisuian", 203:"sneasler", 216:"avalugg-hisuian", 219:"zorua-hisuian", 220:"zoroark-hisuian", 222:"braviary-hisuian"
+};
+
+function spriteName(input) {
+  const pokemon = typeof input === "object" ? input : findPokemonByName(input);
+  if (pokemon && HISUIAN_SPRITE_BY_DEX[pokemon.num]) return HISUIAN_SPRITE_BY_DEX[pokemon.num];
+  const name = typeof input === "object" ? input.name : input;
+  return (name || "").toLowerCase().replaceAll(".","").replaceAll("'","").replaceAll(" ","-").replace("mime-jr","mime-jr");
+}
+
+function spriteUrl(input) {
+  return `https://img.pokemondb.net/sprites/legends-arceus/normal/2x/${spriteName(input)}.jpg`;
+}
+
+function statTotal(stats) {
+  return stats.reduce((sum, stat) => sum + stat, 0);
+}
+
+function roleForPokemon(pokemon, stats = pokemonStats(pokemon.name)) {
+  if (!stats.length) return "Field research";
+  const [hp, atk, def, spa, spd, spe] = stats;
+  const bulk = hp + def + spd;
+  const offense = Math.max(atk, spa);
+  const style = atk > spa + 20 ? "Physical" : spa > atk + 20 ? "Special" : "Mixed";
+  if (bulk >= 320 && offense >= 100) return `${style} bulky attacker`;
+  if (spe >= 95 && offense >= 100) return `${style} sweeper`;
+  if (bulk >= 310) return "Bulky support";
+  if (offense >= 100) return `${style} attacker`;
+  return statTotal(stats) >= 450 ? "Flexible story pick" : "Research and dex utility";
+}
+
+function defensiveProfile(types) {
+  const rows = TYPES.map(type => [type, damageMultiplier(type, types)]);
+  return {
+    weaknesses: rows.filter(([,mult]) => mult > 1).sort((a,b) => b[1] - a[1] || a[0].localeCompare(b[0])),
+    resists: rows.filter(([,mult]) => mult > 0 && mult < 1).sort((a,b) => a[1] - b[1] || a[0].localeCompare(b[0])),
+    immunities: rows.filter(([,mult]) => mult === 0).sort((a,b) => a[0].localeCompare(b[0]))
   };
-  return map[name] || name.toLowerCase().replaceAll(".","").replaceAll(" ","-");
 }
 
-function spriteUrl(name) {
-  if (SPRITE_OVERRIDES[name]) return SPRITE_OVERRIDES[name];
-  return `https://img.pokemondb.net/sprites/scarlet-violet/normal/${spriteName(name)}.png`;
+function stabTargets(types) {
+  return TYPES
+    .map(type => [type, Math.max(...types.map(attack => damageMultiplier(attack, [type])))])
+    .filter(([,mult]) => mult >= 2)
+    .sort((a,b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+}
+
+function abilitySummary(pokemon) {
+  const special = {
+    Cherrim:"Flower Gift is represented through Cherrim's sunshine form behavior.",
+    Regigigas:"Slow Start is represented in PLA, reducing early battle pressure.",
+    Arceus:"Multitype is represented through plates and Judgment."
+  };
+  return special[pokemon.name] || "Standard abilities are not active battle mechanics in Pokemon Legends: Arceus.";
 }
 
 function renderTable(id, headers, rows) {
@@ -1061,11 +1644,27 @@ function renderMeta() {
   }).join("");
 }
 
+function itemSpriteName(name) {
+  return name
+    .toLowerCase()
+    .replace(/pok[eé]/g, "poke")
+    .replace(/king's/g, "kings")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+
+function itemSpriteHtml(name) {
+  if (!name || name === "Move condition") return `<span class="item-cell no-sprite"><span class="item-fallback">?</span><span>${name}</span></span>`;
+  return `<span class="item-cell"><img src="https://img.pokemondb.net/sprites/items/${itemSpriteName(name)}.png" alt="" loading="lazy"><span>${name}</span></span>`;
+}
+
 function renderRecipes() {
   if (!$("recipeTable")) return;
   const q = $("recipeSearch").value.toLowerCase();
   const cat = $("recipeCategory").value;
-  const rows = recipes.filter(r => (cat === "all" || r[1] === cat) && r.join(" ").toLowerCase().includes(q));
+  const rows = recipes
+    .filter(r => (cat === "all" || r[1] === cat) && r.join(" ").toLowerCase().includes(q))
+    .map(r => [itemSpriteHtml(r[0]), r[1], r[2]]);
   renderTable("recipeTable", ["Item","Category","Materials"], rows);
 }
 
@@ -1075,7 +1674,14 @@ function renderDex() {
   const type = $("dexType").value;
   $("pokedexGrid").innerHTML = POKEDEX.filter(p => {
     return p.name.toLowerCase().includes(q) && (type === "all" || p.types.includes(type));
-  }).map(p => `<div class="dex-card"><strong>#${String(p.num).padStart(3,"0")} ${p.name}</strong>${typeChips(p.types)}</div>`).join("");
+  }).map(p => {
+    const stats = pokemonStats(p.name);
+    const total = stats.length ? statTotal(stats) : "-";
+    return `<a class="dex-card" href="pokemon.html?pokemon=${encodeURIComponent(p.name)}">
+      <img src="${spriteUrl(p)}" alt="${p.name} sprite" loading="lazy">
+      <span><strong>#${String(p.num).padStart(3,"0")} ${p.name}</strong>${typeChips(p.types)}<small>BST ${total} / ${roleForPokemon(p, stats)}</small></span>
+    </a>`;
+  }).join("");
 }
 
 function damageMultiplier(attack, defenderTypes) {
@@ -1086,24 +1692,74 @@ function normalizeLookup(value) {
   return value.toLowerCase().replace(/[^a-z0-9]/g, "");
 }
 
+function searchTokens(value) {
+  return (value || "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim().split(/\s+/).filter(Boolean);
+}
+
+function editDistance(a, b) {
+  if (a === b) return 0;
+  if (!a.length) return b.length;
+  if (!b.length) return a.length;
+  const row = Array.from({length:b.length + 1}, (_, i) => i);
+  for (let i = 1; i <= a.length; i++) {
+    let previous = row[0];
+    row[0] = i;
+    for (let j = 1; j <= b.length; j++) {
+      const tmp = row[j];
+      row[j] = Math.min(
+        row[j] + 1,
+        row[j - 1] + 1,
+        previous + (a[i - 1] === b[j - 1] ? 0 : 1)
+      );
+      previous = tmp;
+    }
+  }
+  return row[b.length];
+}
+
 function findPokemonByName(name) {
   const normalized = normalizeLookup(name || "");
   return POKEDEX.find(p => normalizeLookup(p.name) === normalized) ||
     POKEDEX.find(p => normalizeLookup(p.name) === normalized.replace(/^hisuian/, ""));
 }
 
-function findMoveForSlot(slot, moveName) {
-  const normalizedMove = normalizeLookup(moveName || "");
-  if (!slot || !normalizedMove) return "";
-  return learnableMovesForPokemon(slot.querySelector(".team-pokemon")?.value)
-    .find(candidate => normalizeLookup(candidate) === normalizedMove) || "";
+function fuzzyMoveCandidates(slot, query) {
+  const normalizedMove = normalizeLookup(query || "");
+  if (!slot) return [];
+  const moves = learnableMovesForPokemon(slot.querySelector(".team-pokemon")?.value);
+  const terms = searchTokens(query);
+  if (!normalizedMove) return moves.map(move => ({move, score:1, exact:false}));
+  return moves.map(move => {
+    const normalizedCandidate = normalizeLookup(move);
+    const moveTerms = searchTokens(move);
+    let score = 0;
+    if (normalizedCandidate === normalizedMove) score += 1000;
+    if (normalizedCandidate.startsWith(normalizedMove)) score += 520;
+    if (normalizedCandidate.includes(normalizedMove)) score += 360 - Math.min(120, normalizedCandidate.indexOf(normalizedMove) * 8);
+    terms.forEach(term => {
+      const bestTerm = Math.min(...moveTerms.map(candidate => editDistance(term, candidate)));
+      if (moveTerms.some(candidate => candidate === term)) score += 180;
+      else if (moveTerms.some(candidate => candidate.includes(term) || term.includes(candidate))) score += 130;
+      else if (bestTerm <= Math.max(1, Math.floor(term.length * .34))) score += 85;
+    });
+    const wholeDistance = editDistance(normalizedMove, normalizedCandidate);
+    if (wholeDistance <= Math.max(2, Math.floor(normalizedCandidate.length * .28))) score += 240 - wholeDistance * 18;
+    return score > 0 ? {move, score, exact:normalizedCandidate === normalizedMove} : null;
+  })
+    .filter(Boolean)
+    .sort((a,b) => b.score - a.score || a.move.localeCompare(b.move));
 }
 
-function hasMovePrefixForSlot(slot, moveName) {
+function findMoveForSlot(slot, moveName, fuzzy = false) {
   const normalizedMove = normalizeLookup(moveName || "");
-  if (!slot || !normalizedMove) return false;
-  return learnableMovesForPokemon(slot.querySelector(".team-pokemon")?.value)
-    .some(candidate => normalizeLookup(candidate).startsWith(normalizedMove));
+  if (!slot || !normalizedMove) return "";
+  const exact = learnableMovesForPokemon(slot.querySelector(".team-pokemon")?.value)
+    .find(candidate => normalizeLookup(candidate) === normalizedMove);
+  if (exact || !fuzzy) return exact || "";
+  const [best, second] = fuzzyMoveCandidates(slot, moveName);
+  if (!best || best.score < 85) return "";
+  if (second && best.score < 260 && best.score - second.score < 30) return "";
+  return best.move;
 }
 
 function learnableMovesForPokemon(name) {
@@ -1196,12 +1852,17 @@ function hasCritSupport(entries) {
   return entries.some(entry => entry.move === "Triple Arrows" || entry.move === "Focus Energy");
 }
 
+function drawbackCount(entries) {
+  return entries.filter(entry => DRAWBACK_MOVES.has(entry.move)).length;
+}
+
 function isRedundantMove(member, move, details, entries) {
   if (NEVER_RECOMMENDED_MOVES.has(move)) return true;
   if (isStatusSupport(move)) return hasStatusSupport(entries);
   if (isSetupSupport(move)) return hasSetupSupport(entries);
   if (!details.power) return true;
   if (hasMoveByType(entries, details.type)) return true;
+  if (DRAWBACK_MOVES.has(move) && drawbackCount(entries) >= 2) return true;
   if (details.type === "Normal" && !member.pokemon.types.includes("Normal") && details.power >= 100) return true;
   return false;
 }
@@ -1210,12 +1871,18 @@ function recommendationScoreForEntry(member, move, details, gain, entries) {
   const profileMoves = MOVE_PROFILE_HINTS[member.pokemon.name] || [];
   const profileIndex = profileMoves.indexOf(move);
   if (profileIndex !== -1) return 10000 - profileIndex * 100 + gain;
-  if (isStatusSupport(move)) return 250 + details.accuracy + (STATUS_PAYOFF_MOVES.size ? 0 : 0);
-  if (isSetupSupport(move)) return 220 + (move === "Victory Dance" ? 60 : 0);
+  if (isStatusSupport(move)) {
+    const paysOffStatus = learnableMovesForPokemon(member.pokemon.name).some(candidate => STATUS_PAYOFF_MOVES.has(candidate));
+    return (paysOffStatus ? 130 : 55) + details.accuracy + gain * .2;
+  }
+  if (isSetupSupport(move)) return 105 + (move === "Victory Dance" ? 90 : 0) + gain * .15;
   let score = recommendationScore(member, move, gain);
   if (HIGH_CRIT_MOVES.has(move) && (hasCritSupport(entries) || learnableMovesForPokemon(member.pokemon.name).includes("Triple Arrows"))) score += 50;
   if (STATUS_PAYOFF_MOVES.has(move) && hasStatusSupport(entries)) score += 60;
   if (move === "Triple Arrows" && learnableMovesForPokemon(member.pokemon.name).some(candidate => HIGH_CRIT_MOVES.has(candidate))) score += 60;
+  if (SPECIAL_EFFECT_ATTACKS.has(move)) score += 32;
+  if (MOVE_EFFECT_NOTES[move]) score += 16;
+  if (DRAWBACK_MOVES.has(move)) score -= 18 + drawbackCount(entries) * 34;
   return score;
 }
 
@@ -1236,7 +1903,7 @@ function moveOptionHtml(move) {
 }
 
 function moveTypeForSlot(slot, moveName) {
-  const move = findMoveForSlot(slot, moveName);
+  const move = findMoveForSlot(slot, moveName, true);
   return move ? moveDetails(move).type : "";
 }
 
@@ -1245,7 +1912,7 @@ function getTeam() {
     const pokemonName = slot.querySelector(".team-pokemon")?.value;
     const pokemon = findPokemonByName(pokemonName);
     const moves = [...slot.querySelectorAll(".move-row")].map(row => ({
-      name: row.querySelector(".move-name")?.value.trim() || "",
+      name: row.dataset.move || row.querySelector(".move-name")?.value.trim() || "",
       type: row.querySelector(".move-type")?.value || ""
     })).filter(move => move.type);
     return pokemon ? {pokemon, moves, slotIndex:+slot.dataset.slot} : null;
@@ -1269,7 +1936,8 @@ function renderTeamBuilder() {
 function teamSlotHtml(index) {
   return `<article class="team-slot" data-slot="${index}">
     <div class="team-slot-head">
-      <label>Pokemon ${index + 1}<input class="team-pokemon" list="pokemonNames" placeholder="Select or type Pokemon"></label>
+      <img class="team-sprite" src="" alt="" hidden>
+      <label><span>Pokemon ${index + 1}</span><input class="team-pokemon" list="pokemonNames" placeholder="Select or type Pokemon"></label>
       <div class="team-types"></div>
     </div>
     <div class="move-grid">${Array.from({length: 4}, (_, moveIndex) => moveRowHtml(moveIndex, index)).join("")}</div>
@@ -1293,13 +1961,15 @@ function renderMoveDatalist() {
     pokemonDatalist.innerHTML = POKEDEX.map(p => `<option value="${p.name}">#${String(p.num).padStart(3,"0")} ${p.types.join("/")}</option>`).join("");
     document.body.appendChild(pokemonDatalist);
   }
-  document.querySelectorAll(".team-slot").forEach(updateMoveDatalist);
+  document.querySelectorAll(".team-slot").forEach(slot => updateMoveDatalist(slot));
 }
 
-function updateMoveDatalist(slot) {
+function updateMoveDatalist(slot, query = "") {
   const moves = learnableMovesForPokemon(slot.querySelector(".team-pokemon")?.value);
   const datalist = slot.querySelector(`datalist`);
-  if (datalist) datalist.innerHTML = moves.map(moveOptionHtml).join("");
+  const queryText = String(query || "");
+  const displayMoves = queryText.trim() ? fuzzyMoveCandidates(slot, queryText).slice(0, 80).map(candidate => candidate.move) : moves;
+  if (datalist) datalist.innerHTML = displayMoves.map(moveOptionHtml).join("");
   slot.querySelectorAll(".move-name").forEach((input, index) => {
     input.placeholder = moves.length ? `Move ${index + 1}` : "Select Pokemon first";
   });
@@ -1309,6 +1979,14 @@ function updateSelectedPokemon(slot, pokemonName) {
   const pokemon = findPokemonByName(pokemonName);
   selectRecommendationSlot(slot);
   slot.querySelector(".team-types").innerHTML = pokemon ? typeChips(pokemon.types) : "";
+  const sprite = slot.querySelector(".team-sprite");
+  if (sprite) {
+    sprite.hidden = !pokemon;
+    if (pokemon) {
+      sprite.src = spriteUrl(pokemon);
+      sprite.alt = `${pokemon.name} sprite`;
+    }
+  }
   updateMoveDatalist(slot);
   slot.querySelectorAll(".move-row").forEach(row => applyMoveTypeLock(row, true));
 }
@@ -1331,25 +2009,29 @@ function applyMoveTypeLock(row, clearInvalid = false) {
   const moveInput = row.querySelector(".move-name");
   const status = row.querySelector(".move-status");
   const slot = row.closest(".team-slot");
-  const move = findMoveForSlot(slot, moveName);
+  const move = findMoveForSlot(slot, moveName, true);
   const details = move ? moveDetails(move) : null;
   row.classList.remove("selected-move", "invalid-move");
   moveInput.style.removeProperty("--move-color");
   typeInput.value = "";
+  row.dataset.move = "";
   if (status) status.textContent = "";
   if (!moveName) return;
   if (move && details.type) {
-    moveInput.value = move;
+    if (clearInvalid || normalizeLookup(moveName) === normalizeLookup(move)) moveInput.value = move;
+    row.dataset.move = move;
     typeInput.value = details.type;
     row.classList.add("selected-move");
     moveInput.style.setProperty("--move-color", TYPE_COLORS[details.type] || "");
-    if (status) status.textContent = `${details.type} ${details.category}${details.power ? ` / ${details.power} power` : ""}`;
+    if (status) status.textContent = `${clearInvalid ? "Using" : "Matched"} ${move}: ${details.type} ${details.category}${details.power ? ` / ${details.power} power` : ""}`;
     return;
   }
-  if (clearInvalid || !hasMovePrefixForSlot(slot, moveName)) {
+  if (clearInvalid) {
     moveInput.value = "";
     row.classList.add("invalid-move");
     if (status) status.textContent = "Move not learnable by this Pokemon.";
+  } else {
+    if (status) status.textContent = "Keep typing. Use a learnable move for this Pokemon.";
   }
 }
 
@@ -1474,6 +2156,33 @@ function moveRecommendationsForMember(member, currentMoveTypes) {
     picked.push(candidate);
     workingEntries.push({move:candidate.move, details:candidate});
   });
+  candidates.forEach(candidate => {
+    if (picked.length >= 4) return;
+    if (picked.some(p => p.move === candidate.move)) return;
+    if (NEVER_RECOMMENDED_MOVES.has(candidate.move)) return;
+    picked.push({...candidate, fallback:true});
+  });
+  if (picked.length < 4) {
+    learnableMovesForPokemon(member.pokemon.name)
+      .filter(move => !NEVER_RECOMMENDED_MOVES.has(move))
+      .filter(move => !selectedMoves.has(normalizeLookup(move)))
+      .map(move => {
+        const details = moveDetails(move);
+        if (!details.type || details.accuracy < 85) return null;
+        if (!details.power && !isSupportMove(move, details)) return null;
+        if (details.power && details.power < 50 && !hasRecommendationException(move, details)) return null;
+        const nextTypes = [...new Set([...baseTypes, details.type])];
+        const gain = offensiveCoverageCount(nextTypes) - baseScore;
+        return {...details, move, gain, support:isSupportMove(move, details), stab:member.pokemon.types.includes(details.type), score:recommendationScoreForEntry(member, move, details, gain, workingEntries) - 90, fallback:true};
+      })
+      .filter(Boolean)
+      .sort((a,b) => b.score - a.score || b.power - a.power || a.move.localeCompare(b.move))
+      .forEach(candidate => {
+        if (picked.length >= 4) return;
+        if (picked.some(p => p.move === candidate.move)) return;
+        picked.push(candidate);
+      });
+  }
   return picked;
 }
 
@@ -1491,6 +2200,68 @@ function recommendedMovesetForPokemon(name) {
   return [...new Set(merged)].slice(0, 4);
 }
 
+function shuffle(values) {
+  const copy = [...values];
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+  return copy;
+}
+
+function randomMovesetForPokemon(name) {
+  const pokemon = findPokemonByName(name);
+  if (!pokemon) return [];
+  const profile = MOVE_PROFILE_HINTS[pokemon.name] || [];
+  const suggested = recommendedMovesetForPokemon(pokemon.name);
+  const member = {pokemon, moves:[], slotIndex:0};
+  const pool = learnableMovesForPokemon(pokemon.name)
+    .filter(move => !NEVER_RECOMMENDED_MOVES.has(move))
+    .map(move => {
+      const details = moveDetails(move);
+      if (!details.type || details.accuracy < 85) return null;
+      if (details.power && details.power < 50 && !hasRecommendationException(move, details)) return null;
+      if (!details.power && !isSupportMove(move, details)) return null;
+      const gain = offensiveCoverageCount([details.type]);
+      return {...details, move, gain, score:recommendationScoreForEntry(member, move, details, gain, []) + (profile.includes(move) ? 100 : 0) + Math.random() * 18};
+    })
+    .filter(Boolean)
+    .sort((a,b) => b.score - a.score || b.power - a.power);
+  const picked = [];
+  const addMove = move => {
+    if (!move || picked.includes(move)) return;
+    const details = moveDetails(move);
+    if (isRedundantMove(member, move, details, picked.map(name => ({move:name, details:moveDetails(name)}))) && picked.length >= 2) return;
+    picked.push(move);
+    member.moves.push({name:move, type:details.type});
+  };
+  shuffle([...suggested, ...profile]).forEach(addMove);
+  pool.forEach(entry => {
+    if (picked.length >= 4) return;
+    addMove(entry.move);
+  });
+  pool.forEach(entry => {
+    if (picked.length >= 4 || picked.includes(entry.move)) return;
+    picked.push(entry.move);
+  });
+  return picked.slice(0, 4);
+}
+
+function randomizeTeam() {
+  if (!$("teamBuilder")) return;
+  const viablePool = RANDOM_TEAM_POOL
+    .map(name => findPokemonByName(name))
+    .filter(Boolean)
+    .filter(pokemon => {
+      const stats = pokemonStats(pokemon.name);
+      return stats.length && statTotal(stats) >= 455;
+    });
+  const state = shuffle(viablePool)
+    .slice(0, 6)
+    .map(pokemon => ({pokemon:pokemon.name, moves:randomMovesetForPokemon(pokemon.name)}));
+  applyTeamState(state);
+}
+
 function renderMoveRecommendations(team, moveTypes) {
   const mount = $("moveRecommendations");
   if (!mount) return;
@@ -1505,7 +2276,8 @@ function renderMoveRecommendations(team, moveTypes) {
     const damage = rec.power ? `${rec.power} dmg` : rec.category;
     const accuracy = rec.accuracy === 100 ? "100 acc" : `${rec.accuracy} acc`;
     const stab = rec.stab ? `<em>STAB</em>` : "";
-    return `<li title="${gain}"><span>${typeChips([rec.type])}<strong>${rec.move}</strong>${stab}<small>${rec.type} / ${damage} / ${accuracy}</small></span><button class="recommendation-button" type="button" data-slot="${selected.slotIndex}" data-move="${rec.move}">Add</button></li>`;
+    const effect = MOVE_EFFECT_NOTES[rec.move] ? `<small class="move-effect">${MOVE_EFFECT_NOTES[rec.move]}</small>` : "";
+    return `<li title="${gain}"><span>${typeChips([rec.type])}<strong>${rec.move}</strong>${stab}<small>${rec.type} / ${damage} / ${accuracy}</small>${effect}</span><button class="recommendation-button" type="button" data-slot="${selected.slotIndex}" data-move="${rec.move}">Add</button></li>`;
   }).join("") : `<li><span><strong>No available move suggestions</strong><small>Accurate damaging recommendations are already represented or unavailable.</small></span></li>`;
   mount.innerHTML = `<article class="recommendation-card"><h4>${selected.pokemon.name}</h4><p class="muted-text">Recommendations use learnset, STAB, category fit, coverage gain, power, and accuracy.</p><ul>${items}</ul></article>`;
 }
@@ -1539,6 +2311,9 @@ function renderCoverage() {
     ["Team members", team.length],
     ["Move types", moveTypes.length],
     ["Hit super-effectively", superEffective.length],
+    ["Best neutral", neutral.length],
+    ["Not very effective", resisted.length],
+    ["Ineffective", immune.length],
     ["Problem weaknesses", problemWeaknesses.length]
   ].map(([label, val]) => `<div><strong>${val}</strong><span>${label}</span></div>`).join("");
   if ($("offenseBreakdown")) $("offenseBreakdown").innerHTML = [
@@ -1572,14 +2347,14 @@ function multiplierLabel(multiplier) {
 function renderTypeChart() {
   const table = $("typeChartTable");
   if (!table) return;
-  const header = `<tr><th class="type-axis-head">Atk / Def</th>${TYPES.map(type => `<th>${typeChips([type])}</th>`).join("")}</tr>`;
+  const header = `<tr><th class="type-axis-head">Atk / Def</th>${TYPES.map(type => `<th>${typeChips([type], true)}</th>`).join("")}</tr>`;
   const colgroup = `<colgroup><col class="type-chart-axis-col">${TYPES.map(() => `<col>`).join("")}</colgroup>`;
   const rows = TYPES.map(attack => {
     const cells = TYPES.map(defense => {
       const multiplier = damageMultiplier(attack, [defense]);
       return `<td class="type-matchup type-matchup-${String(multiplier).replace(".","-")}">${multiplierLabel(multiplier)}</td>`;
     }).join("");
-    return `<tr><th>${typeChips([attack])}</th>${cells}</tr>`;
+    return `<tr><th>${typeChips([attack], true)}</th>${cells}</tr>`;
   }).join("");
   table.innerHTML = `${colgroup}<thead>${header}</thead><tbody>${rows}</tbody>`;
 }
@@ -1602,8 +2377,15 @@ function renderNatures() {
 function mapMarkerLabel(point) {
   if (point[0] === "Subarea") return point[1];
   if (point[0] === "Camp") return "C";
-  if (point[0] === "Gate") return "G";
+  if (point[0] === "Gate") return "F";
+  if (point[0] === "Transition") return "T";
+  if (point[0] === "Cave") return "Cv";
   if (point[0] === "Wisp") return "W";
+  if (point[0] === "Unown") return "U";
+  if (point[0] === "Point") return "P";
+  if (point[0] === "Character") return "NPC";
+  if (point[0] === "Arena") return "A";
+  if (point[0] === "Noble") return "N";
   if (point[0] === "Landmark") return "L";
   return point[0][0];
 }
@@ -1627,6 +2409,7 @@ function applyMapTransform() {
   const layer = $("mapLayer");
   if (!layer) return;
   clampMapView();
+  $("regionMap")?.style.setProperty("--map-scale", mapViewState.scale);
   layer.style.transform = `translate(${mapViewState.x}px, ${mapViewState.y}px) scale(${mapViewState.scale})`;
   if ($("mapZoomLabel")) $("mapZoomLabel").textContent = `${Math.round(mapViewState.scale * 100)}%`;
 }
@@ -1690,7 +2473,7 @@ function renderMap() {
   const points = mapData[region].filter(p => enabled.has(p[0]));
   $("regionMap").style.setProperty("--map-aspect", MAP_ASPECTS[region] || "1 / 1");
   const mapImage = MAP_IMAGES[region] ? `url('${MAP_IMAGES[region].replaceAll("'", "\\'")}')` : "linear-gradient(135deg, rgba(112, 166, 109, .18), rgba(90, 153, 199, .14))";
-  $("regionMap").innerHTML = `<div id="mapLayer" class="map-layer" style="--map-image:${mapImage}"><div class="map-label">${region}</div>${points.map((p,i) => `<button class="marker" data-index="${i}" data-kind="${p[0]}" style="left:${p[4]}%;top:${p[5]}%" title="${p[1]}">${mapMarkerLabel(p)}</button>`).join("")}</div>`;
+  $("regionMap").innerHTML = `<div id="mapLayer" class="map-layer" style="--map-image:${mapImage}">${points.map((p,i) => `<button class="marker" data-index="${i}" data-kind="${p[0]}" style="left:${p[4]}%;top:${p[5]}%" title="${p[1]}">${mapMarkerLabel(p)}</button>`).join("")}</div>`;
   bindMapInteractions();
   applyMapTransform();
   const setDetail = index => {
@@ -1728,7 +2511,7 @@ function renderStaticTables() {
   renderTable("ballTable", ["Ball","Family","Craft cost","Best use"], balls);
   renderTable("rankTable", ["Rank","Obedience level","Notable unlocks"], ranks);
   renderTable("hisuianTable", ["Pokemon","Type","Location","Method / notes"], hisuian);
-  renderTable("evolutionTable", ["Item / method","Evolutions","Source / condition"], evolutions);
+  renderTable("evolutionTable", ["Item / method","Evolutions","Source / condition"], evolutions.map(row => [itemSpriteHtml(row[0]), row[1], row[2]]));
   renderNatures();
   renderTypeChart();
   renderTable("requestTable", ["No.","Request","Region","Why it matters"], requests);
@@ -1757,7 +2540,11 @@ function renderPokemonDetail() {
   if (!mount) return;
   const params = new URLSearchParams(location.search);
   const wanted = params.get("pokemon");
-  if (!wanted) return;
+  if (!wanted) {
+    mount.classList.add("is-hidden");
+    return;
+  }
+  mount.classList.remove("is-hidden");
   const normalized = wanted.toLowerCase().replace(/[^a-z0-9]/g, "");
   const dex = POKEDEX.find(p => p.name.toLowerCase().replace(/[^a-z0-9]/g, "") === normalized);
   if (!dex) {
@@ -1765,19 +2552,34 @@ function renderPokemonDetail() {
     return;
   }
   const viable = meta.find(p => p.name.toLowerCase().replace(/[^a-z0-9]/g, "").includes(normalized) || normalized.includes(p.name.toLowerCase().replace(/[^a-z0-9]/g, "")));
-  const weaknesses = TYPES.map(type => [type, damageMultiplier(type, dex.types)]).filter(([,mult]) => mult > 1).sort((a,b) => b[1] - a[1]);
-  const resists = TYPES.map(type => [type, damageMultiplier(type, dex.types)]).filter(([,mult]) => mult < 1).sort((a,b) => a[1] - b[1]);
-  const detailStats = viable ? statChart(viable.stats, "detail-stat-chart") : "";
-  const viableMoves = viable ? (recommendedMovesetForPokemon(viable.name).join(", ") || viable.moves) : "";
+  const stats = pokemonStats(dex.name);
+  const profile = defensiveProfile(dex.types);
+  const offensive = stabTargets(dex.types);
+  const detailStats = stats.length ? statChart(stats, "detail-stat-chart") : "";
+  const viableMoves = recommendedMovesetForPokemon(dex.name);
+  const role = viable?.role || roleForPokemon(dex, stats);
+  const matchupText = list => list.length ? list.map(([t,m]) => `${t} ${m}x`).join(", ") : "None";
+  const moveList = viableMoves.length ? viableMoves.map(move => {
+    const details = moveDetails(move);
+    const effect = MOVE_EFFECT_NOTES[move] ? `, ${MOVE_EFFECT_NOTES[move]}` : "";
+    return `<li>${typeChips([details.type])}<strong>${move}</strong><span>${details.category}${details.power ? ` / ${details.power} power` : ""} / ${details.accuracy} acc${effect}</span></li>`;
+  }).join("") : `<li><span>Use its STAB moves and reliable coverage from Zisu if building it for battle.</span></li>`;
   mount.innerHTML = `<div class="pokemon-detail">
-    <img src="${spriteUrl(viable?.name || dex.name)}" alt="${dex.name} sprite">
+    <img src="${spriteUrl(dex)}" alt="${dex.name} sprite">
     <div>
       <p class="eyebrow">Hisui #${String(dex.num).padStart(3,"0")}</p>
       <h2>${dex.name}</h2>
       <p>${typeChips(dex.types)}</p>
-      ${viable ? `<p><strong>Recommended role:</strong> ${viable.role}</p><p><strong>Moves:</strong> ${viableMoves}</p><p>${viable.note}</p>` : `<p>This page has verified typing for ${dex.name}. Detailed moveset notes are focused on the most practical story and post-game Pokemon below.</p>`}
-      <p><strong>Weak to:</strong> ${weaknesses.length ? weaknesses.map(([t,m]) => `${t} ${m}x`).join(", ") : "No standard weakness"}</p>
-      <p><strong>Resists / immune:</strong> ${resists.length ? resists.map(([t,m]) => `${t} ${m}x`).join(", ") : "No resistances"}</p>
+      <p><strong>Role:</strong> ${role}</p>
+      ${viable ? `<p>${viable.note}</p>` : ""}
+      <div class="pokemon-facts">
+        <p><strong>Weak to:</strong> ${matchupText(profile.weaknesses)}</p>
+        <p><strong>Resists:</strong> ${matchupText(profile.resists)}</p>
+        <p><strong>Immune to:</strong> ${profile.immunities.length ? profile.immunities.map(([t]) => t).join(", ") : "None"}</p>
+        <p><strong>STAB hits super-effectively:</strong> ${offensive.length ? offensive.map(([t,m]) => `${t} ${m}x`).join(", ") : "No single-type target super-effectively by STAB alone"}</p>
+        <p><strong>Ability handling:</strong> ${abilitySummary(dex)}</p>
+      </div>
+      <div class="pokemon-move-summary"><h3>Useful moves</h3><ul>${moveList}</ul></div>
       ${detailStats}
     </div>
   </div>`;
@@ -1824,6 +2626,14 @@ function wireGlobalSearch() {
   });
 }
 
+function markActiveNav() {
+  const current = location.pathname.split("/").pop() || "index.html";
+  document.querySelectorAll(".top-nav a").forEach(link => {
+    const target = link.getAttribute("href");
+    if (target === current) link.setAttribute("aria-current", "page");
+  });
+}
+
 function wireSearch() {
   if ($("recipeSearch")) $("recipeSearch").addEventListener("input", renderRecipes);
   if ($("recipeCategory")) $("recipeCategory").addEventListener("change", renderRecipes);
@@ -1863,6 +2673,7 @@ function wireSearch() {
       if (e.target.matches(".team-pokemon")) updateSelectedPokemon(e.target.closest(".team-slot"), e.target.value);
       if (e.target.matches(".move-name")) {
         const row = e.target.closest(".move-row");
+        updateMoveDatalist(row.closest(".team-slot"), e.target.value);
         applyMoveTypeLock(row);
       }
       renderCoverage();
@@ -1894,6 +2705,7 @@ function wireSearch() {
   if ($("saveTeam")) $("saveTeam").addEventListener("click", saveCurrentTeam);
   if ($("loadTeam")) $("loadTeam").addEventListener("click", loadSelectedTeam);
   if ($("deleteTeam")) $("deleteTeam").addEventListener("click", deleteSelectedTeam);
+  if ($("randomTeam")) $("randomTeam").addEventListener("click", randomizeTeam);
   if ($("savedTeams")) $("savedTeams").addEventListener("change", () => {
     if ($("teamName")) $("teamName").value = $("savedTeams").value;
   });
@@ -1916,6 +2728,7 @@ function wireSearch() {
 }
 
 function init() {
+  markActiveNav();
   renderStaticTables();
   renderCards();
   renderHomeCards();
