@@ -161,11 +161,17 @@ const STARTER_MOVESETS = {
 };
 
 const RANDOM_TEAM_POOL = [
-  "Staraptor", "Luxray", "Rapidash", "Snorlax", "Scyther", "Gyarados", "Crobat", "Roserade", "Gardevoir", "Gallade",
-  "Hisuian Lilligant", "Rhyperior", "Togekiss", "Gengar", "Machamp", "Magnezone", "Electivire", "Magmortar",
-  "Hisuian Arcanine", "Overqwil", "Basculegion", "Infernape", "Torterra", "Empoleon", "Ursaring", "Ursaluna",
-  "Hisuian Goodra", "Garchomp", "Hisuian Zoroark", "Mamoswine", "Weavile", "Gliscor", "Yanmega", "Hisuian Braviary",
-  "Clefable", "Blissey"
+  "Decidueye", "Typhlosion", "Samurott", "Bibarel", "Staraptor", "Luxray", "Beautifly", "Dustox", "Rapidash",
+  "Vaporeon", "Jolteon", "Flareon", "Espeon", "Umbreon", "Leafeon", "Glaceon", "Sylveon", "Crobat", "Drifblim",
+  "Golem", "Wyrdeer", "Snorlax", "Raichu", "Alakazam", "Infernape", "Lopunny", "Golduck", "Vespiquen", "Scyther",
+  "Scizor", "Kleavor", "Heracross", "Mr. Mime", "Gyarados", "Gastrodon", "Ambipom", "Overqwil", "Roserade",
+  "Lilligant", "Tangrowth", "Carnivine", "Whiscash", "Toxicroak", "Gardevoir", "Gallade", "Yanmega", "Hippowdon",
+  "Skuntank", "Lucario", "Ursaluna", "Goodra", "Steelix", "Rhyperior", "Torterra", "Porygon-Z", "Lickilicky",
+  "Porygon2", "Gengar", "Honchkrow", "Walrein", "Drapion", "Arcanine", "Purugly", "Machamp", "Dusknoir",
+  "Empoleon", "Mantine", "Basculegion", "Ninetales", "Tentacruel", "Lumineon", "Magmortar", "Magneton",
+  "Magnezone", "Bronzong", "Electivire", "Gliscor", "Garchomp", "Probopass", "Electrode", "Mismagius",
+  "Clefable", "Sneasel", "Weavile", "Froslass", "Glalie", "Mamoswine", "Avalugg", "Abomasnow", "Zoroark",
+  "Braviary"
 ];
 
 const RANDOM_TEAM_EXCLUSIONS = new Set([
@@ -1339,112 +1345,114 @@ const exactMapMarkerText = {
 
 const exactMapMarkerGroups = {
   "Obsidian Fieldlands":{
-    Wisp:[[71.7,11.8],[34.6,21.2],[91.1,24.3],[76.7,32],[25.9,36.5],[90.8,41.4],[53.3,49.5],[82.5,52.6],[63.4,55.1],[96.7,57.7],[46.5,64.4],[60.7,67.7],[21.5,69.4],[81.5,70.7],[71.5,80.8],[37.9,83.5],[60.9,90.3]],
+    Wisp:[["Horseshoe Plains Wisp",71.7,11.8,"Spiritomb wisp collectible."],["Aspiration Hill Wisp",43,23,"Spiritomb wisp collectible."],["Floaro Gardens Wisp",34.6,21.2,"Spiritomb wisp collectible."],["Grueling Grove Wisp",85,14,"Spiritomb wisp collectible."],["Worn Bridge Wisp",91.1,24.3,"Spiritomb wisp collectible."],["Worn Bridge Wisp",76.7,32,"Spiritomb wisp collectible."],["Lake Verity Wisp",25.9,36.5,"Spiritomb wisp collectible."],["Obsidian Falls Wisp",90.8,41.4,"Spiritomb wisp collectible."],["Deertrack Heights Wisp",53.3,49.5,"Spiritomb wisp collectible."],["Obsidian Falls Wisp",82.5,52.6,"Spiritomb wisp collectible."],["Deertrack Heights Wisp",63.4,55.1,"Spiritomb wisp collectible."],["Oreburrow Tunnel Wisp",96.7,57.7,"Spiritomb wisp collectible."],["Windswept Run Wisp",46.5,64.4,"Spiritomb wisp collectible."],["Nature's Pantry Wisp",60.7,67.7,"Spiritomb wisp collectible."],["Sandgem Flats Wisp",21.5,69.4,"Spiritomb wisp collectible."],["The Heartwood Wisp",81.5,70.7,"Spiritomb wisp collectible."],["The Heartwood Wisp",71.5,80.8,"Spiritomb wisp collectible."],["Ramanas Island Wisp",37.9,83.5,"Spiritomb wisp collectible."],["Grandtree Arena Wisp",60.9,90.3,"Spiritomb wisp collectible."],["Ramanas Island Wisp",47.1,91,"Spiritomb wisp collectible."]],
     Subarea:[["Floaro Gardens",18,17,"Shinx line, Shaymin request area, and western alpha checks."],["Aspiration Hill",43,23,"Early tutorial route and first field gathering loop."],["Horseshoe Plains",63,22,"Bidoof, Starly, Shinx, Ponyta, and early research."],["Grueling Grove",85,14,"Bug-type route and alpha Heracross area."],["Deertrack Path",55,39,"Main path between the first camp routes and Deertrack Heights."],["Deertrack Heights",64,48,"Heights Camp route and early Geodude/Kricketot checks."],["Windswept Run",51,57,"Floatzel and river-crossing route."],["Nature's Pantry",61,69,"Cherubi tree checks and alpha Parasect/Kricketune route."],["Worn Bridge",79,35,"Floatzel, Bibarel, and bridge route."],["Obsidian Falls",88,52,"Alpha Blissey XP route and waterfall checks."],["Oreburrow Tunnel",92,62,"Cave route toward Obsidian Falls."],["The Heartwood",83,82,"Bug and Grass routes near the Grandtree approach."],["Tidewater Dam",68,79,"Water route and Bibarel checks."],["Sandgem Flats",23,75,"Snorlax, Alakazam, and ore route."],["Ramanas Island",39,82,"Post-game alpha loop and Landorus route."],["Lake Verity",19,43,"Mesprit route and water checks."]],
-    Alpha:[[67.4,13.4],[86.2,14.5],[25.9,23.5],[71.5,29.1],[95.8,34.2],[71.3,42.3],[19.1,44.5],[39.3,44.6],[72.7,52.7],[52.3,56.1],[89,60.6],[95.9,63.4],[59.9,71.3],[20.1,72.2],[87.8,87.8],[47.1,91]],
-    Unown:[[96.6,15.8],[95.8,42.1],[94.9,47.8],[91.9,83.2]],
-    Story:[[79.3,27.9],[58.2,35.6],[51.1,39.6],[31.7,77.4]],
-    Character:[[69.4,56.8]],
-    Camp:[[38.5,12.3],[64,50.6]],
-    Gate:[[38.5,12.3],[64,50.6],[21.9,44.5],[31.7,77.4],[89,81.2]],
-    Transition:[[39.6,14.8],[94.9,47.8],[89,81.2]],
-    Cave:[[94.9,47.8]],
-    Arena:[[82.6,86.5]],
-    Noble:[[89,81.2]],
-    Request:[[34.6,21.2]],
-    Legendary:[[19,43],[40,82],[18,17]],
-    Farm:[[88,55],[58,25],[39,82]]
+    Alpha:[["Alpha Rapidash",67.4,13.4,"Fixed alpha in Horseshoe Plains."],["Alpha Heracross",86.2,14.5,"Fixed alpha in Grueling Grove."],["Alpha Luxio",25.9,23.5,"Fixed alpha near Floaro Gardens."],["Alpha Floatzel",71.5,29.1,"Fixed alpha near Worn Bridge."],["Alpha Magikarp",95.8,34.2,"Fixed alpha in the Obsidian Falls water route."],["Alpha Stantler",71.3,42.3,"Fixed alpha near Deertrack Heights."],["Alpha Gyarados",19.1,44.5,"Fixed alpha at Lake Verity."],["Alpha Alakazam",39.3,44.6,"Fixed alpha near Sandgem Flats."],["Alpha Lopunny",72.7,52.7,"Fixed alpha near The Heartwood."],["Alpha Staravia",52.3,56.1,"Fixed alpha around Windswept Run."],["Alpha Graveler",89,60.6,"Fixed alpha near Oreburrow Tunnel."],["Alpha Golbat",95.9,63.4,"Fixed alpha in Oreburrow Tunnel."],["Alpha Parasect",59.9,71.3,"Fixed alpha near Nature's Pantry."],["Alpha Snorlax",20.1,72.2,"Fixed alpha in Sandgem Flats."],["Alpha Scyther",87.8,87.8,"Fixed alpha near Grandtree Arena."],["Alpha Infernape",47.1,91,"Fixed alpha on Ramanas Island."],["Alpha Blissey",88,55,"Fixed alpha at Obsidian Falls."],["Alpha Bibarel",68,79,"Fixed alpha near Tidewater Dam."],["Alpha Kricketune",60.7,67.7,"Fixed alpha near Nature's Pantry."],["Alpha Torterra",39,82,"Post-game alpha on Ramanas Island."]],
+    Unown:[["Grueling Grove Unown",96.6,15.8,"Unown letter collectible."],["Obsidian Falls Unown",95.8,42.1,"Unown letter collectible."],["Oreburrow Tunnel Unown",94.9,47.8,"Unown letter collectible."],["The Heartwood Unown",91.9,83.2,"Unown letter collectible."],["Lake Verity Unown",19,43,"Unown letter collectible."]],
+    Story:[["Fieldlands Camp Story",38.5,12.3,"Opening Fieldlands expeditions and tutorial routes."],["Heights Camp Story",63.5,49.5,"Important early camp in the center of Deertrack Heights."],["Sandgem Flats Story",23,75,"Story/research routing marker placed at Sandgem Flats."],["Kleavor Arena Story",82.6,86.5,"First Noble route and battle at Grandtree Arena."]],
+    Character:[["Munchlax encounter",69.4,56.8,"Early story alpha-problem route marker near Deertrack Heights."],["Lian",82.6,86.5,"Pearl Clan warden for Kleavor at Grandtree Arena."]],
+    Camp:[["Fieldlands Camp",38.5,12.3,"Main Obsidian Fieldlands base camp."],["Heights Camp",63.5,49.5,"Base camp in the center of Deertrack Heights."]],
+    Gate:[["Fieldlands Camp Fast Travel",38.5,12.3,"Fast travel point."],["Heights Camp Fast Travel",63.5,49.5,"Fast travel point."],["Lake Verity Fast Travel",21.9,44.5,"Fast travel point."],["Ramanas Island Fast Travel",31.7,77.4,"Fast travel point."],["Grandtree Arena Fast Travel",82.6,86.5,"Fast travel point near Kleavor's arena."]],
+    Transition:[["Fieldlands Entrance",39.6,14.8,"Transition point."],["Oreburrow Tunnel Transition",94.9,47.8,"Tunnel transition."],["Grandtree Arena Transition",82.6,86.5,"Grandtree route transition."]],
+    Cave:[["Oreburrow Tunnel",94.9,47.8,"Cave route toward Obsidian Falls."]],
+    Arena:[["Grandtree Arena",82.6,86.5,"Kleavor's Noble arena."]],
+    Noble:[["Kleavor",82.6,86.5,"Noble Pokemon battle at Grandtree Arena."]],
+    Request:[["Request 19: A Peculiar Ponyta",34.6,21.2,"Guaranteed shiny Ponyta request route near Horseshoe Plains."],["Bothersome Bidoof route",38.5,12.3,"Early request route that begins from Jubilife and the Fieldlands entry."],["Mushroom Cake request",60.7,67.7,"Food-lure request route near Nature's Pantry."]],
+    Legendary:[["Mesprit",19,43,"Post-game lake guardian at Lake Verity."],["Landorus",40,82,"Appears on Ramanas Island during Request 94."],["Shaymin",18,17,"Request 92 in Floaro Gardens with Sword/Shield save data."]],
+    Farm:[["Alpha Blissey XP route",88,55,"High-HP Blissey route at Obsidian Falls."],["Horseshoe Plains research loop",58,25,"Fast early research route."],["Ramanas Island alpha loop",39,82,"Post-game alpha and sellable loop."]]
   },
   "Jubilife Village":{
-    Wisp:[[28.1,5.8],[42.6,20.1],[59.8,24.7],[46.1,32.8],[26.6,32.9],[29.5,74]],
+    Wisp:[["Training Grounds Wisp",28.1,5.8,"Spiritomb wisp collectible."],["Galaxy Hall Wisp",42.6,20.1,"Spiritomb wisp collectible."],["General Store Wisp",59.8,24.7,"Spiritomb wisp collectible."],["Craftworks Wisp",46.1,32.8,"Spiritomb wisp collectible."],["Pastures Wisp",26.6,32.9,"Spiritomb wisp collectible."],["Farm Wisp",29.5,74,"Spiritomb wisp collectible."],["Prelude Beach Wisp",32.6,77,"Spiritomb wisp collectible."]],
     Subarea:[["Galaxy Hall",53,24,"Research reports, rank ups, and request board."],["Training Grounds",43,15,"Move tutoring and Ingo battles."],["Craftworks",37,18,"Recipe unlocks and crafting supply route."],["Trading Post",46,19,"Merit Points and evolution items."],["General Store",60,22,"Purchased basics and item sales."],["Pastures",33,35,"Storage and bulk release for Grit."],["Farm",33,76,"Farm upgrades and harvests."],["Front Gate",54,47,"Village exit and expedition gate."]],
+    Unown:[["Galaxy Hall Unown",53,24,"Unown letter collectible."],["Training Grounds Unown",43,15,"Unown letter collectible."],["Prelude Beach Unown",32.6,77,"Unown letter collectible."]],
     Point:[[40.7,2.1],[51.5,6.9],[33,8.8],[41.9,11.3],[56.3,12],[61.9,12],[37.9,12.4],[47.3,12.5],[51.5,13.4],[73.6,14.4],[70.2,15.6],[48.2,18],[65.9,18.3],[54.5,18.7],[57.9,18.7],[61.8,18.7],[32.9,33.3],[64.6,69],[68.4,70.5],[32.6,77]],
-    Story:[[48.1,8.8],[68.7,18.1]],
+    Story:[["Galaxy Hall Story",48.1,8.8,"Main mission and request-board hub."],["Front Gate Story",68.7,18.1,"Expedition departure routing."]],
     Character:[[68.8,13.1],[46.6,21],[63.3,27.6],[44.4,29.8],[42.2,34.7],[54.3,36.2],[52.4,42.7]],
-    Camp:[[54,47]],
-    Gate:[[32.6,77],[40.7,2.1],[51.5,6.9]],
-    Transition:[[54,47]],
-    Request:[[48.1,8.8],[68.7,18.1]],
-    Farm:[[43,15],[33,76]]
+    Camp:[["Front Gate",54,47,"Village expedition gate and services checkpoint."]],
+    Gate:[["Prelude Beach Fast Travel",32.6,77,"Fast travel point."],["Training Grounds Fast Travel",40.7,2.1,"Fast travel point."],["Galaxy Hall Fast Travel",51.5,6.9,"Fast travel point."]],
+    Transition:[["Front Gate",54,47,"Expedition transition point."]],
+    Request:[["Request Board",48.1,8.8,"Galaxy Hall request board."],["Front Gate Requests",68.7,18.1,"Expedition-related request routing."]],
+    Farm:[["Training Grounds",43,15,"Ingo battles and move mastery practice."],["Farm",33,76,"Harvest route for crafting materials."]]
   },
   "Crimson Mirelands":{
-    Wisp:[[59.4,7.1],[44.4,13.3],[27.1,13.7],[36.3,15.7],[29.5,25.4],[52.9,30.9],[72.8,35.6],[44.7,41.2],[56.6,41.5],[67.8,45.3],[30.5,52],[18.4,52.3],[71.5,52.9],[68.6,59.4],[24.2,64.9],[91.7,68.3],[27.4,69.5],[63.5,77.9],[26.4,82.6],[57.6,87.1],[41.1,88.3],[77.9,90.7]],
+    Wisp:[["Brava Arena Wisp",44.4,7.1,"Spiritomb wisp collectible."],["Shrouded Ruins Wisp",59.4,7.1,"Spiritomb wisp collectible."],["Cloudpool Ridge Wisp",27.1,13.7,"Spiritomb wisp collectible."],["Cloudpool Ridge Wisp",36.3,15.7,"Spiritomb wisp collectible."],["Diamond Heath Wisp",29.5,25.4,"Spiritomb wisp collectible."],["Diamond Settlement Wisp",52.9,30.9,"Spiritomb wisp collectible."],["Lake Valor Wisp",72.8,35.6,"Spiritomb wisp collectible."],["Solaceon Ruins Wisp",44.7,41.2,"Spiritomb wisp collectible."],["Diamond Settlement Wisp",56.6,41.5,"Spiritomb wisp collectible."],["Bolderoll Slope Wisp",67.8,45.3,"Spiritomb wisp collectible."],["Golden Lowlands Wisp",30.5,52,"Spiritomb wisp collectible."],["Golden Lowlands Wisp",18.4,52.3,"Spiritomb wisp collectible."],["Scarlet Bog Wisp",71.5,52.9,"Spiritomb wisp collectible."],["Scarlet Bog Wisp",68.6,59.4,"Spiritomb wisp collectible."],["Gapejaw Bog Wisp",24.2,64.9,"Spiritomb wisp collectible."],["Droning Meadow Wisp",91.7,68.3,"Spiritomb wisp collectible."],["Gapejaw Bog Wisp",27.4,69.5,"Spiritomb wisp collectible."],["Sludge Mound Wisp",63.5,77.9,"Spiritomb wisp collectible."],["Holm of Trials Wisp",41.1,88.3,"Spiritomb wisp collectible."],["Ursa's Ring Wisp",77.9,90.7,"Spiritomb wisp collectible."]],
     Subarea:[["Cloudpool Ridge",32,20,"Onix and Roserade alpha route."],["Shrouded Ruins",58,13,"Spiritomb and request routing."],["Diamond Heath",55,26,"Route toward Diamond Settlement."],["Diamond Settlement",64,30,"Diamond Clan hub."],["Solaceon Ruins",49,42,"Unown and story route."],["Golden Lowlands",26,54,"Starting field and early Mirelands research."],["Gapejaw Bog",36,69,"Tangela, Carnivine, Croagunk, and request routes."],["Scarlet Bog",56,58,"Skuntank, digging route, and Enamorus zone."],["Sludge Mound",59,81,"Hippowdon and mud route."],["Bolderoll Slope",71,49,"Rhyhorn and rocky route."],["Lake Valor",82,23,"Azelf and lake route."],["Cottonsedge Prairie",87,64,"Togepi and Togekiss route."],["Droning Meadow",88,76,"Yanma and Yanmega route."],["Ursa's Ring",76,86,"Teddiursa, Ursaring, and Peat Block planning."],["Holm of Trials",43,90,"Torterra, Sliggoo, and Toxicroak route."]],
     Alpha:[[51.6,9.4],[52.2,23.9],[21.6,29.8],[54.1,37.9],[78.4,44.3],[37.2,50.9],[53.5,57.8],[59.5,59.6],[18.5,61.7],[84.5,69.3],[20.5,71.6],[50.4,72.8],[35.4,76.2]],
-    Unown:[[56.4,17.3],[62.6,27.1],[57.8,78.8]],
+    Unown:[["Shrouded Ruins Unown",56.4,17.3,"Unown letter collectible."],["Diamond Settlement Unown",62.6,27.1,"Unown letter collectible."],["Solaceon Ruins Unown",49,42,"Unown letter collectible."],["Sludge Mound Unown",57.8,78.8,"Unown letter collectible."],["Scarlet Bog Unown",56,58,"Unown letter collectible."]],
     Point:[[58.8,30.4],[20.7,37.8],[24.2,39.9]],
-    Story:[[29.4,29.3],[43.6,44.8],[77,78.3],[35.2,87.7]],
+    Story:[["Mirelands Camp Story",20.7,37.8,"Opening Crimson Mirelands expedition route."],["Diamond Settlement Story",58.8,30.4,"Diamond Clan settlement and main story route."],["Solaceon Ruins Story",43.6,44.8,"Main story route through Solaceon Ruins."],["Brava Arena Story",44.4,7.1,"Second Noble route and Lilligant battle in northern Crimson Mirelands."]],
     Character:[[25.1,25.8],[44.3,32.3],[26,38.4],[46.2,43.5],[62.1,68.6]],
-    Camp:[[20.7,37.8],[24.2,39.9]],
-    Gate:[[20.7,37.8],[24.2,39.9],[58.8,30.4],[82,26]],
-    Transition:[[82,26]],
-    Arena:[[77,78.3]],
-    Noble:[[77,78.3]],
+    Camp:[["Mirelands Camp",20.7,37.8,"Starting Crimson Mirelands base camp."],["Bogbound Camp",59,70,"Base camp north of Sludge Mound and south of Scarlet Bog."]],
+    Gate:[["Mirelands Camp Fast Travel",20.7,37.8,"Fast travel point."],["Bogbound Camp Fast Travel",59,70,"Fast travel point."],["Diamond Settlement Fast Travel",58.8,30.4,"Fast travel point."],["Lake Valor Fast Travel",82,26,"Fast travel point."],["Brava Arena Fast Travel",44.4,7.1,"Fast travel point near the second Noble arena."]],
+    Transition:[["Valor Cavern",82,26,"Lake Valor cavern transition."]],
+    Arena:[["Brava Arena",44.4,7.1,"Hisuian Lilligant's Noble arena north of Cloudpool Ridge."]],
+    Noble:[["Hisuian Lilligant",44.4,7.1,"Noble Pokemon battle at Brava Arena."]],
     Request:[[59.4,7.1],[24.2,64.9],[63.5,77.9]],
-    Legendary:[[82,26],[56,58]],
+    Legendary:[["Azelf",82,26,"Post-game lake guardian at Lake Valor."],["Enamorus",56,58,"Appears in Scarlet Bog after the other Forces of Nature."]],
     Farm:[[62,69]]
   },
   "Cobalt Coastlands":{
-    Wisp:[[62.5,4.6],[33.8,8.6],[77.2,10.5],[86.6,17.2],[31.3,21.8],[26.6,24.6],[15.6,25.4],[46.8,27],[92.1,28.5],[50,29.2],[57.3,37.8],[17.3,60],[97.4,62.3],[21.7,67.7],[72.8,68.1],[43.2,73.7],[89,81.8],[35.4,85.4],[64.6,91.6]],
+    Wisp:[["Tidal Passage Wisp",62.5,4.6,"Spiritomb wisp collectible."],["Islespy Shore Wisp",33.8,8.6,"Spiritomb wisp collectible."],["Seagrass Haven Wisp",77.2,10.5,"Spiritomb wisp collectible."],["Firespit Island Wisp",86.6,17.2,"Spiritomb wisp collectible."],["Veilstone Cape Wisp",31.3,21.8,"Spiritomb wisp collectible."],["Veilstone Cape Wisp",26.6,24.6,"Spiritomb wisp collectible."],["Spring Path Wisp",15.6,25.4,"Spiritomb wisp collectible."],["Castaway Shore Wisp",46.8,27,"Spiritomb wisp collectible."],["Lunker's Lair Wisp",92.1,28.5,"Spiritomb wisp collectible."],["Castaway Shore Wisp",50,29.2,"Spiritomb wisp collectible."],["Veilstone Cape Wisp",57.3,37.8,"Spiritomb wisp collectible."],["Ginkgo Landing Wisp",17.3,60,"Spiritomb wisp collectible."],["Seaside Hollow Wisp",97.4,62.3,"Spiritomb wisp collectible."],["Crossing Slope Wisp",21.7,67.7,"Spiritomb wisp collectible."],["Sand's Reach Wisp",72.8,68.1,"Spiritomb wisp collectible."],["Tranquility Cove Wisp",43.2,73.7,"Spiritomb wisp collectible."],["Tombolo Walk Wisp",89,81.8,"Spiritomb wisp collectible."],["Aipom Hill Wisp",35.4,85.4,"Spiritomb wisp collectible."],["Deadwood Haunt Wisp",64.6,91.6,"Spiritomb wisp collectible."],["Hideaway Bay Wisp",55.4,81.1,"Spiritomb wisp collectible."]],
     Subarea:[["Spring Path",18,24,"Highland route and alpha checks."],["Islespy Shore",35,16,"Empoleon and northern shoreline."],["Windbreak Stand",25,39,"Hisuian Growlithe checks."],["Veilstone Cape",56,38,"Machamp, Vulpix, and Growlithe routes."],["Castaway Shore",45,44,"Machoke and Octillery routes."],["Tranquility Cove",58,63,"Mantyke, Qwilfish, and sea routing."],["Seagrass Haven",70,24,"Lumineon and pearl route."],["Lunker's Lair",92,41,"Tentacruel and water alpha route."],["Sand's Reach",81,76,"Gyarados and Thundurus weather route."],["Deadwood Haunt",73,84,"Duskull, Dusclops, and Dusknoir at night."],["Tombolo Walk",91,89,"Chansey and Manaphy route."],["Ginkgo Landing",28,62,"Entry beach and Ginter check route."],["Crossing Slope",20,70,"Purugly and early Coastlands route."],["Aipom Hill",32,82,"Aipom and Ambipom routing."],["Bathers' Lagoon",44,88,"Golduck and southern water route."],["Firespit Island",87,14,"Heatran, Magmar line, and Noble route."]],
     Alpha:[[37.2,13.9],[62.5,16.2],[50.9,17.1],[37.2,18.1],[88.9,19.3],[18.6,28.4],[67.9,29.7],[92.1,34.1],[64.3,35.4],[32.3,45.8],[26.2,50],[91.1,50.4],[63.3,50.6],[31.8,65.8],[77.3,77.6],[55.4,81.1],[92.3,83.9],[43.9,85]],
-    Unown:[[84.1,19],[21.1,24.8],[72.9,76.1]],
+    Unown:[["Firespit Island Unown",84.1,19,"Unown letter collectible."],["Spring Path Unown",21.1,24.8,"Unown letter collectible."],["Sand's Reach Unown",72.9,76.1,"Unown letter collectible."],["Tombolo Walk Unown",91,89,"Unown letter collectible."],["Deadwood Haunt Unown",73,84,"Unown letter collectible."]],
     Point:[[88.4,11.1],[67.1,39.2],[12.7,58.2],[9.5,61.5],[83.2,73.7]],
-    Story:[[34.5,23.3],[43.6,78.1]],
-    Camp:[[12.7,58.2],[83.2,73.7]],
-    Gate:[[12.7,58.2],[83.2,73.7],[88.4,11.1],[67.1,39.2],[9.5,61.5]],
+    Story:[["Beachside Camp Story",12.7,58.2,"Opening Cobalt Coastlands expedition route."],["Firespit Island Story",88.4,11.1,"Third Noble route and Molten Arena story sequence."],["Seaside Hollow Story",97.4,62.3,"The Sea's Legend request destination."]],
+    Camp:[["Beachside Camp",12.7,58.2,"Starting Cobalt Coastlands base camp west of Crossing Slope."],["Coastlands Camp",83.2,73.7,"Base camp in the center of Sand's Reach."]],
+    Gate:[["Beachside Camp Fast Travel",12.7,58.2,"Fast travel point."],["Coastlands Camp Fast Travel",83.2,73.7,"Fast travel point."],["Molten Arena Fast Travel",88.4,11.1,"Fast travel point."],["Seagrass Haven Fast Travel",67.1,39.2,"Fast travel point."],["Spring Path Fast Travel",9.5,61.5,"Fast travel point."]],
     Transition:[[88.4,11.1]],
     Cave:[[97.4,62.3]],
-    Arena:[[88.4,11.1]],
-    Noble:[[88.4,11.1]],
+    Arena:[["Molten Arena",88.4,11.1,"Hisuian Arcanine's Noble arena on Firespit Island."]],
+    Noble:[["Hisuian Arcanine",88.4,11.1,"Noble Pokemon battle at Molten Arena."]],
     Request:[[77.2,10.5],[31.3,21.8],[43.2,73.7]],
-    Legendary:[[86,14],[78,76],[93,63]],
+    Legendary:[["Heatran",86,14,"Post-game plate mission in Firespit Island's Lava Dome Sanctum."],["Thundurus",78,76,"Appears over the Coastlands water during thunderstorm weather."],["Manaphy and Phione",93,63,"Request 66 encounter in Seaside Hollow."]],
     Farm:[[71,33],[27,38]]
   },
   "Coronet Highlands":{
-    Wisp:[[26.1,7.2],[17.1,35.8],[33.7,39.5],[44,40.2],[86.9,46.4],[71.3,46.6],[44.6,47.8],[44,53.4],[35.4,57.4],[71.3,58.2],[83.7,60.4],[68.2,66.3],[32.1,66.7],[13.5,67.6],[93.3,70],[41.2,70.9],[60.9,80.8],[77.4,80.9],[25.6,82.5],[17.5,83.7],[35.7,88.5],[71.1,91.6]],
+    Wisp:[["Moonview Arena Wisp",26.1,7.2,"Spiritomb wisp collectible."],["Cloudcap Pass Wisp",17.1,35.8,"Spiritomb wisp collectible."],["Sacred Plaza Wisp",33.7,39.5,"Spiritomb wisp collectible."],["Celestica Ruins Wisp",44,40.2,"Spiritomb wisp collectible."],["Clamberclaw Cliffs Wisp",86.9,46.4,"Spiritomb wisp collectible."],["Lonely Spring Wisp",71.3,46.6,"Spiritomb wisp collectible."],["Primeval Grotto Wisp",44.6,47.8,"Spiritomb wisp collectible."],["Primeval Grotto Wisp",44,53.4,"Spiritomb wisp collectible."],["Celestica Trail Wisp",35.4,57.4,"Spiritomb wisp collectible."],["Clamberclaw Cliffs Wisp",71.3,58.2,"Spiritomb wisp collectible."],["Lonely Spring Wisp",83.7,60.4,"Spiritomb wisp collectible."],["Sonorous Path Wisp",68.2,66.3,"Spiritomb wisp collectible."],["Celestica Trail Wisp",32.1,66.7,"Spiritomb wisp collectible."],["Bolderoll Ravine Wisp",13.5,67.6,"Spiritomb wisp collectible."],["Heavenward Lookout Wisp",93.3,70,"Spiritomb wisp collectible."],["Fabled Spring Wisp",25.6,82.5,"Spiritomb wisp collectible."],["Fabled Spring Wisp",17.5,83.7,"Spiritomb wisp collectible."],["Ancient Quarry Wisp",60.9,80.8,"Spiritomb wisp collectible."],["Ancient Quarry Wisp",77.4,80.9,"Spiritomb wisp collectible."],["Wayward Wood Wisp",35.7,88.5,"Spiritomb wisp collectible."]],
     Subarea:[["Temple of Sinnoh",25,8,"Late-story and Arceus route."],["Cloudcap Pass",34,22,"High-elevation route toward the summit."],["Sacred Plaza",27,50,"High-level alpha and story route."],["Stonetooth Rows",12,57,"Electric and Ghost checks."],["Bolderoll Ravine",17,68,"Golem, ore, and rocky route."],["Fabled Spring",20,88,"Cleffa, Clefairy, and Clefable night route."],["Celestica Ruins",57,40,"Hisuian Voltorb and upper route."],["Primeval Grotto",45,50,"Probopass and ore-heavy routes."],["Celestica Trail",47,64,"Steelix and cliff routing."],["Sonorous Path",62,73,"Mountain Camp approach."],["Ancient Quarry",52,85,"Bronzong, Goodra, and ore route."],["Wayward Wood",55,94,"Mothim and lower route checks."],["Heavenward Lookout",88,90,"Early Highlands route."],["Clamberclaw Cliffs",83,57,"Gible line, Gligar, and Darkrai request route."],["Lonely Spring",90,61,"Carnivine and water route."]],
     Alpha:[[34.8,33.6],[61.7,41.4],[40.1,45.1],[56.5,47.1],[84.4,49.1],[59.8,52.7],[22.7,54.4],[32.7,58.1],[45.4,58.2],[66.5,61.3],[17.4,64.2],[52.7,80.4],[63.9,85.9],[22,89.1]],
-    Unown:[[58.7,81],[24.7,86.1]],
+    Unown:[["Ancient Quarry Unown",58.7,81,"Unown letter collectible."],["Fabled Spring Unown",24.7,86.1,"Unown letter collectible."],["Wayward Cave Unown",42,59,"Unown letter collectible."],["Celestica Ruins Unown",57,40,"Unown letter collectible."],["Temple of Sinnoh Unown",25,8,"Unown letter collectible."]],
     Point:[[27.7,16.1],[39.9,27.7],[14.1,39.1],[90.6,86.6],[93.3,90]],
-    Story:[[58.3,36.4],[23.9,39],[27.7,60.8],[96.9,92.1]],
+    Story:[["Highlands Camp Story",90.6,86.6,"Opening Coronet Highlands expedition route."],["Celestica Ruins Story",58.3,36.4,"Main story route through Celestica Ruins."],["Sacred Plaza Story",23.9,39,"Main story route near Sacred Plaza."],["Moonview Arena Story",26.1,7.2,"Fourth Noble route and Electrode battle."]],
     Character:[[78.6,55],[59.6,86.8]],
-    Camp:[[90.6,86.6],[78.6,55],[39.9,27.7]],
-    Gate:[[90.6,86.6],[78.6,55],[39.9,27.7],[27.7,16.1],[93.3,90]],
+    Camp:[["Highlands Camp",90.6,86.6,"Starting Coronet Highlands base camp."],["Mountain Camp",78.6,55,"Base camp south of Clamberclaw Cliffs."],["Summit Camp",39.9,27.7,"Base camp near Cloudcap Pass and the summit route."]],
+    Gate:[["Highlands Camp Fast Travel",90.6,86.6,"Fast travel point."],["Mountain Camp Fast Travel",78.6,55,"Fast travel point."],["Summit Camp Fast Travel",39.9,27.7,"Fast travel point."],["Moonview Arena Fast Travel",27.7,16.1,"Fast travel point."],["Heavenward Lookout Fast Travel",93.3,90,"Fast travel point."]],
     Transition:[[26.1,7.2]],
     Cave:[[78.6,55],[59.6,86.8]],
-    Arena:[[26.1,7.2]],
-    Noble:[[26.1,7.2]],
+    Arena:[["Moonview Arena",26.1,7.2,"Hisuian Electrode's Noble arena."]],
+    Noble:[["Hisuian Electrode",26.1,7.2,"Noble Pokemon battle at Moonview Arena."]],
     Request:[[26.1,7.2],[44,40.2],[86.9,46.4],[17.5,83.7]],
-    Legendary:[[37,8],[84,58]],
+    Legendary:[["Cresselia",37,8,"Post-game plate mission at Moonview Arena."],["Darkrai",84,58,"Request 93 near Clamberclaw Cliffs with BDSP save data."]],
     Farm:[[76,82],[20,88]]
   },
   "Alabaster Icelands":{
-    Wisp:[[60.5,7.2],[62.9,10.6],[72.5,20.6],[28,25.7],[39,26.8],[59.9,39],[79.5,50],[68.8,51.7],[17.2,54.9],[31.4,56.2],[66.5,61.3],[40.5,70.5],[24.8,70.6],[16.6,72.7],[38.1,75.4],[44.2,78.5],[57.3,85.5],[7,86.1]],
+    Wisp:[["Snowpoint Temple Wisp",60.5,7.2,"Spiritomb wisp collectible."],["Icepeak Arena Wisp",62.9,10.6,"Spiritomb wisp collectible."],["Lake Acuity Wisp",72.5,20.6,"Spiritomb wisp collectible."],["Glacier Terrace Wisp",28,25.7,"Spiritomb wisp collectible."],["Glacier Terrace Wisp",39,26.8,"Spiritomb wisp collectible."],["Avalugg's Legacy Wisp",59.9,39,"Spiritomb wisp collectible."],["Heart's Crag Wisp",79.5,50,"Spiritomb wisp collectible."],["Pearl Settlement Wisp",68.8,51.7,"Spiritomb wisp collectible."],["Snowfall Hot Spring Wisp",17.2,54.9,"Spiritomb wisp collectible."],["Avalugg's Legacy Wisp",31.4,56.2,"Spiritomb wisp collectible."],["Avalugg's Legacy Wisp",66.5,61.3,"Spiritomb wisp collectible."],["Bonechill Wastes Wisp",40.5,70.5,"Spiritomb wisp collectible."],["Arena's Approach Wisp",24.8,70.6,"Spiritomb wisp collectible."],["Arena's Approach Wisp",16.6,72.7,"Spiritomb wisp collectible."],["Bonechill Wastes Wisp",38.1,75.4,"Spiritomb wisp collectible."],["Bonechill Wastes Wisp",44.2,78.5,"Spiritomb wisp collectible."],["Whiteout Valley Wisp",57.3,85.5,"Spiritomb wisp collectible."],["Avalanche Slopes Wisp",7,86.1,"Spiritomb wisp collectible."],["Icebound Falls Wisp",30,94,"Spiritomb wisp collectible."],["Lake Acuity Wisp",48,18,"Spiritomb wisp collectible."]],
     Subarea:[["Lake Acuity",48,18,"Uxie and lake route."],["Glacier Terrace",21,27,"Lake Acuity approach."],["Snowfall Hot Spring",14,39,"Gallade/Gardevoir route and healing landmark."],["Avalugg's Legacy",49,49,"Ice landmark and central route."],["Pearl Settlement",68,33,"Pearl Clan hub."],["Heart's Crag",82,40,"Gardevoir, Froslass, and Snorunt route."],["Bonechill Wastes",52,73,"Mamoswine, Zorua tunnels, and Tornadus zone."],["Whiteout Valley",55,88,"Starting snow route and Snowfields Camp area."],["Arena's Approach",21,68,"Machamp and late story arena route."],["Avalanche Slopes",15,81,"Abomasnow, Glaceon, Garchomp, and Piloswine route."],["Icebound Falls",30,94,"Lucario and Electabuzz route."],["Icepeak Arena",65,3,"Hisuian Avalugg Noble arena."],["Snowpoint Temple",66,3,"Regigigas and temple route."]],
     Alpha:[[41,23.4],[75.3,32.9],[78,40.7],[58.2,44.5],[46.7,45],[28.4,50.6],[60.9,55.5],[44.5,57.3],[53.8,60.5],[32.9,62.3],[29.1,76.7],[27.8,88],[12.2,90.9]],
-    Unown:[[22.1,42.2],[53.6,42.5],[85.1,43.9],[23.5,83.5],[34.1,84.7],[20.8,86.4]],
+    Unown:[["Snowfall Hot Spring Unown",22.1,42.2,"Unown letter collectible."],["Avalugg's Legacy Unown",53.6,42.5,"Unown letter collectible."],["Heart's Crag Unown",85.1,43.9,"Unown letter collectible."],["Avalanche Slopes Unown",23.5,83.5,"Unown letter collectible."],["Icebound Falls Unown",34.1,84.7,"Unown letter collectible."]],
     Point:[[59.2,11.6],[9.9,49.1],[19.2,54.6],[46.2,54.7],[63.8,61.6],[20.3,75]],
+    Story:[["Snowfields Camp Story",9.9,49.1,"Opening Alabaster Icelands expedition route."],["Pearl Settlement Story",68.8,33,"Pearl Clan story route."],["Icepeak Arena Story",62.9,10.6,"Fifth Noble route and Avalugg battle."]],
     Character:[[46.7,30.5],[70.3,35.3],[34.9,49.2],[42.7,76],[48.7,87.8]],
-    Camp:[[9.9,49.1],[63.8,61.6]],
-    Gate:[[59.2,11.6],[9.9,49.1],[63.8,61.6],[20.3,75]],
+    Camp:[["Snowfields Camp",9.9,49.1,"Starting Alabaster Icelands base camp."],["Icepeak Camp",63.8,61.6,"Base camp northwest of Avalugg's Legacy and southeast of Glacier Terrace."]],
+    Gate:[["Snowpoint Temple Fast Travel",59.2,11.6,"Fast travel point."],["Snowfields Camp Fast Travel",9.9,49.1,"Fast travel point."],["Icepeak Camp Fast Travel",63.8,61.6,"Fast travel point."],["Arena's Approach Fast Travel",20.3,75,"Fast travel point."]],
     Transition:[[59.2,11.6],[62.9,10.6]],
     Cave:[[42.7,76]],
-    Arena:[[62.9,10.6]],
-    Noble:[[62.9,10.6]],
+    Arena:[["Icepeak Arena",62.9,10.6,"Hisuian Avalugg's Noble arena."]],
+    Noble:[["Hisuian Avalugg",62.9,10.6,"Noble Pokemon battle at Icepeak Arena."]],
     Request:[[47.6,23.1],[38.1,75.4]],
-    Legendary:[[48,18],[66,3],[52,82],[52,73]],
+    Legendary:[["Uxie",48,18,"Post-game lake guardian at Lake Acuity."],["Regigigas",66,3,"Post-game plate mission in Snowpoint Temple."],["Giratina",52,82,"Post-game encounter route after the late-story boss sequence."],["Tornadus",52,73,"Appears in blizzard weather after Request 94 starts."]],
     Farm:[[52,82],[18,80]]
   }
 };
 
 exactMapMarkerGroups["Obsidian Fieldlands"].Subarea.push(
-  ["Grandtree Arena",89,86,"Kleavor's Noble arena."],
+  ["Grandtree Arena",82.6,86.5,"Kleavor's Noble arena."],
   ["Moss Rock",71,86,"Leafeon evolution landmark."],
   ["Verity Cavern",20,43,"Lake guardian cavern."]
 );
 exactMapMarkerGroups["Crimson Mirelands"].Subarea.push(
-  ["Brava Arena",77,78,"Hisuian Lilligant's Noble arena."],
+  ["Brava Arena",44.4,7.1,"Hisuian Lilligant's Noble arena."],
   ["Valor Cavern",82,26,"Lake guardian cavern."]
 );
 exactMapMarkerGroups["Cobalt Coastlands"].Subarea.push(
@@ -1779,8 +1787,13 @@ function pokemonDbItemSpriteName(name) {
     .replace(/^-|-$/g, "");
 }
 
+const ARCHIVE_ITEM_NAME_OVERRIDES = {
+  "Poke Ball":"Pok\u00e9 Ball"
+};
+
 function archiveItemName(name) {
-  return name
+  const archiveName = ARCHIVE_ITEM_NAME_OVERRIDES[name] || name;
+  return archiveName
     .replace(/^Poke /, "Pok\u00e9 ")
     .replace(/^XP Candy /, "Exp. Candy ")
     .replace(/['\u2019]/g, "")
@@ -1793,11 +1806,27 @@ function archiveItemSpriteUrl(name, version) {
 }
 
 const ITEM_DIRECT_SPRITES = {
-  "Potion":"https://archives.bulbagarden.net/media/upload/e/e8/Bag_Potion_LA_Sprite.png",
-  "Super Potion":"https://archives.bulbagarden.net/media/upload/5/51/Bag_Super_Potion_LA_Sprite.png",
-  "Hyper Potion":"https://archives.bulbagarden.net/media/upload/f/f4/Bag_Hyper_Potion_LA_Sprite.png",
-  "Heavy Ball":"https://archives.bulbagarden.net/media/upload/c/c9/Bag_Heavy_Ball_LA_Sprite.png",
-  "Leaden Ball":"https://archives.bulbagarden.net/media/upload/e/ed/Bag_Leaden_Ball_LA_Sprite.png",
+  "Poke Ball":archiveItemSpriteUrl("Poke Ball", "LA"),
+  "Great Ball":archiveItemSpriteUrl("Great Ball", "LA"),
+  "Ultra Ball":archiveItemSpriteUrl("Ultra Ball", "LA"),
+  "Heavy Ball":archiveItemSpriteUrl("Heavy Ball", "LA"),
+  "Leaden Ball":archiveItemSpriteUrl("Leaden Ball", "LA"),
+  "Gigaton Ball":archiveItemSpriteUrl("Gigaton Ball", "LA"),
+  "Feather Ball":archiveItemSpriteUrl("Feather Ball", "LA"),
+  "Wing Ball":archiveItemSpriteUrl("Wing Ball", "LA"),
+  "Jet Ball":archiveItemSpriteUrl("Jet Ball", "LA"),
+  "Origin Ball":archiveItemSpriteUrl("Origin Ball", "LA"),
+  "Potion":archiveItemSpriteUrl("Potion", "LA"),
+  "Super Potion":archiveItemSpriteUrl("Super Potion", "LA"),
+  "Hyper Potion":archiveItemSpriteUrl("Hyper Potion", "LA"),
+  "Max Potion":archiveItemSpriteUrl("Max Potion", "LA"),
+  "Full Restore":archiveItemSpriteUrl("Full Restore", "LA"),
+  "Revive":archiveItemSpriteUrl("Revive", "LA"),
+  "Max Revive":archiveItemSpriteUrl("Max Revive", "LA"),
+  "Remedy":archiveItemSpriteUrl("Remedy", "LA"),
+  "Fine Remedy":archiveItemSpriteUrl("Fine Remedy", "LA"),
+  "Superb Remedy":archiveItemSpriteUrl("Superb Remedy", "LA"),
+  "Full Heal":archiveItemSpriteUrl("Full Heal", "LA"),
   "Smoke Bomb":"https://archives.bulbagarden.net/media/upload/1/1c/Bag_Smoke_Bomb_LA_Sprite.png",
   "Scatter Bang":"https://archives.bulbagarden.net/media/upload/3/32/Bag_Scatter_Bang_LA_Sprite.png",
   "Sticky Glob":"https://archives.bulbagarden.net/media/upload/9/99/Bag_Sticky_Glob_LA_Sprite.png",
@@ -1805,19 +1834,26 @@ const ITEM_DIRECT_SPRITES = {
   "Honey Cake":"https://archives.bulbagarden.net/media/upload/7/71/Bag_Honey_Cake_LA_Sprite.png",
   "Grain Cake":"https://archives.bulbagarden.net/media/upload/9/91/Bag_Grain_Cake_LA_Sprite.png",
   "Bean Cake":"https://archives.bulbagarden.net/media/upload/d/d7/Bag_Bean_Cake_LA_Sprite.png",
-  "Salt Cake":"https://archives.bulbagarden.net/media/upload/e/e0/Bag_Salt_Cake_LA_Sprite.png"
-};
-
-const ITEM_ALIAS_SPRITES = {
-  "Leaden Ball":"heavy-ball",
-  "Smoke Bomb":"smoke-ball",
-  "Scatter Bang":"poke-ball",
-  "Sticky Glob":"sticky-barb",
-  "Mushroom Cake":"tiny-mushroom",
-  "Honey Cake":"honey",
-  "Grain Cake":"grain",
-  "Bean Cake":"bean",
-  "Salt Cake":"salt"
+  "Salt Cake":"https://archives.bulbagarden.net/media/upload/e/e0/Bag_Salt_Cake_LA_Sprite.png",
+  "Star Piece":archiveItemSpriteUrl("Star Piece", "LA"),
+  "Linking Cord":archiveItemSpriteUrl("Linking Cord", "LA"),
+  "Metal Coat":archiveItemSpriteUrl("Metal Coat", "LA"),
+  "Black Augurite":archiveItemSpriteUrl("Black Augurite", "LA"),
+  "Protector":archiveItemSpriteUrl("Protector", "LA"),
+  "Upgrade":"https://archives.bulbagarden.net/media/upload/f/f1/Bag_Upgrade_LA_Sprite.png",
+  "Dubious Disc":archiveItemSpriteUrl("Dubious Disc", "LA"),
+  "Magmarizer":archiveItemSpriteUrl("Magmarizer", "LA"),
+  "Electirizer":archiveItemSpriteUrl("Electirizer", "LA"),
+  "Reaper Cloth":archiveItemSpriteUrl("Reaper Cloth", "LA"),
+  "Peat Block":archiveItemSpriteUrl("Peat Block", "LA"),
+  "Razor Claw":archiveItemSpriteUrl("Razor Claw", "LA"),
+  "Razor Fang":archiveItemSpriteUrl("Razor Fang", "LA"),
+  "Shiny Stone":archiveItemSpriteUrl("Shiny Stone", "LA"),
+  "Moon Stone":archiveItemSpriteUrl("Moon Stone", "LA"),
+  "Sun Stone":archiveItemSpriteUrl("Sun Stone", "LA"),
+  "Leaf Stone":archiveItemSpriteUrl("Leaf Stone", "LA"),
+  "Ice Stone":archiveItemSpriteUrl("Ice Stone", "LA"),
+  "Dawn Stone":archiveItemSpriteUrl("Dawn Stone", "LA")
 };
 
 function itemSpriteHtml(name) {
@@ -1827,8 +1863,7 @@ function itemSpriteHtml(name) {
     archiveItemSpriteUrl(name, "LA"),
     archiveItemSpriteUrl(name, "SV"),
     `https://img.pokemondb.net/sprites/items/${pokemonDbItemSpriteName(name)}.png`,
-    ITEM_ALIAS_SPRITES[name] ? `https://img.pokemondb.net/sprites/items/${ITEM_ALIAS_SPRITES[name]}.png` : "",
-    "https://img.pokemondb.net/sprites/items/poke-ball.png"
+    ""
   ];
   return `<span class="item-cell"><img ${fallbackImageAttrs(sources)} alt=""><span>${name}</span></span>`;
 }
@@ -2474,13 +2509,11 @@ function randomMoveTypePenalty(type, teamMoveTypeCounts) {
 }
 
 function randomTeamCandidates() {
-  return POKEDEX
+  return [...new Set(RANDOM_TEAM_POOL)]
+    .map(name => findPokemonByName(name))
+    .filter(Boolean)
     .filter(pokemon => !RANDOM_TEAM_EXCLUSIONS.has(pokemon.name))
-    .filter(pokemon => learnableMovesForPokemon(pokemon.name).length)
-    .filter(pokemon => {
-      const stats = pokemonStats(pokemon.name);
-      return stats.length && statTotal(stats) > 460;
-    });
+    .filter(pokemon => learnableMovesForPokemon(pokemon.name).length);
 }
 
 function randomTeamPokemonScore(pokemon, teamTypeCounts) {
@@ -2568,6 +2601,12 @@ function randomizeTeam() {
     .map(pokemon => ({pokemon:pokemon.name, moves:randomMovesetForPokemon(pokemon.name, teamMoveTypeCounts)}));
   applyTeamState(state);
   writeCurrentTeamDraft();
+}
+
+function updateFloatingJumpVisibility() {
+  const button = $("jumpToCoverage");
+  if (!button) return;
+  button.classList.toggle("is-visible", window.scrollY > 520);
 }
 
 function renderMoveRecommendations(team, moveTypes) {
@@ -2707,6 +2746,16 @@ function mapCountsHtml(region, enabled, visibleCount) {
   return `<div class="map-counts"><strong>${visibleCount} markers visible</strong>${rows}</div>`;
 }
 
+function selectedCollectibleListHtml(points, selectedIndex) {
+  const selected = points[selectedIndex];
+  if (!selected || !["Wisp", "Unown"].includes(selected[0])) return "";
+  const label = selected[0] === "Wisp" ? "Wisps" : "Unown";
+  const rows = points
+    .map((point, index) => ({point, index}))
+    .filter(({point}) => point[0] === selected[0]);
+  return `<div class="map-list collectible-list"><h4>${label}</h4>${rows.map(({point, index}) => `<button data-list-index="${index}">${point[1]} <span class="tag">${point[0]}</span></button>`).join("")}</div>`;
+}
+
 function clampMapView() {
   const map = $("regionMap");
   if (!map) return;
@@ -2800,11 +2849,12 @@ function renderMap() {
       return;
     }
     document.querySelectorAll(".marker").forEach((m,i) => m.classList.toggle("active", i === index));
-    $("mapDetails").innerHTML = `<span class="tag">${p[0]}</span><h3>${pokemonTitleLinks(p[1])}</h3><p><strong>${p[2]}</strong></p><p>${p[3]}</p>${mapCountsHtml(region, enabled, points.length)}<div class="map-list">${points.map((x,i) => `<button data-list-index="${i}">${x[1]} <span class="tag">${x[0]}</span></button>`).join("")}</div>`;
+    $("mapDetails").innerHTML = `<span class="tag">${p[0]}</span><h3>${pokemonTitleLinks(p[1])}</h3><p><strong>${p[2]}</strong></p><p>${p[3]}</p>${mapCountsHtml(region, enabled, points.length)}${selectedCollectibleListHtml(points, index)}`;
     document.querySelectorAll("[data-list-index]").forEach(btn => btn.addEventListener("click", () => setDetail(+btn.dataset.listIndex)));
   };
   document.querySelectorAll(".marker").forEach(btn => btn.addEventListener("click", () => setDetail(+btn.dataset.index)));
-  setDetail(0);
+  const defaultIndex = points.findIndex(point => !["Wisp", "Unown"].includes(point[0]));
+  setDetail(defaultIndex === -1 ? 0 : defaultIndex);
 }
 
 function renderRegionButtons() {
@@ -3030,6 +3080,10 @@ function wireSearch() {
     const target = $("coverageTable") || $("coverageSummary");
     if (target) target.scrollIntoView({behavior:"smooth", block:"end"});
   });
+  if ($("jumpToCoverage")) {
+    updateFloatingJumpVisibility();
+    window.addEventListener("scroll", updateFloatingJumpVisibility, {passive:true});
+  }
   if ($("savedTeams")) $("savedTeams").addEventListener("change", () => {
     if ($("teamName")) $("teamName").value = $("savedTeams").value;
     writeCurrentTeamDraft();
