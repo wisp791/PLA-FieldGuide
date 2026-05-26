@@ -181,6 +181,7 @@ const RANDOM_TEAM_EXCLUSIONS = new Set([
 ]);
 
 const RANDOM_TEAM_STARTERS = new Set(["Decidueye", "Typhlosion", "Samurott"]);
+const RANDOM_TEAM_EEVEELUTIONS = new Set(["Vaporeon", "Jolteon", "Flareon", "Espeon", "Umbreon", "Leafeon", "Glaceon", "Sylveon"]);
 
 const POKEDEX_TSV = `1	Rowlet	Grass/Flying
 2	Dartrix	Grass/Flying
@@ -435,6 +436,7 @@ const TEAM_AUTOSAVE_KEY = "plaCurrentTeam";
 let selectedRecommendationSlot = 0;
 let floatingJumpDismissed = false;
 let floatingJumpLastY = 0;
+let mapFocusName = "";
 const mapViewState = {region:"", scale:1, x:0, y:0, dragging:false, startX:0, startY:0, originX:0, originY:0};
 
 const balls = [
@@ -1351,7 +1353,7 @@ const exactMapMarkerGroups = {
   "Obsidian Fieldlands":{
     Wisp:[["Horseshoe Plains Wisp",71.7,11.8,"Spiritomb wisp collectible."],["Aspiration Hill Wisp",43,23,"Spiritomb wisp collectible."],["Floaro Gardens Wisp",34.6,21.2,"Spiritomb wisp collectible."],["Grueling Grove Wisp",85,14,"Spiritomb wisp collectible."],["Worn Bridge Wisp",91.1,24.3,"Spiritomb wisp collectible."],["Worn Bridge Wisp",76.7,32,"Spiritomb wisp collectible."],["Lake Verity Wisp",25.9,36.5,"Spiritomb wisp collectible."],["Obsidian Falls Wisp",90.8,41.4,"Spiritomb wisp collectible."],["Deertrack Heights Wisp",53.3,49.5,"Spiritomb wisp collectible."],["Obsidian Falls Wisp",82.5,52.6,"Spiritomb wisp collectible."],["Deertrack Heights Wisp",63.4,55.1,"Spiritomb wisp collectible."],["Oreburrow Tunnel Wisp",96.7,57.7,"Spiritomb wisp collectible."],["Windswept Run Wisp",46.5,64.4,"Spiritomb wisp collectible."],["Nature's Pantry Wisp",60.7,67.7,"Spiritomb wisp collectible."],["Sandgem Flats Wisp",21.5,69.4,"Spiritomb wisp collectible."],["The Heartwood Wisp",81.5,70.7,"Spiritomb wisp collectible."],["The Heartwood Wisp",71.5,80.8,"Spiritomb wisp collectible."],["Ramanas Island Wisp",37.9,83.5,"Spiritomb wisp collectible."],["Grandtree Arena Wisp",60.9,90.3,"Spiritomb wisp collectible."],["Ramanas Island Wisp",47.1,91,"Spiritomb wisp collectible."]],
     Subarea:[["Floaro Gardens",18,17,"Shinx line, Shaymin request area, and western alpha checks."],["Aspiration Hill",43,23,"Early tutorial route and first field gathering loop."],["Horseshoe Plains",63,22,"Bidoof, Starly, Shinx, Ponyta, and early research."],["Grueling Grove",85,14,"Bug-type route and alpha Heracross area."],["Deertrack Path",55,39,"Main path between the first camp routes and Deertrack Heights."],["Deertrack Heights",64,48,"Heights Camp route and early Geodude/Kricketot checks."],["Windswept Run",51,57,"Floatzel and river-crossing route."],["Nature's Pantry",61,69,"Cherubi tree checks and alpha Parasect/Kricketune route."],["Worn Bridge",79,35,"Floatzel, Bibarel, and bridge route."],["Obsidian Falls",88,52,"Alpha Blissey XP route and waterfall checks."],["Oreburrow Tunnel",92,62,"Cave route toward Obsidian Falls."],["The Heartwood",83,82,"Bug and Grass routes near the Grandtree approach."],["Tidewater Dam",68,79,"Water route and Bibarel checks."],["Sandgem Flats",23,75,"Snorlax, Alakazam, and ore route."],["Ramanas Island",39,82,"Post-game alpha loop and Landorus route."],["Lake Verity",19,43,"Mesprit route and water checks."]],
-    Alpha:[["Alpha Rapidash",67.4,13.4,"Fixed alpha in Horseshoe Plains."],["Alpha Heracross",86.2,14.5,"Fixed alpha in Grueling Grove."],["Alpha Luxio",25.9,23.5,"Fixed alpha near Floaro Gardens."],["Alpha Floatzel",71.5,29.1,"Fixed alpha near Worn Bridge."],["Alpha Magikarp",95.8,34.2,"Fixed alpha in the Obsidian Falls water route."],["Alpha Stantler",71.3,42.3,"Fixed alpha near Deertrack Heights."],["Alpha Gyarados",19.1,44.5,"Fixed alpha at Lake Verity."],["Alpha Alakazam",39.3,44.6,"Fixed alpha near Sandgem Flats."],["Alpha Lopunny",72.7,52.7,"Fixed alpha near The Heartwood."],["Alpha Staravia",52.3,56.1,"Fixed alpha around Windswept Run."],["Alpha Graveler",89,60.6,"Fixed alpha near Oreburrow Tunnel."],["Alpha Golbat",95.9,63.4,"Fixed alpha in Oreburrow Tunnel."],["Alpha Parasect",59.9,71.3,"Fixed alpha near Nature's Pantry."],["Alpha Snorlax",20.1,72.2,"Fixed alpha in Sandgem Flats."],["Alpha Scyther",87.8,87.8,"Fixed alpha near Grandtree Arena."],["Alpha Infernape",43,82,"Fixed alpha on Ramanas Island."],["Alpha Blissey",88,55,"Fixed alpha at Obsidian Falls."],["Alpha Bibarel",68,79,"Fixed alpha near Tidewater Dam."],["Alpha Kricketune",60.7,67.7,"Fixed alpha near Nature's Pantry."],["Alpha Torterra",39,82,"Post-game alpha on Ramanas Island."]],
+    Alpha:[["Alpha Rapidash",67.4,13.4,"Fixed alpha in Horseshoe Plains."],["Alpha Heracross",86.2,14.5,"Fixed alpha in Grueling Grove."],["Alpha Luxio",25.9,23.5,"Fixed alpha near Floaro Gardens."],["Alpha Floatzel",71.5,29.1,"Fixed alpha near Worn Bridge."],["Alpha Magikarp",95.8,34.2,"Fixed alpha in the Obsidian Falls water route."],["Alpha Stantler",71.3,42.3,"Fixed alpha near Deertrack Heights."],["Alpha Gyarados",19.1,44.5,"Fixed alpha at Lake Verity."],["Alpha Alakazam",22.6,66.6,"Fixed alpha in Sandgem Flats."],["Alpha Lopunny",72.7,52.7,"Fixed alpha near The Heartwood."],["Alpha Staravia",52.3,56.1,"Fixed alpha around Windswept Run."],["Alpha Graveler",89.2,63.4,"Fixed alpha near Oreburrow Tunnel."],["Alpha Golbat",95.9,67.5,"Fixed alpha in Oreburrow Tunnel."],["Alpha Parasect",59.9,71.3,"Fixed alpha near Nature's Pantry."],["Alpha Snorlax",20.1,72.2,"Fixed alpha in Sandgem Flats."],["Alpha Scyther",87.8,87.8,"Fixed alpha near Grandtree Arena."],["Alpha Infernape",43,82,"Fixed alpha on Ramanas Island."],["Alpha Blissey",73.5,51.5,"Fixed alpha at Obsidian Falls."],["Alpha Bibarel",68,79,"Fixed alpha near Tidewater Dam."],["Alpha Kricketune",60.3,76.3,"Fixed alpha near Nature's Pantry."],["Alpha Torterra",39,82,"Post-game alpha on Ramanas Island."]],
     Unown:[["Grueling Grove Unown",96.6,15.8,"Unown letter collectible."],["Obsidian Falls Unown",95.8,42.1,"Unown letter collectible."],["Oreburrow Tunnel Unown",94.9,47.8,"Unown letter collectible."],["The Heartwood Unown",91.9,83.2,"Unown letter collectible."],["Lake Verity Unown",19,43,"Unown letter collectible."]],
     Story:[["Fieldlands Camp Story",38.5,12.3,"Opening Fieldlands expeditions and tutorial routes."],["Heights Camp Story",61.5,49.2,"Important early camp in the center of Deertrack Heights."],["Sandgem Flats Story",23,75,"Story/research routing marker placed at Sandgem Flats."],["Kleavor Arena Story",82.6,86.5,"First Noble route and battle at Grandtree Arena."]],
     Character:[["Munchlax encounter",69.4,56.8,"Early story alpha-problem route marker near Deertrack Heights."],["Lian",82.6,86.5,"Pearl Clan warden for Kleavor at Grandtree Arena."]],
@@ -1363,7 +1365,7 @@ const exactMapMarkerGroups = {
     Noble:[["Kleavor",82.6,86.5,"Noble Pokemon battle at Grandtree Arena."]],
     Request:[["Request 19: A Peculiar Ponyta",34.6,21.2,"Guaranteed shiny Ponyta request route near Horseshoe Plains."],["Bothersome Bidoof route",38.5,12.3,"Early request route that begins from Jubilife and the Fieldlands entry."],["Mushroom Cake request",60.7,67.7,"Food-lure request route near Nature's Pantry."]],
     Legendary:[["Mesprit",19,43,"Post-game lake guardian at Lake Verity."],["Landorus",40,82,"Appears on Ramanas Island during Request 94."],["Shaymin",18,17,"Request 92 in Floaro Gardens with Sword/Shield save data."]],
-    Farm:[["Alpha Blissey XP route",88,55,"High-HP Blissey route at Obsidian Falls."],["Horseshoe Plains research loop",58,25,"Fast early research route."],["Ramanas Island alpha loop",39,82,"Post-game alpha and sellable loop."]]
+    Farm:[["Alpha Blissey XP route",73.5,51.5,"High-HP Blissey route at Obsidian Falls."],["Horseshoe Plains research loop",58,25,"Fast early research route."],["Ramanas Island alpha loop",39,82,"Post-game alpha and sellable loop."]]
   },
   "Jubilife Village":{
     Wisp:[["Training Grounds Wisp",28.1,5.8,"Spiritomb wisp collectible."],["Galaxy Hall Wisp",42.6,20.1,"Spiritomb wisp collectible."],["General Store Wisp",59.8,24.7,"Spiritomb wisp collectible."],["Craftworks Wisp",46.1,32.8,"Spiritomb wisp collectible."],["Pastures Wisp",26.6,32.9,"Spiritomb wisp collectible."],["Farm Wisp",29.5,74,"Spiritomb wisp collectible."],["Prelude Beach Wisp",32.6,77,"Spiritomb wisp collectible."]],
@@ -1814,7 +1816,7 @@ const ITEM_DIRECT_SPRITES = {
   "Great Ball":archiveItemSpriteUrl("Great Ball", "LA"),
   "Ultra Ball":archiveItemSpriteUrl("Ultra Ball", "LA"),
   "Heavy Ball":archiveItemSpriteUrl("Heavy Ball", "LA"),
-  "Leaden Ball":"https://archives.bulbagarden.net/media/upload/e/ed/Bag_Leaden_Ball_LA_Sprite.png",
+  "Leaden Ball":"assets/items/leaden-ball-la.png",
   "Gigaton Ball":archiveItemSpriteUrl("Gigaton Ball", "LA"),
   "Feather Ball":archiveItemSpriteUrl("Feather Ball", "LA"),
   "Wing Ball":archiveItemSpriteUrl("Wing Ball", "LA"),
@@ -2581,6 +2583,7 @@ function randomizeTeam() {
   while (selected.length < 6 && remaining.length) {
     const choice = remaining.shift();
     if (RANDOM_TEAM_STARTERS.has(choice.name) && selected.some(pokemon => RANDOM_TEAM_STARTERS.has(pokemon.name))) continue;
+    if (RANDOM_TEAM_EEVEELUTIONS.has(choice.name) && selected.filter(pokemon => RANDOM_TEAM_EEVEELUTIONS.has(pokemon.name)).length >= 2) continue;
     selected.push(choice);
   }
   const teamMoveTypeCounts = new Map();
@@ -2736,14 +2739,14 @@ function mapCountsHtml(region, enabled, visibleCount) {
   return `<div class="map-counts"><strong>${visibleCount} markers visible</strong>${rows}</div>`;
 }
 
-function selectedCollectibleListHtml(points, selectedIndex) {
+function selectedMarkerListHtml(points, selectedIndex) {
   const selected = points[selectedIndex];
-  if (!selected || !["Wisp", "Unown"].includes(selected[0])) return "";
-  const label = selected[0] === "Wisp" ? "Wisps" : "Unown";
+  if (!selected) return "";
+  const label = mapKindName(selected[0]);
   const rows = points
     .map((point, index) => ({point, index}))
     .filter(({point}) => point[0] === selected[0]);
-  return `<div class="map-list collectible-list"><h4>${label}</h4>${rows.map(({point, index}) => `<button data-list-index="${index}">${point[1]} <span class="tag">${point[0]}</span></button>`).join("")}</div>`;
+  return `<div class="map-list collectible-list"><h4>${label}</h4>${rows.map(({point, index}) => `<button class="${index === selectedIndex ? "active" : ""}" data-list-index="${index}">${point[1]} <span class="tag">${point[0]}</span></button>`).join("")}</div>`;
 }
 
 function clampMapView() {
@@ -2765,8 +2768,18 @@ function applyMapTransform() {
   const layer = $("mapLayer");
   if (!layer) return;
   clampMapView();
+  const map = $("regionMap");
+  const rect = map?.getBoundingClientRect();
   $("regionMap")?.style.setProperty("--map-scale", mapViewState.scale);
   layer.style.transform = `translate(${mapViewState.x}px, ${mapViewState.y}px) scale(${mapViewState.scale})`;
+  if (rect) {
+    document.querySelectorAll(".marker").forEach(marker => {
+      const x = (+marker.dataset.x / 100) * rect.width * mapViewState.scale + mapViewState.x;
+      const y = (+marker.dataset.y / 100) * rect.height * mapViewState.scale + mapViewState.y;
+      marker.style.left = `${x}px`;
+      marker.style.top = `${y}px`;
+    });
+  }
   if ($("mapZoomLabel")) $("mapZoomLabel").textContent = `${Math.round(mapViewState.scale * 100)}%`;
   syncMapDetailsHeight();
 }
@@ -2838,7 +2851,7 @@ function renderMap() {
   const points = mapData[region].filter(p => enabled.has(p[0]));
   $("regionMap").style.setProperty("--map-aspect", MAP_ASPECTS[region] || "1 / 1");
   const mapImage = MAP_IMAGES[region] ? `url('${MAP_IMAGES[region].replaceAll("'", "\\'")}')` : "linear-gradient(135deg, rgba(112, 166, 109, .18), rgba(90, 153, 199, .14))";
-  $("regionMap").innerHTML = `<div id="mapLayer" class="map-layer" style="--map-image:${mapImage}">${points.map((p,i) => `<button class="marker" data-index="${i}" data-kind="${p[0]}" style="left:${p[4]}%;top:${p[5]}%" title="${p[1]}">${mapMarkerLabel(p)}</button>`).join("")}</div>`;
+  $("regionMap").innerHTML = `<div id="mapLayer" class="map-layer" style="--map-image:${mapImage}"></div><div id="mapMarkerLayer" class="map-marker-layer">${points.map((p,i) => `<button class="marker" data-index="${i}" data-kind="${p[0]}" data-x="${p[4]}" data-y="${p[5]}" title="${p[1]}">${mapMarkerLabel(p)}</button>`).join("")}</div>`;
   bindMapInteractions();
   applyMapTransform();
   const setDetail = index => {
@@ -2848,12 +2861,15 @@ function renderMap() {
       return;
     }
     document.querySelectorAll(".marker").forEach((m,i) => m.classList.toggle("active", i === index));
-    $("mapDetails").innerHTML = `<span class="tag">${p[0]}</span><h3>${pokemonTitleLinks(p[1])}</h3><p><strong>${p[2]}</strong></p><p>${p[3]}</p>${mapCountsHtml(region, enabled, points.length)}${selectedCollectibleListHtml(points, index)}`;
+    $("mapDetails").innerHTML = `<span class="tag">${p[0]}</span><h3>${pokemonTitleLinks(p[1])}</h3><p><strong>${p[2]}</strong></p><p>${p[3]}</p>${mapCountsHtml(region, enabled, points.length)}${selectedMarkerListHtml(points, index)}`;
     syncMapDetailsHeight();
     document.querySelectorAll("[data-list-index]").forEach(btn => btn.addEventListener("click", () => setDetail(+btn.dataset.listIndex)));
   };
   document.querySelectorAll(".marker").forEach(btn => btn.addEventListener("click", () => setDetail(+btn.dataset.index)));
-  const defaultIndex = points.findIndex(point => !["Wisp", "Unown"].includes(point[0]));
+  const requestedMarker = normalizeSearch(mapFocusName);
+  let defaultIndex = requestedMarker ? points.findIndex(point => normalizeSearch(point[1]) === requestedMarker) : -1;
+  if (defaultIndex === -1 && requestedMarker) defaultIndex = points.findIndex(point => normalizeSearch(point[1]).includes(requestedMarker));
+  if (defaultIndex === -1) defaultIndex = points.findIndex(point => !["Wisp", "Unown"].includes(point[0]));
   setDetail(defaultIndex === -1 ? 0 : defaultIndex);
 }
 
@@ -2874,7 +2890,7 @@ function renderRegionButtons() {
 }
 
 function renderStaticTables() {
-  renderTable("ballTable", ["Ball","Family","Craft cost","Best use"], balls);
+  renderTable("ballTable", ["Ball","Family","Craft cost","Best use"], balls.map(row => [itemSpriteHtml(row[0]), row[1], row[2], row[3]]));
   renderTable("rankTable", ["Rank","Obedience level","Notable unlocks"], ranks);
   renderTable("hisuianTable", ["Pokemon","Type","Location","Method / notes"], hisuian.map(row => [pokemonListLinks(row[0]), row[1], row[2], row[3]]));
   renderTable("evolutionTable", ["Item / method","Evolutions","Source / condition"], evolutions.map(row => [itemSpriteHtml(row[0]), pokemonListLinks(row[1]), row[2]]));
@@ -2950,10 +2966,25 @@ function renderPokemonDetail() {
   </div>`;
 }
 
+function normalizeSearch(value) {
+  return String(value || "").toLowerCase().replace(/[^a-z0-9]+/g, "");
+}
+
+function searchScore(item, query, normalizedQuery) {
+  const title = item.title.toLowerCase();
+  const normalizedTitle = normalizeSearch(item.title);
+  const body = `${item.kind} ${item.text}`.toLowerCase();
+  if (title === query || normalizedTitle === normalizedQuery) return 0;
+  if (title.startsWith(query) || normalizedTitle.startsWith(normalizedQuery)) return 1;
+  if (title.includes(query) || normalizedTitle.includes(normalizedQuery)) return 2;
+  if (body.includes(query) || normalizeSearch(body).includes(normalizedQuery)) return 3;
+  return 99;
+}
+
 function searchIndex() {
   const pokemonItems = POKEDEX.map(p => ({title:p.name, url:`pokemon.html?pokemon=${encodeURIComponent(p.name)}`, kind:"Pokemon", text:`#${String(p.num).padStart(3,"0")} ${p.types.join("/")}`}));
   const metaItems = meta.map(p => ({title:`${p.name} moveset`, url:`pokemon.html?pokemon=${encodeURIComponent(p.name)}`, kind:"Moveset", text:recommendedMovesetForPokemon(p.name).join(", ") || p.moves}));
-  const mapItems = Object.entries(mapData).flatMap(([region, points]) => points.map(p => ({title:p[1], url:`maps.html?region=${encodeURIComponent(region)}`, kind:p[0], text:`${region}: ${p[2]}`})));
+  const mapItems = Object.entries(mapData).flatMap(([region, points]) => points.map(p => ({title:p[1], url:`maps.html?region=${encodeURIComponent(region)}&marker=${encodeURIComponent(p[1])}`, kind:p[0], text:`${region}: ${p[2]}`})));
   const requestItems = requests.map(r => ({title:`Request ${r[0]}: ${r[1]}`, url:"requests.html", kind:"Request", text:r[3]}));
   const itemItems = [...balls.map(b => ({title:b[0], url:"items.html", kind:"Ball", text:b[3]})), ...recipes.map(r => ({title:r[0], url:"resources.html", kind:r[1], text:r[2]}))];
   return [...pageLinks, ...pokemonItems, ...metaItems, ...mapItems, ...requestItems, ...itemItems];
@@ -2971,7 +3002,13 @@ function wireGlobalSearch() {
       close();
       return;
     }
-    const results = items.filter(item => `${item.title} ${item.kind} ${item.text}`.toLowerCase().includes(q)).slice(0, 10);
+    const nq = normalizeSearch(q);
+    const results = items
+      .map((item, index) => ({item, index, score:searchScore(item, q, nq)}))
+      .filter(result => result.score < 99)
+      .sort((a,b) => a.score - b.score || a.index - b.index)
+      .slice(0, 10)
+      .map(result => result.item);
     box.innerHTML = results.length ? results.map(item => `<a class="search-result" href="${item.url}"><span><strong>${item.title}</strong><br><small>${item.text}</small></span><small>${item.kind}</small></a>`).join("") : `<div class="search-result"><span>No matches</span></div>`;
     box.classList.add("open");
   });
@@ -3007,10 +3044,20 @@ function wireSearch() {
   if ($("dexSearch")) $("dexSearch").addEventListener("input", renderDex);
   if ($("dexType")) $("dexType").addEventListener("change", renderDex);
   if ($("regionSelect")) $("regionSelect").addEventListener("change", () => {
+    mapFocusName = "";
     renderMap();
     renderRegionButtons();
   });
   document.querySelectorAll(".map-controls input").forEach(input => input.addEventListener("change", renderMap));
+  if ($("mapSelectAll")) $("mapSelectAll").addEventListener("click", () => {
+    document.querySelectorAll(".map-controls input[type='checkbox']").forEach(input => { input.checked = true; });
+    renderMap();
+  });
+  if ($("mapClearAll")) $("mapClearAll").addEventListener("click", () => {
+    mapFocusName = "";
+    document.querySelectorAll(".map-controls input[type='checkbox']").forEach(input => { input.checked = false; });
+    renderMap();
+  });
   if ($("mapZoomIn")) $("mapZoomIn").addEventListener("click", () => setMapZoom(mapViewState.scale * 1.25));
   if ($("mapZoomOut")) $("mapZoomOut").addEventListener("click", () => setMapZoom(mapViewState.scale * .8));
   if ($("mapReset")) $("mapReset").addEventListener("click", () => resetMapView($("regionSelect")?.value || mapViewState.region));
@@ -3125,8 +3172,16 @@ function init() {
   renderSavedTeams();
   restoreCurrentTeamDraft();
   if ($("dexType")) $("dexType").innerHTML = `<option value="all">All types</option>` + TYPES.map(t => `<option>${t}</option>`).join("");
-  const regionParam = new URLSearchParams(location.search).get("region");
+  const params = new URLSearchParams(location.search);
+  const regionParam = params.get("region");
+  mapFocusName = params.get("marker") || "";
   if (regionParam && $("regionSelect") && mapData[regionParam]) $("regionSelect").value = regionParam;
+  if (mapFocusName && $("regionSelect")) {
+    const region = $("regionSelect").value;
+    const focusPoint = mapData[region]?.find(point => normalizeSearch(point[1]) === normalizeSearch(mapFocusName));
+    const focusInput = focusPoint ? document.querySelector(`.map-controls input[value="${focusPoint[0]}"]`) : null;
+    if (focusInput) focusInput.checked = true;
+  }
   renderDex();
   renderRegionButtons();
   renderMap();

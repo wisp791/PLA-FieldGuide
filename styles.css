@@ -113,6 +113,15 @@ a:hover { text-decoration: underline; }
 
 .brand:hover { text-decoration: none; }
 
+.brand::before {
+  background: url("https://img.pokemondb.net/sprites/home/normal/arceus.png") center / contain no-repeat;
+  content: "";
+  flex: 0 0 auto;
+  height: 38px;
+  margin-right: 10px;
+  width: 38px;
+}
+
 .brand-mark {
   align-items: center;
   background: linear-gradient(135deg, var(--gold), #866a2b);
@@ -621,6 +630,11 @@ td {
   min-width: 44px;
 }
 
+.map-filter-actions {
+  display: inline-flex;
+  gap: 8px;
+}
+
 #mapZoomLabel {
   color: var(--gold);
   font-family: var(--heading-font);
@@ -907,6 +921,17 @@ td {
   cursor: grabbing;
 }
 
+.map-layer,
+.map-marker-layer {
+  border-radius: inherit;
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
 .map-layer {
   background:
     linear-gradient(180deg, rgba(7, 10, 9, .06), rgba(7, 10, 9, .2)),
@@ -916,15 +941,12 @@ td {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover, 108% 108%, cover, cover;
-  border-radius: inherit;
-  height: 100%;
-  left: 0;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
   transform-origin: 0 0;
-  width: 100%;
   will-change: transform;
+}
+
+.map-marker-layer {
+  pointer-events: none;
 }
 
 .map-layer::before {
@@ -968,8 +990,9 @@ td {
   font-weight: 900;
   height: 25px;
   justify-content: center;
+  pointer-events: auto;
   position: absolute;
-  transform: translate(-50%, -50%) scale(calc(1 / var(--map-scale, 1)));
+  transform: translate(-50%, -50%);
   transform-origin: center;
   width: 25px;
 }
@@ -1007,7 +1030,7 @@ td {
 .marker:hover,
 .marker.active {
   outline: 3px solid rgba(255, 255, 255, .42);
-  transform: translate(-50%, -50%) scale(calc(1.08 / var(--map-scale, 1)));
+  transform: translate(-50%, -50%) scale(1.08);
 }
 
 .map-details h3 {
@@ -1068,6 +1091,11 @@ td {
   border-color: rgba(223, 185, 95, .48);
   box-shadow: 0 0 0 2px rgba(223, 185, 95, .1);
   transform: translateY(-1px);
+}
+
+.map-list button.active {
+  background: rgba(223, 185, 95, .16);
+  border-color: rgba(223, 185, 95, .62);
 }
 
 .type-buttons {
@@ -1787,6 +1815,12 @@ footer {
   margin: 0;
 }
 
+.collapsible-section[open] summary {
+  border-bottom: 1px solid rgba(222, 232, 214, .12);
+  margin-bottom: 22px;
+  padding-bottom: 14px;
+}
+
 .collapsible-section summary span {
   color: var(--gold);
   font-size: 13px;
@@ -1868,6 +1902,14 @@ footer {
   .global-search {
     max-width: none;
     width: 100%;
+  }
+
+  .map-filter-actions {
+    width: 100%;
+  }
+
+  .map-filter-actions .button {
+    flex: 1;
   }
 
   .search-band {
