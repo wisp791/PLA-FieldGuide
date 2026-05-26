@@ -849,23 +849,38 @@ td {
 }
 
 .detail-stat-chart {
+  box-sizing: border-box;
   max-width: 780px;
-  padding: 12px 0;
+  padding: 14px 18px 16px;
 }
 
 .detail-stat-chart .stat-row {
-  gap: 9px;
-  grid-template-columns: 76px 42px minmax(120px, 1fr);
+  gap: 12px;
+  grid-template-columns: 92px 46px minmax(0, 1fr);
   min-height: 31px;
+  padding-inline: 2px;
 }
 
 .detail-stat-chart .stat-track {
   height: 16px;
-  max-width: 285px;
+  max-width: none;
+  width: 100%;
+}
+
+.detail-stat-chart .stat-total {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 92px 1fr;
+  padding: 12px 2px 0;
+}
+
+.detail-stat-chart .stat-total strong {
+  justify-self: end;
+  padding-right: 2px;
 }
 
 .map-shell {
-  align-items: stretch;
+  align-items: start;
   display: grid;
   gap: 16px;
   grid-template-columns: minmax(0, 1fr) minmax(250px, 330px);
@@ -1002,7 +1017,8 @@ td {
 .map-details {
   display: flex;
   flex-direction: column;
-  max-height: 100%;
+  height: var(--map-box-height, auto);
+  max-height: var(--map-box-height, none);
   min-height: 0;
   overflow: hidden;
 }
@@ -1783,6 +1799,10 @@ footer {
   gap: 10px;
 }
 
+#hisuian .table-wrap {
+  margin-top: 16px;
+}
+
 @media (max-width: 1500px) {
   .team-builder-layout {
     grid-template-columns: 1fr;
@@ -1804,6 +1824,11 @@ footer {
 
   .map-shell {
     grid-template-columns: 1fr;
+  }
+
+  .map-details {
+    height: auto;
+    max-height: none;
   }
 
   .grid.two,

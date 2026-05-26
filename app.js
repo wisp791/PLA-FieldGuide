@@ -180,6 +180,8 @@ const RANDOM_TEAM_EXCLUSIONS = new Set([
   "Arceus", "Phione", "Manaphy", "Shaymin", "Darkrai", "Unown"
 ]);
 
+const RANDOM_TEAM_STARTERS = new Set(["Decidueye", "Typhlosion", "Samurott"]);
+
 const POKEDEX_TSV = `1	Rowlet	Grass/Flying
 2	Dartrix	Grass/Flying
 3	Decidueye	Grass/Fighting
@@ -431,6 +433,8 @@ const POKEDEX = POKEDEX_TSV.trim().split("\n").map(row => {
 const TEAM_STORAGE_KEY = "plaSavedTeams";
 const TEAM_AUTOSAVE_KEY = "plaCurrentTeam";
 let selectedRecommendationSlot = 0;
+let floatingJumpDismissed = false;
+let floatingJumpLastY = 0;
 const mapViewState = {region:"", scale:1, x:0, y:0, dragging:false, startX:0, startY:0, originX:0, originY:0};
 
 const balls = [
@@ -1347,12 +1351,12 @@ const exactMapMarkerGroups = {
   "Obsidian Fieldlands":{
     Wisp:[["Horseshoe Plains Wisp",71.7,11.8,"Spiritomb wisp collectible."],["Aspiration Hill Wisp",43,23,"Spiritomb wisp collectible."],["Floaro Gardens Wisp",34.6,21.2,"Spiritomb wisp collectible."],["Grueling Grove Wisp",85,14,"Spiritomb wisp collectible."],["Worn Bridge Wisp",91.1,24.3,"Spiritomb wisp collectible."],["Worn Bridge Wisp",76.7,32,"Spiritomb wisp collectible."],["Lake Verity Wisp",25.9,36.5,"Spiritomb wisp collectible."],["Obsidian Falls Wisp",90.8,41.4,"Spiritomb wisp collectible."],["Deertrack Heights Wisp",53.3,49.5,"Spiritomb wisp collectible."],["Obsidian Falls Wisp",82.5,52.6,"Spiritomb wisp collectible."],["Deertrack Heights Wisp",63.4,55.1,"Spiritomb wisp collectible."],["Oreburrow Tunnel Wisp",96.7,57.7,"Spiritomb wisp collectible."],["Windswept Run Wisp",46.5,64.4,"Spiritomb wisp collectible."],["Nature's Pantry Wisp",60.7,67.7,"Spiritomb wisp collectible."],["Sandgem Flats Wisp",21.5,69.4,"Spiritomb wisp collectible."],["The Heartwood Wisp",81.5,70.7,"Spiritomb wisp collectible."],["The Heartwood Wisp",71.5,80.8,"Spiritomb wisp collectible."],["Ramanas Island Wisp",37.9,83.5,"Spiritomb wisp collectible."],["Grandtree Arena Wisp",60.9,90.3,"Spiritomb wisp collectible."],["Ramanas Island Wisp",47.1,91,"Spiritomb wisp collectible."]],
     Subarea:[["Floaro Gardens",18,17,"Shinx line, Shaymin request area, and western alpha checks."],["Aspiration Hill",43,23,"Early tutorial route and first field gathering loop."],["Horseshoe Plains",63,22,"Bidoof, Starly, Shinx, Ponyta, and early research."],["Grueling Grove",85,14,"Bug-type route and alpha Heracross area."],["Deertrack Path",55,39,"Main path between the first camp routes and Deertrack Heights."],["Deertrack Heights",64,48,"Heights Camp route and early Geodude/Kricketot checks."],["Windswept Run",51,57,"Floatzel and river-crossing route."],["Nature's Pantry",61,69,"Cherubi tree checks and alpha Parasect/Kricketune route."],["Worn Bridge",79,35,"Floatzel, Bibarel, and bridge route."],["Obsidian Falls",88,52,"Alpha Blissey XP route and waterfall checks."],["Oreburrow Tunnel",92,62,"Cave route toward Obsidian Falls."],["The Heartwood",83,82,"Bug and Grass routes near the Grandtree approach."],["Tidewater Dam",68,79,"Water route and Bibarel checks."],["Sandgem Flats",23,75,"Snorlax, Alakazam, and ore route."],["Ramanas Island",39,82,"Post-game alpha loop and Landorus route."],["Lake Verity",19,43,"Mesprit route and water checks."]],
-    Alpha:[["Alpha Rapidash",67.4,13.4,"Fixed alpha in Horseshoe Plains."],["Alpha Heracross",86.2,14.5,"Fixed alpha in Grueling Grove."],["Alpha Luxio",25.9,23.5,"Fixed alpha near Floaro Gardens."],["Alpha Floatzel",71.5,29.1,"Fixed alpha near Worn Bridge."],["Alpha Magikarp",95.8,34.2,"Fixed alpha in the Obsidian Falls water route."],["Alpha Stantler",71.3,42.3,"Fixed alpha near Deertrack Heights."],["Alpha Gyarados",19.1,44.5,"Fixed alpha at Lake Verity."],["Alpha Alakazam",39.3,44.6,"Fixed alpha near Sandgem Flats."],["Alpha Lopunny",72.7,52.7,"Fixed alpha near The Heartwood."],["Alpha Staravia",52.3,56.1,"Fixed alpha around Windswept Run."],["Alpha Graveler",89,60.6,"Fixed alpha near Oreburrow Tunnel."],["Alpha Golbat",95.9,63.4,"Fixed alpha in Oreburrow Tunnel."],["Alpha Parasect",59.9,71.3,"Fixed alpha near Nature's Pantry."],["Alpha Snorlax",20.1,72.2,"Fixed alpha in Sandgem Flats."],["Alpha Scyther",87.8,87.8,"Fixed alpha near Grandtree Arena."],["Alpha Infernape",47.1,91,"Fixed alpha on Ramanas Island."],["Alpha Blissey",88,55,"Fixed alpha at Obsidian Falls."],["Alpha Bibarel",68,79,"Fixed alpha near Tidewater Dam."],["Alpha Kricketune",60.7,67.7,"Fixed alpha near Nature's Pantry."],["Alpha Torterra",39,82,"Post-game alpha on Ramanas Island."]],
+    Alpha:[["Alpha Rapidash",67.4,13.4,"Fixed alpha in Horseshoe Plains."],["Alpha Heracross",86.2,14.5,"Fixed alpha in Grueling Grove."],["Alpha Luxio",25.9,23.5,"Fixed alpha near Floaro Gardens."],["Alpha Floatzel",71.5,29.1,"Fixed alpha near Worn Bridge."],["Alpha Magikarp",95.8,34.2,"Fixed alpha in the Obsidian Falls water route."],["Alpha Stantler",71.3,42.3,"Fixed alpha near Deertrack Heights."],["Alpha Gyarados",19.1,44.5,"Fixed alpha at Lake Verity."],["Alpha Alakazam",39.3,44.6,"Fixed alpha near Sandgem Flats."],["Alpha Lopunny",72.7,52.7,"Fixed alpha near The Heartwood."],["Alpha Staravia",52.3,56.1,"Fixed alpha around Windswept Run."],["Alpha Graveler",89,60.6,"Fixed alpha near Oreburrow Tunnel."],["Alpha Golbat",95.9,63.4,"Fixed alpha in Oreburrow Tunnel."],["Alpha Parasect",59.9,71.3,"Fixed alpha near Nature's Pantry."],["Alpha Snorlax",20.1,72.2,"Fixed alpha in Sandgem Flats."],["Alpha Scyther",87.8,87.8,"Fixed alpha near Grandtree Arena."],["Alpha Infernape",43,82,"Fixed alpha on Ramanas Island."],["Alpha Blissey",88,55,"Fixed alpha at Obsidian Falls."],["Alpha Bibarel",68,79,"Fixed alpha near Tidewater Dam."],["Alpha Kricketune",60.7,67.7,"Fixed alpha near Nature's Pantry."],["Alpha Torterra",39,82,"Post-game alpha on Ramanas Island."]],
     Unown:[["Grueling Grove Unown",96.6,15.8,"Unown letter collectible."],["Obsidian Falls Unown",95.8,42.1,"Unown letter collectible."],["Oreburrow Tunnel Unown",94.9,47.8,"Unown letter collectible."],["The Heartwood Unown",91.9,83.2,"Unown letter collectible."],["Lake Verity Unown",19,43,"Unown letter collectible."]],
-    Story:[["Fieldlands Camp Story",38.5,12.3,"Opening Fieldlands expeditions and tutorial routes."],["Heights Camp Story",63.5,49.5,"Important early camp in the center of Deertrack Heights."],["Sandgem Flats Story",23,75,"Story/research routing marker placed at Sandgem Flats."],["Kleavor Arena Story",82.6,86.5,"First Noble route and battle at Grandtree Arena."]],
+    Story:[["Fieldlands Camp Story",38.5,12.3,"Opening Fieldlands expeditions and tutorial routes."],["Heights Camp Story",61.5,49.2,"Important early camp in the center of Deertrack Heights."],["Sandgem Flats Story",23,75,"Story/research routing marker placed at Sandgem Flats."],["Kleavor Arena Story",82.6,86.5,"First Noble route and battle at Grandtree Arena."]],
     Character:[["Munchlax encounter",69.4,56.8,"Early story alpha-problem route marker near Deertrack Heights."],["Lian",82.6,86.5,"Pearl Clan warden for Kleavor at Grandtree Arena."]],
-    Camp:[["Fieldlands Camp",38.5,12.3,"Main Obsidian Fieldlands base camp."],["Heights Camp",63.5,49.5,"Base camp in the center of Deertrack Heights."]],
-    Gate:[["Fieldlands Camp Fast Travel",38.5,12.3,"Fast travel point."],["Heights Camp Fast Travel",63.5,49.5,"Fast travel point."],["Lake Verity Fast Travel",21.9,44.5,"Fast travel point."],["Ramanas Island Fast Travel",31.7,77.4,"Fast travel point."],["Grandtree Arena Fast Travel",82.6,86.5,"Fast travel point near Kleavor's arena."]],
+    Camp:[["Fieldlands Camp",38.5,12.3,"Main Obsidian Fieldlands base camp."],["Heights Camp",61.5,49.2,"Base camp in the center of Deertrack Heights."]],
+    Gate:[["Fieldlands Camp Fast Travel",38.5,12.3,"Fast travel point."],["Heights Camp Fast Travel",61.5,49.2,"Fast travel point."],["Ramanas Island Fast Travel",31.7,77.4,"Fast travel point."],["Grandtree Arena Fast Travel",82.6,86.5,"Fast travel point near Kleavor's arena."]],
     Transition:[["Fieldlands Entrance",39.6,14.8,"Transition point."],["Oreburrow Tunnel Transition",94.9,47.8,"Tunnel transition."],["Grandtree Arena Transition",82.6,86.5,"Grandtree route transition."]],
     Cave:[["Oreburrow Tunnel",94.9,47.8,"Cave route toward Obsidian Falls."]],
     Arena:[["Grandtree Arena",82.6,86.5,"Kleavor's Noble arena."]],
@@ -1810,7 +1814,7 @@ const ITEM_DIRECT_SPRITES = {
   "Great Ball":archiveItemSpriteUrl("Great Ball", "LA"),
   "Ultra Ball":archiveItemSpriteUrl("Ultra Ball", "LA"),
   "Heavy Ball":archiveItemSpriteUrl("Heavy Ball", "LA"),
-  "Leaden Ball":archiveItemSpriteUrl("Leaden Ball", "LA"),
+  "Leaden Ball":"https://archives.bulbagarden.net/media/upload/e/ed/Bag_Leaden_Ball_LA_Sprite.png",
   "Gigaton Ball":archiveItemSpriteUrl("Gigaton Ball", "LA"),
   "Feather Ball":archiveItemSpriteUrl("Feather Ball", "LA"),
   "Wing Ball":archiveItemSpriteUrl("Wing Ball", "LA"),
@@ -2516,16 +2520,6 @@ function randomTeamCandidates() {
     .filter(pokemon => learnableMovesForPokemon(pokemon.name).length);
 }
 
-function randomTeamPokemonScore(pokemon, teamTypeCounts) {
-  const stats = pokemonStats(pokemon.name);
-  const preferred = RANDOM_TEAM_POOL.some(name => findPokemonByName(name)?.name === pokemon.name) ? 95 : 0;
-  const offense = Math.max(stats[1] || 0, stats[3] || 0);
-  const speed = stats[5] || 0;
-  const bulk = (stats[0] || 0) + (stats[2] || 0) + (stats[4] || 0);
-  const duplicateTypePenalty = pokemon.types.reduce((sum, type) => sum + (teamTypeCounts.get(type) || 0) * 48, 0);
-  return statTotal(stats) + preferred + offense * .5 + speed * .25 + bulk * .12 - duplicateTypePenalty + Math.random() * 110;
-}
-
 function randomMovesetForPokemon(name, teamMoveTypeCounts = new Map()) {
   const pokemon = findPokemonByName(name);
   if (!pokemon) return [];
@@ -2584,17 +2578,10 @@ function randomizeTeam() {
   if (!$("teamBuilder")) return;
   const remaining = shuffle(randomTeamCandidates());
   const selected = [];
-  const teamTypeCounts = new Map();
   while (selected.length < 6 && remaining.length) {
-    const ranked = remaining
-      .map(pokemon => ({pokemon, score:randomTeamPokemonScore(pokemon, teamTypeCounts)}))
-      .sort((a,b) => b.score - a.score);
-    const shortList = ranked.slice(0, Math.min(7, ranked.length));
-    const choice = shortList[Math.floor(Math.random() * shortList.length)].pokemon;
+    const choice = remaining.shift();
+    if (RANDOM_TEAM_STARTERS.has(choice.name) && selected.some(pokemon => RANDOM_TEAM_STARTERS.has(pokemon.name))) continue;
     selected.push(choice);
-    choice.types.forEach(type => bumpTypeCount(teamTypeCounts, type));
-    const index = remaining.findIndex(pokemon => pokemon.name === choice.name);
-    if (index !== -1) remaining.splice(index, 1);
   }
   const teamMoveTypeCounts = new Map();
   const state = selected
@@ -2606,7 +2593,10 @@ function randomizeTeam() {
 function updateFloatingJumpVisibility() {
   const button = $("jumpToCoverage");
   if (!button) return;
-  button.classList.toggle("is-visible", window.scrollY > 520);
+  const y = window.scrollY;
+  if (y < 160 || (floatingJumpDismissed && y < floatingJumpLastY - 300 && y < 900)) floatingJumpDismissed = false;
+  button.classList.toggle("is-visible", y > 520 && !floatingJumpDismissed);
+  floatingJumpLastY = y;
 }
 
 function renderMoveRecommendations(team, moveTypes) {
@@ -2778,6 +2768,15 @@ function applyMapTransform() {
   $("regionMap")?.style.setProperty("--map-scale", mapViewState.scale);
   layer.style.transform = `translate(${mapViewState.x}px, ${mapViewState.y}px) scale(${mapViewState.scale})`;
   if ($("mapZoomLabel")) $("mapZoomLabel").textContent = `${Math.round(mapViewState.scale * 100)}%`;
+  syncMapDetailsHeight();
+}
+
+function syncMapDetailsHeight() {
+  const map = $("regionMap");
+  const details = $("mapDetails");
+  if (!map || !details) return;
+  const height = Math.round(map.getBoundingClientRect().height);
+  if (height) details.style.setProperty("--map-box-height", `${height}px`);
 }
 
 function setMapZoom(nextScale, anchorX = null, anchorY = null) {
@@ -2850,6 +2849,7 @@ function renderMap() {
     }
     document.querySelectorAll(".marker").forEach((m,i) => m.classList.toggle("active", i === index));
     $("mapDetails").innerHTML = `<span class="tag">${p[0]}</span><h3>${pokemonTitleLinks(p[1])}</h3><p><strong>${p[2]}</strong></p><p>${p[3]}</p>${mapCountsHtml(region, enabled, points.length)}${selectedCollectibleListHtml(points, index)}`;
+    syncMapDetailsHeight();
     document.querySelectorAll("[data-list-index]").forEach(btn => btn.addEventListener("click", () => setDetail(+btn.dataset.listIndex)));
   };
   document.querySelectorAll(".marker").forEach(btn => btn.addEventListener("click", () => setDetail(+btn.dataset.index)));
@@ -3014,6 +3014,7 @@ function wireSearch() {
   if ($("mapZoomIn")) $("mapZoomIn").addEventListener("click", () => setMapZoom(mapViewState.scale * 1.25));
   if ($("mapZoomOut")) $("mapZoomOut").addEventListener("click", () => setMapZoom(mapViewState.scale * .8));
   if ($("mapReset")) $("mapReset").addEventListener("click", () => resetMapView($("regionSelect")?.value || mapViewState.region));
+  if ($("regionMap")) window.addEventListener("resize", syncMapDetailsHeight, {passive:true});
   if ($("teamBuilder")) {
     $("teamBuilder").addEventListener("click", e => {
       selectRecommendationSlot(e.target.closest(".team-slot"));
@@ -3077,6 +3078,8 @@ function wireSearch() {
   if ($("deleteTeam")) $("deleteTeam").addEventListener("click", deleteSelectedTeam);
   if ($("randomTeam")) $("randomTeam").addEventListener("click", randomizeTeam);
   if ($("jumpToCoverage")) $("jumpToCoverage").addEventListener("click", () => {
+    floatingJumpDismissed = true;
+    updateFloatingJumpVisibility();
     const target = $("coverageTable") || $("coverageSummary");
     if (target) target.scrollIntoView({behavior:"smooth", block:"end"});
   });

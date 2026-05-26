@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Pokemon | Pokemon Legends: Arceus Field Guide</title>
-  <link rel="stylesheet" href="styles.css?v=20260525b">
+  <link rel="stylesheet" href="styles.css?v=20260525d">
 </head>
 <body data-page="pokemon">
   <header class="site-header">
@@ -15,7 +15,6 @@
   <main class="page-main">
     <section class="page-hero"><p class="eyebrow">Pokemon index</p><h1>Viable teams, Hisuian forms, evolution methods, and all 242 Pokemon.</h1></section>
     <section class="guide-section" id="pokemonDetail"></section>
-    <section class="guide-section pokemon-jump"><h2>Pokemon Lookup</h2><div class="page-jumps"><a class="button" href="#meta">Viable movesets</a><a class="button" href="#hisuian">Hisuian forms</a><a class="button primary" href="#fullDex">Full Hisui Pokedex</a></div></section>
     <details class="guide-section collapsible-section" open><summary><h2>Starters</h2><span>Show / hide</span></summary><div class="cards" id="starterCards"></div></details>
     <section class="guide-section" id="meta">
       <h2>Meta Team & Viable Movesets</h2>
@@ -23,13 +22,13 @@
       <div class="controls"><input id="metaSearch" type="search" placeholder="Filter viable Pokemon"><select id="metaRole" aria-label="Role filter"><option value="all">All roles</option><option value="Early">Early-game</option><option value="Midgame">Midgame</option><option value="Late">Late-game</option><option value="Sweeper">Sweeper</option><option value="Bulky">Bulky</option><option value="Coverage">Coverage</option></select></div>
       <div class="cards stat-cards" id="metaCards"></div>
     </section>
-    <details class="guide-section collapsible-section" id="hisuian"><summary><h2>Hisuian Forms & New Evolutions</h2><span>Show / hide</span></summary><div class="table-wrap"><table id="hisuianTable"></table></div></details>
-    <section class="guide-section" id="fullDex"><h2>Full Hisui Pokedex</h2><div class="controls"><input id="dexSearch" type="search" placeholder="Search all 242 Pokemon"><select id="dexType" aria-label="Type filter"></select></div><div class="pokedex-grid" id="pokedexGrid"></div></section>
+    <section class="guide-section" id="hisuian"><h2>Hisuian Forms & New Evolutions</h2><div class="table-wrap"><table id="hisuianTable"></table></div></section>
+    <details class="guide-section collapsible-section" id="fullDex" open><summary><h2>Full Hisui Pokedex</h2><span>Show / hide</span></summary><div class="controls"><input id="dexSearch" type="search" placeholder="Search all 242 Pokemon"><select id="dexType" aria-label="Type filter"></select></div><div class="pokedex-grid" id="pokedexGrid"></div></details>
   </main>
   <footer><p>Fan-made guide. Data checked against Pokemon Database, Serebii, Bulbapedia, Game8, and RotomLabs.</p></footer>
   <script src="pla-learnsets.js"></script>
   <script src="pla-move-details.js"></script>
   <script src="pla-base-stats.js"></script>
-  <script src="app.js?v=20260525b"></script>
+  <script src="app.js?v=20260525d"></script>
 </body>
 </html>
