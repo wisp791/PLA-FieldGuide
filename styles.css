@@ -1480,6 +1480,10 @@ body[data-page="resources"] .guide-section {
 .type-matchup {
   font-family: "Google Sans", "Product Sans", Montserrat, "Trebuchet MS", sans-serif;
   font-weight: 900;
+  padding-left: 0;
+  padding-right: 0;
+  text-align: center;
+  vertical-align: middle;
 }
 
 .type-matchup-2 {

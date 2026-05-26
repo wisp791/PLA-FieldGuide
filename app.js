@@ -1353,7 +1353,7 @@ const exactMapMarkerGroups = {
   "Obsidian Fieldlands":{
     Wisp:[["Horseshoe Plains Wisp",71.7,11.8,"Spiritomb wisp collectible."],["Aspiration Hill Wisp",43,23,"Spiritomb wisp collectible."],["Floaro Gardens Wisp",34.6,21.2,"Spiritomb wisp collectible."],["Grueling Grove Wisp",85,14,"Spiritomb wisp collectible."],["Worn Bridge Wisp",91.1,24.3,"Spiritomb wisp collectible."],["Worn Bridge Wisp",76.7,32,"Spiritomb wisp collectible."],["Lake Verity Wisp",25.9,36.5,"Spiritomb wisp collectible."],["Obsidian Falls Wisp",90.8,41.4,"Spiritomb wisp collectible."],["Deertrack Heights Wisp",53.3,49.5,"Spiritomb wisp collectible."],["Obsidian Falls Wisp",82.5,52.6,"Spiritomb wisp collectible."],["Deertrack Heights Wisp",63.4,55.1,"Spiritomb wisp collectible."],["Oreburrow Tunnel Wisp",96.7,57.7,"Spiritomb wisp collectible."],["Windswept Run Wisp",46.5,64.4,"Spiritomb wisp collectible."],["Nature's Pantry Wisp",60.7,67.7,"Spiritomb wisp collectible."],["Sandgem Flats Wisp",21.5,69.4,"Spiritomb wisp collectible."],["The Heartwood Wisp",81.5,70.7,"Spiritomb wisp collectible."],["The Heartwood Wisp",71.5,80.8,"Spiritomb wisp collectible."],["Ramanas Island Wisp",37.9,83.5,"Spiritomb wisp collectible."],["Grandtree Arena Wisp",60.9,90.3,"Spiritomb wisp collectible."],["Ramanas Island Wisp",47.1,91,"Spiritomb wisp collectible."]],
     Subarea:[["Floaro Gardens",18,17,"Shinx line, Shaymin request area, and western alpha checks."],["Aspiration Hill",43,23,"Early tutorial route and first field gathering loop."],["Horseshoe Plains",63,22,"Bidoof, Starly, Shinx, Ponyta, and early research."],["Grueling Grove",85,14,"Bug-type route and alpha Heracross area."],["Deertrack Path",55,39,"Main path between the first camp routes and Deertrack Heights."],["Deertrack Heights",64,48,"Heights Camp route and early Geodude/Kricketot checks."],["Windswept Run",51,57,"Floatzel and river-crossing route."],["Nature's Pantry",61,69,"Cherubi tree checks and alpha Parasect/Kricketune route."],["Worn Bridge",79,35,"Floatzel, Bibarel, and bridge route."],["Obsidian Falls",88,52,"Alpha Blissey XP route and waterfall checks."],["Oreburrow Tunnel",92,62,"Cave route toward Obsidian Falls."],["The Heartwood",83,82,"Bug and Grass routes near the Grandtree approach."],["Tidewater Dam",68,79,"Water route and Bibarel checks."],["Sandgem Flats",23,75,"Snorlax, Alakazam, and ore route."],["Ramanas Island",39,82,"Post-game alpha loop and Landorus route."],["Lake Verity",19,43,"Mesprit route and water checks."]],
-    Alpha:[["Alpha Rapidash",67.4,13.4,"Fixed alpha in Horseshoe Plains."],["Alpha Heracross",86.2,14.5,"Fixed alpha in Grueling Grove."],["Alpha Luxio",25.9,23.5,"Fixed alpha near Floaro Gardens."],["Alpha Floatzel",71.5,29.1,"Fixed alpha near Worn Bridge."],["Alpha Magikarp",95.8,34.2,"Fixed alpha in the Obsidian Falls water route."],["Alpha Stantler",71.3,42.3,"Fixed alpha near Deertrack Heights."],["Alpha Gyarados",19.1,44.5,"Fixed alpha at Lake Verity."],["Alpha Alakazam",22.6,66.6,"Fixed alpha in Sandgem Flats."],["Alpha Lopunny",72.7,52.7,"Fixed alpha near The Heartwood."],["Alpha Staravia",52.3,56.1,"Fixed alpha around Windswept Run."],["Alpha Graveler",89.2,63.4,"Fixed alpha near Oreburrow Tunnel."],["Alpha Golbat",95.9,67.5,"Fixed alpha in Oreburrow Tunnel."],["Alpha Parasect",59.9,71.3,"Fixed alpha near Nature's Pantry."],["Alpha Snorlax",20.1,72.2,"Fixed alpha in Sandgem Flats."],["Alpha Scyther",87.8,87.8,"Fixed alpha near Grandtree Arena."],["Alpha Infernape",43,82,"Fixed alpha on Ramanas Island."],["Alpha Blissey",73.5,51.5,"Fixed alpha at Obsidian Falls."],["Alpha Bibarel",68,79,"Fixed alpha near Tidewater Dam."],["Alpha Kricketune",60.3,76.3,"Fixed alpha near Nature's Pantry."],["Alpha Torterra",39,82,"Post-game alpha on Ramanas Island."]],
+    Alpha:[["Alpha Rapidash",67.4,13.4,"Fixed alpha in Horseshoe Plains."],["Alpha Heracross",86.2,14.5,"Fixed alpha in Grueling Grove."],["Alpha Luxio",25.9,23.5,"Fixed alpha near Floaro Gardens."],["Alpha Floatzel",71.5,29.1,"Fixed alpha near Worn Bridge."],["Alpha Magikarp",93.4,35.8,"Fixed alpha in the Obsidian Falls water route."],["Alpha Stantler",71.3,42.3,"Fixed alpha near Deertrack Heights."],["Alpha Gyarados",19.1,44.5,"Fixed alpha at Lake Verity."],["Alpha Alakazam",22.5,66.3,"Fixed alpha in Sandgem Flats."],["Alpha Lopunny",74.6,56.2,"Fixed alpha near The Heartwood."],["Alpha Staravia",52.3,56.1,"Fixed alpha around Windswept Run."],["Alpha Graveler",88.4,57.5,"Fixed alpha near Oreburrow Tunnel."],["Alpha Golbat",94.1,64.8,"Fixed alpha in Oreburrow Tunnel."],["Alpha Parasect",60.2,64.2,"Fixed alpha near Nature's Pantry."],["Alpha Snorlax",20.6,68.6,"Fixed alpha in Sandgem Flats."],["Alpha Scyther",87.8,87.8,"Fixed alpha near Grandtree Arena."],["Alpha Infernape",43.8,78.8,"Fixed alpha on Ramanas Island."],["Alpha Blissey",78.2,51.3,"Fixed alpha at Obsidian Falls."],["Alpha Bibarel",68,79,"Fixed alpha near Tidewater Dam."],["Alpha Kricketune",59.5,68.4,"Fixed alpha near Nature's Pantry."],["Alpha Torterra",38.6,80.7,"Post-game alpha on Ramanas Island."]],
     Unown:[["Grueling Grove Unown",96.6,15.8,"Unown letter collectible."],["Obsidian Falls Unown",95.8,42.1,"Unown letter collectible."],["Oreburrow Tunnel Unown",94.9,47.8,"Unown letter collectible."],["The Heartwood Unown",91.9,83.2,"Unown letter collectible."],["Lake Verity Unown",19,43,"Unown letter collectible."]],
     Story:[["Fieldlands Camp Story",38.5,12.3,"Opening Fieldlands expeditions and tutorial routes."],["Heights Camp Story",61.5,49.2,"Important early camp in the center of Deertrack Heights."],["Sandgem Flats Story",23,75,"Story/research routing marker placed at Sandgem Flats."],["Kleavor Arena Story",82.6,86.5,"First Noble route and battle at Grandtree Arena."]],
     Character:[["Munchlax encounter",69.4,56.8,"Early story alpha-problem route marker near Deertrack Heights."],["Lian",82.6,86.5,"Pearl Clan warden for Kleavor at Grandtree Arena."]],
@@ -1365,7 +1365,7 @@ const exactMapMarkerGroups = {
     Noble:[["Kleavor",82.6,86.5,"Noble Pokemon battle at Grandtree Arena."]],
     Request:[["Request 19: A Peculiar Ponyta",34.6,21.2,"Guaranteed shiny Ponyta request route near Horseshoe Plains."],["Bothersome Bidoof route",38.5,12.3,"Early request route that begins from Jubilife and the Fieldlands entry."],["Mushroom Cake request",60.7,67.7,"Food-lure request route near Nature's Pantry."]],
     Legendary:[["Mesprit",19,43,"Post-game lake guardian at Lake Verity."],["Landorus",40,82,"Appears on Ramanas Island during Request 94."],["Shaymin",18,17,"Request 92 in Floaro Gardens with Sword/Shield save data."]],
-    Farm:[["Alpha Blissey XP route",73.5,51.5,"High-HP Blissey route at Obsidian Falls."],["Horseshoe Plains research loop",58,25,"Fast early research route."],["Ramanas Island alpha loop",39,82,"Post-game alpha and sellable loop."]]
+    Farm:[["Alpha Blissey XP route",78.2,51.3,"High-HP Blissey route at Obsidian Falls."],["Horseshoe Plains research loop",58,25,"Fast early research route."],["Ramanas Island alpha loop",39,80.7,"Post-game alpha and sellable loop."]]
   },
   "Jubilife Village":{
     Wisp:[["Training Grounds Wisp",28.1,5.8,"Spiritomb wisp collectible."],["Galaxy Hall Wisp",42.6,20.1,"Spiritomb wisp collectible."],["General Store Wisp",59.8,24.7,"Spiritomb wisp collectible."],["Craftworks Wisp",46.1,32.8,"Spiritomb wisp collectible."],["Pastures Wisp",26.6,32.9,"Spiritomb wisp collectible."],["Farm Wisp",29.5,74,"Spiritomb wisp collectible."],["Prelude Beach Wisp",32.6,77,"Spiritomb wisp collectible."]],
@@ -1701,19 +1701,6 @@ function statTotal(stats) {
   return stats.reduce((sum, stat) => sum + stat, 0);
 }
 
-function roleForPokemon(pokemon, stats = pokemonStats(pokemon.name)) {
-  if (!stats.length) return "Field research";
-  const [hp, atk, def, spa, spd, spe] = stats;
-  const bulk = hp + def + spd;
-  const offense = Math.max(atk, spa);
-  const style = atk > spa + 20 ? "Physical" : spa > atk + 20 ? "Special" : "Mixed";
-  if (bulk >= 320 && offense >= 100) return `${style} bulky attacker`;
-  if (spe >= 95 && offense >= 100) return `${style} sweeper`;
-  if (bulk >= 310) return "Bulky support";
-  if (offense >= 100) return `${style} attacker`;
-  return statTotal(stats) >= 450 ? "Flexible story pick" : "Research and dex utility";
-}
-
 function defensiveProfile(types) {
   const rows = TYPES.map(type => [type, damageMultiplier(type, types)]);
   return {
@@ -1816,7 +1803,7 @@ const ITEM_DIRECT_SPRITES = {
   "Great Ball":archiveItemSpriteUrl("Great Ball", "LA"),
   "Ultra Ball":archiveItemSpriteUrl("Ultra Ball", "LA"),
   "Heavy Ball":archiveItemSpriteUrl("Heavy Ball", "LA"),
-  "Leaden Ball":"assets/items/leaden-ball-la.png",
+  "Leaden Ball":archiveItemSpriteUrl("Leaden Ball", "LA"),
   "Gigaton Ball":archiveItemSpriteUrl("Gigaton Ball", "LA"),
   "Feather Ball":archiveItemSpriteUrl("Feather Ball", "LA"),
   "Wing Ball":archiveItemSpriteUrl("Wing Ball", "LA"),
@@ -1864,8 +1851,10 @@ const ITEM_DIRECT_SPRITES = {
 
 function itemSpriteHtml(name) {
   if (!name || name === "Move condition") return `<span class="item-cell no-sprite"><span class="item-fallback">?</span><span>${name}</span></span>`;
+  const localFallbacks = name === "Leaden Ball" ? ["assets/items/leaden-ball-la.png"] : [];
   const sources = [
     ITEM_DIRECT_SPRITES[name],
+    ...localFallbacks,
     archiveItemSpriteUrl(name, "LA"),
     archiveItemSpriteUrl(name, "SV"),
     `https://img.pokemondb.net/sprites/items/${pokemonDbItemSpriteName(name)}.png`,
@@ -1895,7 +1884,7 @@ function renderDex() {
     const total = stats.length ? statTotal(stats) : "-";
     return `<a class="dex-card" href="pokemon.html?pokemon=${encodeURIComponent(p.name)}">
       <img ${pokemonSpriteAttrs(p)} alt="${p.name} sprite" loading="lazy">
-      <span><strong>#${String(p.num).padStart(3,"0")} ${p.name}</strong>${typeChips(p.types)}<small>BST ${total} / ${roleForPokemon(p, stats)}</small></span>
+      <span><strong>#${String(p.num).padStart(3,"0")} ${p.name}</strong>${typeChips(p.types)}<small>BST ${total}</small></span>
     </a>`;
   }).join("");
 }
@@ -2597,8 +2586,9 @@ function updateFloatingJumpVisibility() {
   const button = $("jumpToCoverage");
   if (!button) return;
   const y = window.scrollY;
+  const nearBottom = y + window.innerHeight >= document.documentElement.scrollHeight - 96;
   if (y < 160 || (floatingJumpDismissed && y < floatingJumpLastY - 300 && y < 900)) floatingJumpDismissed = false;
-  button.classList.toggle("is-visible", y > 520 && !floatingJumpDismissed);
+  button.classList.toggle("is-visible", y > 520 && !floatingJumpDismissed && !nearBottom);
   floatingJumpLastY = y;
 }
 
@@ -2890,7 +2880,7 @@ function renderRegionButtons() {
 }
 
 function renderStaticTables() {
-  renderTable("ballTable", ["Ball","Family","Craft cost","Best use"], balls.map(row => [itemSpriteHtml(row[0]), row[1], row[2], row[3]]));
+  renderTable("ballTable", ["Ball","Family","Craft cost","Best use"], balls);
   renderTable("rankTable", ["Rank","Obedience level","Notable unlocks"], ranks);
   renderTable("hisuianTable", ["Pokemon","Type","Location","Method / notes"], hisuian.map(row => [pokemonListLinks(row[0]), row[1], row[2], row[3]]));
   renderTable("evolutionTable", ["Item / method","Evolutions","Source / condition"], evolutions.map(row => [itemSpriteHtml(row[0]), pokemonListLinks(row[1]), row[2]]));
@@ -2939,7 +2929,6 @@ function renderPokemonDetail() {
   const offensive = stabTargets(dex.types);
   const detailStats = stats.length ? statChart(stats, "detail-stat-chart") : "";
   const viableMoves = recommendedMovesetForPokemon(dex.name);
-  const role = viable?.role || roleForPokemon(dex, stats);
   const matchupText = list => list.length ? list.map(([t,m]) => `${t} ${m}x`).join(", ") : "None";
   const moveList = viableMoves.length ? viableMoves.map(move => {
     const details = moveDetails(move);
@@ -2952,7 +2941,6 @@ function renderPokemonDetail() {
       <p class="eyebrow">Hisui #${String(dex.num).padStart(3,"0")}</p>
       <h2>${dex.name}</h2>
       <p>${typeChips(dex.types)}</p>
-      <p><strong>Role:</strong> ${role}</p>
       ${viable ? `<p>${viable.note}</p>` : ""}
       ${detailStats}
       <div class="pokemon-facts">
