@@ -97,7 +97,7 @@ a:hover { text-decoration: underline; }
   gap: 24px;
   justify-content: space-between;
   left: 0;
-  padding: 12px clamp(16px, 4vw, 44px);
+  padding: 12px clamp(8px, 1.6vw, 18px) 12px clamp(8px, 1.4vw, 14px);
   position: sticky;
   right: 0;
   top: 0;
@@ -114,7 +114,7 @@ a:hover { text-decoration: underline; }
 .brand:hover { text-decoration: none; }
 
 .brand::before {
-  background: url("https://img.pokemondb.net/sprites/home/normal/arceus.png") center / contain no-repeat;
+  background: url("assets/pokemon/arceus.png") center / contain no-repeat;
   content: "";
   flex: 0 0 auto;
   height: 38px;
@@ -908,7 +908,7 @@ td {
   background-size: auto, 320% 320%;
   animation: borderFlow 20s linear infinite;
   border: 2px solid transparent;
-  border-radius: 9%;
+  border-radius: 7%;
   box-shadow: 0 16px 34px rgba(0, 0, 0, .28), inset 0 0 0 1px rgba(255, 255, 255, .08);
   cursor: grab;
   overflow: hidden;
@@ -940,7 +940,7 @@ td {
     rgba(7, 11, 10, .76);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover, 108% 108%, cover, cover;
+  background-size: cover, calc(100% + 10px) calc(100% + 10px), cover, cover;
   transform-origin: 0 0;
   will-change: transform;
 }
@@ -978,6 +978,9 @@ td {
 }
 
 .marker {
+  --label-dx: 0px;
+  --label-dy: 0px;
+  --marker-scale: 1;
   align-items: center;
   background: var(--gold);
   border: 2px solid rgba(11, 14, 12, .74);
@@ -992,8 +995,9 @@ td {
   justify-content: center;
   pointer-events: auto;
   position: absolute;
-  transform: translate(-50%, -50%);
+  transform: translate(calc(-50% + var(--label-dx)), calc(-50% + var(--label-dy))) scale(var(--marker-scale));
   transform-origin: center;
+  backface-visibility: hidden;
   width: 25px;
 }
 
@@ -1024,13 +1028,14 @@ td {
   max-width: 120px;
   padding: 4px 6px;
   text-align: center;
+  text-rendering: geometricPrecision;
   width: auto;
 }
 
 .marker:hover,
 .marker.active {
   outline: 3px solid rgba(255, 255, 255, .42);
-  transform: translate(-50%, -50%) scale(1.08);
+  --marker-scale: 1.08;
 }
 
 .map-details h3 {
@@ -1133,6 +1138,41 @@ td {
   display: grid;
   gap: 10px;
   grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-bottom: 14px;
+}
+
+.coverage-details-panel {
+  background:
+    linear-gradient(145deg, rgba(44, 55, 47, .96), rgba(25, 35, 32, .96)),
+    #1c2622;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .22);
+  padding: 16px;
+}
+
+.coverage-details-panel summary {
+  align-items: center;
+  color: var(--text);
+  cursor: pointer;
+  display: flex;
+  font-family: var(--heading-font);
+  font-weight: 900;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.coverage-details-panel summary::-webkit-details-marker {
+  display: none;
+}
+
+.coverage-details-panel summary small {
+  color: var(--gold);
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.coverage-details-panel[open] summary {
   margin-bottom: 14px;
 }
 
@@ -1451,6 +1491,8 @@ body[data-page="resources"] .guide-section {
 .type-chart-table th,
 .type-chart-table td {
   padding: 5px 2px;
+  text-align: center;
+  vertical-align: middle;
 }
 
 .type-chart-table .type-axis-head {
@@ -1471,9 +1513,9 @@ body[data-page="resources"] .guide-section {
 .type-chart-table th:first-child {
   background: rgba(17, 23, 21, .96);
   left: 0;
-  padding-right: 8px;
+  padding-right: 10px;
   position: sticky;
-  text-align: left;
+  text-align: center;
   z-index: 1;
 }
 
@@ -1858,6 +1900,17 @@ footer {
 
   .brand {
     min-width: 0;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .brand span {
+    min-width: 0;
+  }
+
+  .brand strong,
+  .brand small {
+    overflow-wrap: anywhere;
   }
 
   .map-shell {
@@ -1889,14 +1942,19 @@ footer {
     align-items: stretch;
     flex-direction: column;
     gap: 10px;
+    max-width: 100vw;
+    min-width: 0;
     position: static;
   }
 
   .top-nav {
     flex-wrap: nowrap;
     justify-content: flex-start;
+    max-width: 100%;
+    min-width: 0;
     overflow-x: auto;
     padding-bottom: 3px;
+    width: 100%;
   }
 
   .top-nav a {

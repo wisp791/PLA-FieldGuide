@@ -1350,137 +1350,3674 @@ const exactMapMarkerText = {
 };
 
 const exactMapMarkerGroups = {
-  "Obsidian Fieldlands":{
-    Wisp:[["Horseshoe Plains Wisp",71.7,11.8,"Spiritomb wisp collectible."],["Aspiration Hill Wisp",43,23,"Spiritomb wisp collectible."],["Floaro Gardens Wisp",34.6,21.2,"Spiritomb wisp collectible."],["Grueling Grove Wisp",85,14,"Spiritomb wisp collectible."],["Worn Bridge Wisp",91.1,24.3,"Spiritomb wisp collectible."],["Worn Bridge Wisp",76.7,32,"Spiritomb wisp collectible."],["Lake Verity Wisp",25.9,36.5,"Spiritomb wisp collectible."],["Obsidian Falls Wisp",90.8,41.4,"Spiritomb wisp collectible."],["Deertrack Heights Wisp",53.3,49.5,"Spiritomb wisp collectible."],["Obsidian Falls Wisp",82.5,52.6,"Spiritomb wisp collectible."],["Deertrack Heights Wisp",63.4,55.1,"Spiritomb wisp collectible."],["Oreburrow Tunnel Wisp",96.7,57.7,"Spiritomb wisp collectible."],["Windswept Run Wisp",46.5,64.4,"Spiritomb wisp collectible."],["Nature's Pantry Wisp",60.7,67.7,"Spiritomb wisp collectible."],["Sandgem Flats Wisp",21.5,69.4,"Spiritomb wisp collectible."],["The Heartwood Wisp",81.5,70.7,"Spiritomb wisp collectible."],["The Heartwood Wisp",71.5,80.8,"Spiritomb wisp collectible."],["Ramanas Island Wisp",37.9,83.5,"Spiritomb wisp collectible."],["Grandtree Arena Wisp",60.9,90.3,"Spiritomb wisp collectible."],["Ramanas Island Wisp",47.1,91,"Spiritomb wisp collectible."]],
-    Subarea:[["Floaro Gardens",18,17,"Shinx line, Shaymin request area, and western alpha checks."],["Aspiration Hill",43,23,"Early tutorial route and first field gathering loop."],["Horseshoe Plains",63,22,"Bidoof, Starly, Shinx, Ponyta, and early research."],["Grueling Grove",85,14,"Bug-type route and alpha Heracross area."],["Deertrack Path",55,39,"Main path between the first camp routes and Deertrack Heights."],["Deertrack Heights",64,48,"Heights Camp route and early Geodude/Kricketot checks."],["Windswept Run",51,57,"Floatzel and river-crossing route."],["Nature's Pantry",61,69,"Cherubi tree checks and alpha Parasect/Kricketune route."],["Worn Bridge",79,35,"Floatzel, Bibarel, and bridge route."],["Obsidian Falls",88,52,"Alpha Blissey XP route and waterfall checks."],["Oreburrow Tunnel",92,62,"Cave route toward Obsidian Falls."],["The Heartwood",83,82,"Bug and Grass routes near the Grandtree approach."],["Tidewater Dam",68,79,"Water route and Bibarel checks."],["Sandgem Flats",23,75,"Snorlax, Alakazam, and ore route."],["Ramanas Island",39,82,"Post-game alpha loop and Landorus route."],["Lake Verity",19,43,"Mesprit route and water checks."]],
-    Alpha:[["Alpha Rapidash",67.4,13.4,"Fixed alpha in Horseshoe Plains."],["Alpha Heracross",86.2,14.5,"Fixed alpha in Grueling Grove."],["Alpha Luxio",25.9,23.5,"Fixed alpha near Floaro Gardens."],["Alpha Floatzel",71.5,29.1,"Fixed alpha near Worn Bridge."],["Alpha Magikarp",93.4,35.8,"Fixed alpha in the Obsidian Falls water route."],["Alpha Stantler",71.3,42.3,"Fixed alpha near Deertrack Heights."],["Alpha Gyarados",19.1,44.5,"Fixed alpha at Lake Verity."],["Alpha Alakazam",22.5,66.3,"Fixed alpha in Sandgem Flats."],["Alpha Lopunny",74.6,56.2,"Fixed alpha near The Heartwood."],["Alpha Staravia",52.3,56.1,"Fixed alpha around Windswept Run."],["Alpha Graveler",88.4,57.5,"Fixed alpha near Oreburrow Tunnel."],["Alpha Golbat",94.1,64.8,"Fixed alpha in Oreburrow Tunnel."],["Alpha Parasect",60.2,64.2,"Fixed alpha near Nature's Pantry."],["Alpha Snorlax",20.6,68.6,"Fixed alpha in Sandgem Flats."],["Alpha Scyther",87.8,87.8,"Fixed alpha near Grandtree Arena."],["Alpha Infernape",43.8,78.8,"Fixed alpha on Ramanas Island."],["Alpha Blissey",78.2,51.3,"Fixed alpha at Obsidian Falls."],["Alpha Bibarel",68,79,"Fixed alpha near Tidewater Dam."],["Alpha Kricketune",59.5,68.4,"Fixed alpha near Nature's Pantry."],["Alpha Torterra",38.6,80.7,"Post-game alpha on Ramanas Island."]],
-    Unown:[["Grueling Grove Unown",96.6,15.8,"Unown letter collectible."],["Obsidian Falls Unown",95.8,42.1,"Unown letter collectible."],["Oreburrow Tunnel Unown",94.9,47.8,"Unown letter collectible."],["The Heartwood Unown",91.9,83.2,"Unown letter collectible."],["Lake Verity Unown",19,43,"Unown letter collectible."]],
-    Story:[["Fieldlands Camp Story",38.5,12.3,"Opening Fieldlands expeditions and tutorial routes."],["Heights Camp Story",61.5,49.2,"Important early camp in the center of Deertrack Heights."],["Sandgem Flats Story",23,75,"Story/research routing marker placed at Sandgem Flats."],["Kleavor Arena Story",82.6,86.5,"First Noble route and battle at Grandtree Arena."]],
-    Character:[["Munchlax encounter",69.4,56.8,"Early story alpha-problem route marker near Deertrack Heights."],["Lian",82.6,86.5,"Pearl Clan warden for Kleavor at Grandtree Arena."]],
-    Camp:[["Fieldlands Camp",38.5,12.3,"Main Obsidian Fieldlands base camp."],["Heights Camp",61.5,49.2,"Base camp in the center of Deertrack Heights."]],
-    Gate:[["Fieldlands Camp Fast Travel",38.5,12.3,"Fast travel point."],["Heights Camp Fast Travel",61.5,49.2,"Fast travel point."],["Ramanas Island Fast Travel",31.7,77.4,"Fast travel point."],["Grandtree Arena Fast Travel",82.6,86.5,"Fast travel point near Kleavor's arena."]],
-    Transition:[["Fieldlands Entrance",39.6,14.8,"Transition point."],["Oreburrow Tunnel Transition",94.9,47.8,"Tunnel transition."],["Grandtree Arena Transition",82.6,86.5,"Grandtree route transition."]],
-    Cave:[["Oreburrow Tunnel",94.9,47.8,"Cave route toward Obsidian Falls."]],
-    Arena:[["Grandtree Arena",82.6,86.5,"Kleavor's Noble arena."]],
-    Noble:[["Kleavor",82.6,86.5,"Noble Pokemon battle at Grandtree Arena."]],
-    Request:[["Request 19: A Peculiar Ponyta",34.6,21.2,"Guaranteed shiny Ponyta request route near Horseshoe Plains."],["Bothersome Bidoof route",38.5,12.3,"Early request route that begins from Jubilife and the Fieldlands entry."],["Mushroom Cake request",60.7,67.7,"Food-lure request route near Nature's Pantry."]],
-    Legendary:[["Mesprit",19,43,"Post-game lake guardian at Lake Verity."],["Landorus",40,82,"Appears on Ramanas Island during Request 94."],["Shaymin",18,17,"Request 92 in Floaro Gardens with Sword/Shield save data."]],
-    Farm:[["Alpha Blissey XP route",78.2,51.3,"High-HP Blissey route at Obsidian Falls."],["Horseshoe Plains research loop",58,25,"Fast early research route."],["Ramanas Island alpha loop",39,80.7,"Post-game alpha and sellable loop."]]
+  "Obsidian Fieldlands": {
+    "Subarea": [
+      [
+        "Aspiration Hill",
+        38.0,
+        34.8,
+        "Named subarea marker."
+      ],
+      [
+        "Deertrack Heights",
+        61.7,
+        51.8,
+        "Named subarea marker."
+      ],
+      [
+        "Deertrack Path",
+        47.9,
+        47.4,
+        "Named subarea marker."
+      ],
+      [
+        "Floaro Gardens",
+        12.9,
+        29.9,
+        "Named subarea marker."
+      ],
+      [
+        "Grueling Grove",
+        80.8,
+        25.6,
+        "Named subarea marker."
+      ],
+      [
+        "Horseshoe Plains",
+        59.3,
+        30.6,
+        "Named subarea marker."
+      ],
+      [
+        "Lake Verity",
+        13.7,
+        48.8,
+        "Named subarea marker."
+      ],
+      [
+        "Nature's Pantry",
+        58.0,
+        70.0,
+        "Named subarea marker."
+      ],
+      [
+        "Obsidian Falls",
+        84.9,
+        55.3,
+        "Named subarea marker."
+      ],
+      [
+        "Oreburrow Tunnel",
+        87.2,
+        63.5,
+        "Named subarea marker."
+      ],
+      [
+        "Ramanas Island",
+        27.4,
+        85.5,
+        "Named subarea marker."
+      ],
+      [
+        "Sandgem Flat",
+        15.9,
+        74.6,
+        "Named subarea marker."
+      ],
+      [
+        "The Heartwood",
+        72.1,
+        82.9,
+        "Named subarea marker."
+      ],
+      [
+        "Tidewater Dam",
+        62.7,
+        78.0,
+        "Named subarea marker."
+      ],
+      [
+        "Windswept Run",
+        42.9,
+        63.3,
+        "Named subarea marker."
+      ],
+      [
+        "Worn Bridge",
+        75.0,
+        42.0,
+        "Named subarea marker."
+      ]
+    ],
+    "Alpha": [
+      [
+        "Alpha Golbat",
+        95.4,
+        64.4,
+        "Fixed alpha Pokemon. Level 35. Location: Near Oreburrow Tunnel."
+      ],
+      [
+        "Alpha Parasect",
+        60.3,
+        73.4,
+        "Fixed alpha Pokemon. Level 30. Location: Nature's Pantry."
+      ],
+      [
+        "Alpha Alakazam",
+        17.8,
+        73.2,
+        "Fixed alpha Pokemon. Level 60. Location: Sandgem Flats."
+      ],
+      [
+        "Alpha Graveler",
+        95.2,
+        41.4,
+        "Fixed alpha Pokemon. Level 30. Location: Near Obsidian Falls."
+      ],
+      [
+        "Alpha Rapidash",
+        71.8,
+        27.1,
+        "Fixed alpha Pokemon. Level 40. Location: Horseshoe Plains."
+      ],
+      [
+        "Alpha Scyther",
+        91.8,
+        86.2,
+        "Fixed alpha Pokemon. Level 42. Location: Near Grandtree Arena."
+      ],
+      [
+        "Alpha Magikarp",
+        94.8,
+        47.6,
+        "Fixed alpha Pokemon. Level 55. Location: Near Oreburrow Tunnel."
+      ],
+      [
+        "Alpha Gyarados",
+        21.6,
+        42.4,
+        "Fixed alpha Pokemon. Level 60. Location: Lake Verity."
+      ],
+      [
+        "Alpha Snorlax",
+        20.8,
+        74.4,
+        "Fixed alpha Pokemon. Level 45. Location: Near Sandgem Flats."
+      ],
+      [
+        "Alpha Heracross",
+        86.3,
+        10.9,
+        "Fixed alpha Pokemon. Level 45. Location: Grueling Grove."
+      ],
+      [
+        "Alpha Stantler",
+        64.4,
+        50.6,
+        "Fixed alpha Pokemon. Level 42. Location: Deertrack Heights."
+      ],
+      [
+        "Alpha Blissey",
+        88.8,
+        61.4,
+        "Fixed alpha Pokemon. Level 62. Location: Near Obsidian Falls."
+      ],
+      [
+        "Alpha Infernape",
+        38.8,
+        82.8,
+        "Fixed alpha Pokemon. Level 65. Location: Ramanas Island."
+      ],
+      [
+        "Alpha Staravia",
+        52.7,
+        56.7,
+        "Fixed alpha Pokemon. Level 32. Location: Windswept Run."
+      ],
+      [
+        "Alpha Bibarel",
+        64.0,
+        78.6,
+        "Fixed alpha Pokemon. Level 16. Location: Tidewater Dam."
+      ],
+      [
+        "Alpha Kricketune",
+        55.0,
+        75.8,
+        "Fixed alpha Pokemon. Level 30. Location: Near Tidewater Dam."
+      ],
+      [
+        "Alpha Luxio",
+        26.6,
+        20.9,
+        "Fixed alpha Pokemon. Level 40. Location: Floaro Gardens."
+      ],
+      [
+        "Alpha Floatzel",
+        72.9,
+        53.0,
+        "Fixed alpha Pokemon. Level 31. Location: Near Worn Bridge."
+      ],
+      [
+        "Alpha Lopunny",
+        87.9,
+        91.6,
+        "Fixed alpha Pokemon. Level 40. Location: Near The Heartwood."
+      ]
+    ],
+    "Camp": [
+      [
+        "Fieldlands Camp",
+        34.3,
+        26.5,
+        "Base camp marker."
+      ],
+      [
+        "Heights Camp",
+        57.7,
+        57.8,
+        "Base camp marker."
+      ]
+    ],
+    "Gate": [
+      [
+        "Fieldlands Camp Fast Travel",
+        34.3,
+        26.5,
+        "Fast travel point at this base camp."
+      ],
+      [
+        "Grandtree Arena Fast Travel",
+        85.3,
+        85.5,
+        "Fast travel point at this arena."
+      ],
+      [
+        "Heights Camp Fast Travel",
+        57.7,
+        57.8,
+        "Fast travel point at this base camp."
+      ]
+    ],
+    "Transition": [
+      [
+        "Exit",
+        31.6,
+        24.2,
+        "Transition marker."
+      ]
+    ],
+    "Cave": [
+      [
+        "Verity Cavern",
+        13.8,
+        52.4,
+        "Cave marker."
+      ]
+    ],
+    "Arena": [
+      [
+        "Grandtree Arena",
+        85.3,
+        85.5,
+        "Arena marker."
+      ]
+    ],
+    "Noble": [
+      [
+        "Kleavor",
+        80.0,
+        90.0,
+        "Noble Pokemon marker."
+      ]
+    ],
+    "Wisp": [
+      [
+        "Aspiration Hill Wisp",
+        27.4,
+        31.8,
+        "Location: On top of a small hill, next to a tree."
+      ],
+      [
+        "Deertrack Path Wisp",
+        53.7,
+        44.2,
+        "Location: On a small cliff."
+      ],
+      [
+        "Grueling Grove Wisp",
+        87.5,
+        34.5,
+        "Location: On a ledge, near the top of the mountain."
+      ],
+      [
+        "Horseshoe Plains Wisp",
+        66.8,
+        23.4,
+        "Location: On top of a small mountain."
+      ],
+      [
+        "Lake Verity Wisp",
+        18.0,
+        45.6,
+        "Location: On a small ledge, looking over Lake Verity."
+      ],
+      [
+        "Nature's Pantry Wisp",
+        58.0,
+        62.1,
+        "Location: At the very top of the mountain."
+      ],
+      [
+        "Nature's Pantry Wisp 2",
+        55.0,
+        73.8,
+        "Location: On top of the small hill."
+      ],
+      [
+        "Obsidian Falls Wisp",
+        78.3,
+        59.9,
+        "Location: On top of the cliff."
+      ],
+      [
+        "Obsidian Falls Wisp 2",
+        87.2,
+        49.9,
+        "Location: On a small island on the river."
+      ],
+      [
+        "Oreburrow Tunnel Wisp",
+        93.5,
+        64.6,
+        "Location: Above Oreburrow Tunnel."
+      ],
+      [
+        "Ramanas Island Wisp",
+        30.9,
+        87.6,
+        "Location: Atop the cliff, overlooking the island."
+      ],
+      [
+        "Ramanas Island Wisp 2",
+        39.9,
+        93.9,
+        "Location: At the very end of the peninsula."
+      ],
+      [
+        "Sandgem Flat Wisp",
+        13.1,
+        75.5,
+        "Location: At the top of a slanted rock."
+      ],
+      [
+        "The Heartwood Wisp",
+        66.6,
+        85.1,
+        "Location: On top of the hill, looking over the dam."
+      ],
+      [
+        "The Heartwood Wisp 2",
+        77.3,
+        76.1,
+        "Location: At the end of the cliff, near the river."
+      ],
+      [
+        "Tidewater Dam Wisp",
+        55.4,
+        93.6,
+        "Location: On a ledge up the mountain."
+      ],
+      [
+        "Windswept Run Wisp",
+        31.9,
+        51.9,
+        "Location: On a ledge jutting from the mountain range."
+      ],
+      [
+        "Windswept Run Wisp 2",
+        40.0,
+        70.4,
+        "Spiritomb wisp collectible."
+      ],
+      [
+        "Windswept Run Wisp 3",
+        47.3,
+        57.1,
+        "Location: On a high ledge up the moutain."
+      ],
+      [
+        "Worn Bridge Wisp",
+        72.2,
+        41.5,
+        "Location: On ground level, near the worn bridge."
+      ]
+    ],
+    "Unown": [
+      [
+        "Grueling Grove Unown",
+        93.3,
+        26.9,
+        "Hint: A lone tree in a pond in the grove. Location: Near the bottom of the tree."
+      ],
+      [
+        "Lake Verity Unown",
+        13.7,
+        51.3,
+        "Hint: A lake island where emotion resides. Location: Directly behind Verity Cavern."
+      ],
+      [
+        "Obsidian Falls Unown",
+        91.5,
+        55.6,
+        "Hint: Atop a waterfall of obsidian. Location: On the boulder where the waterfall starts."
+      ],
+      [
+        "The Heartwood Unown",
+        88.4,
+        87.3,
+        "Hint: Scale the Grandtree. Location: On the lowest branch of the tree."
+      ],
+      [
+        "Tidewater Dam Unown",
+        61.8,
+        78.3,
+        "Hint: Where stick and log dam the river. Location: On the western side of the dam."
+      ]
+    ],
+    "Request": [
+      [
+        "#11: The Timbre of the Fields",
+        34.3,
+        28.0,
+        "*Music lover Yeo is captivated by the sound she hears coming from the Kricketot in the Obsidian Fieldlands. Fill in Kricketot's Pokédex page and show it to her!* How to unlock: Start #5: A Request from Mai. How to start: Speak with Yeo Objectives: - Show Yeo the completed Pokédex entry for Kricketot. Rewards: 1x Vivichoke"
+      ],
+      [
+        "#13: Trees That Bear Berries",
+        52.5,
+        44.6,
+        "*Bjorn of the Agriculture Corps wants you to get a Cheri Berry for him. He says he'll give you a helpful tip if you're able to grant his wish...* How to unlock: Start Story Mission #5. How to start: Speak with Bjorn. Objectives: - Gather the number of Berries Bjorn wanted (3 Cheri Berries), then give them to him. Rewards: 15x Poké Ball"
+      ],
+      [
+        "#15: Balloon Race in the Fieldsland",
+        57.4,
+        57.0,
+        "*The man running the balloon race in the Obsidian Fieldlands has issued you a challenge. You’ll get a special reward if you manage to burst 17 balloons.* How to unlock: Complete Story Mission #7. How to start: Speak with the Balloon Race NPC. Objectives: - Burst 17 balloons within the time limit for the balloon race in the Obsidian Fieldslands. Rewards: - 1x Rare Candy - 15x Feather Ball"
+      ],
+      [
+        "#51: Coming Up Roses",
+        24.2,
+        82.0,
+        "*On Ramanas Island, Hiemo asked you to bring him a Pokémon with a scythe on each arm.* How to unlock: Complete Story Mission #10 How to start: Speak with Hiemo. Objectives: - Find the Pokémon with a scythe on each arm (Scyther) and catch one to show to Hiemo on Ramanas Island. Rewards: 1x Seed of Mastery"
+      ],
+      [
+        "#6: Mushroom Cake Marketing",
+        35.9,
+        27.6,
+        "*A villager named Morel wants everyone to know about the crafting recipe he invented using mushrooms. To that end, he says he'll teach the recipe to you!* How to unlock: Start #5: A Request from Mai. How to start: Speak with Morel Objectives: - Give Morel the item he requested (Springy Mushroom) Rewards: - 1x Mushroom Cake Recipe - 5x Cake-Lure Base"
+      ]
+    ],
+    "Legendary": [
+      [
+        "Landorus",
+        27.3,
+        85.1,
+        "How to catch: Part of the #94: Incarnate Forces of Hisui request."
+      ],
+      [
+        "Mesprit",
+        15.3,
+        52.2,
+        "Level: 70 How to catch: Part of the #21: The Plate of the Lakes story mission. Can be found within Verity Cavern."
+      ],
+      [
+        "Shaymin",
+        14.9,
+        28.2,
+        "How to catch: Part of the #92: A Token of Gratitude request."
+      ]
+    ],
+    "Character": [
+      [
+        "Medi",
+        33.1,
+        26.6,
+        "Character marker."
+      ],
+      [
+        "Wanda - Fieldslands",
+        64.4,
+        63.7,
+        "Character marker."
+      ]
+    ],
+    "Farm": [
+      [
+        "Alpha Blissey XP route",
+        92.5,
+        50.5,
+        "High-HP Blissey route at Obsidian Falls."
+      ],
+      [
+        "Horseshoe Plains research loop",
+        58.0,
+        25.0,
+        "Fast early research route."
+      ],
+      [
+        "Ramanas Island alpha loop",
+        31.1,
+        84.7,
+        "Post-game alpha and sellable loop."
+      ]
+    ],
+    "Story": [
+      [
+        "#5: A Request from Mai",
+        61.7,
+        51.8,
+        "Main story route to Deertrack Heights."
+      ],
+      [
+        "#7: The Frenzy of the Lord of the Woods",
+        80.0,
+        90.0,
+        "Kleavor Noble fight at Grandtree Arena."
+      ],
+      [
+        "#14: The Trial of Lake Verity",
+        13.8,
+        52.4,
+        "Lake Verity trial route."
+      ]
+    ]
   },
-  "Jubilife Village":{
-    Wisp:[["Training Grounds Wisp",28.1,5.8,"Spiritomb wisp collectible."],["Galaxy Hall Wisp",42.6,20.1,"Spiritomb wisp collectible."],["General Store Wisp",59.8,24.7,"Spiritomb wisp collectible."],["Craftworks Wisp",46.1,32.8,"Spiritomb wisp collectible."],["Pastures Wisp",26.6,32.9,"Spiritomb wisp collectible."],["Farm Wisp",29.5,74,"Spiritomb wisp collectible."],["Prelude Beach Wisp",32.6,77,"Spiritomb wisp collectible."]],
-    Subarea:[["Galaxy Hall",53,24,"Research reports, rank ups, and request board."],["Training Grounds",43,15,"Move tutoring and Ingo battles."],["Craftworks",37,18,"Recipe unlocks and crafting supply route."],["Trading Post",46,19,"Merit Points and evolution items."],["General Store",60,22,"Purchased basics and item sales."],["Pastures",33,35,"Storage and bulk release for Grit."],["Farm",33,76,"Farm upgrades and harvests."],["Front Gate",54,47,"Village exit and expedition gate."]],
-    Unown:[["Galaxy Hall Unown",53,24,"Unown letter collectible."],["Training Grounds Unown",43,15,"Unown letter collectible."],["Prelude Beach Unown",32.6,77,"Unown letter collectible."]],
-    Point:[[40.7,2.1],[51.5,6.9],[33,8.8],[41.9,11.3],[56.3,12],[61.9,12],[37.9,12.4],[47.3,12.5],[51.5,13.4],[73.6,14.4],[70.2,15.6],[48.2,18],[65.9,18.3],[54.5,18.7],[57.9,18.7],[61.8,18.7],[32.9,33.3],[64.6,69],[68.4,70.5],[32.6,77]],
-    Story:[["Galaxy Hall Story",48.1,8.8,"Main mission and request-board hub."],["Front Gate Story",68.7,18.1,"Expedition departure routing."]],
-    Character:[[68.8,13.1],[46.6,21],[63.3,27.6],[44.4,29.8],[42.2,34.7],[54.3,36.2],[52.4,42.7]],
-    Camp:[["Front Gate",54,47,"Village expedition gate and services checkpoint."]],
-    Gate:[["Prelude Beach Fast Travel",32.6,77,"Fast travel point."],["Training Grounds Fast Travel",40.7,2.1,"Fast travel point."],["Galaxy Hall Fast Travel",51.5,6.9,"Fast travel point."]],
-    Transition:[["Front Gate",54,47,"Expedition transition point."]],
-    Request:[["Request Board",48.1,8.8,"Galaxy Hall request board."],["Front Gate Requests",68.7,18.1,"Expedition-related request routing."]],
-    Farm:[["Training Grounds",43,15,"Ingo battles and move mastery practice."],["Farm",33,76,"Harvest route for crafting materials."]]
+  "Crimson Mirelands": {
+    "Subarea": [
+      [
+        "Bolderoll Slope",
+        62.5,
+        53.7,
+        "Named subarea marker."
+      ],
+      [
+        "Cloudpool Ridge",
+        32.0,
+        32.2,
+        "Named subarea marker."
+      ],
+      [
+        "Cottonsedge Prairie",
+        77.9,
+        64.9,
+        "Named subarea marker."
+      ],
+      [
+        "Diamond Heath",
+        48.7,
+        36.3,
+        "Named subarea marker."
+      ],
+      [
+        "Diamond Settlement",
+        55.8,
+        39.2,
+        "Named subarea marker."
+      ],
+      [
+        "Droning Meadow",
+        78.9,
+        71.8,
+        "Named subarea marker."
+      ],
+      [
+        "Gapejaw Bog",
+        32.8,
+        68.9,
+        "Named subarea marker."
+      ],
+      [
+        "Golden Lowlands",
+        27.7,
+        56.5,
+        "Named subarea marker."
+      ],
+      [
+        "Holm of Trials",
+        43.6,
+        88.3,
+        "Named subarea marker."
+      ],
+      [
+        "Lake Valor",
+        72.2,
+        32.8,
+        "Named subarea marker."
+      ],
+      [
+        "Scarlet Bog",
+        51.4,
+        61.6,
+        "Named subarea marker."
+      ],
+      [
+        "Shrouded Ruins",
+        52.5,
+        26.9,
+        "Named subarea marker."
+      ],
+      [
+        "Sludge Mound",
+        56.4,
+        78.2,
+        "Named subarea marker."
+      ],
+      [
+        "Solaceon Ruins",
+        41.3,
+        48.3,
+        "Named subarea marker."
+      ],
+      [
+        "Ursa's Ring",
+        67.5,
+        83.2,
+        "Named subarea marker."
+      ]
+    ],
+    "Alpha": [
+      [
+        "Alpha Raichu",
+        21.6,
+        41.6,
+        "Fixed alpha Pokemon. Level 52. Location: Near Golden Lowlands."
+      ],
+      [
+        "Alpha Onix",
+        53.2,
+        48.3,
+        "Fixed alpha Pokemon. Level 50. Location: Near Diamond Settlement."
+      ],
+      [
+        "Alpha Rhyhorn",
+        51.2,
+        36.7,
+        "Fixed alpha Pokemon. Level 45. Location: Diamond Heath."
+      ],
+      [
+        "Alpha Ursaring (Gapejaw Bog)",
+        18.6,
+        68.3,
+        "Fixed alpha Pokemon. Level 55. Location: Near Gapejaw Bog."
+      ],
+      [
+        "Alpha Ursaring (Ursa's Ring)",
+        70.9,
+        90.9,
+        "Fixed alpha Pokemon. Level 41. Location: Ursa's Ring."
+      ],
+      [
+        "Alpha Whiscash",
+        71.8,
+        43.9,
+        "Fixed alpha Pokemon. Level 64. Location: Lake Valor."
+      ],
+      [
+        "Alpha Torterra",
+        41.5,
+        84.2,
+        "Fixed alpha Pokemon. Level 65. Location: Holm of Trials."
+      ],
+      [
+        "Alpha Roserade",
+        32.7,
+        31.6,
+        "Fixed alpha Pokemon. Level 50. Location: Cloudpool Ridge."
+      ],
+      [
+        "Alpha Vespiquen",
+        80.6,
+        56.2,
+        "Fixed alpha Pokemon. Level 61. Location: Near Cottonsedge Prairie."
+      ],
+      [
+        "Alpha Pachirisu",
+        20.6,
+        76.5,
+        "Fixed alpha Pokemon. Level 40. Location: Near Gapejaw Bog."
+      ],
+      [
+        "Alpha Honchkrow",
+        31.4,
+        31.6,
+        "Fixed alpha Pokemon. Level 55. Location: Cloudpool Ridge."
+      ],
+      [
+        "Alpha Skuntank",
+        52.6,
+        64.9,
+        "Fixed alpha Pokemon. Level 45. Location: Scarlet Bog."
+      ],
+      [
+        "Alpha Hippowdon",
+        49.5,
+        77.5,
+        "Fixed alpha Pokemon. Level 46. Location: Gapejaw Bog."
+      ],
+      [
+        "Alpha Toxicroak",
+        35.0,
+        80.4,
+        "Fixed alpha Pokemon. Level 47. Location: Holm of Trials."
+      ],
+      [
+        "Alpha Carnivine",
+        76.7,
+        53.7,
+        "Fixed alpha Pokemon. Level 43. Location: Near Cottonsedge Prairie."
+      ],
+      [
+        "Alpha Lickilicky",
+        50.8,
+        24.6,
+        "Fixed alpha Pokemon. Level 52. Location: Shrouded Ruins."
+      ],
+      [
+        "Alpha Tangrowth",
+        36.8,
+        59.2,
+        "Fixed alpha Pokemon. Level 45. Location: Gapejaw Bog."
+      ],
+      [
+        "Alpha Yanmega",
+        82.7,
+        74.5,
+        "Fixed alpha Pokemon. Level 58. Location: Droning Meadow."
+      ],
+      [
+        "Alpha Hisuian Sliggoo",
+        56.7,
+        89.3,
+        "Fixed alpha Pokemon. Level 50. Location: Holm of Trials."
+      ]
+    ],
+    "Camp": [
+      [
+        "Bogbound Camp",
+        60.4,
+        73.4,
+        "Base camp marker."
+      ],
+      [
+        "Mirelands Camp",
+        24.1,
+        50.1,
+        "Base camp marker."
+      ]
+    ],
+    "Gate": [
+      [
+        "Bogbound Camp Fast Travel",
+        60.4,
+        73.4,
+        "Fast travel point at this base camp."
+      ],
+      [
+        "Brava Arena Fast Travel",
+        33.8,
+        22.5,
+        "Fast travel point at this arena."
+      ],
+      [
+        "Diamond Settlement Fast Travel",
+        57.7,
+        42.1,
+        "Fast travel point."
+      ],
+      [
+        "Mirelands Camp Fast Travel",
+        24.1,
+        50.1,
+        "Fast travel point at this base camp."
+      ]
+    ],
+    "Transition": [
+      [
+        "Exit",
+        20.7,
+        48.3,
+        "Transition marker."
+      ]
+    ],
+    "Cave": [
+      [
+        "Valor Cavern",
+        72.1,
+        38.7,
+        "Cave marker."
+      ]
+    ],
+    "Arena": [
+      [
+        "Brava Arena",
+        33.8,
+        22.5,
+        "Arena marker."
+      ]
+    ],
+    "Noble": [
+      [
+        "Lilligant",
+        35.1,
+        22.3,
+        "Noble Pokemon marker."
+      ]
+    ],
+    "Wisp": [
+      [
+        "Bolderoll Slope Wisp",
+        55.6,
+        51.4,
+        "Location: On a cliff overlooking the bog."
+      ],
+      [
+        "Bolderoll Slope Wisp 2",
+        66.4,
+        54.6,
+        "Location: On top of a small rock outcroping, facing the river."
+      ],
+      [
+        "Bolderoll Slope Wisp 3",
+        71.3,
+        46.5,
+        "Location: Between a circle of trees, near Lake Valor."
+      ],
+      [
+        "Cloudpool Ridge Wisp",
+        35.8,
+        29.8,
+        "Location: Behind the trees, near the cliff."
+      ],
+      [
+        "Cloudpool Ridge Wisp 2",
+        29.2,
+        38.0,
+        "Location: On the shore, opposite to the campfire."
+      ],
+      [
+        "Cloudpool Ridge Wisp 3",
+        26.9,
+        28.2,
+        "Location: At the end of a ledge overlooking the river."
+      ],
+      [
+        "Cottonsedge Prairie Wisp",
+        82.0,
+        65.0,
+        "Location: On top of the hill, by a withered tree."
+      ],
+      [
+        "Cottonsedge Prairie Wisp 2",
+        67.3,
+        66.4,
+        "Location: On a small hill overlooking the river."
+      ],
+      [
+        "Cottonsedge Prairie Wisp 3",
+        70.0,
+        60.9,
+        "Location: On top of a small hill."
+      ],
+      [
+        "Diamond Settlement Wisp",
+        51.9,
+        42.6,
+        "Location: On top of a cliff overlooking Diamond Settlement."
+      ],
+      [
+        "Droning Meadow Wisp",
+        89.7,
+        73.8,
+        "Location: On a mountain cliff, near a few trees."
+      ],
+      [
+        "Gapejaw Bog Wisp",
+        27.2,
+        74.7,
+        "Location: On top of a hill."
+      ],
+      [
+        "Golden Lowlands Wisp",
+        30.2,
+        60.1,
+        "Location: On top of the cliff overlooking the river."
+      ],
+      [
+        "Golden Lowlands Wisp 2",
+        18.5,
+        60.4,
+        "Location: Within the valley between the two cliffs."
+      ],
+      [
+        "Holm of Trials Wisp",
+        26.2,
+        85.7,
+        "Location: In the middle of a puddle."
+      ],
+      [
+        "Holm of Trials Wisp 2",
+        40.5,
+        90.5,
+        "Location: On top of a hill, near some trees."
+      ],
+      [
+        "Shrouded Ruins Wisp",
+        43.7,
+        27.9,
+        "Location: On a cliff near Brave Arena."
+      ],
+      [
+        "Sludge Mound Wisp",
+        56.6,
+        89.4,
+        "Location: On a rock in the middle of the lake."
+      ],
+      [
+        "Solaceon Ruins Wisp",
+        44.3,
+        51.6,
+        "Location: On top of a cliff overlooking a ravine."
+      ],
+      [
+        "Ursa's Ring Wisp",
+        76.2,
+        92.5,
+        "Location: On a cliff, near the end of the river."
+      ]
+    ],
+    "Unown": [
+      [
+        "Cloudpool Ridge Unown",
+        25.0,
+        38.1,
+        "Hint: Among stumps and campire ashes in fields of gold. Location: Sitting on a stump by the campfire."
+      ],
+      [
+        "Diamond Settlement Unown",
+        61.4,
+        39.2,
+        "Hint: Within the settlement where time rules. Location: On top of a tent in Diamond Settlement."
+      ],
+      [
+        "Scarlet Bog Unown",
+        46.6,
+        61.7,
+        "Hint: A withered tree in the sprawling red swamp. Location: On top of a dead tree in the bog."
+      ],
+      [
+        "Shrouded Ruins Unown",
+        55.3,
+        31.1,
+        "Hint: Where stones pile high amid fogbound ruins. Location: On top of the southernmost pillar."
+      ],
+      [
+        "Sludge Mound Unown",
+        56.7,
+        82.4,
+        "Hint: A tree felled on sludge. Location: On a tree in Sludge Mound."
+      ]
+    ],
+    "Request": [
+      [
+        "#30: A Beautiful Rose...",
+        22.6,
+        49.7,
+        "*Berra, a villager, has been utterly captivated by Roselia’s elegance and wishes to learn more about this Pokémon. Complete Roselia’s Pokédex page, and show it to Berra!* How to unlock: Visit the Crimson Mirelands How to start: Speak with Berra Objectives: - Show Berra the completed Pokédex entry for Roselia. Rewards: - 5x Grain Cake - 2x Exp. Candy S"
+      ],
+      [
+        "#31: Setting Up the Bogbound Camp",
+        55.5,
+        80.1,
+        "*It seems the Construction Corps could use some help setting up the new Bogbound Camp. A villager named Odo is worried about a Sudowoodo that seems to be under the weather. He wants your advice on what to do* How to unlock: Enter the Crimson Mirelands How to start: Speak with Odo Objectives: - Go to help set up the Bogbound Camp. - Chase away the three Stunky. Rewards: Unlocks the Bogbound Camp settlement."
+      ],
+      [
+        "#32: The Headache-Stricken Psyduck",
+        55.5,
+        43.6,
+        "*Description* How to unlock: Enter Diamond Settlement. How to start: Speak with Martia. Objectives: - Gather information in Jubilife Village about medicine that might ease the headaches of suffering Psyduck. (Speak with Tomma) - Deliver the secret medicine to Martia. Rewards: 1x Max Revive"
+      ],
+      [
+        "#40: The Charm Lost in the Swamp",
+        59.3,
+        73.5,
+        "*Yojiro wants you to find his charm that he lost while being chased by an alpha Hippowdon.* How to unlock: Complete Story Mission #8 How to start: Speak with Yojiro Objectives: - Find the charm that Yojiro dropped in the Crimson Mirelands. - Chase away the Hippowdon and retrieve Yojiro’s charm. Rewards: - 5x Iron Chunk - 1x Grit Gravel"
+      ],
+      [
+        "#89: The Diamond's Clan's Treasure",
+        65.7,
+        34.1,
+        "*Adaman of the Diamond Clan has challenged you to a battle. Claim victory against him to find out more about the treasure he mentioned.* How to unlock: Complete Story Mission #19. How to start: Speak with Adaman Objectives: - Speak with Adaman near the Diamond Settlement, and defeat him in battle. - Adaman's team: Leafeon (LV64), Umbreon (LV32), Vaporeon (LV32) Rewards: - 3x Comet Shard - 1x Adamant Crystal"
+      ]
+    ],
+    "Legendary": [
+      [
+        "Azelf",
+        73.7,
+        38.6,
+        "Level: 70 How to catch: Part of the #21: The Plate of the Lakes story mission. Can be found within Valor Cavern"
+      ],
+      [
+        "Enamorus",
+        51.9,
+        60.2,
+        "How to catch: Part of the #94: Incarnate Forces of Hisui request."
+      ]
+    ],
+    "Character": [
+      [
+        "Arezu",
+        45.5,
+        53.1,
+        "Character marker."
+      ],
+      [
+        "Calaba",
+        43.6,
+        43.6,
+        "Character marker."
+      ],
+      [
+        "Miss Fortune Sisters (M8)",
+        25.0,
+        38.2,
+        "Character marker."
+      ],
+      [
+        "Odo",
+        60.9,
+        73.9,
+        "Character marker."
+      ],
+      [
+        "Ren",
+        25.4,
+        49.1,
+        "Character marker."
+      ],
+      [
+        "Wanda - Mirelands",
+        28.5,
+        74.4,
+        "Character marker."
+      ]
+    ],
+    "Farm": [
+      [
+        "Scarlet Bog Ursaluna digging route",
+        55.0,
+        58.0,
+        "Peat Blocks, stones, shards, and sellables."
+      ]
+    ],
+    "Story": [
+      [
+        "#8: Arezu's Predicament",
+        35.1,
+        22.3,
+        "Hisuian Lilligant Noble fight at Brava Arena."
+      ],
+      [
+        "#15: The Trial of Lake Valor",
+        72.1,
+        38.7,
+        "Lake Valor trial route."
+      ],
+      [
+        "#21: The Plate of the Lakes - Azelf",
+        72.1,
+        38.7,
+        "Post-game plate route at Valor Cavern."
+      ]
+    ]
   },
-  "Crimson Mirelands":{
-    Wisp:[["Brava Arena Wisp",44.4,7.1,"Spiritomb wisp collectible."],["Shrouded Ruins Wisp",59.4,7.1,"Spiritomb wisp collectible."],["Cloudpool Ridge Wisp",27.1,13.7,"Spiritomb wisp collectible."],["Cloudpool Ridge Wisp",36.3,15.7,"Spiritomb wisp collectible."],["Diamond Heath Wisp",29.5,25.4,"Spiritomb wisp collectible."],["Diamond Settlement Wisp",52.9,30.9,"Spiritomb wisp collectible."],["Lake Valor Wisp",72.8,35.6,"Spiritomb wisp collectible."],["Solaceon Ruins Wisp",44.7,41.2,"Spiritomb wisp collectible."],["Diamond Settlement Wisp",56.6,41.5,"Spiritomb wisp collectible."],["Bolderoll Slope Wisp",67.8,45.3,"Spiritomb wisp collectible."],["Golden Lowlands Wisp",30.5,52,"Spiritomb wisp collectible."],["Golden Lowlands Wisp",18.4,52.3,"Spiritomb wisp collectible."],["Scarlet Bog Wisp",71.5,52.9,"Spiritomb wisp collectible."],["Scarlet Bog Wisp",68.6,59.4,"Spiritomb wisp collectible."],["Gapejaw Bog Wisp",24.2,64.9,"Spiritomb wisp collectible."],["Droning Meadow Wisp",91.7,68.3,"Spiritomb wisp collectible."],["Gapejaw Bog Wisp",27.4,69.5,"Spiritomb wisp collectible."],["Sludge Mound Wisp",63.5,77.9,"Spiritomb wisp collectible."],["Holm of Trials Wisp",41.1,88.3,"Spiritomb wisp collectible."],["Ursa's Ring Wisp",77.9,90.7,"Spiritomb wisp collectible."]],
-    Subarea:[["Cloudpool Ridge",32,20,"Onix and Roserade alpha route."],["Shrouded Ruins",58,13,"Spiritomb and request routing."],["Diamond Heath",55,26,"Route toward Diamond Settlement."],["Diamond Settlement",64,30,"Diamond Clan hub."],["Solaceon Ruins",49,42,"Unown and story route."],["Golden Lowlands",26,54,"Starting field and early Mirelands research."],["Gapejaw Bog",36,69,"Tangela, Carnivine, Croagunk, and request routes."],["Scarlet Bog",56,58,"Skuntank, digging route, and Enamorus zone."],["Sludge Mound",59,81,"Hippowdon and mud route."],["Bolderoll Slope",71,49,"Rhyhorn and rocky route."],["Lake Valor",82,23,"Azelf and lake route."],["Cottonsedge Prairie",87,64,"Togepi and Togekiss route."],["Droning Meadow",88,76,"Yanma and Yanmega route."],["Ursa's Ring",76,86,"Teddiursa, Ursaring, and Peat Block planning."],["Holm of Trials",43,90,"Torterra, Sliggoo, and Toxicroak route."]],
-    Alpha:[[51.6,9.4],[52.2,23.9],[21.6,29.8],[54.1,37.9],[78.4,44.3],[37.2,50.9],[53.5,57.8],[59.5,59.6],[18.5,61.7],[84.5,69.3],[20.5,71.6],[50.4,72.8],[35.4,76.2]],
-    Unown:[["Shrouded Ruins Unown",56.4,17.3,"Unown letter collectible."],["Diamond Settlement Unown",62.6,27.1,"Unown letter collectible."],["Solaceon Ruins Unown",49,42,"Unown letter collectible."],["Sludge Mound Unown",57.8,78.8,"Unown letter collectible."],["Scarlet Bog Unown",56,58,"Unown letter collectible."]],
-    Point:[[58.8,30.4],[20.7,37.8],[24.2,39.9]],
-    Story:[["Mirelands Camp Story",20.7,37.8,"Opening Crimson Mirelands expedition route."],["Diamond Settlement Story",58.8,30.4,"Diamond Clan settlement and main story route."],["Solaceon Ruins Story",43.6,44.8,"Main story route through Solaceon Ruins."],["Brava Arena Story",44.4,7.1,"Second Noble route and Lilligant battle in northern Crimson Mirelands."]],
-    Character:[[25.1,25.8],[44.3,32.3],[26,38.4],[46.2,43.5],[62.1,68.6]],
-    Camp:[["Mirelands Camp",20.7,37.8,"Starting Crimson Mirelands base camp."],["Bogbound Camp",59,70,"Base camp north of Sludge Mound and south of Scarlet Bog."]],
-    Gate:[["Mirelands Camp Fast Travel",20.7,37.8,"Fast travel point."],["Bogbound Camp Fast Travel",59,70,"Fast travel point."],["Diamond Settlement Fast Travel",58.8,30.4,"Fast travel point."],["Lake Valor Fast Travel",82,26,"Fast travel point."],["Brava Arena Fast Travel",44.4,7.1,"Fast travel point near the second Noble arena."]],
-    Transition:[["Valor Cavern",82,26,"Lake Valor cavern transition."]],
-    Arena:[["Brava Arena",44.4,7.1,"Hisuian Lilligant's Noble arena north of Cloudpool Ridge."]],
-    Noble:[["Hisuian Lilligant",44.4,7.1,"Noble Pokemon battle at Brava Arena."]],
-    Request:[[59.4,7.1],[24.2,64.9],[63.5,77.9]],
-    Legendary:[["Azelf",82,26,"Post-game lake guardian at Lake Valor."],["Enamorus",56,58,"Appears in Scarlet Bog after the other Forces of Nature."]],
-    Farm:[[62,69]]
+  "Cobalt Coastlands": {
+    "Subarea": [
+      [
+        "Aipom Hill",
+        24.6,
+        80.8,
+        "Named subarea marker."
+      ],
+      [
+        "Bathers' Lagoon",
+        45.2,
+        87.6,
+        "Named subarea marker."
+      ],
+      [
+        "Castaway Shore",
+        45.0,
+        50.8,
+        "Named subarea marker."
+      ],
+      [
+        "Crossing Slope",
+        10.5,
+        72.4,
+        "Named subarea marker."
+      ],
+      [
+        "Deadwood Haunt",
+        62.2,
+        83.0,
+        "Named subarea marker."
+      ],
+      [
+        "Firespit Island",
+        80.4,
+        30.0,
+        "Named subarea marker."
+      ],
+      [
+        "Ginkgo Landing",
+        23.0,
+        67.0,
+        "Named subarea marker."
+      ],
+      [
+        "Hideaway Bay",
+        44.3,
+        92.7,
+        "Named subarea marker."
+      ],
+      [
+        "Islespy Shore",
+        30.8,
+        27.0,
+        "Named subarea marker."
+      ],
+      [
+        "Lunker's Lair",
+        81.5,
+        48.8,
+        "Named subarea marker."
+      ],
+      [
+        "Sand's Reach",
+        74.5,
+        73.1,
+        "Named subarea marker."
+      ],
+      [
+        "Seagrass Haven",
+        65.3,
+        36.4,
+        "Named subarea marker."
+      ],
+      [
+        "Spring Path",
+        15.3,
+        36.3,
+        "Named subarea marker."
+      ],
+      [
+        "Tombolo Walk",
+        86.3,
+        88.7,
+        "Named subarea marker."
+      ],
+      [
+        "Tranquility Cove",
+        56.1,
+        64.7,
+        "Named subarea marker."
+      ],
+      [
+        "Veilstone Cape",
+        56.2,
+        44.3,
+        "Named subarea marker."
+      ],
+      [
+        "Windbreak Stand",
+        19.1,
+        46.7,
+        "Named subarea marker."
+      ]
+    ],
+    "Alpha": [
+      [
+        "Alpha Ninetales",
+        78.2,
+        25.2,
+        "Fixed alpha Pokemon. Level 61. Location: Firespit Island."
+      ],
+      [
+        "Alpha Golduck",
+        49.6,
+        85.4,
+        "Fixed alpha Pokemon. Level 50. Location: Bathers' Lagoon."
+      ],
+      [
+        "Alpha Machoke",
+        26.2,
+        53.6,
+        "Fixed alpha Pokemon. Level 40. Location: Ginkgo Landing."
+      ],
+      [
+        "Alpha Tentacruel",
+        86.8,
+        43.0,
+        "Fixed alpha Pokemon. Level 50. Location: Near Lunker's Lair."
+      ],
+      [
+        "Alpha Chansey",
+        87.0,
+        88.0,
+        "Fixed alpha Pokemon. Level 51. Location: Tombolo Walk."
+      ],
+      [
+        "Alpha Gyarados",
+        85.8,
+        57.7,
+        "Fixed alpha Pokemon. Level 58. Location: Near Sand's Reach."
+      ],
+      [
+        "Alpha Hisuian Qwilfish",
+        45.0,
+        27.6,
+        "Fixed alpha Pokemon. Level 55. Location: Near Islespy Shore."
+      ],
+      [
+        "Alpha Octillery",
+        44.7,
+        49.8,
+        "Fixed alpha Pokemon. Level 46. Location: Castaway Shore."
+      ],
+      [
+        "Alpha Mantine",
+        57.6,
+        57.9,
+        "Fixed alpha Pokemon. Level 50. Location: Tranquility Cove."
+      ],
+      [
+        "Alpha Walrein",
+        25.7,
+        71.6,
+        "Fixed alpha Pokemon. Level 50. Location: Ginkgo Landing."
+      ],
+      [
+        "Alpha Empoleon",
+        31.3,
+        28.6,
+        "Fixed alpha Pokemon. Level 69. Location: Islespy Shore."
+      ],
+      [
+        "Alpha Mothim",
+        12.3,
+        37.8,
+        "Fixed alpha Pokemon. Level 56. Location: Spring Path."
+      ],
+      [
+        "Alpha Gastrodon",
+        56.8,
+        26.8,
+        "Fixed alpha Pokemon. Level 61. Location: Seagrass Haven."
+      ],
+      [
+        "Alpha Ambipom",
+        37.9,
+        89.0,
+        "Fixed alpha Pokemon. Level 50. Location: Near Hideaway Bay."
+      ],
+      [
+        "Alpha Purugly",
+        58.6,
+        44.1,
+        "Fixed alpha Pokemon. Level 45. Location: Veilstone Cape."
+      ],
+      [
+        "Alpha Drapion",
+        20.1,
+        57.3,
+        "Fixed alpha Pokemon. Level 45. Location: Near Ginkgo Landing."
+      ],
+      [
+        "Alpha Lumineon",
+        62.3,
+        39.1,
+        "Fixed alpha Pokemon. Level 60. Location: Seagrass Haven."
+      ],
+      [
+        "Alpha Dusknoir",
+        71.8,
+        82.2,
+        "Fixed alpha Pokemon. Level 65. Location: Deadwood Haunt."
+      ]
+    ],
+    "Camp": [
+      [
+        "Beachside Camp",
+        6.3,
+        64.8,
+        "Base camp marker."
+      ],
+      [
+        "Coastlands Camp",
+        77.7,
+        78.8,
+        "Base camp marker."
+      ]
+    ],
+    "Gate": [
+      [
+        "Beachside Camp Fast Travel",
+        6.3,
+        64.8,
+        "Fast travel point at this base camp."
+      ],
+      [
+        "Coastlands Camp Fast Travel",
+        77.7,
+        78.8,
+        "Fast travel point at this base camp."
+      ],
+      [
+        "Molten Arena Fast Travel",
+        83.0,
+        22.2,
+        "Fast travel point at this arena."
+      ]
+    ],
+    "Transition": [
+      [
+        "Exit",
+        3.2,
+        67.8,
+        "Transition marker."
+      ]
+    ],
+    "Cave": [
+      [
+        "Veilstone Cape Cave South Exit",
+        61.5,
+        42.3,
+        "Exit to the south"
+      ],
+      [
+        "Veilstone Cape Cave North Exit",
+        61.4,
+        47.6,
+        "Exit to the north"
+      ],
+      [
+        "Lava Dome Sanctum",
+        81.1,
+        25.5,
+        "Cave marker."
+      ],
+      [
+        "Seaside Hollow",
+        49.6,
+        39.4,
+        "Cave marker."
+      ],
+      [
+        "Turnback Cave",
+        16.9,
+        33.2,
+        "Cave marker."
+      ]
+    ],
+    "Arena": [
+      [
+        "Molten Arena",
+        83.0,
+        22.2,
+        "Arena marker."
+      ]
+    ],
+    "Noble": [
+      [
+        "Arcanine",
+        80.1,
+        22.0,
+        "Noble Pokemon marker."
+      ]
+    ],
+    "Wisp": [
+      [
+        "Bathers' Lagoon Wisp",
+        37.2,
+        78.8,
+        "Location: On a cliff, by the beach."
+      ],
+      [
+        "Bathers' Lagoon Wisp 2",
+        50.0,
+        82.7,
+        "Location: On a small island, in the middle of the lake."
+      ],
+      [
+        "Castaway Shore Wisp",
+        44.1,
+        38.6,
+        "Location: On top of the cliff."
+      ],
+      [
+        "Castaway Shore Wisp 2",
+        49.8,
+        56.9,
+        "Location: At the end of the rocky outcroping."
+      ],
+      [
+        "Crossing Slope Wisp",
+        11.1,
+        66.4,
+        "Location: On top of the cliff just south of the camp."
+      ],
+      [
+        "Crossing Slope Wisp 2",
+        15.5,
+        73.4,
+        "Location: At the end of a ledge, by an Oran Berry tree."
+      ],
+      [
+        "Deadwood Haunt Wisp",
+        58.9,
+        95.0,
+        "Location: On a small island."
+      ],
+      [
+        "Firespit Island Wisp",
+        90.7,
+        14.9,
+        "Location: On an island hidden behind Firespit Island."
+      ],
+      [
+        "Firespit Island Wisp 2",
+        86.8,
+        38.0,
+        "Location: On a small island, just south of Firespit Island."
+      ],
+      [
+        "Firespit Island Wisp 3",
+        81.2,
+        27.7,
+        "Location: On the southern side of the volcano, on a ledge."
+      ],
+      [
+        "Islespy Shore Wisp",
+        27.8,
+        20.0,
+        "Location: At the end of the cliff, behind the trees."
+      ],
+      [
+        "Islespy Shore Wisp 2",
+        41.0,
+        36.6,
+        "Location: At the end of a ledge overlooking the sea."
+      ],
+      [
+        "Sand's Reach Wisp",
+        67.2,
+        73.7,
+        "Location: On a lone rock."
+      ],
+      [
+        "Sand's Reach Wisp 2",
+        92.1,
+        68.5,
+        "Location: At the end of the sandy beach, near the rock archway,"
+      ],
+      [
+        "Seagrass Haven Wisp",
+        56.8,
+        16.3,
+        "Location: On a small lonely island."
+      ],
+      [
+        "Spring Path Wisp",
+        9.4,
+        35.1,
+        "Location: On a curved ledge, behind the spring."
+      ],
+      [
+        "Spring Path Wisp 2",
+        20.5,
+        34.4,
+        "Location: On a ledge, on the eastern side of the spring."
+      ],
+      [
+        "Tombolo Walk Wisp",
+        83.5,
+        86.1,
+        "Location: On a small rocky hill, on an island."
+      ],
+      [
+        "Veilstone Cape Wisp",
+        51.5,
+        46.4,
+        "Location: On a small rock outcroping, high up on the cliff."
+      ],
+      [
+        "Windbreak Stand Wisp",
+        25.6,
+        52.3,
+        "Location: On top of a small hill."
+      ]
+    ],
+    "Unown": [
+      [
+        "Deadwood Haunt Unown",
+        67.3,
+        80.9,
+        "Hint: A timeworn ship on a sandy shore. Location: Atop the mast of the wrecked ship."
+      ],
+      [
+        "Firespit Island Unown",
+        78.3,
+        25.9,
+        "Hint: Turn your eyes up at the volcanic island. Location: High up on the western side of the volcano"
+      ],
+      [
+        "Lunker's Lair Unown",
+        75.3,
+        46.6,
+        "Hint: By the grave upon the cape. Location: On top of the rocky cliff, past the grave."
+      ],
+      [
+        "Sand's Reach Unown",
+        91.2,
+        66.2,
+        "Hint: Two horns rising from the sea. Location: On the eastern side of the tall rock."
+      ],
+      [
+        "Spring Path Unown",
+        14.9,
+        34.5,
+        "Hint: Twin trees at the spring by the sea. Location: On the southern tree."
+      ]
+    ],
+    "Request": [
+      [
+        "#46: Setting Up the Coastlands Camp",
+        36.6,
+        82.6,
+        "*Gully of the Supply Corps wants you to find the missing Yorrich and tell him to return to where she’s waiting. He doesn’t seem to have gone to Deadwood Haunt...* How to unlock: Visit the Cobalt Coastlands How to start: Speak with Gully Objectives: - Speak with Gully to learn more about her request. - Look for Yorrich of the Construction Corps. - Drive away the Chatot scaring Yorrich (must be done in nighttime). - Report back to Gully with your progress. Rewards: Unlocks the Coastlands Camp."
+      ],
+      [
+        "#47: Balloon Race in the Coastlands",
+        80.7,
+        77.4,
+        "*The man running the balloon race in the Cobalt Coastlands has issued you a challenge. You’ll get a special reward if you manage to burst 24 balloons.* How to unlock: Complete Request #46. How to start: Speak with the Balloon Race NPC. Objectives: - Burst 24 balloons within the time limit for the balloon race in the Cobalt Coastlands. Rewards: - 1x Nugget - 10x Ultra Ball"
+      ],
+      [
+        "#49: Keep an Eye Out for Aipom!",
+        40.3,
+        39.8,
+        "*Hiko from the village had his pack stolen by some Aipom. He wants you to chase down the Aipom and get his pack back.* How to unlock: Visit the Cobalt Coastlands How to start: Speak with Hiko Objectives: - Chase down the Aipom that stole Hiko’s pack. - They will pause here and here, before stopping here. - Defeat the Aipom, and retrieve the pack. Rewards: - 5x Scatter Bang - 1x Exp. Candy M"
+      ],
+      [
+        "#55: Poor, Peckish Piplup",
+        85.6,
+        84.5,
+        "*Maris of the Supply Corps wants to help a Piplup that’s too famished to move. She’s asked you to help her out by providing a tasty Bean Cake.* How to unlock: Complete Request #46. How to start: Speak with Maris. Objectives: - Give Maris the item she requested (1x Bean Cake). - Bean Cakes can be crafted for 1x Plump Beans and 1x Cake-Lure Base. The recipe can be bought at Craftworks for ₽1,000. Rewards: - 5x Razz Berry - 3x Hyper Potion"
+      ],
+      [
+        "#56: Getting Help from Machoke",
+        26.9,
+        49.8,
+        "*Bosley wants to know more about Machoke so he can have it help with the Construction Corps’ work. Show him Machoke’s Pokédex page after it’s completed.* How to unlock: Complete Story Mission #10. How to start: Speak with Bosley Objectives: - Show Bosley the completed Pokédex entry for Machoke. - Wait for Bosley to invite Machoke to help the Construction Corps. Rewards: - 1x Grit Gravel - 1x Aux Powerguard"
+      ]
+    ],
+    "Legendary": [
+      [
+        "Giratina",
+        18.0,
+        33.8,
+        "Level: 70 How to catch: Part of the #91: On the Trail of Giratina request. Can be found inside of Turnback Cave."
+      ],
+      [
+        "Heatran",
+        82.2,
+        25.3,
+        "Level: 70 How to catch: Part of the #22: The Plate of Firespit Island story mission. Can be found within Lava Dome Sanctum."
+      ],
+      [
+        "Manaphy",
+        48.8,
+        38.4,
+        "Level: 50 How to catch: Part of the #66: The Sea's Legend request. Can be found within Seaside Hollow."
+      ],
+      [
+        "Thundurus",
+        79.4,
+        58.6,
+        "How to catch: Part of the #94: Incarnate Forces of Hisui request. Note: Only spawns during thunderstorms."
+      ]
+    ],
+    "Character": [
+      [
+        "Irida (M9)",
+        10.5,
+        65.1,
+        "Character marker."
+      ],
+      [
+        "Iscan",
+        28.7,
+        87.7,
+        "Character marker."
+      ],
+      [
+        "Miss Fortune Sisters (M10)",
+        78.2,
+        23.0,
+        "Character marker."
+      ],
+      [
+        "Palina",
+        74.2,
+        47.0,
+        "Character marker."
+      ],
+      [
+        "Wanda - Coastlands",
+        46.2,
+        51.4,
+        "Character marker."
+      ],
+      [
+        "Yorrich",
+        87.4,
+        81.2,
+        "Character marker."
+      ]
+    ],
+    "Farm": [
+      [
+        "Growlithe route",
+        24.0,
+        38.0,
+        "Hisuian Growlithe checks and Fire Stone planning."
+      ],
+      [
+        "Seagrass Haven pearl route",
+        69.0,
+        32.0,
+        "Pearls, Water types, and sea catches."
+      ]
+    ],
+    "Story": [
+      [
+        "#10: The Lordless Island",
+        80.1,
+        22.0,
+        "Hisuian Arcanine Noble fight at Molten Arena."
+      ],
+      [
+        "#22: The Plate of Firespit Island",
+        81.1,
+        25.5,
+        "Post-game Heatran plate route in Lava Dome Sanctum."
+      ]
+    ]
   },
-  "Cobalt Coastlands":{
-    Wisp:[["Tidal Passage Wisp",62.5,4.6,"Spiritomb wisp collectible."],["Islespy Shore Wisp",33.8,8.6,"Spiritomb wisp collectible."],["Seagrass Haven Wisp",77.2,10.5,"Spiritomb wisp collectible."],["Firespit Island Wisp",86.6,17.2,"Spiritomb wisp collectible."],["Veilstone Cape Wisp",31.3,21.8,"Spiritomb wisp collectible."],["Veilstone Cape Wisp",26.6,24.6,"Spiritomb wisp collectible."],["Spring Path Wisp",15.6,25.4,"Spiritomb wisp collectible."],["Castaway Shore Wisp",46.8,27,"Spiritomb wisp collectible."],["Lunker's Lair Wisp",92.1,28.5,"Spiritomb wisp collectible."],["Castaway Shore Wisp",50,29.2,"Spiritomb wisp collectible."],["Veilstone Cape Wisp",57.3,37.8,"Spiritomb wisp collectible."],["Ginkgo Landing Wisp",17.3,60,"Spiritomb wisp collectible."],["Seaside Hollow Wisp",97.4,62.3,"Spiritomb wisp collectible."],["Crossing Slope Wisp",21.7,67.7,"Spiritomb wisp collectible."],["Sand's Reach Wisp",72.8,68.1,"Spiritomb wisp collectible."],["Tranquility Cove Wisp",43.2,73.7,"Spiritomb wisp collectible."],["Tombolo Walk Wisp",89,81.8,"Spiritomb wisp collectible."],["Aipom Hill Wisp",35.4,85.4,"Spiritomb wisp collectible."],["Deadwood Haunt Wisp",64.6,91.6,"Spiritomb wisp collectible."],["Hideaway Bay Wisp",55.4,81.1,"Spiritomb wisp collectible."]],
-    Subarea:[["Spring Path",18,24,"Highland route and alpha checks."],["Islespy Shore",35,16,"Empoleon and northern shoreline."],["Windbreak Stand",25,39,"Hisuian Growlithe checks."],["Veilstone Cape",56,38,"Machamp, Vulpix, and Growlithe routes."],["Castaway Shore",45,44,"Machoke and Octillery routes."],["Tranquility Cove",58,63,"Mantyke, Qwilfish, and sea routing."],["Seagrass Haven",70,24,"Lumineon and pearl route."],["Lunker's Lair",92,41,"Tentacruel and water alpha route."],["Sand's Reach",81,76,"Gyarados and Thundurus weather route."],["Deadwood Haunt",73,84,"Duskull, Dusclops, and Dusknoir at night."],["Tombolo Walk",91,89,"Chansey and Manaphy route."],["Ginkgo Landing",28,62,"Entry beach and Ginter check route."],["Crossing Slope",20,70,"Purugly and early Coastlands route."],["Aipom Hill",32,82,"Aipom and Ambipom routing."],["Bathers' Lagoon",44,88,"Golduck and southern water route."],["Firespit Island",87,14,"Heatran, Magmar line, and Noble route."]],
-    Alpha:[[37.2,13.9],[62.5,16.2],[50.9,17.1],[37.2,18.1],[88.9,19.3],[18.6,28.4],[67.9,29.7],[92.1,34.1],[64.3,35.4],[32.3,45.8],[26.2,50],[91.1,50.4],[63.3,50.6],[31.8,65.8],[77.3,77.6],[55.4,81.1],[92.3,83.9],[43.9,85]],
-    Unown:[["Firespit Island Unown",84.1,19,"Unown letter collectible."],["Spring Path Unown",21.1,24.8,"Unown letter collectible."],["Sand's Reach Unown",72.9,76.1,"Unown letter collectible."],["Tombolo Walk Unown",91,89,"Unown letter collectible."],["Deadwood Haunt Unown",73,84,"Unown letter collectible."]],
-    Point:[[88.4,11.1],[67.1,39.2],[12.7,58.2],[9.5,61.5],[83.2,73.7]],
-    Story:[["Beachside Camp Story",12.7,58.2,"Opening Cobalt Coastlands expedition route."],["Firespit Island Story",88.4,11.1,"Third Noble route and Molten Arena story sequence."],["Seaside Hollow Story",97.4,62.3,"The Sea's Legend request destination."]],
-    Camp:[["Beachside Camp",12.7,58.2,"Starting Cobalt Coastlands base camp west of Crossing Slope."],["Coastlands Camp",83.2,73.7,"Base camp in the center of Sand's Reach."]],
-    Gate:[["Beachside Camp Fast Travel",12.7,58.2,"Fast travel point."],["Coastlands Camp Fast Travel",83.2,73.7,"Fast travel point."],["Molten Arena Fast Travel",88.4,11.1,"Fast travel point."],["Seagrass Haven Fast Travel",67.1,39.2,"Fast travel point."],["Spring Path Fast Travel",9.5,61.5,"Fast travel point."]],
-    Transition:[[88.4,11.1]],
-    Cave:[[97.4,62.3]],
-    Arena:[["Molten Arena",88.4,11.1,"Hisuian Arcanine's Noble arena on Firespit Island."]],
-    Noble:[["Hisuian Arcanine",88.4,11.1,"Noble Pokemon battle at Molten Arena."]],
-    Request:[[77.2,10.5],[31.3,21.8],[43.2,73.7]],
-    Legendary:[["Heatran",86,14,"Post-game plate mission in Firespit Island's Lava Dome Sanctum."],["Thundurus",78,76,"Appears over the Coastlands water during thunderstorm weather."],["Manaphy and Phione",93,63,"Request 66 encounter in Seaside Hollow."]],
-    Farm:[[71,33],[27,38]]
+  "Coronet Highlands": {
+    "Subarea": [
+      [
+        "Ancient Quarry",
+        47.0,
+        83.7,
+        "Named subarea marker."
+      ],
+      [
+        "Bolderoll Ravine",
+        8.0,
+        72.0,
+        "Named subarea marker."
+      ],
+      [
+        "Celestica Ruins",
+        55.2,
+        50.7,
+        "Named subarea marker."
+      ],
+      [
+        "Celestica Trail",
+        42.8,
+        69.2,
+        "Named subarea marker."
+      ],
+      [
+        "Clamberclaw Cliffs",
+        75.1,
+        62.6,
+        "Named subarea marker."
+      ],
+      [
+        "Cloudcap Pass",
+        24.4,
+        36.2,
+        "Named subarea marker."
+      ],
+      [
+        "Fabled Spring",
+        15.5,
+        87.5,
+        "Named subarea marker."
+      ],
+      [
+        "Heavenward Lookout",
+        82.3,
+        86.2,
+        "Named subarea marker."
+      ],
+      [
+        "Lonely Spring",
+        82.4,
+        66.3,
+        "Named subarea marker."
+      ],
+      [
+        "Primeval Grotto",
+        43.0,
+        61.0,
+        "Named subarea marker."
+      ],
+      [
+        "Sacred Plaza",
+        23.6,
+        57.8,
+        "Named subarea marker."
+      ],
+      [
+        "Sonorous Path",
+        58.9,
+        76.5,
+        "Named subarea marker."
+      ],
+      [
+        "Stonetooth Rows",
+        5.2,
+        62.7,
+        "Named subarea marker."
+      ],
+      [
+        "Temple of Sinnoh",
+        20.0,
+        25.4,
+        "Named subarea marker."
+      ],
+      [
+        "Wayward Wood",
+        50.4,
+        91.0,
+        "Named subarea marker."
+      ]
+    ],
+    "Alpha": [
+      [
+        "Alpha Clefable",
+        24.7,
+        92.7,
+        "Fixed alpha Pokemon. Level 62. Location: Fabled Spring."
+      ],
+      [
+        "Alpha Golem",
+        13.0,
+        71.5,
+        "Fixed alpha Pokemon. Level 60. Location: Bolderoll Ravine."
+      ],
+      [
+        "Alpha Crobat",
+        69.8,
+        85.1,
+        "Fixed alpha Pokemon. Level 60. Location: Wayward Cave."
+      ],
+      [
+        "Alpha Gligar",
+        56.5,
+        52.0,
+        "Fixed alpha Pokemon. Level 52. Location: Near Celestica Ruins."
+      ],
+      [
+        "Alpha Steelix",
+        43.8,
+        70.2,
+        "Fixed alpha Pokemon. Level 60. Location: Celestica Trail."
+      ],
+      [
+        "Alpha Luxray",
+        35.3,
+        55.1,
+        "Fixed alpha Pokemon. Level 55. Location: Sacred Plaza."
+      ],
+      [
+        "Alpha Mothim",
+        58.6,
+        89.9,
+        "Fixed alpha Pokemon. Level 55. Location: Wayward Wood."
+      ],
+      [
+        "Alpha Mismagius",
+        18.3,
+        63.1,
+        "Fixed alpha Pokemon. Level 61. Location: Stonetooth Rows."
+      ],
+      [
+        "Alpha Bronzong",
+        78.8,
+        58.5,
+        "Fixed alpha Pokemon. Level 55. Location: Near Clamberclaw Cliffs."
+      ],
+      [
+        "Alpha Gabite",
+        76.2,
+        58.0,
+        "Fixed alpha Pokemon. Level 56. Location: Near Clamberclaw Cliffs."
+      ],
+      [
+        "Alpha Carnivine",
+        82.4,
+        66.3,
+        "Fixed alpha Pokemon. Level 52. Location: Lonely Spring."
+      ],
+      [
+        "Alpha Rhyperior",
+        28.1,
+        66.2,
+        "Fixed alpha Pokemon. Level 74. Location: Near Sacred Plaza."
+      ],
+      [
+        "Alpha Electivire",
+        30.2,
+        45.4,
+        "Fixed alpha Pokemon. Level 69. Location: Cloudcap Pass."
+      ],
+      [
+        "Alpha Gliscor",
+        54.6,
+        61.6,
+        "Fixed alpha Pokemon. Level 77. Location: Near Primeval Grotto."
+      ],
+      [
+        "Alpha Probopass",
+        40.6,
+        66.4,
+        "Fixed alpha Pokemon. Level 73. Location: Near Primeval Grotto."
+      ],
+      [
+        "Alpha Hisuian Goodra",
+        47.6,
+        85.1,
+        "Fixed alpha Pokemon. Level 70. Location: Near Ancient Quarry."
+      ]
+    ],
+    "Camp": [
+      [
+        "Highlands Camp",
+        84.8,
+        90.4,
+        "Base camp marker."
+      ],
+      [
+        "Mountain Camp",
+        78.3,
+        71.4,
+        "Base camp marker."
+      ],
+      [
+        "Summit Camp",
+        17.2,
+        53.5,
+        "Base camp marker."
+      ]
+    ],
+    "Gate": [
+      [
+        "Highlands Camp Fast Travel",
+        84.8,
+        90.4,
+        "Fast travel point at this base camp."
+      ],
+      [
+        "Moonview Arena Fast Travel",
+        9.8,
+        50.1,
+        "Fast travel point at this arena."
+      ],
+      [
+        "Mountain Camp Fast Travel",
+        78.3,
+        71.4,
+        "Fast travel point at this base camp."
+      ],
+      [
+        "Summit Camp Fast Travel",
+        17.2,
+        53.5,
+        "Fast travel point at this base camp."
+      ]
+    ],
+    "Transition": [
+      [
+        "Heavenward Lookout Exit",
+        97.0,
+        91.7,
+        "Transition marker."
+      ],
+      [
+        "Southern Highlands Exit",
+        87.5,
+        93.3,
+        "Transition marker."
+      ]
+    ],
+    "Cave": [
+      [
+        "Temple Stone Portal",
+        23.1,
+        30.6,
+        "Cave marker."
+      ],
+      [
+        "Cloudcap Stone Portal",
+        35.1,
+        40.5,
+        "Cave marker."
+      ],
+      [
+        "Wayward Cave East Entrance",
+        74.1,
+        80.5,
+        "Cave marker."
+      ],
+      [
+        "Wayward Cave South Entrance",
+        70.3,
+        84.6,
+        "Cave marker."
+      ]
+    ],
+    "Arena": [
+      [
+        "Moonview Arena",
+        9.8,
+        50.1,
+        "Arena marker."
+      ]
+    ],
+    "Noble": [
+      [
+        "Electrode",
+        11.5,
+        50.0,
+        "Noble Pokemon marker."
+      ]
+    ],
+    "Wisp": [
+      [
+        "Bolderoll Ravine Wisp",
+        9.3,
+        74.3,
+        "Location: At the end of the ravine."
+      ],
+      [
+        "Celestica Trail Wisp",
+        27.4,
+        73.6,
+        "Location: Near the lake, at the start of the waterfall."
+      ],
+      [
+        "Celestica Trail Wisp 2",
+        36.4,
+        77.1,
+        "Location: High up on the northern cliff."
+      ],
+      [
+        "Clamberclaw Cliffs Wisp",
+        65.9,
+        66.3,
+        "Location: At the end of the high ridge, beside a tree."
+      ],
+      [
+        "Clamberclaw Cliffs Wisp 2",
+        81.2,
+        56.3,
+        "Location: On top of the high ledge overlooking the sea."
+      ],
+      [
+        "Clamberclaw Cliffs Wisp 3",
+        65.9,
+        56.4,
+        "Location: At the south end of a rock, in the middle of a puddle."
+      ],
+      [
+        "Fabled Spring Wisp",
+        21.1,
+        87.0,
+        "Location: On top of the hill."
+      ],
+      [
+        "Fabled Spring Wisp 2",
+        31.0,
+        92.0,
+        "Location: On the cliff looking over Fabled Spring."
+      ],
+      [
+        "Heavenward Lookout Wisp",
+        71.9,
+        85.6,
+        "Location: Inside Wayward Cave. In the underwater lake cavern. Stick to the right side."
+      ],
+      [
+        "Heavenward Lookout Wisp 2",
+        87.4,
+        76.3,
+        "Location: At the end of a rising cliff."
+      ],
+      [
+        "Primeval Grotto Wisp",
+        39.7,
+        57.5,
+        "Location: In the the middle of a circle of pillars."
+      ],
+      [
+        "Primeval Grotto Wisp 2",
+        39.1,
+        62.3,
+        "Location: Just above the entrance to Primeval Grotto."
+      ],
+      [
+        "Sacred Plaza Wisp",
+        29.0,
+        50.5,
+        "Location: On top of the cliffs."
+      ],
+      [
+        "Sacred Plaza Wisp 2",
+        17.4,
+        62.1,
+        "Location: Near the gravestones"
+      ],
+      [
+        "Sacred Plaza Wisp 3",
+        12.8,
+        47.5,
+        "Location: On top of a cliff, overlooking Moonview Arena."
+      ],
+      [
+        "Sacred Plaza Wisp 4",
+        30.5,
+        65.7,
+        "Location: On top of a tall stone pillar."
+      ],
+      [
+        "Sonorous Path Wisp",
+        62.9,
+        73.2,
+        "Location: On a small ledge jutting from the cliff."
+      ],
+      [
+        "Sonorous Path Wisp 2",
+        69.3,
+        84.4,
+        "Location: Directly above Wayward Cave's entrance, near the waterfall."
+      ],
+      [
+        "Wayward Wood Wisp",
+        65.7,
+        94.7,
+        "Location: At the far end of the beach."
+      ],
+      [
+        "Wayward Wood Wisp 2",
+        55.4,
+        85.5,
+        "Location: Inside the Ancient Quarry. On top of a square stone pillar."
+      ]
+    ],
+    "Unown": [
+      [
+        "Fabled Spring Unown",
+        20.2,
+        89.9,
+        "Hint: Among flowers at the spring where fairies dwell. Location: In the center of the purple flower bed."
+      ],
+      [
+        "Heavenward Lookout Unown",
+        70.9,
+        85.0,
+        "Hint: A impasse in a cave adorned by twin falls. Location: Inside Wayward Cave. Find a tunnel blocked by brown boulders; the Unown is at the end of that corridor."
+      ],
+      [
+        "Primeval Grotto Unown",
+        39.1,
+        56.0,
+        "Hint: Look to the ruined pillars of Celestica. Location: On top of a pillar."
+      ],
+      [
+        "Wayward Wood Unown",
+        53.5,
+        85.7,
+        "Hint: A stony outcrop over pools of mud on a mighty mountain. Location: On the north side of the stone pile, at the top of the mountain."
+      ],
+      [
+        "Wayward Wood Unown 2",
+        55.6,
+        84.6,
+        "Hint: A nook within a quarry. Location: Inside the Ancient Quarry. High up on the east wall."
+      ]
+    ],
+    "Request": [
+      [
+        "#65: Setting Up the Mountain Camp",
+        77.4,
+        71.6,
+        "*A Bronzor is getting in the way of a new base camp’s construction and seems to want to tell you something. Eshim has asked you to investigate.* How to unlock: Visit the Coronet Highlands How to start: Talk to Eshim Objectives: - Find out what Bronzor wants. Rewards: A new base camp."
+      ],
+      [
+        "#87: Rolling with Spheal",
+        20.5,
+        57.1,
+        "*A villager named Senki has asked you to look for his Spheal that went rolling off into Bolderoll Ravine.* How to unlock: Start #17: Atop Mount Coronet. How to start: Speak with Senki. Objectives: - Find Senki’s Spheal, which has rolled off toward Bolderoll Ravine. - The Spheal will briefly stop here, here and here. He will stop here. - Return to the Summit Camp to speak with Senki. Rewards: - 1x Rare Candy - 5x Sticky Glob"
+      ]
+    ],
+    "Story": [
+      [
+        "#11: Scaling Perilous Heights",
+        11.5,
+        50.0,
+        "Hisuian Electrode Noble fight at Moonview Arena."
+      ],
+      [
+        "#17: Atop Mount Coronet",
+        20.0,
+        25.4,
+        "Late story summit route at the Temple of Sinnoh."
+      ],
+      [
+        "#18: The Counterpart",
+        20.0,
+        25.4,
+        "Second Origin Forme encounter at the Temple of Sinnoh."
+      ],
+      [
+        "#23: The Plate of Moonview Arena",
+        9.8,
+        50.1,
+        "Post-game Cresselia plate route at Moonview Arena."
+      ],
+      [
+        "#26: Seeking the Remaining Plates",
+        20.0,
+        25.4,
+        "Late post-game route toward the Temple of Sinnoh."
+      ],
+      [
+        "#27: The Deified Pokemon",
+        19.9,
+        29.8,
+        "Final Arceus mission at the Temple of Sinnoh."
+      ]
+    ],
+    "Legendary": [
+      [
+        "Arceus",
+        19.9,
+        29.8,
+        "Level: 70 How to catch: Part of the #27: The Deified Pokémon mission."
+      ],
+      [
+        "Cresselia",
+        8.1,
+        49.7,
+        "Level: 70 How to catch: Part of the #23: The Plate of Moonview Arena story mission."
+      ],
+      [
+        "Darkrai",
+        59.3,
+        66.3,
+        "How to catch: Part of the #93: The Darksome Nightmare request."
+      ],
+      [
+        "Dialga",
+        18.8,
+        28.9,
+        "In #13: Disaster Looming, you have to choose to side with Adaman or Irina. This choice changes how you encounter this Pokémon. - If you chose Adaman, you will encounter this Pokémon during #17: Atop Mount Coronet, in its standard form. - If you chose Irina, you will encounter this Pokémon during #18: The Counterpart, in its origin form."
+      ],
+      [
+        "Palkia",
+        21.1,
+        28.8,
+        "In #13: Disaster Looming, you have to choose to side with Adaman or Irina. This choice changes how you encounter this Pokémon. - If you chose Irina, you will encounter this Pokémon during #17: Atop Mount Coronet, in its standard form. - If you chose Adaman, you will encounter this Pokémon during #18: The Counterpart, in its origin form."
+      ]
+    ],
+    "Character": [
+      [
+        "Gully",
+        79.4,
+        71.6,
+        "Character marker."
+      ],
+      [
+        "Gully (R68)",
+        75.4,
+        80.6,
+        "Note: Located inside the Wayward Cave."
+      ],
+      [
+        "Ingo (Clamberclaw Route)",
+        73.0,
+        63.6,
+        "Character marker."
+      ],
+      [
+        "Ingo (Wayward Route)",
+        70.1,
+        85.4,
+        "Character marker."
+      ],
+      [
+        "Ingo (Wayward Wood)",
+        54.4,
+        90.6,
+        "Character marker."
+      ],
+      [
+        "Wanda - Highlands",
+        76.9,
+        81.1,
+        "Character marker."
+      ]
+    ],
+    "Farm": [
+      [
+        "Cleffa night checks",
+        20.0,
+        88.0,
+        "Cleffa, Clefairy, Moon Stone, and Shiny Stone routing."
+      ],
+      [
+        "Gible and ore route",
+        76.0,
+        82.0,
+        "Gible line, Tumblestones, and Iron Chunks."
+      ]
+    ]
   },
-  "Coronet Highlands":{
-    Wisp:[["Moonview Arena Wisp",26.1,7.2,"Spiritomb wisp collectible."],["Cloudcap Pass Wisp",17.1,35.8,"Spiritomb wisp collectible."],["Sacred Plaza Wisp",33.7,39.5,"Spiritomb wisp collectible."],["Celestica Ruins Wisp",44,40.2,"Spiritomb wisp collectible."],["Clamberclaw Cliffs Wisp",86.9,46.4,"Spiritomb wisp collectible."],["Lonely Spring Wisp",71.3,46.6,"Spiritomb wisp collectible."],["Primeval Grotto Wisp",44.6,47.8,"Spiritomb wisp collectible."],["Primeval Grotto Wisp",44,53.4,"Spiritomb wisp collectible."],["Celestica Trail Wisp",35.4,57.4,"Spiritomb wisp collectible."],["Clamberclaw Cliffs Wisp",71.3,58.2,"Spiritomb wisp collectible."],["Lonely Spring Wisp",83.7,60.4,"Spiritomb wisp collectible."],["Sonorous Path Wisp",68.2,66.3,"Spiritomb wisp collectible."],["Celestica Trail Wisp",32.1,66.7,"Spiritomb wisp collectible."],["Bolderoll Ravine Wisp",13.5,67.6,"Spiritomb wisp collectible."],["Heavenward Lookout Wisp",93.3,70,"Spiritomb wisp collectible."],["Fabled Spring Wisp",25.6,82.5,"Spiritomb wisp collectible."],["Fabled Spring Wisp",17.5,83.7,"Spiritomb wisp collectible."],["Ancient Quarry Wisp",60.9,80.8,"Spiritomb wisp collectible."],["Ancient Quarry Wisp",77.4,80.9,"Spiritomb wisp collectible."],["Wayward Wood Wisp",35.7,88.5,"Spiritomb wisp collectible."]],
-    Subarea:[["Temple of Sinnoh",25,8,"Late-story and Arceus route."],["Cloudcap Pass",34,22,"High-elevation route toward the summit."],["Sacred Plaza",27,50,"High-level alpha and story route."],["Stonetooth Rows",12,57,"Electric and Ghost checks."],["Bolderoll Ravine",17,68,"Golem, ore, and rocky route."],["Fabled Spring",20,88,"Cleffa, Clefairy, and Clefable night route."],["Celestica Ruins",57,40,"Hisuian Voltorb and upper route."],["Primeval Grotto",45,50,"Probopass and ore-heavy routes."],["Celestica Trail",47,64,"Steelix and cliff routing."],["Sonorous Path",62,73,"Mountain Camp approach."],["Ancient Quarry",52,85,"Bronzong, Goodra, and ore route."],["Wayward Wood",55,94,"Mothim and lower route checks."],["Heavenward Lookout",88,90,"Early Highlands route."],["Clamberclaw Cliffs",83,57,"Gible line, Gligar, and Darkrai request route."],["Lonely Spring",90,61,"Carnivine and water route."]],
-    Alpha:[[34.8,33.6],[61.7,41.4],[40.1,45.1],[56.5,47.1],[84.4,49.1],[59.8,52.7],[22.7,54.4],[32.7,58.1],[45.4,58.2],[66.5,61.3],[17.4,64.2],[52.7,80.4],[63.9,85.9],[22,89.1]],
-    Unown:[["Ancient Quarry Unown",58.7,81,"Unown letter collectible."],["Fabled Spring Unown",24.7,86.1,"Unown letter collectible."],["Wayward Cave Unown",42,59,"Unown letter collectible."],["Celestica Ruins Unown",57,40,"Unown letter collectible."],["Temple of Sinnoh Unown",25,8,"Unown letter collectible."]],
-    Point:[[27.7,16.1],[39.9,27.7],[14.1,39.1],[90.6,86.6],[93.3,90]],
-    Story:[["Highlands Camp Story",90.6,86.6,"Opening Coronet Highlands expedition route."],["Celestica Ruins Story",58.3,36.4,"Main story route through Celestica Ruins."],["Sacred Plaza Story",23.9,39,"Main story route near Sacred Plaza."],["Moonview Arena Story",26.1,7.2,"Fourth Noble route and Electrode battle."]],
-    Character:[[78.6,55],[59.6,86.8]],
-    Camp:[["Highlands Camp",90.6,86.6,"Starting Coronet Highlands base camp."],["Mountain Camp",78.6,55,"Base camp south of Clamberclaw Cliffs."],["Summit Camp",39.9,27.7,"Base camp near Cloudcap Pass and the summit route."]],
-    Gate:[["Highlands Camp Fast Travel",90.6,86.6,"Fast travel point."],["Mountain Camp Fast Travel",78.6,55,"Fast travel point."],["Summit Camp Fast Travel",39.9,27.7,"Fast travel point."],["Moonview Arena Fast Travel",27.7,16.1,"Fast travel point."],["Heavenward Lookout Fast Travel",93.3,90,"Fast travel point."]],
-    Transition:[[26.1,7.2]],
-    Cave:[[78.6,55],[59.6,86.8]],
-    Arena:[["Moonview Arena",26.1,7.2,"Hisuian Electrode's Noble arena."]],
-    Noble:[["Hisuian Electrode",26.1,7.2,"Noble Pokemon battle at Moonview Arena."]],
-    Request:[[26.1,7.2],[44,40.2],[86.9,46.4],[17.5,83.7]],
-    Legendary:[["Cresselia",37,8,"Post-game plate mission at Moonview Arena."],["Darkrai",84,58,"Request 93 near Clamberclaw Cliffs with BDSP save data."]],
-    Farm:[[76,82],[20,88]]
+  "Alabaster Icelands": {
+    "Subarea": [
+      [
+        "Arena's Approach",
+        20.2,
+        66.0,
+        "Named subarea marker."
+      ],
+      [
+        "Avalanche Slopes",
+        12.7,
+        76.0,
+        "Named subarea marker."
+      ],
+      [
+        "Avalugg's Legacy",
+        49.7,
+        52.0,
+        "Named subarea marker."
+      ],
+      [
+        "Bonechill Wastes",
+        49.3,
+        69.8,
+        "Named subarea marker."
+      ],
+      [
+        "Glacier Terrace",
+        21.4,
+        34.7,
+        "Named subarea marker."
+      ],
+      [
+        "Heart's Crag",
+        76.2,
+        45.9,
+        "Named subarea marker."
+      ],
+      [
+        "Icebound Falls",
+        27.4,
+        86.3,
+        "Named subarea marker."
+      ],
+      [
+        "Lake Acuity",
+        43.4,
+        29.5,
+        "Named subarea marker."
+      ],
+      [
+        "Pearl Settlement",
+        63.0,
+        39.5,
+        "Named subarea marker."
+      ],
+      [
+        "Snowfall Hot Spring",
+        13.2,
+        44.2,
+        "Named subarea marker."
+      ],
+      [
+        "Whiteout Valley",
+        49.7,
+        81.5,
+        "Named subarea marker."
+      ]
+    ],
+    "Alpha": [
+      [
+        "Alpha Machamp",
+        27.5,
+        55.3,
+        "Fixed alpha Pokemon. Level 70. Location: Arena's Approach."
+      ],
+      [
+        "Alpha Electabuzz",
+        28.2,
+        78.3,
+        "Fixed alpha Pokemon. Level 65. Location: Icebound Falls."
+      ],
+      [
+        "Alpha Sneasel",
+        46.5,
+        50.4,
+        "Fixed alpha Pokemon. Level 61. Location: Near Avalugg's Legacy."
+      ],
+      [
+        "Alpha Swinub",
+        44.1,
+        61.2,
+        "Fixed alpha Pokemon. Level 62. Location: Near Bonechill Wastes."
+      ],
+      [
+        "Alpha Piloswine",
+        32.2,
+        65.6,
+        "Fixed alpha Pokemon. Level 65. Location: Arena's Approach."
+      ],
+      [
+        "Alpha Gardevoir",
+        78.8,
+        46.6,
+        "Fixed alpha Pokemon. Level 70. Location: Heart's Crag."
+      ],
+      [
+        "Alpha Chimecho",
+        40.5,
+        31.3,
+        "Fixed alpha Pokemon. Level 65. Location: Near Lake Acuity."
+      ],
+      [
+        "Alpha Glalie",
+        53.8,
+        64.0,
+        "Fixed alpha Pokemon. Level 62. Location: Bonechill Wastes."
+      ],
+      [
+        "Alpha Garchomp",
+        10.8,
+        90.8,
+        "Fixed alpha Pokemon. Level 85. Location: Avalanche Slopes."
+      ],
+      [
+        "Alpha Lucario",
+        26.8,
+        88.2,
+        "Fixed alpha Pokemon. Level 70. Location: Icebound Falls."
+      ],
+      [
+        "Alpha Abomasnow",
+        61.0,
+        59.7,
+        "Fixed alpha Pokemon. Level 68. Location: Bonechill Wastes."
+      ],
+      [
+        "Alpha Mamoswine",
+        58.4,
+        49.9,
+        "Fixed alpha Pokemon. Level 68. Location: Avalugg's Legacy."
+      ],
+      [
+        "Alpha Gallade",
+        62.6,
+        19.0,
+        "Fixed alpha Pokemon. Level 70. Location: Snowpoint Temple."
+      ],
+      [
+        "Alpha Froslass",
+        22.4,
+        84.4,
+        "Fixed alpha Pokemon. Level 72. Location: Ice Column Chamber."
+      ]
+    ],
+    "Camp": [
+      [
+        "Icepeak Camp",
+        39.4,
+        42.5,
+        "Base camp marker."
+      ],
+      [
+        "Snowfields Camp",
+        49.6,
+        87.8,
+        "Base camp marker."
+      ]
+    ],
+    "Gate": [
+      [
+        "Icepeak Arena Fast Travel",
+        8.3,
+        54.0,
+        "Fast travel point at this arena."
+      ],
+      [
+        "Icepeak Camp Fast Travel",
+        39.4,
+        42.5,
+        "Fast travel point at this base camp."
+      ],
+      [
+        "Snowfields Camp Fast Travel",
+        49.6,
+        87.8,
+        "Fast travel point at this base camp."
+      ]
+    ],
+    "Transition": [
+      [
+        "Exit",
+        51.2,
+        90.4,
+        "Transition marker."
+      ]
+    ],
+    "Cave": [
+      [
+        "Acuity Cavern",
+        44.6,
+        24.8,
+        "Cave marker."
+      ],
+      [
+        "Snowpoint Temple West Entrance",
+        64.3,
+        19.2,
+        "Cave marker."
+      ],
+      [
+        "Snowpoint Temple Main Entrance",
+        59.2,
+        21.0,
+        "Cave marker."
+      ]
+    ],
+    "Arena": [
+      [
+        "Icepeak Arena",
+        8.3,
+        54.0,
+        "Arena marker."
+      ]
+    ],
+    "Noble": [
+      [
+        "Avalugg",
+        10.1,
+        54.0,
+        "Noble Pokemon marker."
+      ]
+    ],
+    "Wisp": [
+      [
+        "Arena's Approach Wisp",
+        15.8,
+        59.1,
+        "Location: On a ledge jutting from the cliff."
+      ],
+      [
+        "Arena's Approach Wisp 2",
+        30.5,
+        60.3,
+        "Location: Between the two nearby cliffs."
+      ],
+      [
+        "Arena's Approach Wisp 3",
+        23.7,
+        72.9,
+        "Location: At the end of the tall cliff."
+      ],
+      [
+        "Avalanche Slopes Wisp",
+        15.2,
+        74.8,
+        "Location: On top of a pillar."
+      ],
+      [
+        "Avalanche Slopes Wisp 2",
+        5.3,
+        86.6,
+        "Location: Between the two nearby cliffs."
+      ],
+      [
+        "Avalugg's Legacy Wisp",
+        31.3,
+        50.8,
+        "Location: Near the ledge overlooking the snowy plain."
+      ],
+      [
+        "Avalugg's Legacy Wisp 2",
+        54.0,
+        60.0,
+        "Location: On the side of the hill, on a small outcroping."
+      ],
+      [
+        "Avalugg's Legacy Wisp 3",
+        51.3,
+        59.0,
+        "Location: Undeground, in Ice Rock Cavern (can be accessed through Ice Rock Cavern entrance and Ice Rock Cavern entrance). At the end of a side cavern."
+      ],
+      [
+        "Bonechill Wastes Wisp",
+        39.9,
+        72.9,
+        "Location: At the end of the ledge."
+      ],
+      [
+        "Glacier Terrace Wisp",
+        27.0,
+        33.4,
+        "Location: On a high ledge, near the border of the map."
+      ],
+      [
+        "Heart's Crag Wisp",
+        69.2,
+        56.3,
+        "Location: At the end of a large slanted rock."
+      ],
+      [
+        "Heart's Crag Wisp 2",
+        80.4,
+        54.8,
+        "Location: On a small ledge, high up on the mountain."
+      ],
+      [
+        "Lake Acuity Wisp",
+        60.7,
+        17.1,
+        "Location: On a small hill, north of Snowpoint Temple."
+      ],
+      [
+        "Lake Acuity Wisp 2",
+        46.2,
+        31.4,
+        "Location: On the eastern cliff overlooking the waterfall."
+      ],
+      [
+        "Lake Acuity Wisp 3",
+        38.5,
+        34.4,
+        "Location: Inside the secret hollow, accessed by destroying the large brown rocks at the bottom of the waterfall."
+      ],
+      [
+        "Pearl Settlement Wisp",
+        63.2,
+        20.0,
+        "Location: On the 1st floor of Snowpoint Temple, just past the first puzzle door."
+      ],
+      [
+        "Pearl Settlement Wisp 2",
+        73.1,
+        28.9,
+        "Location: Behind the large tent."
+      ],
+      [
+        "Pearl Settlement Wisp 3",
+        60.0,
+        45.1,
+        "Location: At the end of the large, slanted piece of ice."
+      ],
+      [
+        "Whiteout Valley Wisp",
+        43.8,
+        79.9,
+        "Location: On the north side of a ledge jutting out of the mountain."
+      ],
+      [
+        "Whiteout Valley Wisp 2",
+        57.3,
+        86.1,
+        "Location: At the top of a cliff."
+      ]
+    ],
+    "Unown": [
+      [
+        "Avalugg's Legacy Unown",
+        53.5,
+        48.2,
+        "Hint: Gaze down upon the greatest glacial legacy. Location: On top of an ice pillar, near Avalugg's Legacy."
+      ],
+      [
+        "Heart's Crag Unown",
+        86.1,
+        49.3,
+        "Hint: The unusual stone staring out across the snowfields. Location: Atop the large stone, near the waterfall."
+      ],
+      [
+        "Icebound Falls Unown",
+        19.5,
+        86.9,
+        "Hint: Three pillars in a world of ice. Location: Underground, inside Ice Column Chamber (access through Ice Column Chamber entrance). On top of the southernmost pillar."
+      ],
+      [
+        "Icebound Falls Unown 2",
+        33.3,
+        85.3,
+        "Hint: Scale the frozen falls. Location: Not quite at the top of the frozen falls."
+      ],
+      [
+        "Snowfall Hot Spring Unown",
+        20.8,
+        47.8,
+        "Hint: A dead tree by the hot spring. Location: Atop a dead tree, on the highest ledge near the spring."
+      ]
+    ],
+    "Request": [
+      [
+        "#78: Setting Up the Icepeak Camp",
+        39.2,
+        41.1,
+        "*Brice of the Supply Corps wants you to find Craig. They were to meet at the base of the falls in the Alabaster Icelands, yet he hasn’t shown...* How to unlock: Start #12: The Slumbering Lord of the Tundra. How to start: Speak with Brice Objectives: - Look for Craig of the Construction Corps. - Report back to Brice with your findings. Rewards: A new base camp."
+      ],
+      [
+        "#79: Balloon Race in the Icelands",
+        38.5,
+        45.6,
+        "*The man running the balloon race in the Alabaster Icelands has issued you a challenge. You’ll get a special reward if you manage to burst 30 balloons.* How to unlock: Complete #12: The Slumbering Lord of the Tundra and #78: Setting Up the Icepeak Camp. How to start: Speak with the Balloon Race NPC. Objectives: - Burst 30 balloons within the time limit for the balloon race in the Alabaster Icelands. Rewards: 3x Nugget"
+      ],
+      [
+        "#81: In Search of a Fiery Pokémon",
+        40.5,
+        42.0,
+        "*Brice of the Supply Corps is working at the chilly Icepeak Camp and wants a Fire-type Pokémon.* How to unlock: Complete #78: Setting Up the Icepeak Camp. How to start: Speak with Brice Objectives: - Catch a Fire-type Pokémon to give to Brice. Rewards: - 3x Full Restore - 1x Exp. Candy L"
+      ],
+      [
+        "#84: The Bergmite Enthusiast",
+        62.2,
+        35.3,
+        "*Dominia from the Pearl Clan is a big fan of Bergmite and has asked you to show her Bergmite’s completed Pokédex page so she can verify its information.* How to unlock: Complete #12: The Slumbering Lord of the Tundra. How to start: Speak with Dominia. Objectives: - Show Dominia the completed Pokédex entry for Bergmite. Rewards: Grit Pebble x3"
+      ],
+      [
+        "#90: The Pearl's Clan Treasure",
+        70.7,
+        31.2,
+        "*Irida of the Pearl Clan has challenged you to a battle. Claim victory against her to find out more about the treasure she mentioned.* How to unlock: Complete #19: A New Day Dawns. How to start: Speak with Irida. Objectives: - Speak with Irida near the Pearl Settlement, and defeat her in battle. - Irida's team: Glaceon (LV64), Flareon (LV32), Espeon (LV32) Rewards: - 3x Comet Shard - 1x Lustrous Globe"
+      ]
+    ],
+    "Legendary": [
+      [
+        "Regigigas",
+        65.0,
+        17.7,
+        "Level: 70 How to catch: Part of the #24: The Plate of Snowpoint Temple story mission. Can be found at the bottom of Snowpoint Temple."
+      ],
+      [
+        "Tornadus",
+        53.2,
+        65.8,
+        "How to catch: Part of the #94: Incarnate Forces of Hisui request. Note: Only spawns in blizzards."
+      ],
+      [
+        "Uxie",
+        43.1,
+        24.1,
+        "Level: 70 How to catch: Part of the #21: The Plate of the Lakes story mission. Can be found within Acuity Cavern."
+      ]
+    ],
+    "Point": [
+      [
+        "Ice Column Chamber entrance",
+        19.0,
+        76.8,
+        "Point of Interest marker."
+      ],
+      [
+        "Ice Rock Cavern West Entrance",
+        45.7,
+        58.9,
+        "Point of Interest marker."
+      ],
+      [
+        "Ice Rock Cavern East Entrance",
+        64.0,
+        65.0,
+        "Point of Interest marker."
+      ],
+      [
+        "Icepeak Cavern entrance",
+        34.4,
+        53.9,
+        "Point of Interest marker."
+      ]
+    ],
+    "Character": [
+      [
+        "Craig",
+        46.3,
+        37.6,
+        "Character marker."
+      ],
+      [
+        "Gaeric",
+        57.2,
+        49.3,
+        "Character marker."
+      ],
+      [
+        "Keaka",
+        48.5,
+        88.1,
+        "Character marker."
+      ],
+      [
+        "Morel (Icelands)",
+        70.8,
+        41.8,
+        "Character marker."
+      ],
+      [
+        "Pippa",
+        50.8,
+        87.4,
+        "Character marker."
+      ],
+      [
+        "Sabi",
+        42.3,
+        77.8,
+        "Character marker."
+      ],
+      [
+        "Zeke",
+        34.1,
+        54.1,
+        "Character marker."
+      ]
+    ],
+    "Farm": [
+      [
+        "Avalanche alpha loop",
+        18.0,
+        80.0,
+        "Glaceon, Garchomp, Piloswine, and Ice-type research."
+      ],
+      [
+        "Zorua tunnels",
+        52.0,
+        82.0,
+        "Hisuian Zorua/Zoroark and late-game Ice types."
+      ]
+    ],
+    "Story": [
+      [
+        "#12: The Slumbering Lord of the Tundra",
+        10.1,
+        54.0,
+        "Hisuian Avalugg Noble fight at Icepeak Arena."
+      ],
+      [
+        "#16: The Trial of Lake Acuity",
+        44.6,
+        24.8,
+        "Lake Acuity trial route."
+      ],
+      [
+        "#24: The Plate of Snowpoint Temple",
+        64.3,
+        19.2,
+        "Post-game Regigigas plate route in Snowpoint Temple."
+      ]
+    ]
   },
-  "Alabaster Icelands":{
-    Wisp:[["Snowpoint Temple Wisp",60.5,7.2,"Spiritomb wisp collectible."],["Icepeak Arena Wisp",62.9,10.6,"Spiritomb wisp collectible."],["Lake Acuity Wisp",72.5,20.6,"Spiritomb wisp collectible."],["Glacier Terrace Wisp",28,25.7,"Spiritomb wisp collectible."],["Glacier Terrace Wisp",39,26.8,"Spiritomb wisp collectible."],["Avalugg's Legacy Wisp",59.9,39,"Spiritomb wisp collectible."],["Heart's Crag Wisp",79.5,50,"Spiritomb wisp collectible."],["Pearl Settlement Wisp",68.8,51.7,"Spiritomb wisp collectible."],["Snowfall Hot Spring Wisp",17.2,54.9,"Spiritomb wisp collectible."],["Avalugg's Legacy Wisp",31.4,56.2,"Spiritomb wisp collectible."],["Avalugg's Legacy Wisp",66.5,61.3,"Spiritomb wisp collectible."],["Bonechill Wastes Wisp",40.5,70.5,"Spiritomb wisp collectible."],["Arena's Approach Wisp",24.8,70.6,"Spiritomb wisp collectible."],["Arena's Approach Wisp",16.6,72.7,"Spiritomb wisp collectible."],["Bonechill Wastes Wisp",38.1,75.4,"Spiritomb wisp collectible."],["Bonechill Wastes Wisp",44.2,78.5,"Spiritomb wisp collectible."],["Whiteout Valley Wisp",57.3,85.5,"Spiritomb wisp collectible."],["Avalanche Slopes Wisp",7,86.1,"Spiritomb wisp collectible."],["Icebound Falls Wisp",30,94,"Spiritomb wisp collectible."],["Lake Acuity Wisp",48,18,"Spiritomb wisp collectible."]],
-    Subarea:[["Lake Acuity",48,18,"Uxie and lake route."],["Glacier Terrace",21,27,"Lake Acuity approach."],["Snowfall Hot Spring",14,39,"Gallade/Gardevoir route and healing landmark."],["Avalugg's Legacy",49,49,"Ice landmark and central route."],["Pearl Settlement",68,33,"Pearl Clan hub."],["Heart's Crag",82,40,"Gardevoir, Froslass, and Snorunt route."],["Bonechill Wastes",52,73,"Mamoswine, Zorua tunnels, and Tornadus zone."],["Whiteout Valley",55,88,"Starting snow route and Snowfields Camp area."],["Arena's Approach",21,68,"Machamp and late story arena route."],["Avalanche Slopes",15,81,"Abomasnow, Glaceon, Garchomp, and Piloswine route."],["Icebound Falls",30,94,"Lucario and Electabuzz route."],["Icepeak Arena",65,3,"Hisuian Avalugg Noble arena."],["Snowpoint Temple",66,3,"Regigigas and temple route."]],
-    Alpha:[[41,23.4],[75.3,32.9],[78,40.7],[58.2,44.5],[46.7,45],[28.4,50.6],[60.9,55.5],[44.5,57.3],[53.8,60.5],[32.9,62.3],[29.1,76.7],[27.8,88],[12.2,90.9]],
-    Unown:[["Snowfall Hot Spring Unown",22.1,42.2,"Unown letter collectible."],["Avalugg's Legacy Unown",53.6,42.5,"Unown letter collectible."],["Heart's Crag Unown",85.1,43.9,"Unown letter collectible."],["Avalanche Slopes Unown",23.5,83.5,"Unown letter collectible."],["Icebound Falls Unown",34.1,84.7,"Unown letter collectible."]],
-    Point:[[59.2,11.6],[9.9,49.1],[19.2,54.6],[46.2,54.7],[63.8,61.6],[20.3,75]],
-    Story:[["Snowfields Camp Story",9.9,49.1,"Opening Alabaster Icelands expedition route."],["Pearl Settlement Story",68.8,33,"Pearl Clan story route."],["Icepeak Arena Story",62.9,10.6,"Fifth Noble route and Avalugg battle."]],
-    Character:[[46.7,30.5],[70.3,35.3],[34.9,49.2],[42.7,76],[48.7,87.8]],
-    Camp:[["Snowfields Camp",9.9,49.1,"Starting Alabaster Icelands base camp."],["Icepeak Camp",63.8,61.6,"Base camp northwest of Avalugg's Legacy and southeast of Glacier Terrace."]],
-    Gate:[["Snowpoint Temple Fast Travel",59.2,11.6,"Fast travel point."],["Snowfields Camp Fast Travel",9.9,49.1,"Fast travel point."],["Icepeak Camp Fast Travel",63.8,61.6,"Fast travel point."],["Arena's Approach Fast Travel",20.3,75,"Fast travel point."]],
-    Transition:[[59.2,11.6],[62.9,10.6]],
-    Cave:[[42.7,76]],
-    Arena:[["Icepeak Arena",62.9,10.6,"Hisuian Avalugg's Noble arena."]],
-    Noble:[["Hisuian Avalugg",62.9,10.6,"Noble Pokemon battle at Icepeak Arena."]],
-    Request:[[47.6,23.1],[38.1,75.4]],
-    Legendary:[["Uxie",48,18,"Post-game lake guardian at Lake Acuity."],["Regigigas",66,3,"Post-game plate mission in Snowpoint Temple."],["Giratina",52,82,"Post-game encounter route after the late-story boss sequence."],["Tornadus",52,73,"Appears in blizzard weather after Request 94 starts."]],
-    Farm:[[52,82],[18,80]]
+  "Jubilife Village": {
+    "Gate": [
+      [
+        "Farm Fast Travel",
+        32.6,
+        40.0,
+        "Fast travel point."
+      ],
+      [
+        "Front Gate Fast Travel",
+        69.7,
+        30.2,
+        "Fast travel point."
+      ],
+      [
+        "Galaxy Hall Fast Travel",
+        51.0,
+        28.3,
+        "Fast travel point."
+      ],
+      [
+        "Practice Field Fast Travel",
+        64.0,
+        77.0,
+        "Fast travel point."
+      ]
+    ],
+    "Transition": [
+      [
+        "Front Gate",
+        73.0,
+        29.2,
+        "Transition marker."
+      ]
+    ],
+    "Wisp": [
+      [
+        "Jubilife Village Wisp",
+        27.9,
+        21.7,
+        "Location: Behind the Training Grounds building."
+      ],
+      [
+        "Jubilife Village Wisp 2",
+        54.1,
+        19.8,
+        "Location: Behind the Galaxy Hall."
+      ],
+      [
+        "Jubilife Village Wisp 3",
+        42.3,
+        34.2,
+        "Location: By the river, next to the water wheel. Access from the west, near the Training Grounds."
+      ],
+      [
+        "Jubilife Village Wisp 4",
+        46.0,
+        45.6,
+        "Location: Between the four surrounding buildings. Access from the south."
+      ],
+      [
+        "Jubilife Village Wisp 5",
+        26.3,
+        45.5,
+        "Location: Behind the small building."
+      ],
+      [
+        "Jubilife Village Wisp 6",
+        29.3,
+        81.5,
+        "Location: By a large rock near the shack."
+      ],
+      [
+        "Jubilife Village Wisp 7",
+        59.3,
+        38.2,
+        "Location: By the river, near a tree."
+      ]
+    ],
+    "Unown": [
+      [
+        "Jubilife Village Unown",
+        51.1,
+        57.6,
+        "Hint: A village gateway. Location: On the village entry sign."
+      ],
+      [
+        "Jubilife Village Unown 2",
+        43.9,
+        24.1,
+        "Hint: The left eye atop the village. Location: Over the left eye of Magikarp's statue. Access through Commander Kamado's chamber."
+      ],
+      [
+        "Jubilife Village Unown 3",
+        60.4,
+        24.4,
+        "Hint: Where things hang to dry at living quarters. Location: Behind your quarters, on a clothesline."
+      ]
+    ],
+    "Request": [
+      [
+        "#1: Wurmple can Evolve",
+        49.2,
+        27.3,
+        "*Beauregard of the Security Corps heard about Evolution from the professor, and now Beauregard wants to evolve a Wurmple of his own. You need to catch one for him.* How to unlock: Finish Story Mission #3. How to start: Speak with Beauregard Objectives: - Catch a Wurmple to give to Beauregard Rewards: - 3x Dazzling Honey"
+      ],
+      [
+        "#10: Wurmple's Evolved",
+        46.2,
+        20.7,
+        "*It seems Beauregard of the Security Corps has some questions about the Evolution of that Wurmple you gave him. Go find out more from him.* How to unlock: - Complete #5: A Request from Mai. - Evolve a Silcoon into a Beautifly - Complete #1: Wurmple can Evolve. How to start: Speak with Beauregard Objectives: - Speak with Beauregard to learn more about his request. - Catch a Silcoon or evolve a Wurmple into one, then show it to Beauregard. Rewards: 1x Exp. Candy S"
+      ],
+      [
+        "#12: A Perfect Pickling Stone",
+        53.1,
+        22.1,
+        "*A villager named Radisa is hoping a Geodude would be just the right weight to use as a pickling stone. Catch one for her to test out her theory.* How to unlock: Start #5: A Request from Mai. How to start: Speak with Radisa (2nd floor). Objectives: - Catch a Geodude to give to Radisa. Rewards: - 3x Honey Cake - 1x Exp. Candy S"
+      ],
+      [
+        "#14: Berry Helpful",
+        70.0,
+        32.9,
+        "*A villager named Andra is terrified of Pokémon and wants you to find some Oran Berries for him, since they can come in handy when running from Pokémon.* How to unlock: Start #5: A Request from Mai. How to start: Speak with Andra. Objectives: - Gather the number of Berries Andra wanted (5x Oran Berry), then give them to him. Rewards: 3x Revive"
+      ],
+      [
+        "#16: Strange Happenings at Midnight",
+        49.8,
+        49.2,
+        "*Sanqua, the captain of the Construction Corps, says that strange things are happening in her house at night. She wants you to find out what is going on.* How to unlock: Start #7: The Frenzy of the Lord of the Woods and have Pichu in your Pokédex. How to start: Speak with Sanqua. Objectives: - Search Sanqua’s house to solve the mystery. - Investigate the chest by the entrance, both drawers, the drapped mirror and the round table. Then, investigate the chest again. Rewards: 7x Nanab Berry"
+      ],
+      [
+        "#17: To Bloom or Not to Bloom",
+        28.4,
+        44.1,
+        "*Kichi of the Agriculture Corps wants an explanation for Cherrim's changeable appearance. He wants to see a completed Pokédex entry for Cherrim.* How to unlock: Complete Story Mission #5. How to start: Speak with Kichi Objectives: - Show Kicki the completed Pokédex entry for Cherrim Rewards: 5x Vivichoke"
+      ],
+      [
+        "#18: Please! Make Me a Pokéshi Doll!",
+        42.5,
+        30.7,
+        "*Anvin from the craftworks has asked you to show him a Pokéshi Doll you've crafted with your own hands.* How to unlock: Start Story Mission #7. How to start: Speak with Anvin. Objectives: - Craft a Pokéshi Doll (3x Wood), and show it to Anvin. Rewards: 1x Pokéshi Doll"
+      ],
+      [
+        "#19: A Peculiar Ponyta",
+        45.2,
+        21.1,
+        "*Yota is alarmed by the unusual Ponyta that frequents the Horseshoe Plains. He wants you to catch it for him.* How to unlock: Complete #7: The Frenzy of the Lord of the Woods and catch a Ponyta. How to start: Interact with the Blackboard. Objectives: - Speak with Yota to learn more about his request. - Catch the strange Ponyta on the Horseshoe Plains in the Obsidian Fieldlands. - Report back to Yota with your findings. Rewards: 5x Razz Berry"
+      ],
+      [
+        "#2: Adorable Starly",
+        55.9,
+        30.7,
+        "*Show a Starly to Marli of the Supply Corps, who is rather taken with how adorable Starly are.* How to unlock: Complete Story Mission #3. How to start: Speak with Marli. Objectives: - Show Marli the completed Pokedex entry for Starly. - Show Marli a Starly. Rewards: 10x Poké Ball."
+      ],
+      [
+        "#20: The Mysterious Will-o'-the-Wisp",
+        56.1,
+        40.8,
+        "*A villager named Paira wants you to catch the will-o’-the-wisp she saw on Windswept Run to prove to Waka that she’s telling the truth.* How to unlock: Complete #7: The Frenzy of the Lord of the Woods. How to start: Speak with Paira. Objectives: - Catch the mysterious red will-o’-the-wisp on Windswept Run at night. - Catch the Chimchar to show to Paira. Rewards: 2x Exp. Candy S"
+      ],
+      [
+        "#21: Back-Alley Mr. Mime",
+        46.2,
+        21.4,
+        "*That villager named Andra wants your help again, this time about a Mr. Mime that’s behaving suspiciously.* How to unlock: - Complete #7: The Frenzy of the Lord of the Woods - Complete #14: Berry Helpful - Have Mr. Mime in your Pokédex How to start: Interact with the Blackboard. Objectives: - Speak with Andra to learn more about his request. - Find a way to approach Mr. Mime and see what it’s up to. - Chase the fleeing Mr. Mime. Rewards: 2x Aux Guard"
+      ],
+      [
+        "#22: Eerie Apparitions at Night",
+        61.9,
+        28.9,
+        "*Collect the 107 wisps scattered around the Hisui region to seal away the “being who brought calamities” that the young girl in the village told you of.* How to unlock: Complete #7: The Frenzy of the Lord of the Woods How to start: Automatic Objectives: - Gather the wisps found scattered in every corner of the Hisui region (see the Wisp collectibles on the map). - Go to the Shrouded Ruins in the Crimson Mirelands at night. - Receive the last wisp. Rewards: 3x Twice-Spice Radish"
+      ],
+      [
+        "#23: Getting Ahold of New Wares",
+        52.8,
+        31.1,
+        "*Choy from the general store wants you to convince Tao Hua, captain of the Supply Corps, to sell him some new wares for his shop.* How to unlock: Start #8: Arezu's Predicament. How to start: Speak with Choy. Objectives: - Try to sweeten up Tao Hua with a gift (3x Hearty Grain) so he might sell new wares to the general store. - Report back to Choy about your progress. Rewards: New items added to the General Store (Heavy Ball, Feather Ball, Super Potion, Smoke Bomb, Mushroom Cake and Honey Cake)."
+      ],
+      [
+        "#24: Inspiration from Hippopotas",
+        60.2,
+        31.1,
+        "*The clothier Anthe has asked you to show her a male and a female Hippopotas since she heard that they each have different appearances.* How to unlock: Start #8: Arezu's Predicament. How to start: Speak with Anthe. Objectives: - Catch a male and a female Hippopotas to show to Anthe. Rewards: New items added to the Clothier."
+      ],
+      [
+        "#25: The Pokémon in the Woodland Photo",
+        65.3,
+        29.0,
+        "*Dagero, who runs the photography studio, thinks a Pokémon that wandered into his photo would make an excellent subject. He wants you to catch one.* How to unlock: Start #8: Arezu's Predicament. How to start: Speak with Dagero. Objectives: - Catch the Pokémon captured in Dagero’s photo (a Buneary) and show it to him. Rewards: New options added to the photography studio."
+      ],
+      [
+        "#26: Aim for the Big Leagues!",
+        50.2,
+        40.2,
+        "*The fellow running the target practice outside Jubilife Village has issued you a challenge. You’ll get a special reward if you manage to score 10,000 points or more.* How to unlock: Start #8: Arezu's Predicament. How to start: Speak with the Target Practice NPC. Objectives: - Get a score of 10,000 points or more at the target practice game hosted in the practice field outside Jubilife Village. Rewards: - 15x Great Ball - 1x Nugget"
+      ],
+      [
+        "#27: Help Wanted: Plowing the Fields",
+        34.6,
+        41.8,
+        "*Miller from the Agriculture Corps says the ground is too hard to plow. He wants to borrow a Pokémon to help with plowing the land to prepare it for planting.* How to unlock: Start #8: Arezu's Predicament. How to start: Speak with Miller. Objectives: - Lend a Ground-type Pokémon to Miller. Rewards: More fields available for farming."
+      ],
+      [
+        "#28: Measuring Your Compatibility",
+        64.6,
+        46.6,
+        "*A villager named Belamy says you remind him of his grandmother. He wants you to show him that you can likewise befriend Pokémon as she could.* How to unlock: Start #8: Arezu's Predicament. How to start: Speak with Belamy. Objectives: - Show a Pokémon with which you have a strong enough bond to satisfy Belamy. - Pokémon with whom you have battled a lot should have high friendship. Rewards: 1x Rare Candy"
+      ],
+      [
+        "#29: The Search for Bitter Leaves",
+        49.9,
+        44.6,
+        "*Shinon wants to make some medicine and asks you to collect the materials needed. Anise of the Medical Corps filled you in on what you need to find to make medicine. Seems you can find the materials in the Crimson Mirelands, but...* How to unlock: Start #8: Arezu's Predicament. How to start: Speak with Shinon. Objectives: - Ask Anise about the materials that are needed for the medicine. - Find the Pokémon with three leaves (Petilil) in the Crimson Mirelands and catch one to give to Anise. Rewards: - 3x Fine Remedy - 5x Hopo Berry"
+      ],
+      [
+        "#3: What Did Shinx's Ears Look Like?",
+        64.5,
+        29.0,
+        "*A villager named Toshi wants you to show him a Shinx, since he can't quite seem to remember what the marks on Shinx's ears look like.* How to unlock: After Story Mission #3. How to start: Speak with Toshi. Objectives: - Catch a Shinx to show to Toshi. Rewards: - Potion x3"
+      ],
+      [
+        "#33: What a Massive Mushroom!",
+        45.2,
+        21.8,
+        "*Go have a chat with Morel, a local fungus expert, and investigate the mushrooom on Parasect's back together.* How to unlock: - Start #8: Arezu's Predicament - Complete #6: Mushroom Cake Marketing - Have Parasect in your Pokédex How to start: Interact with the Blackboard. Objectives: - Speak with Morel to learn more about his request. - Catch a Parasect to give to Morel. Rewards: 1x Candy Truffle"
+      ],
+      [
+        "#34: Croagunk's Curative Poison",
+        46.1,
+        22.0,
+        "*It seems that Pesselle, captain of the Medical Corps, can make medicine using Croagunk’s poison. Ask her for more information so you can help her out.* How to unlock: Start #9: A New Mission and have Croagunk in your Pokédex. How to start: Interact with the Blackboard. Objectives: - Speak with Pesselle to learn more about her request. - Catch a Croagunk to give to Pesselle. Rewards: - 3x Full Heal - 3x Exp. Candy S"
+      ],
+      [
+        "#35: Battling with Pachirisu",
+        45.2,
+        22.5,
+        "*Speak with Ren to learn more about his request. Remove all other Pokémon from your party and show Ren a great strategy for battling with a Pachirisu.* How to unlock: Complete #8: Arezu's Predicament and catch a Pachirisu. How to start: Interact with the Blackboard. Objectives: - Speak with Ren to learn more about his request. - Remove all other Pokémon from your party and show Ren a great strategy for battling with a Pachirisu. - You must face an Ursaring LV30 with only Pachirisu in your party (you can have more than 1). Rewards: - 3x Sitrus Berry - 1x Grit Gravel"
+      ],
+      [
+        "#36: Watering with Care",
+        46.1,
+        22.7,
+        "*You’ve been tasked with finding a Pokémon that can use Water Pulse to help perk up the Sudowoodo at the Bogbound Camp in the Crimson Mirelands.* How to unlock: Complete #10: The Lordless Island and have Sudowoodo in your Pokédex. How to start: Interact with the Blackboard. Objectives: - Show a Pokémon that can use Water Pulse to Odo. - Battle the agitated Sudowoodo and calm it down. Rewards: - 15x Heavy Ball - 3x Exp. Candy S"
+      ],
+      [
+        "#37: The Fragrence of Nostalgic Herbs",
+        53.3,
+        23.9,
+        "*A villager named Risa wants you to find a Pokémon that she remembers from back home. It’s covered in herbs shaped like blue vines.* How to unlock: Complete #8: Arezu's Predicament. How to start: Speak with Risa (in the basement) Objectives: - Find the Pokémon covered in herbs shaped like blue vines (Tangela) and catch one to show to Risa. Rewards: - 5x Smoke Bomb - 2x Exp. Candy S"
+      ],
+      [
+        "#38: Gone Astray...In The Mirelands",
+        50.0,
+        25.3,
+        "*A villager named Zeke wants you to find his sister, Wanda. She’s a member of the Security Corps, and she seems to have gone missing in the Crimson Mirelands.* How to unlock: Complete #8: Arezu's Predicament. How to start: Speak with Zeke. Objectives: - Ride on Ursaluna and follow the blue signals to locate Wanda in the Crimson Mirelands. - Report back to Zeke on the first floor of Galaxy Hall. Rewards: 3x Stardust"
+      ],
+      [
+        "#39: All about Magikarp",
+        53.9,
+        28.8,
+        "*A little girl in the village named Ceci has asked you to teach her more about Magikarp.* How to unlock: Have Magikarp in your Pokédex. How to start: Speak with Ceci during the day. Objectives: - Show Ceci the completed Pokédex entry for Magikarp. Rewards: 1x Rare Candu"
+      ],
+      [
+        "#4: Big Buizel, Little Buizel",
+        49.6,
+        59.2,
+        "*Catch a big Buizel for Dorian of the Security Corps, who wants an even bigger specimen to raise alongside the Buizel he already has.* How to unlock: Complete Story Mission #3. How to start: Speak with Dorian Objectives: - Catch a big (2'8\" and taller) Buizel to give to Dorian Rewards: - 5x Oran Berry - 1x Exp. Candy S"
+      ],
+      [
+        "#41: An Elegant Tail",
+        37.5,
+        56.3,
+        "*A villager named Asabei saw the tail of a Pokémon hiding behind some rocks and was captivated by its elegant movements. He wants you to show him this Pokémon.* How to unlock: Start #9: A New Mission How to start: Speak with Asabei Objectives: - Find the Pokémon with the elegant tail that curls like a spring (Glameow), and catch one to show to Asabei. Rewards: - 2x Aux Evasion - 2x Grit Gravel"
+      ],
+      [
+        "#42: Help Wanted: Watering the Fields",
+        35.5,
+        41.7,
+        "*To expand the fields, more irrigation is needed. Lend a Pokémon that can help with the task to Miller from the Agriculture Corps.* How to unlock: Start #9: A New Mission and complete #27: Help Wanted: Plowing the Fields. How to start: Speak with Miller Objectives: - Lend a Pokémon that can use a Water-type move to Miller. Rewards: More fields available for farming."
+      ],
+      [
+        "#43: More New Wares",
+        53.5,
+        31.1,
+        "*Choy from the general store wants you to convince Tao Hua, captain of the Supply Corps, to sell him some new wares for his shop.* How to unlock: Start #9: A New Mission and complete #23: Getting Ahold of New Wares. How to start: Speak with Choy Objectives: - Try to sweeten up Tao Hua with a gift (3x Pop Pods) so he might sell new wares to the general store. - Report back to Choy about your progress. Rewards: New items added to the General Store (Great Ball, Hyper Potion, Full Heal, Stealth Spray, Scatter Bang, Grain Cake)."
+      ],
+      [
+        "#44: The Pokémon in the Nighttime Photo",
+        66.2,
+        29.0,
+        "*Dagero from the photography studio captured another strange Pokémon in one of his photos. He wants you to identify it and catch one for him.* How to unlock: Start #9: A New Mission and complete #25: The Pokémon in the Woodland Photo. How to start: Speak with Dagero Objectives: - Catch the Pokémon captured in Dagero’s photo (Duskull) and show it to him. Rewards: New options added at the photography studio."
+      ],
+      [
+        "#45: Shellos of the East and West",
+        60.9,
+        31.0,
+        "*Shellos can look different depending on where they live, and the clothier Anthe thinks seeing that will inspire her. Show her two Shellos with different appearances.* How to unlock: Start #9: A New Mission and complete #24: Inspiration from Hippopotas. How to start: Speak with Anthe. Objectives: - Catch an East Sea Shellos and a West Sea Shellos to show to Anthe. Rewards: New items added to the Clothier."
+      ],
+      [
+        "#48: The Taste of Home",
+        48.0,
+        47.0,
+        "*Floaro of the Construction Corps is thinking of cooking a treat from his homeland to try to win over an Eevee, and he has asked you to gather some ingredients.* How to unlock: Start #9: A New Mission. How to start: Speak with Floaro. Objectives: - Gather the necessary materials for Floaro (3x Hearty Grain, 2x Hopo Berry, 1x Razz Berry). Rewards: 5x Exp. Candy S"
+      ],
+      [
+        "#5: What It Takes to Be Awesome",
+        61.6,
+        50.8,
+        "*A village boy named Sho is convinced you need a partner Pokémon to become an awesome member of the Galaxy Team. He wants some Poké Balls.* How to unlock: Start #5: A Request from Mai. How to start: Speak with Sho. Objectives: - Craft or buy some Poké Balls to give to Sho (5). Rewards: 3x Grit Dust Notes: No marker will appear for this request initially; it appears after starting #8: Arezu's Predicament."
+      ],
+      [
+        "#50: Double the Tails, Double the Fun",
+        64.6,
+        48.8,
+        "*Netta of the Security Corps says she spotted a Pokémon with two tail fins and would like to see it once more. Try to catch one, and show it to her.* How to unlock: Complete #10: The Lordless Island. How to start: Speak with Netta. Objectives: - Find the Pokémon with two tail fins (Finneonn) and catch one to show to Netta. Rewards: 1x Star Piece"
+      ],
+      [
+        "#52: Eevee's Evolutions",
+        45.3,
+        23.2,
+        "*Floaro of the Construction Corps wants to discuss Eevee’s evolution. You should go and have a chat with him.* How to unlock: - Complete #10: The Lordless Island - Complete #48: The Taste of Home - Have Eevee in your Pokédex How to start: Interact with the Blackboard. Objectives: - Speak with Floaro to learn more about his request. - Search for the missing Eevee. - Feed the hungry Umbreon a muffin (2x Hearty Grains, 2x Hopo Berry, 1x Razz Berry, 1x Cake-Lure Base). Rewards: 1x Rare Candy"
+      ],
+      [
+        "#53: Octillery's Ink",
+        66.7,
+        31.5,
+        "*Radisa from the village sees culinary potential in Octillery ink, and she wants to try using it to make a new dish. Complete Octillery’s Pokédex page, and show it to her.* How to unlock: Complete #10: The Lordless Island. How to start: Speak with Radisa Objectives: - Show Radisa the completed Pokédex entry for Octillery. Rewards: - 5x Bean Cake - 1x Exp. Candy M"
+      ],
+      [
+        "#54: Serving Up Swap Snacks",
+        53.0,
+        27.2,
+        "*Bonn from the candy stand has decided to teach you a recipe of his that was shelved due to complaints from his customers.* How to unlock: Complete #10: The Lordless Island and speak to Bonn at least once before. How to start: Speak with Bonn. Objectives: - Gather the necessary materials for Bonn (1x Sootfoot Root, 1x Spring Mushroom, 1x Hopo Berry). Rewards: 1x Swap Snack"
+      ],
+      [
+        "#57: The Taste of Honey",
+        46.2,
+        23.3,
+        "*Almous of the Agriculture Corps has a request for you regarding the flavor of honey produced by Combee. Go speak to him, and see what you need to do.* How to unlock: Complete #10: The Lordless Island and have Combee in your Pokédex. How to start: Speak with Almous. Objectives: - Speak with Almous to learn more about his request. - Catch a Combee in Grueling Grove, then show it to Almous. - Catch a Combee on Aipom Hill, then show it to Almous. - Catch a Combee on Ramanas Island, then show it to Almous. Rewards: - 3x Dazzling Honey - 3x King's Leaf"
+      ],
+      [
+        "#58: Gone Astray...in the Coastlands",
+        51.1,
+        25.3,
+        "*Zeke from the village wants you to find his sister, Wanda, once again. She seems to have gone missing in the Cobalt Coastlands this time.* How to unlock: Complete #10: The Lordless Island and #38: Gone Astray...In The Mirelands. How to start: Speak with Zeke. Objectives: - Ride on Ursaluna and follow the blue signals to locate Wanda in the Cobalt Coastlands. - Report back to Zeke on the first floor of Galaxy Hall. Rewards: 1x Star Piece"
+      ],
+      [
+        "#59: Misdreavus the Hairstyle Muse",
+        57.5,
+        30.7,
+        "*Arezu thinks she might take inspiration from a good look at a Misdreavus. She wants you to show her one so she can create some new hairstyles.* How to unlock: Start #11: Scaling Perilious Heights. How to start: Speak with Arezu. Objectives: - Catch the Pokémon needed to inspire Arezu (Misdreavus). Rewards: New styles added to the Hairdresser."
+      ],
+      [
+        "#60: Help Wanted: Rock Smashing in the Fields",
+        36.3,
+        41.6,
+        "*Miller from the Agriculture Corps wants to expand the fields even more, but a giant boulder is in the way! Lend him a Pokémon that can smash up the boulder.* How to unlock: Start #11: Scaling Perilious Heights and complete #42: Help Wanted: Watering the Fields. How to start: Speak with Miller. Objectives: - Lend a Pokémon that can use Rock Smash to Miller. Rewards: More fields available for farming."
+      ],
+      [
+        "#61: Even More Wares",
+        54.3,
+        30.8,
+        "*Choy from the general store wants you to convince Tao Hua, captain of the Supply Corps, to sell him some new wares for his shop.* How to unlock: Start #11: Scaling Perilious Heights and complete #43: More New Wares. How to start: Speak with Choy. Objectives: - Try to sweeten up Tao Hua with a gift (3x Crunchy Salt) so he might sell new wares to the general store. - Report back to Choy about your progress. Rewards: New items added to the General Store (Leaden Ball, Wing Ball, Max Potion, Bean Cake)."
+      ],
+      [
+        "#62: The Pokémon in the River Photo",
+        66.9,
+        29.0,
+        "*Dagero from the photography studio suspects that the pair of leaves in one of his landscape photos is actually a Pokémon and wants you to confirm this for him.* How to unlock: Start #11: Scaling Perilious Heights and complete #44: The Pokémon in the Nighttime Photo. How to start: Speak with Dagero Objectives: - Catch the Pokémon captured in Dagero’s photo (Turtwig) and show it to him. Rewards: New options added at the photography studio."
+      ],
+      [
+        "#63: Fancy, Fashionnable Wormadam",
+        61.7,
+        31.0,
+        "*The clothier Anthe wants you to show her a Wormadam, hoping the sight will inspire her to come up with some new clothing designs.* How to unlock: Start #11: Scaling Perilious Heights and complete #45: Shellos of the East and West. How to start: Speak with Anthe. Objectives: - Catch a Wormadam to show to Anthe. Rewards: New items added to the Clothier."
+      ],
+      [
+        "#64: Getting to Know the Ghosts",
+        50.6,
+        34.0,
+        "*A villager named Ward claims his son Conlan is afraid of ghosts. To help him overcome his fear, Ward has asked you to show him Gastly’s completed Pokédex page.* How to unlock: Start #11: Scaling Perilious Heights and have Gastly in your Pokédex. How to start: Speak with Ward. Objectives: - Show Ward the completed Pokédex entry for Gastly. Rewards: 1x Linking Cord"
+      ],
+      [
+        "#66: The Sea's Legend",
+        45.2,
+        23.9,
+        "*The Pokémon that Professor Laventon saw in the ocean might be connected to the Pokémon that appears in “The Sea’s Legend”...* How to unlock: - Start #11: Scaling Perilious Heights - Have Buizel, Mantyke and Qwilfish in your Pokédex - Reach Star Rank 5 How to start: Interact with the Blackboard. Objectives: - Solve the mystery of “The Sea’s Legend,” and catch the Pokémon that Professor Laventon saw. - Go through the stone pillars here, in the evening, with an Overqwil, a Buizel and a Mantyke to solve the mystery. - Report back to Professor Laventon to share what you’ve learned about Manaphy. Rewards: 3x Comet Shard"
+      ],
+      [
+        "#67: The Clefairy's Moonlit Dance",
+        46.0,
+        24.1,
+        "*Astair of the Supply Corps says that Clefairy dance on nights with a full moon where he comes from. Investigate whether they dance here in Hisui.* How to unlock: Complete #11: Scaling Perilious Heights and have Clefairy in your Pokédex. How to start: Interact with the Blackboard. Objectives: - Speak with Astair to learn more about his request. - Investigate whether Clefairy dance in the Fabled Spring on nights with a full moon. - Report back to Astair with your findings. Rewards: - 5x Salt Cake - 1x Moon Stone - 2x Exp. Candy M"
+      ],
+      [
+        "#68: A Nosepass to Guide the Way",
+        45.2,
+        24.5,
+        "*There’s an old saying that “A Nosepass never wanders.” Gully of the Supply Corps therefore asks for a Nosepass to keep her from getting lost in Wayward Cave.* How to unlock: - Complete #11: Scaling Perilious Heights - Complete #46: Setting Up the Coastlands Camp - Have Nosepass in your Pokédex How to start: Interact with the Blackboard Objectives: - Talk to Gully to learn more about his request - Catch a Nosepass to give to Gully. - Report back to Gully. Rewards: - 1x Black Augurite - 2x Exp. Candy M"
+      ],
+      [
+        "#69: Gone Astray...in the Highlands",
+        52.2,
+        25.2,
+        "*Zeke from the village wants you to find his sister, Wanda, once again. She seems to have gone missing in the Coronet Highlands this time.* How to unlock: Complete #11: Scaling Perilious Heights and #58: Gone Astray...in the Coastlands. How to start: Speak with Zeke. Objectives: - Ride on Ursaluna and follow the blue signals to locate Wanda in the Coronet Highlands. - Report back to Zeke on the first floor of Galaxy Hall. Rewards: 2x Star Piece"
+      ],
+      [
+        "#7: Playing with Drifloon",
+        45.2,
+        19.8,
+        "*It appears that a Drifloon has been sighted playing with one of the village children. Go speak to Miki of the Security Corps for details.* How to unlock: Complete #5: A Request from Mai and have Drifloon in the Pokédex. How to start: Interact with the Blackboard. Objectives: - Speak with Miki to learn more about her request. - Investigate the Drifloon playing with a child at Prelude Beach in the evening. - Report back to Miki with your findings. Rewards: 1x Stardust"
+      ],
+      [
+        "#70: Colorful New Looks",
+        62.4,
+        30.9,
+        "*The clothier Anthe wants to create clothes in new colors and has sent you in search of the materials she needs to do so.* How to unlock: Start #12: The Slumbering Lord of the Tundra and complete #63: Fancy, Fashionnable Wormadam. How to start: Speak with Anthe. Objectives: - Gather the necessary materials for Anthe (1x Green Shard, 1x Red Shard, 1x Blue Shard) Rewards: New items added to the Clothier."
+      ],
+      [
+        "#71: New Wares Yet Again",
+        55.1,
+        31.1,
+        "*Choy from the general store wants you to convince Tao Hua, captain of the Supply Corps, to sell him some new wares for his shop.* How to unlock: Start #12: The Slumbering Lord of the Tundra and complete #61: Even More Wares. How to start: Speak with Choy. Objectives: - Try to sweeten up Tao Hua with a gift (3x Sand Radishes), so he might sell new wares to the general store. - Report back to Choy about your progress. Rewards: New items added to the General Store (Ultra Ball, Full Restore, Max Revive, Sticky Glob, Salt Cake)."
+      ],
+      [
+        "#72: Pesselle's Easy Errand",
+        56.9,
+        23.8,
+        "*Pesselle of the Medical Corps has asked you to bring her a hundred Medicinal Leeks.* How to unlock: Start #12: The Slumbering Lord of the Tundra and complete #34: Croagunk's Curative Poison. How to start: Speak with Pesselle Objectives: - Gather the necessary materials (100x Medicinal Leek) for Pesselle. Rewards: - 1x Adamant Mint - 1x Modest Mint"
+      ],
+      [
+        "#73: Which is the Real Burmy?",
+        43.2,
+        50.6,
+        "*Leif, Duna, and Tarush in the village can’t agree on which form of Burmy is the real one. Each of them has asked you to show them a different Burmy.* How to unlock: Start #12: The Slumbering Lord of the Tundra. How to start: Speak with Leif Objectives: - Catch a Burmy to show to Leif, Duna, and Tarush. - Show Leif, Duna, and Tarush the completed Pokédex entry for Burmy. Rewards: - 1x Leaf Stone - 3x Exp. Candy M"
+      ],
+      [
+        "#74: A Bit of Help from Blissey",
+        46.1,
+        24.7,
+        "*It seems Pippa of the Supply Corps has a request concerning Blissey, a Pokémon that once came to her aid.* How to unlock: Start #12: The Slumbering Lord of the Tundra and have Blissey in your Pokédex. How to start: Interact with the Blackboard. Objectives: - Speak with Pippa in the Alabaster Icelands to learn more about her request. - Meet up with Pippa. - Battle the angry Abomasnow to calm it down. Rewards: - 1x Shiny Stone - 1x Max Revive"
+      ],
+      [
+        "#75: Kirlia the Hairstyle Muse",
+        58.2,
+        30.6,
+        "*Arezu thinks she might take inspiration from a good look at a Kirlia. She wants you to show her one so she can create some new hairstyles.* How to unlock: Start #12: The Slumbering Lord of the Tundra and complete #59: Misdreavus the Hairstyle Muse. How to start: Speak with Arezu. Objectives: - Catch the Pokémon needed to inspire Arezu (Kirlia). Rewards: New styles added to the Hairdresser."
+      ],
+      [
+        "#76: Mushroom Hunting with Swinub",
+        45.1,
+        25.2,
+        "*Morel from the village is at Heart’s Crag in the Alabaster Icelands, and he seems to have a request for you concerning a special skill of Swinub’s.* How to unlock: Start #12: The Slumbering Lord of the Tundra and complete #33: What a Massive Mushroom!. How to start: Interact with the Blackboard. Objectives: - Speak with Morel at Heart’s Crag in the Alabaster Icelands to hear his request. - Add a Swinub to your party, and hunt for mushrooms buried in the snow. - Report back to Morel with your results. Rewards: - 5x Sand Radish - 1x Exp. Candy L"
+      ],
+      [
+        "#77: Gone Astray...in the Fieldlands",
+        50.6,
+        25.9,
+        "*Zeke from the village wants you to find his sister, Wanda, yet again. This time she has somehow gotten lost in the Obsidian Fieldlands right outside the village.* How to unlock: Start #12: The Slumbering Lord of the Tundra and complete #69: Gone Astray...in the Highlands. How to start: Speak with Zeke Objectives: - Ride on Ursaluna and follow the blue signals to locate Wanda in the Obsidian Fieldlands. - Defeat the three Paras attacking Wanda. - Report back to Zeke on the first floor of Galaxy Hall. Rewards: 3x Star Piece"
+      ],
+      [
+        "#8: Bothersome Bidoof",
+        46.3,
+        20.0,
+        "*It seems that some mischievous Bidoof have been causing quite a lot of trouble around the village lately. Get the details from Tsumugi of the Security Corps.* How to unlock: Complete Story Mission #5. How to start: Interact with the Blackboard. Objectives: - Speak with Tsumugi to learn more about her request. - Add a Bidoof to your team, and go find the bothersome Bidoof troubling the village. They are located here, here and here. Rewards: 1x Rare Candy"
+      ],
+      [
+        "#80: The Perfect Pickle Recipe",
+        67.4,
+        31.3,
+        "*Radisa from the village believes she’s come up with the perfect pickle recipe and has asked you to gather the ingredients before she’ll teach it to you.* How to unlock: Start #12: The Slumbering Lord of the Tundra and complete #53: Octillery's Ink. How to start: Speak with Radisa. Objectives: - Gather the necessary materials for Radisa (2x Crunchy Salt, 2x Plump Beans, 2x King's Leaf). Rewards: 1x Twice-Spice Radish"
+      ],
+      [
+        "#82: Traces of a Lost Village",
+        55.6,
+        20.5,
+        "*Mani from the Ginkgo Guild says his ancestors may have once lived at the Avalanche Slopes in the Alabaster Icelands. See if you can find traces of a village there.* How to unlock: Complete #12: The Slumbering Lord of the Tundra. How to start: Speak with Mani (in the Basement) Objectives: - Search for traces of a village said to have been located at the Avalanche Slopes in the Alabaster Icelands. - You will find them here, then here. - Give the Old Journal to Mani. Rewards: 1x Dawn Stone"
+      ],
+      [
+        "#83: Snow-White Vulpix in the Snow",
+        46.1,
+        25.4,
+        "*Keaka, a Security Corps member from the Alola region, has some peculiar Vulpix that he calls Keokeo. Go ask him about them so you can help with his request.* How to unlock: Complete #12: The Slumbering Lord of the Tundra and have Vulpix in your Pokédex. How to start: Interact with the Blackboard. Objectives: - Speak with Keaka to learn more about his request. - Find the Alolan Vulpix hiding out in the Alabaster Icelands. - There are five Alolan Vulpix: #1, #2, #3, #4, #5 - Report back to Keaka with your progress. Rewards: 1x Exp. Candy L"
+      ],
+      [
+        "#85: At Home under the Eaves",
+        45.2,
+        26.0,
+        "*It seems that a wild Chimecho has made itself at home under the eaves of one of the village houses. Talk to a villager named Ida to find out more.* How to unlock: Complete #12: The Slumbering Lord of the Tundra and have Chimecho in your Pokédex. How to start: Interact with the Blackboard. Objectives: - Speak with Ida outside one of the village residences to learn more about her request. - Find a place that Chimecho could hang from at the farmhouse near the fields. - Report back to Ida with your findings. - Find a place that Chimecho could hang from at the hut on the beach. - Report back to Ida with your findings. - Find a place that Chimecho could hang from in the training grounds. - Report back to Ida with your findings. - Find a place that Chimecho could hang from at the house next door to Ida’s home. Rewards: - 1x Rare Candy - 1x Sun Stone"
+      ],
+      [
+        "#86: Gone Astray...in the Icelands",
+        51.7,
+        25.9,
+        "*Wanda of the Security Corps wants you to find her brother, the villager Zeke, who went looking for her in the Alabaster Icelands.* How to unlock: Complete #12: The Slumbering Lord of the Tundra and #77: Gone Astray...in the Fieldlands. How to start: Speak with Wanda Objectives: - Ride on Ursaluna and follow the blue signals to locate Zeke in the Alabaster Icelands. - Defeat the Glalie, and save Zeke. Rewards: - 1x Ice Stone - 1x Peat Block - 5x Star Piece"
+      ],
+      [
+        "#88: Steely Lucario",
+        48.3,
+        24.1,
+        "*Rye from the village wants you to battle with him and his partner, Lucario.* How to unlock: Start #17: Atop Mount Coronet. How to start: Speak with Lucario. Objectives: - Battle Lucario at the training grounds. Rewards: 1x Grit Rock"
+      ],
+      [
+        "#9: Zubat's Eyes",
+        45.3,
+        20.5,
+        "*Clarissa of the Security Corps has a request, and it seems to have something to do with Zubat's eyes. Go hear what she has to say!* How to unlock: Complete Story Mission #5 and have Zubat in your Pokédex. How to start: Interact with the Blackboard. Objectives: - Speak with Clarissa to learn more about her request. - Catch a Zubat to show to Clarissa Rewards: 2x Aux Power"
+      ],
+      [
+        "#91: On the Trail of Giratina",
+        68.6,
+        29.4,
+        "*A huge shadow has been seen in Cobalt Coastlands. According to Professor Laventon, there's a strong chance it is Giratina, the fearsome Pokemon you once battled.* How to unlock: Complete #26: Seeking the Remaining Plates. How to start: Speak with Professor Laventon. Objectives: - Find out the truth behind the huge shadow in the Cobalt - Coastlands. - Catch Giratina before it wreaks havoc! - Report back to Professor Laventon to share what you’ve learned. Rewards: - 1x Griseous Core - 1x Grit Rock"
+      ],
+      [
+        "#92: A Token of Gratitude",
+        46.0,
+        26.2,
+        "*Help Medi of the Diamond Clan find the rare Pokémon she met long ago, and survey the Pokémon while you’re at it.* How to unlock: Complete #18: The Counterpart and have a save file from Pokémon Sword or Shield. How to start: Interact with the Blackboard. Objectives: - Talk to Medi to learn more about her request. - Find the field of Gracidea flowers located somewhere in the Obsidian Fieldlands. - Catch Shaymin in the field of Gracidea flowers. Rewards: 1x Grit Rock"
+      ],
+      [
+        "#93: The Darksome Nightmare",
+        45.1,
+        26.6,
+        "*Get more details from Cael of the Pearl Clan about the terrifying Pokémon he saw and find out its location so you can survey it.* How to unlock: Complete #18: The Counterpart and have a save file from Pokémon Brilliant Diamond or Shining Pearl. How to start: Interact with the Blackboard. Objectives: - Speak with Cael to learn more about his request. - Search for the mysterious black Pokémon that appears around the Clamberclaw Cliffs at night. - Catch Darkrai around the Clamberclaw Cliffs. Rewards: 1x Exp. Candy XL"
+      ],
+      [
+        "#94: Incarnate Forces of Hisui",
+        51.1,
+        18.3,
+        "*Legend has it that Hisui is home to a group of Pokémon said to be forces of nature incarnate. Investigate them to bring your Pokédex closer to completion.* How to unlock: Complete #18: The Counterpart. How to start: Enter the Galaxy Hall. Objectives: - Show Cogita the completed Pokédex entries for Tornadus, Thundurus, and Landorus. - Show Cogita the completed Pokédex entry for Enamorus. Rewards: 1x Exp. Candy L"
+      ],
+      [
+        "Blackboard",
+        48.3,
+        21.9,
+        "Interact with this blackboard to start the following requests: - #7: Playing with Drifloon - #8: Bothersome Bidoof - #9: Zubat's Eyes - #10: Wurmple's Evolved - #19: A Peculiar Ponyta - #21: Back-Alley Mr. Mime - #33: What a Massive Mushroom! - #34: Croagunk's Curative Poison - #35: Battling with Pachirisu - #36: Watering with Care - #52: Eevee's Evolutions - #57: The Taste of Honey - #66: The Sea's Legend - #67: The Clefairy's Moonlit Dance - #68: A Nosepass to Guide the Way - #74: A Bit of Help from Blissey - #76: Mushroom Hunting with Swinub - #83: Snow-White Vulpix in the Snow - #85: At Home under the Eaves"
+      ]
+    ],
+    "Story": [
+      [
+        "#1: In an Unfamiliar Land",
+        27.7,
+        85.3,
+        "*Professor Laventon has brought you to Jubilife Village, an unfamiliar settlement bustling with unfamiliar faces. How will you find your footing in this strange land?* Steps: 1. Head to The Wallflower, which serves as the village canteen. 2. Head to the Survey Corps quarters you’ve been assigned. 3. Sleep until morning in the futon in your quarters. 4. Go to the Galaxy Team headquarters to hear about your trial from Captain Cyllene. Next mission: #2: The Galaxy Team's Entry Trial"
+      ],
+      [
+        "#10: The Lordless Island",
+        50.3,
+        20.3,
+        "*Curious rumors have been pouring in from the Cobalt Coastlands, an area without a noble Pokémon. You must find out what’s behind these strange happenings.* Steps: 1. Head to the Cobalt Coastlands and speak with Irida there. 2. Head to Veilstone Cape to speak with Palina of the Pearl Clan. 3. Find the home of Iscan, a Diamond Clan warden, on Aipom Hill. 4. Obtain a Dusclops, which can be found around Deadwood Haunt during the night, and take it with you to Iscan’s home. 5. Go to Ginkgo Landing to call Basculegion. 6. Ride on Basculegion to follow the bandits across the water to Firespit Island. 7. Take back the Growlithe that the Miss Fortune sisters stole. 8. Quell the frenzy of Arcanine, the Lord of the Isles, at Molten Arena. 9. Report to Commander Kamado that you have accomplished your mission. Next mission: #11: Scaling Perilious Heights"
+      ],
+      [
+        "#11: Scaling Perilious Heights",
+        60.1,
+        28.8,
+        "*Electrode, the Lord of the Hollow, has been driven into a frenzy by the strange lightning. Investigate the matter and find a way to quell its frenzy.* Steps: 1. Battle Adaman to demonstrate what you’re capable of. 2. Complete enough research tasks to reach the rank of Fourth Star. 3. Head to the Jubilife Village training grounds to meet Ingo of the Pearl Clan. 4. Head to the Coronet Highlands for your next mission. 5. Make your way up the mountain with Ingo. 6. Go inside Wayward Cave. 7. Pass through Wayward Cave to continue your journey up the mountain. 8. Make your way up the mountain with Ingo. 9. Defeat Melli in battle to clear your path. 10. Pass through the Ancient Quarry to continue your journey up the mountain. 11. Make your way up the mountain with Ingo. 12. Defeat Ingo in battle to prove your strength to him. 13. Scale the cliffs with Sneasler’s help to reach Moonview Arena. 14. Defeat Melli in battle to clear your path once again. 15. Quell the frenzy of Electrode, the Lord of the Hollow, at Moonview Arena. 16. Report to Commander Kamado that you have accomplished your mission. Next mission: #12: The Slumbering Lord of the Tundra"
+      ],
+      [
+        "#12: The Slumbering Lord of the Tundra",
+        51.0,
+        20.7,
+        "*Avalugg, the Lord of the Tundra, has been driven into a frenzy by the strange lightning. Investigate the matter and find a way to quell his frenzy.* Steps: 1. Complete enough research tasks to reach the rank of Fifth Star. 2. Head to the Alabaster Icelands. 3. Go to meet Gaeric of the Pearl Clan. 4. Defeat Gaeric in battle to prove your strength to him. 5. Speak with Sabi of the Diamond Clan. 6. Catch up to Sabi. 7. Make your way to the top floor of Snowpoint Temple. 8. Solve the stone statues’ puzzles and make your way to Snowpoint Temple’s top floor. 9. Prove your strength to Sabi on the top floor of Snowpoint Temple. 10. Prove your strength to Braviary on the roof of Snowpoint Temple. 11. Glide with Braviary to land atop Avalugg’s Legacy and obtain a piece of Eternal Ice. 12. Make your way to Icepeak Arena. 13. Quell the frenzy of Avalugg, the Lord of the Tundra, at Icepeak Arena. 14. Report to Commander Kamado that you have accomplished your mission. Next mission: #13: Disaster Looming"
+      ],
+      [
+        "#13: Disaster Looming",
+        62.8,
+        26.7,
+        "*The space-time rift has taken a strange and worrisome turn, and you’ve been banished from Jubilife Village. How are you to make your way on your own?* Steps: 1. Go outside and see what’s happening. 2. Seek out Lian. 3. Seek out Mai. 4. Speak to the person who dwells here at the retreat. 5. Complete the trials of the three lakes. 6. Choose whose help you want on the path ahead: Adaman of the Diamond Clan or Irida of the Pearl Clan. Next mission: Can be done in any order - #14: The Trial of Lake Verity - #15: The Trial of Lake Valor - #16: The Trial of Lake Acuity"
+      ],
+      [
+        "#17: Atop Mount Coronet",
+        51.4,
+        23.6,
+        "*Apparently, you’ve just missed Commander Kamado, who has led a force to Mount Coronet to take matters into his own hands. Hurry there to stop his reckless plan!* Steps: 1. Head to Mount Coronet’s peak in pursuit of Commander Kamado. 2. Talk sense into Commander Kamado at Mount Coronet’s peak. 3. Bring the Red Chain to the dais in the Temple of Sinnoh. 4. Approach the dais in the Temple of Sinnoh and catch almighty Sinnoh! - If you chose Adaman, you will face Dialga - If you chose Irida, you will face Palkia Next mission: #18: The Counterpart"
+      ],
+      [
+        "#19: A New Day Dawns",
+        61.7,
+        26.5,
+        "*The rift in space-time has disappeared, and calamity seems to have been averted. At last you can return to the Survey Corps’ main duty: completing the Pokédex.* Steps: - Leave your quarters. - Head to the Survey Corps office to discuss what to do next. Next mission: - #20: The Researcher of Myths"
+      ],
+      [
+        "#2: The Galaxy Team's Entry Trial",
+        50.2,
+        23.6,
+        "*You’ve been set a trial you must clear to join the Galaxy Team. If you want to stay in the village, catch yourself a Bidoof, a Starly, and a Shinx in the Obsidian Fieldlands.* Steps: 1. Choose a Pokémon to be your first partner in preparation for your trial. 2. Depart for the Obsidian Fieldlands from Jubilife Village’s front gate. 3. Catch a Bidoof, the first Pokémon species you need for your trial. 4. Catch a Starly, the second Pokémon species you need for your trial. 5. Catch a Shinx, the third Pokémon species you need for your trial. 6. Report to Captain Cyllene about how your trial went. 7. Use the mirror in your quarters to change into your new Survey Corps uniform and Survey Corps sandals. 8. Report to Commander Kamado in his office on the third floor of Galaxy Hall. Next mission: #3: The Basics of Crafting"
+      ],
+      [
+        "#20: The Researcher of Myths",
+        50.9,
+        24.2,
+        "*To flesh out your Pokédex, look into Legendary Pokémon with the help of the merchant Volo, who is very learned in the myths of the Hisui region.* Steps: 1. Meet Volo at the Heights Camp in the Obsidian Fieldlands. 2. Search for a plate in Grueling Grove in the Obsidian Fieldands. 3. Learn more from Cogita about the myths surrounding Arceus. 4. Collect the five plates that Cogita’s clues point toward. Next mission: Can be done in any order: - #21: The Plate of the Lakes - #22: The Plate of Firespit Island - #23: The Plate of Moonview Arena - #24: The Plate of Snowpoint Temple - #25: The Plate of Prelude Beach"
+      ],
+      [
+        "#3: The Basics of Crafting",
+        59.3,
+        28.5,
+        "*You’ve cleared your trial and joined the Survey Corps. Now it’s time to acquire the skills you’ll need as a recruit. Learn about crafting items to use on your missions.* Steps: 1. Visit the craftworks to learn how to craft items. 2. Use the workbench to make one or more Poké Balls. Next mission: #4: Getting to Work on Research Tasks"
+      ],
+      [
+        "#4: Getting to Work on Research Tasks",
+        45.3,
+        29.9,
+        "*In order to complete the Pokédex, you’ll need to accomplish research tasks set by Professor Laventon. Speak to the professor to learn more.* Steps: 1. Head to the Obsidian Fieldlands and speak to Professor Laventon about research tasks. 2. Follow Akari/Rei to learn some tips for carrying out research tasks. 3. Report your research tasks to Professor Laventon and earn a sufficient number of Pokémon research points (500). 4. Let Captain Cyllene know that you’ve earned enough Pokémon research points to move up to the next rank. Next mission: #5: A Request from Mai"
+      ],
+      [
+        "#5: A Request from Mai",
+        34.0,
+        25.1,
+        "*It seems the Galaxy Team has gotten a request from Mai of the Diamond Clan. Go hear more about it and lend her your help as a member of the Survey Corps.* Steps: 1. Meet Akari/Rei at the training grounds. 2. Have a battle with Akari/Rei before you start your work for the day. 3. Go to the Obsidian Fieldlands to meet Mai of the Diamond Clan. 4. Defeat Mai in battle to prove your strength to her. 5. Make your way to Deertrack Heights, where an alpha Pokémon is causing trouble. 6. Battle the alpha Pokémon causing trouble upon Deertrack Heights. Next mission: #6: Summoned by Commander Kamado"
+      ],
+      [
+        "#6: Summoned by Commander Kamado",
+        59.8,
+        27.0,
+        "*Commander Kamado has summoned you, and it seems urgent. Go find out what the commander needs.* Steps: 1. Report to the commander’s office in Galaxy Hall. Next mission: #7: The Frenzy of the Lord of the Woods"
+      ],
+      [
+        "#7: The Frenzy of the Lord of the Woods",
+        51.7,
+        20.3,
+        "*Kleavor, the Lord of the Woods, seems to have been driven into a frenzy by a strange lightning strike. You must search for a way to quell his frenzy.* How to start: Automatic Steps: 1. Report to your captain in her office to learn more about your next mission. 2. Find your way to Grandtree Arena to speak with Lian and get information on Kleavor. 3. Head to a base camp and report what you’ve learned to Professor Laventon. 4. Return to Galaxy Hall and join the professor in his research lab to formulate a strategy. 5. Work with Lian and Irida to make “Teatime Balls” from Kleavor’s favorite foods. 6. Prove yourself to Irida by defeating her in battle. 7. Quell the frenzy of Kleavor, Lord of the Woods, at Grandtree Arena. 8. Report to Commander Kamado that you have accomplished your mission. Next mission: #8: Arezu's Predicament"
+      ],
+      [
+        "#8: Arezu's Predicament",
+        58.2,
+        28.8,
+        "*Arezu, a warden who serves in the Crimson Mirelands, has come to Jubilife Village. It seems she wants to talk to Commander Kamado about something.* Steps: 1. Follow Arezu to the commander’s office. 2. Complete enough research tasks to reach the rank of Second Star. 3. Head to the Solaceon Ruins, found in the Crimson Mirelands, to meet Calaba. 4. Track down the shady bandits to reclaim the Wall Fragment they stole. 5. Return to the Solaceon Ruins to tell Volo that you’ve retrieved the Wall Fragment. 6. Give the Wall Fragment to Calaba inside the Solaceon Ruins. 7. Head to Sludge Mound to find Ursaluna. 8. Report to Commander Kamado to share what you learned about Ursaluna. 9. Ride on Ursaluna and follow the blue signals to sniff out Arezu in the Crimson Mirelands. 10. Quell the frenzy of Lilligant, the Lady of the Ridge, at Brava Arena. 11. Report to Commander Kamado that you have accomplished your mission. Next mission: #9: A New Mission"
+      ],
+      [
+        "#9: A New Mission",
+        28.3,
+        86.2,
+        "*Commander Kamado has welcomed in new arrivals to the village. You must continue studying the Pokémon of Hisui to ensure that all can live safely here.* Steps: 1. Go to the commander’s office in Galaxy Hall to learn about your next mission. 2. Complete enough research tasks to reach the rank of Third Star. Next mission: #10: The Lordless Island"
+      ]
+    ],
+    "Point": [
+      [
+        "Candy Stand",
+        46.9,
+        27.5,
+        "Point of Interest marker."
+      ],
+      [
+        "Farm",
+        32.6,
+        45.8,
+        "Point of Interest marker."
+      ],
+      [
+        "Galaxy Hall",
+        51.0,
+        22.6,
+        "Point of Interest marker."
+      ],
+      [
+        "Ginkgo Guild Cart",
+        55.8,
+        27.1,
+        "Point of Interest marker."
+      ],
+      [
+        "Pastures",
+        66.9,
+        40.0,
+        "Point of Interest marker."
+      ],
+      [
+        "Prelude Beach",
+        32.3,
+        84.0,
+        "Point of Interest marker."
+      ],
+      [
+        "Sevii Kitchen",
+        65.3,
+        32.7,
+        "Point of Interest marker."
+      ],
+      [
+        "The Wallflower",
+        47.6,
+        32.5,
+        "Point of Interest marker."
+      ]
+    ],
+    "Character": [
+      [
+        "Almous",
+        48.1,
+        41.3,
+        "Character marker."
+      ],
+      [
+        "Andra",
+        46.3,
+        35.0,
+        "Character marker."
+      ],
+      [
+        "Anise",
+        53.8,
+        48.3,
+        "Character marker."
+      ],
+      [
+        "Astair",
+        54.8,
+        21.8,
+        "Note: Located in the Basement of the Galaxy Hall."
+      ],
+      [
+        "Clarissa",
+        41.8,
+        47.0,
+        "Character marker."
+      ],
+      [
+        "Floaro",
+        47.7,
+        46.9,
+        "Character marker."
+      ],
+      [
+        "Ida",
+        62.8,
+        40.8,
+        "Character marker."
+      ],
+      [
+        "Miki",
+        51.9,
+        54.0,
+        "Character marker."
+      ],
+      [
+        "Morel (Village)",
+        48.2,
+        43.1,
+        "Character marker."
+      ],
+      [
+        "Pesselle",
+        56.4,
+        23.8,
+        "Character marker."
+      ],
+      [
+        "Radisa",
+        44.0,
+        42.7,
+        "Note: Inside the 2nd house (from the North)."
+      ],
+      [
+        "Sanqua",
+        47.9,
+        49.1,
+        "Character marker."
+      ],
+      [
+        "Tao Hua",
+        56.3,
+        21.7,
+        "Note: Located in the Basement of the Galaxy Hall."
+      ],
+      [
+        "Tomma",
+        54.9,
+        23.8,
+        "Character marker."
+      ],
+      [
+        "Tsumugi",
+        68.4,
+        28.5,
+        "Character marker."
+      ],
+      [
+        "Yota",
+        68.1,
+        36.4,
+        "Character marker."
+      ]
+    ],
+    "Farm": [
+      [
+        "Farm",
+        33.0,
+        76.0,
+        "Harvest route for crafting materials."
+      ],
+      [
+        "Training Grounds",
+        43.0,
+        15.0,
+        "Ingo battles and move mastery practice."
+      ]
+    ]
   }
 };
 
-exactMapMarkerGroups["Obsidian Fieldlands"].Subarea.push(
-  ["Grandtree Arena",82.6,86.5,"Kleavor's Noble arena."],
-  ["Moss Rock",71,86,"Leafeon evolution landmark."],
-  ["Verity Cavern",20,43,"Lake guardian cavern."]
-);
-exactMapMarkerGroups["Crimson Mirelands"].Subarea.push(
-  ["Brava Arena",44.4,7.1,"Hisuian Lilligant's Noble arena."],
-  ["Valor Cavern",82,26,"Lake guardian cavern."]
-);
-exactMapMarkerGroups["Cobalt Coastlands"].Subarea.push(
-  ["Molten Arena",88,11,"Hisuian Arcanine's Noble arena."],
-  ["Tidal Passage",62,22,"Northern sea passage."],
-  ["Seaside Hollow",96,62,"Coastlands cave route."],
-  ["Lava Dome Sanctum",87,14,"Heatran chamber inside Firespit Island."],
-  ["Turnback Cave",18,24,"Giratina post-game cave route."]
-);
-exactMapMarkerGroups["Coronet Highlands"].Subarea.push(
-  ["Moonview Arena",26,7,"Hisuian Electrode's Noble arena."],
-  ["Wayward Cave",42,59,"Cave route with Gible line checks."],
-  ["Stone Portal",35,33,"Highlands route landmark."]
-);
-exactMapMarkerGroups["Alabaster Icelands"].Subarea.push(
-  ["Icepeak Cavern",63,9,"Cave route near Icepeak Arena."],
-  ["Acuity Cavern",48,18,"Lake guardian cavern."],
-  ["Ice Column Chamber",66,3,"Snowpoint Temple chamber."],
-  ["Ice Rock",48,49,"Glaceon evolution landmark."],
-  ["Secret Hollow",26,73,"Hidden cave in the southern route."],
-  ["Hibernal Cave",39,40,"Northwest cave passage."]
-);
+const mapSubareaLabelOffsets = {
+  "Obsidian Fieldlands":{
+    "Grandtree Arena":[-60,-28],
+    "The Heartwood":[58,8],
+    "Moss Rock":[40,38],
+    "Tidewater Dam":[-48,18],
+    "Verity Cavern":[50,26]
+  },
+  "Crimson Mirelands":{
+    "Cloudpool Ridge":[-18,18],
+    "Brava Arena":[24,-12],
+    "Valor Cavern":[36,28],
+    "Lake Valor":[-28,-10],
+    "Diamond Settlement":[28,12],
+    "Cottonsedge Prairie":[-22,18],
+    "Droning Meadow":[18,-14],
+    "Ursa's Ring":[-12,20]
+  },
+  "Cobalt Coastlands":{
+    "Spring Path":[-38,18],
+    "Turnback Cave":[42,-22],
+    "Veilstone Cape":[18,-18],
+    "Tidal Passage":[-28,-18],
+    "Seagrass Haven":[22,16],
+    "Firespit Island":[54,-24],
+    "Molten Arena":[-56,34],
+    "Lava Dome Sanctum":[4,64],
+    "Bathers' Lagoon":[-18,22],
+    "Hideaway Bay":[28,-16],
+    "Tombolo Walk":[-26,18],
+    "Seaside Hollow":[-46,14]
+  },
+  "Coronet Highlands":{
+    "Temple of Sinnoh":[0,-20],
+    "Moonview Arena":[34,18],
+    "Cloudcap Pass":[-22,18],
+    "Sacred Plaza":[-22,-18],
+    "Celestica Ruins":[24,-18],
+    "Primeval Grotto":[28,18],
+    "Celestica Trail":[-20,18],
+    "Fabled Spring":[-28,20],
+    "Ancient Quarry":[-24,-18],
+    "Heavenward Lookout":[-24,18],
+    "Clamberclaw Cliffs":[-42,-18],
+    "Lonely Spring":[44,18]
+  },
+  "Alabaster Icelands":{
+    "Snowpoint Temple":[46,-24],
+    "Icepeak Arena":[-60,20],
+    "Icepeak Cavern":[8,40],
+    "Lake Acuity":[-28,-18],
+    "Acuity Cavern":[32,20],
+    "Glacier Terrace":[-18,18],
+    "Avalugg's Legacy":[-18,-18],
+    "Ice Rock":[30,20],
+    "Pearl Settlement":[26,-16],
+    "Heart's Crag":[-20,18],
+    "Arena's Approach":[-56,20],
+    "Avalanche Slopes":[-24,-18],
+    "Icebound Falls":[30,20],
+    "Secret Hollow":[62,-34],
+    "Hibernal Cave":[28,18]
+  }
+};
 
 const fallbackMarkerNames = {
   "Obsidian Fieldlands":{
@@ -1646,6 +5183,10 @@ function spriteUrl(input) {
   return `https://img.pokemondb.net/sprites/home/normal/${spriteName(input)}.png`;
 }
 
+function localSpriteUrl(input) {
+  return `assets/pokemon/${spriteName(input)}.png`;
+}
+
 function spriteFallbackUrl(input) {
   return `https://img.pokemondb.net/sprites/scarlet-violet/normal/${spriteName(input)}.png`;
 }
@@ -1665,7 +5206,16 @@ function fallbackImageAttrs(sources) {
 }
 
 function pokemonSpriteAttrs(input) {
-  return fallbackImageAttrs([spriteUrl(input), spriteFallbackUrl(input)]);
+  return fallbackImageAttrs([localSpriteUrl(input), spriteUrl(input), spriteFallbackUrl(input)]);
+}
+
+function setPokemonSprite(img, input) {
+  if (!img || !input) return;
+  const sources = [localSpriteUrl(input), spriteUrl(input), spriteFallbackUrl(input)].filter(Boolean);
+  const [first, ...rest] = sources;
+  img.src = first;
+  img.dataset.fallbacks = rest.join("|");
+  img.onerror = () => window.plaSwapImageFallback && window.plaSwapImageFallback(img);
 }
 
 function pokemonLinkTarget(name) {
@@ -1780,6 +5330,10 @@ function pokemonDbItemSpriteName(name) {
     .replace(/^-|-$/g, "");
 }
 
+function itemAssetUrl(name) {
+  return `assets/items/${pokemonDbItemSpriteName(name)}.png`;
+}
+
 const ARCHIVE_ITEM_NAME_OVERRIDES = {
   "Poke Ball":"Pok\u00e9 Ball"
 };
@@ -1853,8 +5407,9 @@ function itemSpriteHtml(name) {
   if (!name || name === "Move condition") return `<span class="item-cell no-sprite"><span class="item-fallback">?</span><span>${name}</span></span>`;
   const localFallbacks = name === "Leaden Ball" ? ["assets/items/leaden-ball-la.png"] : [];
   const sources = [
-    ITEM_DIRECT_SPRITES[name],
+    itemAssetUrl(name),
     ...localFallbacks,
+    ITEM_DIRECT_SPRITES[name],
     archiveItemSpriteUrl(name, "LA"),
     archiveItemSpriteUrl(name, "SV"),
     `https://img.pokemondb.net/sprites/items/${pokemonDbItemSpriteName(name)}.png`,
@@ -2205,9 +5760,7 @@ function updateSelectedPokemon(slot, pokemonName) {
   if (sprite) {
     sprite.hidden = !pokemon;
     if (pokemon) {
-      sprite.src = spriteUrl(pokemon);
-      sprite.dataset.fallbacks = spriteFallbackUrl(pokemon);
-      sprite.onerror = () => window.plaSwapImageFallback && window.plaSwapImageFallback(sprite);
+      setPokemonSprite(sprite, pokemon);
       sprite.alt = `${pokemon.name} sprite`;
     }
   }
@@ -2662,9 +6215,8 @@ function renderCoverage() {
 }
 
 function coverageGroup(label, list) {
-  const preview = list.slice(0, 16).map(p => p.name).join(", ");
-  const extra = list.length > 16 ? `, +${list.length - 16} more` : "";
-  return `<div class="coverage-group"><strong>${label}</strong><span>${list.length}</span><p>${preview || "None"}${extra}</p></div>`;
+  const names = list.map(p => pokemonLink(p.name, "pokemon-inline-link")).join(", ");
+  return `<div class="coverage-group"><strong>${label}</strong><span>${list.length}</span><p>${names || "None"}</p></div>`;
 }
 
 function multiplierLabel(multiplier) {
@@ -2718,6 +6270,13 @@ function mapMarkerLabel(point) {
   if (point[0] === "Noble") return "N";
   if (point[0] === "Landmark") return "L";
   return point[0][0];
+}
+
+function mapMarkerStyle(point, region) {
+  if (point[0] !== "Subarea") return "";
+  const offset = mapSubareaLabelOffsets[region]?.[point[1]];
+  if (!offset) return "";
+  return ` style="--label-dx:${offset[0]}px;--label-dy:${offset[1]}px"`;
 }
 
 function mapKindName(kind) {
@@ -2841,7 +6400,7 @@ function renderMap() {
   const points = mapData[region].filter(p => enabled.has(p[0]));
   $("regionMap").style.setProperty("--map-aspect", MAP_ASPECTS[region] || "1 / 1");
   const mapImage = MAP_IMAGES[region] ? `url('${MAP_IMAGES[region].replaceAll("'", "\\'")}')` : "linear-gradient(135deg, rgba(112, 166, 109, .18), rgba(90, 153, 199, .14))";
-  $("regionMap").innerHTML = `<div id="mapLayer" class="map-layer" style="--map-image:${mapImage}"></div><div id="mapMarkerLayer" class="map-marker-layer">${points.map((p,i) => `<button class="marker" data-index="${i}" data-kind="${p[0]}" data-x="${p[4]}" data-y="${p[5]}" title="${p[1]}">${mapMarkerLabel(p)}</button>`).join("")}</div>`;
+  $("regionMap").innerHTML = `<div id="mapLayer" class="map-layer" style="--map-image:${mapImage}"></div><div id="mapMarkerLayer" class="map-marker-layer">${points.map((p,i) => `<button class="marker" data-index="${i}" data-kind="${p[0]}" data-x="${p[4]}" data-y="${p[5]}" title="${p[1]}"${mapMarkerStyle(p, region)}>${mapMarkerLabel(p)}</button>`).join("")}</div>`;
   bindMapInteractions();
   applyMapTransform();
   const setDetail = index => {

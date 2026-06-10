@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Team Builder | Pokemon Legends: Arceus Field Guide</title>
-  <link rel="stylesheet" href="styles.css?v=20260525g">
+  <link rel="stylesheet" href="styles.css?v=20260609b">
 </head>
 <body data-page="calculator">
   <header class="site-header">
@@ -36,24 +36,27 @@
         </aside>
       </div>
       <div class="coverage-summary" id="coverageSummary"></div>
-      <div class="coverage-panels">
-        <article>
-          <h3>Offensive coverage</h3>
-          <div id="offenseBreakdown" class="coverage-breakdown"></div>
-        </article>
-        <article>
-          <h3>Defensive profile</h3>
-          <p class="coverage-note">Problem weakness means an attacking type hits more selected team members super-effectively than your team resists or is immune to.</p>
-          <div id="defenseBreakdown" class="coverage-breakdown"></div>
-        </article>
-      </div>
-      <div class="table-wrap"><table id="coverageTable"></table></div>
+      <details class="coverage-details-panel" open>
+        <summary><span>Coverage Details</span><small>Show / hide</small></summary>
+        <div class="coverage-panels">
+          <article>
+            <h3>Offensive coverage</h3>
+            <div id="offenseBreakdown" class="coverage-breakdown"></div>
+          </article>
+          <article>
+            <h3>Defensive profile</h3>
+            <p class="coverage-note">Problem weakness means an attacking type hits more selected team members super-effectively than your team resists or is immune to.</p>
+            <div id="defenseBreakdown" class="coverage-breakdown"></div>
+          </article>
+        </div>
+        <div class="table-wrap"><table id="coverageTable"></table></div>
+      </details>
     </section>
   </main>
   <footer><p>Fan-made guide. Type data checked against Pokemon Database.</p></footer>
   <script src="pla-learnsets.js"></script>
   <script src="pla-move-details.js"></script>
   <script src="pla-base-stats.js"></script>
-  <script src="app.js?v=20260525g"></script>
+  <script src="app.js?v=20260609b"></script>
 </body>
 </html>
