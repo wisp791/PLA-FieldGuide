@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Maps | Pokemon Legends: Arceus Field Guide</title>
-  <link rel="stylesheet" href="styles.css?v=20260611a">
+  <link rel="stylesheet" href="styles.css?v=20260611c">
 </head>
 <body data-page="maps">
   <header class="site-header">
@@ -19,6 +19,23 @@
       <div class="region-buttons" id="regionButtons" aria-label="Region shortcuts"></div>
       <div class="map-controls">
         <select id="regionSelect" aria-label="Region"><option>Obsidian Fieldlands</option><option>Crimson Mirelands</option><option>Cobalt Coastlands</option><option>Coronet Highlands</option><option>Alabaster Icelands</option><option>Jubilife Village</option></select>
+        <div class="map-filter-actions"><button class="button" id="mapSelectAll" type="button">Select all</button><button class="button" id="mapClearAll" type="button">Clear all</button></div>
+        <label><input type="checkbox" value="Alpha" checked> Alphas</label>
+        <label><input type="checkbox" value="Camp" checked> Camps</label>
+        <label><input type="checkbox" value="Gate" checked> Fast travel</label>
+        <label><input type="checkbox" value="Transition" checked> Transitions</label>
+        <label><input type="checkbox" value="Cave" checked> Caves</label>
+        <label><input type="checkbox" value="Subarea" checked> Subareas</label>
+        <label><input type="checkbox" value="Wisp" checked> Wisps</label>
+        <label><input type="checkbox" value="Unown" checked> Unown</label>
+        <label><input type="checkbox" value="Point" checked> Points</label>
+        <label><input type="checkbox" value="Character" checked> Characters</label>
+        <label><input type="checkbox" value="Arena" checked> Arenas</label>
+        <label><input type="checkbox" value="Noble" checked> Nobles</label>
+        <label><input type="checkbox" value="Request" checked> Requests</label>
+        <label><input type="checkbox" value="Story" checked> Story</label>
+        <label><input type="checkbox" value="Legendary" checked> Legendary</label>
+        <label><input type="checkbox" value="Farm" checked> Farming</label>
       </div>
       <div class="map-tools" aria-label="Map zoom controls">
         <button class="button" id="mapZoomOut" type="button">-</button>
@@ -31,6 +48,6 @@
     <section class="guide-section"><h2>Regional Notes</h2><div class="cards" id="regionCards"></div></section>
   </main>
   <footer><p>Fan-made guide. Data checked against Pokemon Database, Serebii, Bulbapedia, Game8, and RotomLabs.</p></footer>
-  <script src="app.js?v=20260611a"></script>
+  <script src="app.js?v=20260611c"></script>
 </body>
 </html>

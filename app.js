@@ -26,12 +26,12 @@ const TYPE_CHART = {
 };
 
 const MAP_IMAGES = {
-  "Obsidian Fieldlands": "assets/maps/reference/obsidian-fieldlands-reference.jpg",
-  "Crimson Mirelands": "assets/maps/reference/crimson-mirelands-reference.jpg",
-  "Cobalt Coastlands": "assets/maps/reference/cobalt-coastlands-reference.jpg",
-  "Coronet Highlands": "assets/maps/reference/coronet-highlands-reference.jpg",
-  "Alabaster Icelands": "assets/maps/reference/alabaster-icelands-reference.jpg",
-  "Jubilife Village": "assets/maps/reference/jubilife-village-reference.jpg"
+  "Obsidian Fieldlands": "Obsidian Fieldlands Map.jpg",
+  "Crimson Mirelands": "Crimson Mirelands Map.jpg",
+  "Cobalt Coastlands": "Cobalt Coastlands Map.jpg",
+  "Coronet Highlands": "Coronet Highlands Map.jpg",
+  "Alabaster Icelands": "Alabaster Icelands-Map.jpg",
+  "Jubilife Village": "Jubilife Village Map.jpg"
 };
 
 const MAP_ASPECTS = {
@@ -39,8 +39,8 @@ const MAP_ASPECTS = {
   "Crimson Mirelands": "1 / 1",
   "Cobalt Coastlands": "1 / 1",
   "Coronet Highlands": "1 / 1",
-  "Alabaster Icelands": "1146 / 991",
-  "Jubilife Village": "954 / 948"
+  "Alabaster Icelands": "1 / 1",
+  "Jubilife Village": "1 / 1"
 };
 
 const MOVE_TYPE_MAP = {
@@ -590,1469 +590,151 @@ const exactMapMarkerText = {
 };
 
 const exactMapMarkerGroups = {
-  "Obsidian Fieldlands": {
-    "Subarea": [
-      [
-        "Aspiration Hill",
-        38.0,
-        34.8,
-        "Named subarea marker."
-      ],
-      [
-        "Deertrack Heights",
-        61.7,
-        51.8,
-        "Named subarea marker."
-      ],
-      [
-        "Deertrack Path",
-        47.9,
-        47.4,
-        "Named subarea marker."
-      ],
-      [
-        "Floaro Gardens",
-        12.9,
-        29.9,
-        "Named subarea marker."
-      ],
-      [
-        "Grueling Grove",
-        80.8,
-        25.6,
-        "Named subarea marker."
-      ],
-      [
-        "Horseshoe Plains",
-        59.3,
-        30.6,
-        "Named subarea marker."
-      ],
-      [
-        "Lake Verity",
-        13.7,
-        48.8,
-        "Named subarea marker."
-      ],
-      [
-        "Nature's Pantry",
-        58.0,
-        70.0,
-        "Named subarea marker."
-      ],
-      [
-        "Obsidian Falls",
-        84.9,
-        55.3,
-        "Named subarea marker."
-      ],
-      [
-        "Oreburrow Tunnel",
-        87.2,
-        63.5,
-        "Named subarea marker."
-      ],
-      [
-        "Ramanas Island",
-        27.4,
-        85.5,
-        "Named subarea marker."
-      ],
-      [
-        "Sandgem Flat",
-        15.9,
-        74.6,
-        "Named subarea marker."
-      ],
-      [
-        "The Heartwood",
-        72.1,
-        82.9,
-        "Named subarea marker."
-      ],
-      [
-        "Tidewater Dam",
-        62.7,
-        78.0,
-        "Named subarea marker."
-      ],
-      [
-        "Windswept Run",
-        42.9,
-        63.3,
-        "Named subarea marker."
-      ],
-      [
-        "Worn Bridge",
-        75.0,
-        42.0,
-        "Named subarea marker."
-      ]
-    ],
-    "Alpha": [
-      [
-        "Alpha Golbat",
-        95.4,
-        64.4,
-        "Fixed alpha Pokemon. Level 35. Location: Near Oreburrow Tunnel."
-      ],
-      [
-        "Alpha Parasect",
-        60.3,
-        73.4,
-        "Fixed alpha Pokemon. Level 30. Location: Nature's Pantry."
-      ],
-      [
-        "Alpha Alakazam",
-        17.8,
-        73.2,
-        "Fixed alpha Pokemon. Level 60. Location: Sandgem Flats."
-      ],
-      [
-        "Alpha Graveler",
-        95.2,
-        41.4,
-        "Fixed alpha Pokemon. Level 30. Location: Near Obsidian Falls."
-      ],
-      [
-        "Alpha Rapidash",
-        71.8,
-        27.1,
-        "Fixed alpha Pokemon. Level 40. Location: Horseshoe Plains."
-      ],
-      [
-        "Alpha Scyther",
-        91.8,
-        86.2,
-        "Fixed alpha Pokemon. Level 42. Location: Near Grandtree Arena."
-      ],
-      [
-        "Alpha Magikarp",
-        94.8,
-        47.6,
-        "Fixed alpha Pokemon. Level 55. Location: Near Oreburrow Tunnel."
-      ],
-      [
-        "Alpha Gyarados",
-        21.6,
-        42.4,
-        "Fixed alpha Pokemon. Level 60. Location: Lake Verity."
-      ],
-      [
-        "Alpha Snorlax",
-        20.8,
-        74.4,
-        "Fixed alpha Pokemon. Level 45. Location: Near Sandgem Flats."
-      ],
-      [
-        "Alpha Heracross",
-        86.3,
-        10.9,
-        "Fixed alpha Pokemon. Level 45. Location: Grueling Grove."
-      ],
-      [
-        "Alpha Stantler",
-        64.4,
-        50.6,
-        "Fixed alpha Pokemon. Level 42. Location: Deertrack Heights."
-      ],
-      [
-        "Alpha Blissey",
-        88.8,
-        61.4,
-        "Fixed alpha Pokemon. Level 62. Location: Near Obsidian Falls."
-      ],
-      [
-        "Alpha Infernape",
-        38.8,
-        82.8,
-        "Fixed alpha Pokemon. Level 65. Location: Ramanas Island."
-      ],
-      [
-        "Alpha Staravia",
-        52.7,
-        56.7,
-        "Fixed alpha Pokemon. Level 32. Location: Windswept Run."
-      ],
-      [
-        "Alpha Bibarel",
-        64.0,
-        78.6,
-        "Fixed alpha Pokemon. Level 16. Location: Tidewater Dam."
-      ],
-      [
-        "Alpha Kricketune",
-        55.0,
-        75.8,
-        "Fixed alpha Pokemon. Level 30. Location: Near Tidewater Dam."
-      ],
-      [
-        "Alpha Luxio",
-        26.6,
-        20.9,
-        "Fixed alpha Pokemon. Level 40. Location: Floaro Gardens."
-      ],
-      [
-        "Alpha Floatzel",
-        72.9,
-        53.0,
-        "Fixed alpha Pokemon. Level 31. Location: Near Worn Bridge."
-      ],
-      [
-        "Alpha Lopunny",
-        87.9,
-        91.6,
-        "Fixed alpha Pokemon. Level 40. Location: Near The Heartwood."
-      ]
-    ],
-    "Camp": [
-      [
-        "Fieldlands Camp",
-        34.3,
-        26.5,
-        "Base camp marker."
-      ],
-      [
-        "Heights Camp",
-        57.7,
-        57.8,
-        "Base camp marker."
-      ]
-    ],
-    "Gate": [
-      [
-        "Fieldlands Camp Fast Travel",
-        34.3,
-        26.5,
-        "Fast travel point at this base camp."
-      ],
-      [
-        "Grandtree Arena Fast Travel",
-        85.3,
-        85.5,
-        "Fast travel point at this arena."
-      ],
-      [
-        "Heights Camp Fast Travel",
-        57.7,
-        57.8,
-        "Fast travel point at this base camp."
-      ]
-    ],
-    "Arena": [
-      [
-        "Grandtree Arena",
-        85.3,
-        85.5,
-        "Arena marker."
-      ]
-    ],
-    "Noble": [
-      [
-        "Kleavor",
-        80.0,
-        90.0,
-        "Noble Pokemon marker."
-      ]
-    ],
-    "Legendary": [
-      [
-        "Landorus",
-        27.3,
-        85.1,
-        "How to catch: Part of the #94: Incarnate Forces of Hisui request."
-      ],
-      [
-        "Mesprit",
-        15.3,
-        52.2,
-        "Level: 70 How to catch: Part of the #21: The Plate of the Lakes story mission. Can be found within Verity Cavern."
-      ],
-      [
-        "Shaymin",
-        14.9,
-        28.2,
-        "How to catch: Part of the #92: A Token of Gratitude request."
-      ]
-    ]
+  "Obsidian Fieldlands":{
+    Wisp:[["Horseshoe Plains Wisp",71.7,11.8,"Spiritomb wisp collectible."],["Aspiration Hill Wisp",43,23,"Spiritomb wisp collectible."],["Floaro Gardens Wisp",34.6,21.2,"Spiritomb wisp collectible."],["Grueling Grove Wisp",85,14,"Spiritomb wisp collectible."],["Worn Bridge Wisp",91.1,24.3,"Spiritomb wisp collectible."],["Worn Bridge Wisp",76.7,32,"Spiritomb wisp collectible."],["Lake Verity Wisp",25.9,36.5,"Spiritomb wisp collectible."],["Obsidian Falls Wisp",90.8,41.4,"Spiritomb wisp collectible."],["Deertrack Heights Wisp",53.3,49.5,"Spiritomb wisp collectible."],["Obsidian Falls Wisp",82.5,52.6,"Spiritomb wisp collectible."],["Deertrack Heights Wisp",63.4,55.1,"Spiritomb wisp collectible."],["Oreburrow Tunnel Wisp",96.7,57.7,"Spiritomb wisp collectible."],["Windswept Run Wisp",46.5,64.4,"Spiritomb wisp collectible."],["Nature's Pantry Wisp",60.7,67.7,"Spiritomb wisp collectible."],["Sandgem Flats Wisp",21.5,69.4,"Spiritomb wisp collectible."],["The Heartwood Wisp",81.5,70.7,"Spiritomb wisp collectible."],["The Heartwood Wisp",71.5,80.8,"Spiritomb wisp collectible."],["Ramanas Island Wisp",37.9,83.5,"Spiritomb wisp collectible."],["Grandtree Arena Wisp",60.9,90.3,"Spiritomb wisp collectible."],["Ramanas Island Wisp",47.1,91,"Spiritomb wisp collectible."]],
+    Subarea:[["Floaro Gardens",18,17,"Shinx line, Shaymin request area, and western alpha checks."],["Aspiration Hill",43,23,"Early tutorial route and first field gathering loop."],["Horseshoe Plains",63,22,"Bidoof, Starly, Shinx, Ponyta, and early research."],["Grueling Grove",85,14,"Bug-type route and alpha Heracross area."],["Deertrack Path",55,39,"Main path between the first camp routes and Deertrack Heights."],["Deertrack Heights",64,48,"Heights Camp route and early Geodude/Kricketot checks."],["Windswept Run",51,57,"Floatzel and river-crossing route."],["Nature's Pantry",61,69,"Cherubi tree checks and alpha Parasect/Kricketune route."],["Worn Bridge",79,35,"Floatzel, Bibarel, and bridge route."],["Obsidian Falls",88,52,"Alpha Blissey XP route and waterfall checks."],["Oreburrow Tunnel",92,62,"Cave route toward Obsidian Falls."],["The Heartwood",83,82,"Bug and Grass routes near the Grandtree approach."],["Tidewater Dam",68,79,"Water route and Bibarel checks."],["Sandgem Flats",23,75,"Snorlax, Alakazam, and ore route."],["Ramanas Island",39,82,"Post-game alpha loop and Landorus route."],["Lake Verity",19,43,"Mesprit route and water checks."]],
+    Alpha:[["Alpha Rapidash",67.4,13.4,"Fixed alpha in Horseshoe Plains."],["Alpha Heracross",86.2,14.5,"Fixed alpha in Grueling Grove."],["Alpha Luxio",25.9,23.5,"Fixed alpha near Floaro Gardens."],["Alpha Floatzel",71.5,29.1,"Fixed alpha near Worn Bridge."],["Alpha Magikarp",95.8,34.2,"Fixed alpha in the Obsidian Falls water route."],["Alpha Stantler",71.3,42.3,"Fixed alpha near Deertrack Heights."],["Alpha Gyarados",19.1,44.5,"Fixed alpha at Lake Verity."],["Alpha Alakazam",22.6,66.6,"Fixed alpha in Sandgem Flats."],["Alpha Lopunny",72.7,52.7,"Fixed alpha near The Heartwood."],["Alpha Staravia",52.3,56.1,"Fixed alpha around Windswept Run."],["Alpha Graveler",89.2,63.4,"Fixed alpha near Oreburrow Tunnel."],["Alpha Golbat",95.9,67.5,"Fixed alpha in Oreburrow Tunnel."],["Alpha Parasect",59.9,71.3,"Fixed alpha near Nature's Pantry."],["Alpha Snorlax",20.1,72.2,"Fixed alpha in Sandgem Flats."],["Alpha Scyther",87.8,87.8,"Fixed alpha near Grandtree Arena."],["Alpha Infernape",43,82,"Fixed alpha on Ramanas Island."],["Alpha Blissey",73.5,51.5,"Fixed alpha at Obsidian Falls."],["Alpha Bibarel",68,79,"Fixed alpha near Tidewater Dam."],["Alpha Kricketune",60.3,76.3,"Fixed alpha near Nature's Pantry."],["Alpha Torterra",39,82,"Post-game alpha on Ramanas Island."]],
+    Unown:[["Grueling Grove Unown",96.6,15.8,"Unown letter collectible."],["Obsidian Falls Unown",95.8,42.1,"Unown letter collectible."],["Oreburrow Tunnel Unown",94.9,47.8,"Unown letter collectible."],["The Heartwood Unown",91.9,83.2,"Unown letter collectible."],["Lake Verity Unown",19,43,"Unown letter collectible."]],
+    Story:[["Fieldlands Camp Story",38.5,12.3,"Opening Fieldlands expeditions and tutorial routes."],["Heights Camp Story",61.5,49.2,"Important early camp in the center of Deertrack Heights."],["Sandgem Flats Story",23,75,"Story/research routing marker placed at Sandgem Flats."],["Kleavor Arena Story",82.6,86.5,"First Noble route and battle at Grandtree Arena."]],
+    Character:[["Munchlax encounter",69.4,56.8,"Early story alpha-problem route marker near Deertrack Heights."],["Lian",82.6,86.5,"Pearl Clan warden for Kleavor at Grandtree Arena."]],
+    Camp:[["Fieldlands Camp",38.5,12.3,"Main Obsidian Fieldlands base camp."],["Heights Camp",61.5,49.2,"Base camp in the center of Deertrack Heights."]],
+    Gate:[["Fieldlands Camp Fast Travel",38.5,12.3,"Fast travel point."],["Heights Camp Fast Travel",61.5,49.2,"Fast travel point."],["Ramanas Island Fast Travel",31.7,77.4,"Fast travel point."],["Grandtree Arena Fast Travel",82.6,86.5,"Fast travel point near Kleavor's arena."]],
+    Transition:[["Fieldlands Entrance",39.6,14.8,"Transition point."],["Oreburrow Tunnel Transition",94.9,47.8,"Tunnel transition."],["Grandtree Arena Transition",82.6,86.5,"Grandtree route transition."]],
+    Cave:[["Oreburrow Tunnel",94.9,47.8,"Cave route toward Obsidian Falls."]],
+    Arena:[["Grandtree Arena",82.6,86.5,"Kleavor's Noble arena."]],
+    Noble:[["Kleavor",82.6,86.5,"Noble Pokemon battle at Grandtree Arena."]],
+    Request:[["Request 19: A Peculiar Ponyta",34.6,21.2,"Guaranteed shiny Ponyta request route near Horseshoe Plains."],["Bothersome Bidoof route",38.5,12.3,"Early request route that begins from Jubilife and the Fieldlands entry."],["Mushroom Cake request",60.7,67.7,"Food-lure request route near Nature's Pantry."]],
+    Legendary:[["Mesprit",19,43,"Post-game lake guardian at Lake Verity."],["Landorus",40,82,"Appears on Ramanas Island during Request 94."],["Shaymin",18,17,"Request 92 in Floaro Gardens with Sword/Shield save data."]],
+    Farm:[["Alpha Blissey XP route",73.5,51.5,"High-HP Blissey route at Obsidian Falls."],["Horseshoe Plains research loop",58,25,"Fast early research route."],["Ramanas Island alpha loop",39,82,"Post-game alpha and sellable loop."]]
   },
-  "Crimson Mirelands": {
-    "Subarea": [
-      [
-        "Bolderoll Slope",
-        62.5,
-        53.7,
-        "Named subarea marker."
-      ],
-      [
-        "Cloudpool Ridge",
-        32.0,
-        32.2,
-        "Named subarea marker."
-      ],
-      [
-        "Cottonsedge Prairie",
-        77.9,
-        64.9,
-        "Named subarea marker."
-      ],
-      [
-        "Diamond Heath",
-        48.7,
-        36.3,
-        "Named subarea marker."
-      ],
-      [
-        "Diamond Settlement",
-        55.8,
-        39.2,
-        "Named subarea marker."
-      ],
-      [
-        "Droning Meadow",
-        78.9,
-        71.8,
-        "Named subarea marker."
-      ],
-      [
-        "Gapejaw Bog",
-        32.8,
-        68.9,
-        "Named subarea marker."
-      ],
-      [
-        "Golden Lowlands",
-        27.7,
-        56.5,
-        "Named subarea marker."
-      ],
-      [
-        "Holm of Trials",
-        43.6,
-        88.3,
-        "Named subarea marker."
-      ],
-      [
-        "Lake Valor",
-        72.2,
-        32.8,
-        "Named subarea marker."
-      ],
-      [
-        "Scarlet Bog",
-        51.4,
-        61.6,
-        "Named subarea marker."
-      ],
-      [
-        "Shrouded Ruins",
-        52.5,
-        26.9,
-        "Named subarea marker."
-      ],
-      [
-        "Sludge Mound",
-        56.4,
-        78.2,
-        "Named subarea marker."
-      ],
-      [
-        "Solaceon Ruins",
-        41.3,
-        48.3,
-        "Named subarea marker."
-      ],
-      [
-        "Ursa's Ring",
-        67.5,
-        83.2,
-        "Named subarea marker."
-      ]
-    ],
-    "Alpha": [
-      [
-        "Alpha Raichu",
-        21.6,
-        41.6,
-        "Fixed alpha Pokemon. Level 52. Location: Near Golden Lowlands."
-      ],
-      [
-        "Alpha Onix",
-        53.2,
-        48.3,
-        "Fixed alpha Pokemon. Level 50. Location: Near Diamond Settlement."
-      ],
-      [
-        "Alpha Rhyhorn",
-        51.2,
-        36.7,
-        "Fixed alpha Pokemon. Level 45. Location: Diamond Heath."
-      ],
-      [
-        "Alpha Ursaring (Gapejaw Bog)",
-        18.6,
-        68.3,
-        "Fixed alpha Pokemon. Level 55. Location: Near Gapejaw Bog."
-      ],
-      [
-        "Alpha Ursaring (Ursa's Ring)",
-        70.9,
-        90.9,
-        "Fixed alpha Pokemon. Level 41. Location: Ursa's Ring."
-      ],
-      [
-        "Alpha Whiscash",
-        71.8,
-        43.9,
-        "Fixed alpha Pokemon. Level 64. Location: Lake Valor."
-      ],
-      [
-        "Alpha Torterra",
-        41.5,
-        84.2,
-        "Fixed alpha Pokemon. Level 65. Location: Holm of Trials."
-      ],
-      [
-        "Alpha Roserade",
-        32.7,
-        31.6,
-        "Fixed alpha Pokemon. Level 50. Location: Cloudpool Ridge."
-      ],
-      [
-        "Alpha Vespiquen",
-        80.6,
-        56.2,
-        "Fixed alpha Pokemon. Level 61. Location: Near Cottonsedge Prairie."
-      ],
-      [
-        "Alpha Pachirisu",
-        20.6,
-        76.5,
-        "Fixed alpha Pokemon. Level 40. Location: Near Gapejaw Bog."
-      ],
-      [
-        "Alpha Honchkrow",
-        31.4,
-        31.6,
-        "Fixed alpha Pokemon. Level 55. Location: Cloudpool Ridge."
-      ],
-      [
-        "Alpha Skuntank",
-        52.6,
-        64.9,
-        "Fixed alpha Pokemon. Level 45. Location: Scarlet Bog."
-      ],
-      [
-        "Alpha Hippowdon",
-        49.5,
-        77.5,
-        "Fixed alpha Pokemon. Level 46. Location: Gapejaw Bog."
-      ],
-      [
-        "Alpha Toxicroak",
-        35.0,
-        80.4,
-        "Fixed alpha Pokemon. Level 47. Location: Holm of Trials."
-      ],
-      [
-        "Alpha Carnivine",
-        76.7,
-        53.7,
-        "Fixed alpha Pokemon. Level 43. Location: Near Cottonsedge Prairie."
-      ],
-      [
-        "Alpha Lickilicky",
-        50.8,
-        24.6,
-        "Fixed alpha Pokemon. Level 52. Location: Shrouded Ruins."
-      ],
-      [
-        "Alpha Tangrowth",
-        36.8,
-        59.2,
-        "Fixed alpha Pokemon. Level 45. Location: Gapejaw Bog."
-      ],
-      [
-        "Alpha Yanmega",
-        82.7,
-        74.5,
-        "Fixed alpha Pokemon. Level 58. Location: Droning Meadow."
-      ],
-      [
-        "Alpha Hisuian Sliggoo",
-        56.7,
-        89.3,
-        "Fixed alpha Pokemon. Level 50. Location: Holm of Trials."
-      ]
-    ],
-    "Camp": [
-      [
-        "Bogbound Camp",
-        60.4,
-        73.4,
-        "Base camp marker."
-      ],
-      [
-        "Mirelands Camp",
-        24.1,
-        50.1,
-        "Base camp marker."
-      ]
-    ],
-    "Gate": [
-      [
-        "Bogbound Camp Fast Travel",
-        60.4,
-        73.4,
-        "Fast travel point at this base camp."
-      ],
-      [
-        "Brava Arena Fast Travel",
-        33.8,
-        22.5,
-        "Fast travel point at this arena."
-      ],
-      [
-        "Diamond Settlement Fast Travel",
-        57.7,
-        42.1,
-        "Fast travel point."
-      ],
-      [
-        "Mirelands Camp Fast Travel",
-        24.1,
-        50.1,
-        "Fast travel point at this base camp."
-      ]
-    ],
-    "Arena": [
-      [
-        "Brava Arena",
-        33.8,
-        22.5,
-        "Arena marker."
-      ]
-    ],
-    "Noble": [
-      [
-        "Lilligant",
-        35.1,
-        22.3,
-        "Noble Pokemon marker."
-      ]
-    ],
-    "Legendary": [
-      [
-        "Azelf",
-        73.7,
-        38.6,
-        "Level: 70 How to catch: Part of the #21: The Plate of the Lakes story mission. Can be found within Valor Cavern"
-      ],
-      [
-        "Enamorus",
-        51.9,
-        60.2,
-        "How to catch: Part of the #94: Incarnate Forces of Hisui request."
-      ]
-    ]
+  "Jubilife Village":{
+    Wisp:[["Training Grounds Wisp",28.1,5.8,"Spiritomb wisp collectible."],["Galaxy Hall Wisp",42.6,20.1,"Spiritomb wisp collectible."],["General Store Wisp",59.8,24.7,"Spiritomb wisp collectible."],["Craftworks Wisp",46.1,32.8,"Spiritomb wisp collectible."],["Pastures Wisp",26.6,32.9,"Spiritomb wisp collectible."],["Farm Wisp",29.5,74,"Spiritomb wisp collectible."],["Prelude Beach Wisp",32.6,77,"Spiritomb wisp collectible."]],
+    Subarea:[["Galaxy Hall",53,24,"Research reports, rank ups, and request board."],["Training Grounds",43,15,"Move tutoring and Ingo battles."],["Craftworks",37,18,"Recipe unlocks and crafting supply route."],["Trading Post",46,19,"Merit Points and evolution items."],["General Store",60,22,"Purchased basics and item sales."],["Pastures",33,35,"Storage and bulk release for Grit."],["Farm",33,76,"Farm upgrades and harvests."],["Front Gate",54,47,"Village exit and expedition gate."]],
+    Unown:[["Galaxy Hall Unown",53,24,"Unown letter collectible."],["Training Grounds Unown",43,15,"Unown letter collectible."],["Prelude Beach Unown",32.6,77,"Unown letter collectible."]],
+    Point:[[40.7,2.1],[51.5,6.9],[33,8.8],[41.9,11.3],[56.3,12],[61.9,12],[37.9,12.4],[47.3,12.5],[51.5,13.4],[73.6,14.4],[70.2,15.6],[48.2,18],[65.9,18.3],[54.5,18.7],[57.9,18.7],[61.8,18.7],[32.9,33.3],[64.6,69],[68.4,70.5],[32.6,77]],
+    Story:[["Galaxy Hall Story",48.1,8.8,"Main mission and request-board hub."],["Front Gate Story",68.7,18.1,"Expedition departure routing."]],
+    Character:[[68.8,13.1],[46.6,21],[63.3,27.6],[44.4,29.8],[42.2,34.7],[54.3,36.2],[52.4,42.7]],
+    Camp:[["Front Gate",54,47,"Village expedition gate and services checkpoint."]],
+    Gate:[["Prelude Beach Fast Travel",32.6,77,"Fast travel point."],["Training Grounds Fast Travel",40.7,2.1,"Fast travel point."],["Galaxy Hall Fast Travel",51.5,6.9,"Fast travel point."]],
+    Transition:[["Front Gate",54,47,"Expedition transition point."]],
+    Request:[["Request Board",48.1,8.8,"Galaxy Hall request board."],["Front Gate Requests",68.7,18.1,"Expedition-related request routing."]],
+    Farm:[["Training Grounds",43,15,"Ingo battles and move mastery practice."],["Farm",33,76,"Harvest route for crafting materials."]]
   },
-  "Cobalt Coastlands": {
-    "Subarea": [
-      [
-        "Aipom Hill",
-        24.6,
-        80.8,
-        "Named subarea marker."
-      ],
-      [
-        "Bathers' Lagoon",
-        45.2,
-        87.6,
-        "Named subarea marker."
-      ],
-      [
-        "Castaway Shore",
-        45.0,
-        50.8,
-        "Named subarea marker."
-      ],
-      [
-        "Crossing Slope",
-        10.5,
-        72.4,
-        "Named subarea marker."
-      ],
-      [
-        "Deadwood Haunt",
-        62.2,
-        83.0,
-        "Named subarea marker."
-      ],
-      [
-        "Firespit Island",
-        80.4,
-        30.0,
-        "Named subarea marker."
-      ],
-      [
-        "Ginkgo Landing",
-        23.0,
-        67.0,
-        "Named subarea marker."
-      ],
-      [
-        "Hideaway Bay",
-        44.3,
-        92.7,
-        "Named subarea marker."
-      ],
-      [
-        "Islespy Shore",
-        30.8,
-        27.0,
-        "Named subarea marker."
-      ],
-      [
-        "Lunker's Lair",
-        81.5,
-        48.8,
-        "Named subarea marker."
-      ],
-      [
-        "Sand's Reach",
-        74.5,
-        73.1,
-        "Named subarea marker."
-      ],
-      [
-        "Seagrass Haven",
-        65.3,
-        36.4,
-        "Named subarea marker."
-      ],
-      [
-        "Spring Path",
-        15.3,
-        36.3,
-        "Named subarea marker."
-      ],
-      [
-        "Tombolo Walk",
-        86.3,
-        88.7,
-        "Named subarea marker."
-      ],
-      [
-        "Tranquility Cove",
-        56.1,
-        64.7,
-        "Named subarea marker."
-      ],
-      [
-        "Veilstone Cape",
-        56.2,
-        44.3,
-        "Named subarea marker."
-      ],
-      [
-        "Windbreak Stand",
-        19.1,
-        46.7,
-        "Named subarea marker."
-      ]
-    ],
-    "Alpha": [
-      [
-        "Alpha Ninetales",
-        78.2,
-        25.2,
-        "Fixed alpha Pokemon. Level 61. Location: Firespit Island."
-      ],
-      [
-        "Alpha Golduck",
-        49.6,
-        85.4,
-        "Fixed alpha Pokemon. Level 50. Location: Bathers' Lagoon."
-      ],
-      [
-        "Alpha Machoke",
-        26.2,
-        53.6,
-        "Fixed alpha Pokemon. Level 40. Location: Ginkgo Landing."
-      ],
-      [
-        "Alpha Tentacruel",
-        86.8,
-        43.0,
-        "Fixed alpha Pokemon. Level 50. Location: Near Lunker's Lair."
-      ],
-      [
-        "Alpha Chansey",
-        87.0,
-        88.0,
-        "Fixed alpha Pokemon. Level 51. Location: Tombolo Walk."
-      ],
-      [
-        "Alpha Gyarados",
-        85.8,
-        57.7,
-        "Fixed alpha Pokemon. Level 58. Location: Near Sand's Reach."
-      ],
-      [
-        "Alpha Hisuian Qwilfish",
-        45.0,
-        27.6,
-        "Fixed alpha Pokemon. Level 55. Location: Near Islespy Shore."
-      ],
-      [
-        "Alpha Octillery",
-        44.7,
-        49.8,
-        "Fixed alpha Pokemon. Level 46. Location: Castaway Shore."
-      ],
-      [
-        "Alpha Mantine",
-        57.6,
-        57.9,
-        "Fixed alpha Pokemon. Level 50. Location: Tranquility Cove."
-      ],
-      [
-        "Alpha Walrein",
-        25.7,
-        71.6,
-        "Fixed alpha Pokemon. Level 50. Location: Ginkgo Landing."
-      ],
-      [
-        "Alpha Empoleon",
-        31.3,
-        28.6,
-        "Fixed alpha Pokemon. Level 69. Location: Islespy Shore."
-      ],
-      [
-        "Alpha Mothim",
-        12.3,
-        37.8,
-        "Fixed alpha Pokemon. Level 56. Location: Spring Path."
-      ],
-      [
-        "Alpha Gastrodon",
-        56.8,
-        26.8,
-        "Fixed alpha Pokemon. Level 61. Location: Seagrass Haven."
-      ],
-      [
-        "Alpha Ambipom",
-        37.9,
-        89.0,
-        "Fixed alpha Pokemon. Level 50. Location: Near Hideaway Bay."
-      ],
-      [
-        "Alpha Purugly",
-        58.6,
-        44.1,
-        "Fixed alpha Pokemon. Level 45. Location: Veilstone Cape."
-      ],
-      [
-        "Alpha Drapion",
-        20.1,
-        57.3,
-        "Fixed alpha Pokemon. Level 45. Location: Near Ginkgo Landing."
-      ],
-      [
-        "Alpha Lumineon",
-        62.3,
-        39.1,
-        "Fixed alpha Pokemon. Level 60. Location: Seagrass Haven."
-      ],
-      [
-        "Alpha Dusknoir",
-        71.8,
-        82.2,
-        "Fixed alpha Pokemon. Level 65. Location: Deadwood Haunt."
-      ]
-    ],
-    "Camp": [
-      [
-        "Beachside Camp",
-        6.3,
-        64.8,
-        "Base camp marker."
-      ],
-      [
-        "Coastlands Camp",
-        77.7,
-        78.8,
-        "Base camp marker."
-      ]
-    ],
-    "Gate": [
-      [
-        "Beachside Camp Fast Travel",
-        6.3,
-        64.8,
-        "Fast travel point at this base camp."
-      ],
-      [
-        "Coastlands Camp Fast Travel",
-        77.7,
-        78.8,
-        "Fast travel point at this base camp."
-      ],
-      [
-        "Molten Arena Fast Travel",
-        83.0,
-        22.2,
-        "Fast travel point at this arena."
-      ]
-    ],
-    "Arena": [
-      [
-        "Molten Arena",
-        83.0,
-        22.2,
-        "Arena marker."
-      ]
-    ],
-    "Noble": [
-      [
-        "Arcanine",
-        80.1,
-        22.0,
-        "Noble Pokemon marker."
-      ]
-    ],
-    "Legendary": [
-      [
-        "Giratina",
-        18.0,
-        33.8,
-        "Level: 70 How to catch: Part of the #91: On the Trail of Giratina request. Can be found inside of Turnback Cave."
-      ],
-      [
-        "Heatran",
-        82.2,
-        25.3,
-        "Level: 70 How to catch: Part of the #22: The Plate of Firespit Island story mission. Can be found within Lava Dome Sanctum."
-      ],
-      [
-        "Manaphy",
-        48.8,
-        38.4,
-        "Level: 50 How to catch: Part of the #66: The Sea's Legend request. Can be found within Seaside Hollow."
-      ],
-      [
-        "Thundurus",
-        79.4,
-        58.6,
-        "How to catch: Part of the #94: Incarnate Forces of Hisui request. Note: Only spawns during thunderstorms."
-      ]
-    ]
+  "Crimson Mirelands":{
+    Wisp:[["Brava Arena Wisp",44.4,7.1,"Spiritomb wisp collectible."],["Shrouded Ruins Wisp",59.4,7.1,"Spiritomb wisp collectible."],["Cloudpool Ridge Wisp",27.1,13.7,"Spiritomb wisp collectible."],["Cloudpool Ridge Wisp",36.3,15.7,"Spiritomb wisp collectible."],["Diamond Heath Wisp",29.5,25.4,"Spiritomb wisp collectible."],["Diamond Settlement Wisp",52.9,30.9,"Spiritomb wisp collectible."],["Lake Valor Wisp",72.8,35.6,"Spiritomb wisp collectible."],["Solaceon Ruins Wisp",44.7,41.2,"Spiritomb wisp collectible."],["Diamond Settlement Wisp",56.6,41.5,"Spiritomb wisp collectible."],["Bolderoll Slope Wisp",67.8,45.3,"Spiritomb wisp collectible."],["Golden Lowlands Wisp",30.5,52,"Spiritomb wisp collectible."],["Golden Lowlands Wisp",18.4,52.3,"Spiritomb wisp collectible."],["Scarlet Bog Wisp",71.5,52.9,"Spiritomb wisp collectible."],["Scarlet Bog Wisp",68.6,59.4,"Spiritomb wisp collectible."],["Gapejaw Bog Wisp",24.2,64.9,"Spiritomb wisp collectible."],["Droning Meadow Wisp",91.7,68.3,"Spiritomb wisp collectible."],["Gapejaw Bog Wisp",27.4,69.5,"Spiritomb wisp collectible."],["Sludge Mound Wisp",63.5,77.9,"Spiritomb wisp collectible."],["Holm of Trials Wisp",41.1,88.3,"Spiritomb wisp collectible."],["Ursa's Ring Wisp",77.9,90.7,"Spiritomb wisp collectible."]],
+    Subarea:[["Cloudpool Ridge",32,20,"Onix and Roserade alpha route."],["Shrouded Ruins",58,13,"Spiritomb and request routing."],["Diamond Heath",55,26,"Route toward Diamond Settlement."],["Diamond Settlement",64,30,"Diamond Clan hub."],["Solaceon Ruins",49,42,"Unown and story route."],["Golden Lowlands",26,54,"Starting field and early Mirelands research."],["Gapejaw Bog",36,69,"Tangela, Carnivine, Croagunk, and request routes."],["Scarlet Bog",56,58,"Skuntank, digging route, and Enamorus zone."],["Sludge Mound",59,81,"Hippowdon and mud route."],["Bolderoll Slope",71,49,"Rhyhorn and rocky route."],["Lake Valor",82,23,"Azelf and lake route."],["Cottonsedge Prairie",87,64,"Togepi and Togekiss route."],["Droning Meadow",88,76,"Yanma and Yanmega route."],["Ursa's Ring",76,86,"Teddiursa, Ursaring, and Peat Block planning."],["Holm of Trials",43,90,"Torterra, Sliggoo, and Toxicroak route."]],
+    Alpha:[["Alpha Lickilicky",51.6,9.4,"Fixed alpha near Shrouded Ruins."],["Alpha Rhyhorn",52.2,23.9,"Fixed alpha in the Diamond Heath route."],["Alpha Roserade",21.6,29.8,"Fixed alpha around Cloudpool Ridge."],["Alpha Onix",54.1,37.9,"Fixed alpha near Solaceon Ruins."],["Alpha Whiscash",78.4,44.3,"Fixed alpha near Lake Valor."],["Alpha Tangrowth",37.2,50.9,"Fixed alpha in the Golden Lowlands route."],["Alpha Skuntank",53.5,57.8,"Fixed alpha in Scarlet Bog."],["Alpha Carnivine",59.5,59.6,"Fixed alpha near Scarlet Bog and Bolderoll Slope."],["Alpha Raichu",18.5,61.7,"Fixed alpha in the western Golden Lowlands route."],["Alpha Yanmega",84.5,69.3,"Fixed alpha in Droning Meadow."],["Alpha Ursaring",20.5,71.6,"Fixed alpha near Gapejaw Bog."],["Alpha Hippowdon",50.4,72.8,"Fixed alpha near Sludge Mound."],["Alpha Toxicroak",35.4,76.2,"Fixed alpha near Gapejaw Bog and Holm of Trials."]],
+    Unown:[["Shrouded Ruins Unown",56.4,17.3,"Unown letter collectible."],["Diamond Settlement Unown",62.6,27.1,"Unown letter collectible."],["Solaceon Ruins Unown",49,42,"Unown letter collectible."],["Sludge Mound Unown",57.8,78.8,"Unown letter collectible."],["Scarlet Bog Unown",56,58,"Unown letter collectible."]],
+    Point:[[58.8,30.4],[20.7,37.8],[24.2,39.9]],
+    Story:[["Mirelands Camp Story",20.7,37.8,"Opening Crimson Mirelands expedition route."],["Diamond Settlement Story",58.8,30.4,"Diamond Clan settlement and main story route."],["Solaceon Ruins Story",43.6,44.8,"Main story route through Solaceon Ruins."],["Brava Arena Story",44.4,7.1,"Second Noble route and Lilligant battle in northern Crimson Mirelands."]],
+    Character:[[25.1,25.8],[44.3,32.3],[26,38.4],[46.2,43.5],[62.1,68.6]],
+    Camp:[["Mirelands Camp",20.7,37.8,"Starting Crimson Mirelands base camp."],["Bogbound Camp",59,70,"Base camp north of Sludge Mound and south of Scarlet Bog."]],
+    Gate:[["Mirelands Camp Fast Travel",20.7,37.8,"Fast travel point."],["Bogbound Camp Fast Travel",59,70,"Fast travel point."],["Diamond Settlement Fast Travel",58.8,30.4,"Fast travel point."],["Lake Valor Fast Travel",82,26,"Fast travel point."],["Brava Arena Fast Travel",44.4,7.1,"Fast travel point near the second Noble arena."]],
+    Transition:[["Valor Cavern",82,26,"Lake Valor cavern transition."]],
+    Arena:[["Brava Arena",44.4,7.1,"Hisuian Lilligant's Noble arena north of Cloudpool Ridge."]],
+    Noble:[["Hisuian Lilligant",44.4,7.1,"Noble Pokemon battle at Brava Arena."]],
+    Request:[[59.4,7.1],[24.2,64.9],[63.5,77.9]],
+    Legendary:[["Azelf",82,26,"Post-game lake guardian at Lake Valor."],["Enamorus",56,58,"Appears in Scarlet Bog after the other Forces of Nature."]],
+    Farm:[[62,69]]
   },
-  "Coronet Highlands": {
-    "Subarea": [
-      [
-        "Ancient Quarry",
-        47.0,
-        83.7,
-        "Named subarea marker."
-      ],
-      [
-        "Bolderoll Ravine",
-        8.0,
-        72.0,
-        "Named subarea marker."
-      ],
-      [
-        "Celestica Ruins",
-        55.2,
-        50.7,
-        "Named subarea marker."
-      ],
-      [
-        "Celestica Trail",
-        42.8,
-        69.2,
-        "Named subarea marker."
-      ],
-      [
-        "Clamberclaw Cliffs",
-        75.1,
-        62.6,
-        "Named subarea marker."
-      ],
-      [
-        "Cloudcap Pass",
-        24.4,
-        36.2,
-        "Named subarea marker."
-      ],
-      [
-        "Fabled Spring",
-        15.5,
-        87.5,
-        "Named subarea marker."
-      ],
-      [
-        "Heavenward Lookout",
-        82.3,
-        86.2,
-        "Named subarea marker."
-      ],
-      [
-        "Lonely Spring",
-        82.4,
-        66.3,
-        "Named subarea marker."
-      ],
-      [
-        "Primeval Grotto",
-        43.0,
-        61.0,
-        "Named subarea marker."
-      ],
-      [
-        "Sacred Plaza",
-        23.6,
-        57.8,
-        "Named subarea marker."
-      ],
-      [
-        "Sonorous Path",
-        58.9,
-        76.5,
-        "Named subarea marker."
-      ],
-      [
-        "Stonetooth Rows",
-        5.2,
-        62.7,
-        "Named subarea marker."
-      ],
-      [
-        "Temple of Sinnoh",
-        20.0,
-        25.4,
-        "Named subarea marker."
-      ],
-      [
-        "Wayward Wood",
-        50.4,
-        91.0,
-        "Named subarea marker."
-      ]
-    ],
-    "Alpha": [
-      [
-        "Alpha Clefable",
-        24.7,
-        92.7,
-        "Fixed alpha Pokemon. Level 62. Location: Fabled Spring."
-      ],
-      [
-        "Alpha Golem",
-        13.0,
-        71.5,
-        "Fixed alpha Pokemon. Level 60. Location: Bolderoll Ravine."
-      ],
-      [
-        "Alpha Crobat",
-        69.8,
-        85.1,
-        "Fixed alpha Pokemon. Level 60. Location: Wayward Cave."
-      ],
-      [
-        "Alpha Gligar",
-        56.5,
-        52.0,
-        "Fixed alpha Pokemon. Level 52. Location: Near Celestica Ruins."
-      ],
-      [
-        "Alpha Steelix",
-        43.8,
-        70.2,
-        "Fixed alpha Pokemon. Level 60. Location: Celestica Trail."
-      ],
-      [
-        "Alpha Luxray",
-        35.3,
-        55.1,
-        "Fixed alpha Pokemon. Level 55. Location: Sacred Plaza."
-      ],
-      [
-        "Alpha Mothim",
-        58.6,
-        89.9,
-        "Fixed alpha Pokemon. Level 55. Location: Wayward Wood."
-      ],
-      [
-        "Alpha Mismagius",
-        18.3,
-        63.1,
-        "Fixed alpha Pokemon. Level 61. Location: Stonetooth Rows."
-      ],
-      [
-        "Alpha Bronzong",
-        78.8,
-        58.5,
-        "Fixed alpha Pokemon. Level 55. Location: Near Clamberclaw Cliffs."
-      ],
-      [
-        "Alpha Gabite",
-        76.2,
-        58.0,
-        "Fixed alpha Pokemon. Level 56. Location: Near Clamberclaw Cliffs."
-      ],
-      [
-        "Alpha Carnivine",
-        82.4,
-        66.3,
-        "Fixed alpha Pokemon. Level 52. Location: Lonely Spring."
-      ],
-      [
-        "Alpha Rhyperior",
-        28.1,
-        66.2,
-        "Fixed alpha Pokemon. Level 74. Location: Near Sacred Plaza."
-      ],
-      [
-        "Alpha Electivire",
-        30.2,
-        45.4,
-        "Fixed alpha Pokemon. Level 69. Location: Cloudcap Pass."
-      ],
-      [
-        "Alpha Gliscor",
-        54.6,
-        61.6,
-        "Fixed alpha Pokemon. Level 77. Location: Near Primeval Grotto."
-      ],
-      [
-        "Alpha Probopass",
-        40.6,
-        66.4,
-        "Fixed alpha Pokemon. Level 73. Location: Near Primeval Grotto."
-      ],
-      [
-        "Alpha Hisuian Goodra",
-        47.6,
-        85.1,
-        "Fixed alpha Pokemon. Level 70. Location: Near Ancient Quarry."
-      ]
-    ],
-    "Camp": [
-      [
-        "Highlands Camp",
-        84.8,
-        90.4,
-        "Base camp marker."
-      ],
-      [
-        "Mountain Camp",
-        78.3,
-        71.4,
-        "Base camp marker."
-      ],
-      [
-        "Summit Camp",
-        17.2,
-        53.5,
-        "Base camp marker."
-      ]
-    ],
-    "Gate": [
-      [
-        "Highlands Camp Fast Travel",
-        84.8,
-        90.4,
-        "Fast travel point at this base camp."
-      ],
-      [
-        "Moonview Arena Fast Travel",
-        9.8,
-        50.1,
-        "Fast travel point at this arena."
-      ],
-      [
-        "Mountain Camp Fast Travel",
-        78.3,
-        71.4,
-        "Fast travel point at this base camp."
-      ],
-      [
-        "Summit Camp Fast Travel",
-        17.2,
-        53.5,
-        "Fast travel point at this base camp."
-      ]
-    ],
-    "Arena": [
-      [
-        "Moonview Arena",
-        9.8,
-        50.1,
-        "Arena marker."
-      ]
-    ],
-    "Noble": [
-      [
-        "Electrode",
-        11.5,
-        50.0,
-        "Noble Pokemon marker."
-      ]
-    ],
-    "Legendary": [
-      [
-        "Arceus",
-        19.9,
-        29.8,
-        "Level: 70 How to catch: Part of the #27: The Deified Pokémon mission."
-      ],
-      [
-        "Cresselia",
-        8.1,
-        49.7,
-        "Level: 70 How to catch: Part of the #23: The Plate of Moonview Arena story mission."
-      ],
-      [
-        "Darkrai",
-        59.3,
-        66.3,
-        "How to catch: Part of the #93: The Darksome Nightmare request."
-      ],
-      [
-        "Dialga",
-        18.8,
-        28.9,
-        "In #13: Disaster Looming, you have to choose to side with Adaman or Irina. This choice changes how you encounter this Pokémon. - If you chose Adaman, you will encounter this Pokémon during #17: Atop Mount Coronet, in its standard form. - If you chose Irina, you will encounter this Pokémon during #18: The Counterpart, in its origin form."
-      ],
-      [
-        "Palkia",
-        21.1,
-        28.8,
-        "In #13: Disaster Looming, you have to choose to side with Adaman or Irina. This choice changes how you encounter this Pokémon. - If you chose Irina, you will encounter this Pokémon during #17: Atop Mount Coronet, in its standard form. - If you chose Adaman, you will encounter this Pokémon during #18: The Counterpart, in its origin form."
-      ]
-    ]
+  "Cobalt Coastlands":{
+    Wisp:[["Tidal Passage Wisp",62.5,4.6,"Spiritomb wisp collectible."],["Islespy Shore Wisp",33.8,8.6,"Spiritomb wisp collectible."],["Seagrass Haven Wisp",77.2,10.5,"Spiritomb wisp collectible."],["Firespit Island Wisp",86.6,17.2,"Spiritomb wisp collectible."],["Veilstone Cape Wisp",31.3,21.8,"Spiritomb wisp collectible."],["Veilstone Cape Wisp",26.6,24.6,"Spiritomb wisp collectible."],["Spring Path Wisp",15.6,25.4,"Spiritomb wisp collectible."],["Castaway Shore Wisp",46.8,27,"Spiritomb wisp collectible."],["Lunker's Lair Wisp",92.1,28.5,"Spiritomb wisp collectible."],["Castaway Shore Wisp",50,29.2,"Spiritomb wisp collectible."],["Veilstone Cape Wisp",57.3,37.8,"Spiritomb wisp collectible."],["Ginkgo Landing Wisp",17.3,60,"Spiritomb wisp collectible."],["Seaside Hollow Wisp",97.4,62.3,"Spiritomb wisp collectible."],["Crossing Slope Wisp",21.7,67.7,"Spiritomb wisp collectible."],["Sand's Reach Wisp",72.8,68.1,"Spiritomb wisp collectible."],["Tranquility Cove Wisp",43.2,73.7,"Spiritomb wisp collectible."],["Tombolo Walk Wisp",89,81.8,"Spiritomb wisp collectible."],["Aipom Hill Wisp",35.4,85.4,"Spiritomb wisp collectible."],["Deadwood Haunt Wisp",64.6,91.6,"Spiritomb wisp collectible."],["Hideaway Bay Wisp",55.4,81.1,"Spiritomb wisp collectible."]],
+    Subarea:[["Spring Path",18,24,"Highland route and alpha checks."],["Islespy Shore",35,16,"Empoleon and northern shoreline."],["Windbreak Stand",25,39,"Hisuian Growlithe checks."],["Veilstone Cape",56,38,"Machamp, Vulpix, and Growlithe routes."],["Castaway Shore",45,44,"Machoke and Octillery routes."],["Tranquility Cove",58,63,"Mantyke, Qwilfish, and sea routing."],["Seagrass Haven",70,24,"Lumineon and pearl route."],["Lunker's Lair",92,41,"Tentacruel and water alpha route."],["Sand's Reach",81,76,"Gyarados and Thundurus weather route."],["Deadwood Haunt",73,84,"Duskull, Dusclops, and Dusknoir at night."],["Tombolo Walk",91,89,"Chansey and Manaphy route."],["Ginkgo Landing",28,62,"Entry beach and Ginter check route."],["Crossing Slope",20,70,"Purugly and early Coastlands route."],["Aipom Hill",32,82,"Aipom and Ambipom routing."],["Bathers' Lagoon",44,88,"Golduck and southern water route."],["Firespit Island",87,14,"Heatran, Magmar line, and Noble route."]],
+    Alpha:[["Alpha Hisuian Qwilfish",37.2,13.9,"Fixed alpha near Islespy Shore."],["Alpha Mantine",62.5,16.2,"Fixed alpha in the northern sea route."],["Alpha Gastrodon (Tidal Passage)",50.9,17.1,"Fixed alpha around the Tidal Passage route."],["Alpha Empoleon",37.2,18.1,"Fixed alpha at Islespy Shore."],["Alpha Ninetales",88.9,19.3,"Fixed alpha on Firespit Island."],["Alpha Mothim",18.6,28.4,"Fixed alpha near Spring Path."],["Alpha Lumineon",67.9,29.7,"Fixed alpha near Seagrass Haven."],["Alpha Tentacruel",92.1,34.1,"Fixed alpha near Lunker's Lair."],["Alpha Gastrodon (Veilstone Cape)",64.3,35.4,"Fixed alpha near Veilstone Cape."],["Alpha Octillery",32.3,45.8,"Fixed alpha near Castaway Shore."],["Alpha Machoke",26.2,50,"Fixed alpha near Ginkgo Landing."],["Alpha Gyarados",91.1,50.4,"Fixed alpha in the eastern sea route."],["Alpha Purugly",63.3,50.6,"Fixed alpha near Veilstone Cape."],["Alpha Walrein",31.8,65.8,"Fixed alpha near Ginkgo Landing."],["Alpha Dusknoir",77.3,77.6,"Fixed alpha near Deadwood Haunt."],["Alpha Golduck",55.4,81.1,"Fixed alpha near Bathers' Lagoon."],["Alpha Chansey",92.3,83.9,"Fixed alpha at Tombolo Walk."],["Alpha Ambipom",43.9,85,"Fixed alpha near Aipom Hill and Hideaway Bay."]],
+    Unown:[["Firespit Island Unown",84.1,19,"Unown letter collectible."],["Spring Path Unown",21.1,24.8,"Unown letter collectible."],["Sand's Reach Unown",72.9,76.1,"Unown letter collectible."],["Tombolo Walk Unown",91,89,"Unown letter collectible."],["Deadwood Haunt Unown",73,84,"Unown letter collectible."]],
+    Point:[[88.4,11.1],[67.1,39.2],[12.7,58.2],[9.5,61.5],[83.2,73.7]],
+    Story:[["Beachside Camp Story",12.7,58.2,"Opening Cobalt Coastlands expedition route."],["Firespit Island Story",88.4,11.1,"Third Noble route and Molten Arena story sequence."],["Seaside Hollow Story",97.4,62.3,"The Sea's Legend request destination."]],
+    Camp:[["Beachside Camp",12.7,58.2,"Starting Cobalt Coastlands base camp west of Crossing Slope."],["Coastlands Camp",83.2,73.7,"Base camp in the center of Sand's Reach."]],
+    Gate:[["Beachside Camp Fast Travel",12.7,58.2,"Fast travel point."],["Coastlands Camp Fast Travel",83.2,73.7,"Fast travel point."],["Molten Arena Fast Travel",88.4,11.1,"Fast travel point."],["Seagrass Haven Fast Travel",67.1,39.2,"Fast travel point."],["Spring Path Fast Travel",9.5,61.5,"Fast travel point."]],
+    Transition:[[88.4,11.1]],
+    Cave:[[97.4,62.3]],
+    Arena:[["Molten Arena",88.4,11.1,"Hisuian Arcanine's Noble arena on Firespit Island."]],
+    Noble:[["Hisuian Arcanine",88.4,11.1,"Noble Pokemon battle at Molten Arena."]],
+    Request:[[77.2,10.5],[31.3,21.8],[43.2,73.7]],
+    Legendary:[["Heatran",86,14,"Post-game plate mission in Firespit Island's Lava Dome Sanctum."],["Thundurus",78,76,"Appears over the Coastlands water during thunderstorm weather."],["Manaphy and Phione",93,63,"Request 66 encounter in Seaside Hollow."]],
+    Farm:[[71,33],[27,38]]
   },
-  "Alabaster Icelands": {
-    "Subarea": [
-      [
-        "Arena's Approach",
-        20.2,
-        66.0,
-        "Named subarea marker."
-      ],
-      [
-        "Avalanche Slopes",
-        12.7,
-        76.0,
-        "Named subarea marker."
-      ],
-      [
-        "Avalugg's Legacy",
-        49.7,
-        52.0,
-        "Named subarea marker."
-      ],
-      [
-        "Bonechill Wastes",
-        49.3,
-        69.8,
-        "Named subarea marker."
-      ],
-      [
-        "Glacier Terrace",
-        21.4,
-        34.7,
-        "Named subarea marker."
-      ],
-      [
-        "Heart's Crag",
-        76.2,
-        45.9,
-        "Named subarea marker."
-      ],
-      [
-        "Icebound Falls",
-        27.4,
-        86.3,
-        "Named subarea marker."
-      ],
-      [
-        "Lake Acuity",
-        43.4,
-        29.5,
-        "Named subarea marker."
-      ],
-      [
-        "Pearl Settlement",
-        63.0,
-        39.5,
-        "Named subarea marker."
-      ],
-      [
-        "Snowfall Hot Spring",
-        13.2,
-        44.2,
-        "Named subarea marker."
-      ],
-      [
-        "Whiteout Valley",
-        49.7,
-        81.5,
-        "Named subarea marker."
-      ]
-    ],
-    "Alpha": [
-      [
-        "Alpha Machamp",
-        27.5,
-        55.3,
-        "Fixed alpha Pokemon. Level 70. Location: Arena's Approach."
-      ],
-      [
-        "Alpha Electabuzz",
-        28.2,
-        78.3,
-        "Fixed alpha Pokemon. Level 65. Location: Icebound Falls."
-      ],
-      [
-        "Alpha Sneasel",
-        46.5,
-        50.4,
-        "Fixed alpha Pokemon. Level 61. Location: Near Avalugg's Legacy."
-      ],
-      [
-        "Alpha Swinub",
-        44.1,
-        61.2,
-        "Fixed alpha Pokemon. Level 62. Location: Near Bonechill Wastes."
-      ],
-      [
-        "Alpha Piloswine",
-        32.2,
-        65.6,
-        "Fixed alpha Pokemon. Level 65. Location: Arena's Approach."
-      ],
-      [
-        "Alpha Gardevoir",
-        78.8,
-        46.6,
-        "Fixed alpha Pokemon. Level 70. Location: Heart's Crag."
-      ],
-      [
-        "Alpha Chimecho",
-        40.5,
-        31.3,
-        "Fixed alpha Pokemon. Level 65. Location: Near Lake Acuity."
-      ],
-      [
-        "Alpha Glalie",
-        53.8,
-        64.0,
-        "Fixed alpha Pokemon. Level 62. Location: Bonechill Wastes."
-      ],
-      [
-        "Alpha Garchomp",
-        10.8,
-        90.8,
-        "Fixed alpha Pokemon. Level 85. Location: Avalanche Slopes."
-      ],
-      [
-        "Alpha Lucario",
-        26.8,
-        88.2,
-        "Fixed alpha Pokemon. Level 70. Location: Icebound Falls."
-      ],
-      [
-        "Alpha Abomasnow",
-        61.0,
-        59.7,
-        "Fixed alpha Pokemon. Level 68. Location: Bonechill Wastes."
-      ],
-      [
-        "Alpha Mamoswine",
-        58.4,
-        49.9,
-        "Fixed alpha Pokemon. Level 68. Location: Avalugg's Legacy."
-      ],
-      [
-        "Alpha Gallade",
-        62.6,
-        19.0,
-        "Fixed alpha Pokemon. Level 70. Location: Snowpoint Temple."
-      ],
-      [
-        "Alpha Froslass",
-        22.4,
-        84.4,
-        "Fixed alpha Pokemon. Level 72. Location: Ice Column Chamber."
-      ]
-    ],
-    "Camp": [
-      [
-        "Icepeak Camp",
-        39.4,
-        42.5,
-        "Base camp marker."
-      ],
-      [
-        "Snowfields Camp",
-        49.6,
-        87.8,
-        "Base camp marker."
-      ]
-    ],
-    "Gate": [
-      [
-        "Icepeak Arena Fast Travel",
-        8.3,
-        54.0,
-        "Fast travel point at this arena."
-      ],
-      [
-        "Icepeak Camp Fast Travel",
-        39.4,
-        42.5,
-        "Fast travel point at this base camp."
-      ],
-      [
-        "Snowfields Camp Fast Travel",
-        49.6,
-        87.8,
-        "Fast travel point at this base camp."
-      ]
-    ],
-    "Arena": [
-      [
-        "Icepeak Arena",
-        8.3,
-        54.0,
-        "Arena marker."
-      ]
-    ],
-    "Noble": [
-      [
-        "Avalugg",
-        10.1,
-        54.0,
-        "Noble Pokemon marker."
-      ]
-    ],
-    "Legendary": [
-      [
-        "Regigigas",
-        65.0,
-        17.7,
-        "Level: 70 How to catch: Part of the #24: The Plate of Snowpoint Temple story mission. Can be found at the bottom of Snowpoint Temple."
-      ],
-      [
-        "Tornadus",
-        53.2,
-        65.8,
-        "How to catch: Part of the #94: Incarnate Forces of Hisui request. Note: Only spawns in blizzards."
-      ],
-      [
-        "Uxie",
-        43.1,
-        24.1,
-        "Level: 70 How to catch: Part of the #21: The Plate of the Lakes story mission. Can be found within Acuity Cavern."
-      ]
-    ]
+  "Coronet Highlands":{
+    Wisp:[["Moonview Arena Wisp",26.1,7.2,"Spiritomb wisp collectible."],["Cloudcap Pass Wisp",17.1,35.8,"Spiritomb wisp collectible."],["Sacred Plaza Wisp",33.7,39.5,"Spiritomb wisp collectible."],["Celestica Ruins Wisp",44,40.2,"Spiritomb wisp collectible."],["Clamberclaw Cliffs Wisp",86.9,46.4,"Spiritomb wisp collectible."],["Lonely Spring Wisp",71.3,46.6,"Spiritomb wisp collectible."],["Primeval Grotto Wisp",44.6,47.8,"Spiritomb wisp collectible."],["Primeval Grotto Wisp",44,53.4,"Spiritomb wisp collectible."],["Celestica Trail Wisp",35.4,57.4,"Spiritomb wisp collectible."],["Clamberclaw Cliffs Wisp",71.3,58.2,"Spiritomb wisp collectible."],["Lonely Spring Wisp",83.7,60.4,"Spiritomb wisp collectible."],["Sonorous Path Wisp",68.2,66.3,"Spiritomb wisp collectible."],["Celestica Trail Wisp",32.1,66.7,"Spiritomb wisp collectible."],["Bolderoll Ravine Wisp",13.5,67.6,"Spiritomb wisp collectible."],["Heavenward Lookout Wisp",93.3,70,"Spiritomb wisp collectible."],["Fabled Spring Wisp",25.6,82.5,"Spiritomb wisp collectible."],["Fabled Spring Wisp",17.5,83.7,"Spiritomb wisp collectible."],["Ancient Quarry Wisp",60.9,80.8,"Spiritomb wisp collectible."],["Ancient Quarry Wisp",77.4,80.9,"Spiritomb wisp collectible."],["Wayward Wood Wisp",35.7,88.5,"Spiritomb wisp collectible."]],
+    Subarea:[["Temple of Sinnoh",25,8,"Late-story and Arceus route."],["Cloudcap Pass",34,22,"High-elevation route toward the summit."],["Sacred Plaza",27,50,"High-level alpha and story route."],["Stonetooth Rows",12,57,"Electric and Ghost checks."],["Bolderoll Ravine",17,68,"Golem, ore, and rocky route."],["Fabled Spring",20,88,"Cleffa, Clefairy, and Clefable night route."],["Celestica Ruins",57,40,"Hisuian Voltorb and upper route."],["Primeval Grotto",45,50,"Probopass and ore-heavy routes."],["Celestica Trail",47,64,"Steelix and cliff routing."],["Sonorous Path",62,73,"Mountain Camp approach."],["Ancient Quarry",52,85,"Bronzong, Goodra, and ore route."],["Wayward Wood",55,94,"Mothim and lower route checks."],["Heavenward Lookout",88,90,"Early Highlands route."],["Clamberclaw Cliffs",83,57,"Gible line, Gligar, and Darkrai request route."],["Lonely Spring",90,61,"Carnivine and water route."]],
+    Alpha:[["Alpha Electivire",34.8,33.6,"Fixed alpha near Cloudcap Pass."],["Alpha Gligar",61.7,41.4,"Fixed alpha near Celestica Ruins."],["Alpha Luxray",40.1,45.1,"Fixed alpha near Sacred Plaza."],["Alpha Gliscor",56.5,47.1,"Fixed alpha near Primeval Grotto."],["Alpha Garchomp",84.4,49.1,"Fixed alpha near Clamberclaw Cliffs."],["Alpha Bronzong",59.8,52.7,"Fixed alpha near Celestica Ruins."],["Alpha Mismagius",22.7,54.4,"Fixed alpha near Stonetooth Rows and Sacred Plaza."],["Alpha Rhyperior",32.7,58.1,"Fixed alpha near Sacred Plaza."],["Alpha Probopass",45.4,58.2,"Fixed alpha near Primeval Grotto."],["Alpha Gabite",66.5,61.3,"Fixed alpha near Clamberclaw Cliffs."],["Alpha Golem",17.4,64.2,"Fixed alpha in Bolderoll Ravine."],["Alpha Hisuian Goodra",52.7,80.4,"Fixed alpha near Ancient Quarry."],["Alpha Crobat",63.9,85.9,"Fixed alpha near Wayward Cave."],["Alpha Clefable",22,89.1,"Fixed alpha at Fabled Spring."]],
+    Unown:[["Ancient Quarry Unown",58.7,81,"Unown letter collectible."],["Fabled Spring Unown",24.7,86.1,"Unown letter collectible."],["Wayward Cave Unown",42,59,"Unown letter collectible."],["Celestica Ruins Unown",57,40,"Unown letter collectible."],["Temple of Sinnoh Unown",25,8,"Unown letter collectible."]],
+    Point:[[27.7,16.1],[39.9,27.7],[14.1,39.1],[90.6,86.6],[93.3,90]],
+    Story:[["Highlands Camp Story",90.6,86.6,"Opening Coronet Highlands expedition route."],["Celestica Ruins Story",58.3,36.4,"Main story route through Celestica Ruins."],["Sacred Plaza Story",23.9,39,"Main story route near Sacred Plaza."],["Moonview Arena Story",26.1,7.2,"Fourth Noble route and Electrode battle."]],
+    Character:[[78.6,55],[59.6,86.8]],
+    Camp:[["Highlands Camp",90.6,86.6,"Starting Coronet Highlands base camp."],["Mountain Camp",78.6,55,"Base camp south of Clamberclaw Cliffs."],["Summit Camp",39.9,27.7,"Base camp near Cloudcap Pass and the summit route."]],
+    Gate:[["Highlands Camp Fast Travel",90.6,86.6,"Fast travel point."],["Mountain Camp Fast Travel",78.6,55,"Fast travel point."],["Summit Camp Fast Travel",39.9,27.7,"Fast travel point."],["Moonview Arena Fast Travel",27.7,16.1,"Fast travel point."],["Heavenward Lookout Fast Travel",93.3,90,"Fast travel point."]],
+    Transition:[[26.1,7.2]],
+    Cave:[[78.6,55],[59.6,86.8]],
+    Arena:[["Moonview Arena",26.1,7.2,"Hisuian Electrode's Noble arena."]],
+    Noble:[["Hisuian Electrode",26.1,7.2,"Noble Pokemon battle at Moonview Arena."]],
+    Request:[[26.1,7.2],[44,40.2],[86.9,46.4],[17.5,83.7]],
+    Legendary:[["Cresselia",37,8,"Post-game plate mission at Moonview Arena."],["Darkrai",84,58,"Request 93 near Clamberclaw Cliffs with BDSP save data."]],
+    Farm:[[76,82],[20,88]]
   },
-  "Jubilife Village": {
-    "Gate": [
-      [
-        "Farm Fast Travel",
-        32.6,
-        40.0,
-        "Fast travel point."
-      ],
-      [
-        "Front Gate Fast Travel",
-        69.7,
-        30.2,
-        "Fast travel point."
-      ],
-      [
-        "Galaxy Hall Fast Travel",
-        51.0,
-        28.3,
-        "Fast travel point."
-      ],
-      [
-        "Practice Field Fast Travel",
-        64.0,
-        77.0,
-        "Fast travel point."
-      ]
-    ],
-    "Point": [
-      [
-        "Candy Stand",
-        46.9,
-        27.5,
-        "Point of Interest marker."
-      ],
-      [
-        "Farm",
-        32.6,
-        45.8,
-        "Point of Interest marker."
-      ],
-      [
-        "Galaxy Hall",
-        51.0,
-        22.6,
-        "Point of Interest marker."
-      ],
-      [
-        "Ginkgo Guild Cart",
-        55.8,
-        27.1,
-        "Point of Interest marker."
-      ],
-      [
-        "Pastures",
-        66.9,
-        40.0,
-        "Point of Interest marker."
-      ],
-      [
-        "Prelude Beach",
-        32.3,
-        84.0,
-        "Point of Interest marker."
-      ],
-      [
-        "Sevii Kitchen",
-        65.3,
-        32.7,
-        "Point of Interest marker."
-      ],
-      [
-        "The Wallflower",
-        47.6,
-        32.5,
-        "Point of Interest marker."
-      ]
-    ],
-    "Farm": [
-      [
-        "Farm",
-        33.0,
-        76.0,
-        "Harvest route for crafting materials."
-      ],
-      [
-        "Training Grounds",
-        43.0,
-        15.0,
-        "Ingo battles and move mastery practice."
-      ]
-    ]
+  "Alabaster Icelands":{
+    Wisp:[["Snowpoint Temple Wisp",60.5,7.2,"Spiritomb wisp collectible."],["Icepeak Arena Wisp",62.9,10.6,"Spiritomb wisp collectible."],["Lake Acuity Wisp",72.5,20.6,"Spiritomb wisp collectible."],["Glacier Terrace Wisp",28,25.7,"Spiritomb wisp collectible."],["Glacier Terrace Wisp",39,26.8,"Spiritomb wisp collectible."],["Avalugg's Legacy Wisp",59.9,39,"Spiritomb wisp collectible."],["Heart's Crag Wisp",79.5,50,"Spiritomb wisp collectible."],["Pearl Settlement Wisp",68.8,51.7,"Spiritomb wisp collectible."],["Snowfall Hot Spring Wisp",17.2,54.9,"Spiritomb wisp collectible."],["Avalugg's Legacy Wisp",31.4,56.2,"Spiritomb wisp collectible."],["Avalugg's Legacy Wisp",66.5,61.3,"Spiritomb wisp collectible."],["Bonechill Wastes Wisp",40.5,70.5,"Spiritomb wisp collectible."],["Arena's Approach Wisp",24.8,70.6,"Spiritomb wisp collectible."],["Arena's Approach Wisp",16.6,72.7,"Spiritomb wisp collectible."],["Bonechill Wastes Wisp",38.1,75.4,"Spiritomb wisp collectible."],["Bonechill Wastes Wisp",44.2,78.5,"Spiritomb wisp collectible."],["Whiteout Valley Wisp",57.3,85.5,"Spiritomb wisp collectible."],["Avalanche Slopes Wisp",7,86.1,"Spiritomb wisp collectible."],["Icebound Falls Wisp",30,94,"Spiritomb wisp collectible."],["Lake Acuity Wisp",48,18,"Spiritomb wisp collectible."]],
+    Subarea:[["Lake Acuity",48,18,"Uxie and lake route."],["Glacier Terrace",21,27,"Lake Acuity approach."],["Snowfall Hot Spring",14,39,"Gallade/Gardevoir route and healing landmark."],["Avalugg's Legacy",49,49,"Ice landmark and central route."],["Pearl Settlement",68,33,"Pearl Clan hub."],["Heart's Crag",82,40,"Gardevoir, Froslass, and Snorunt route."],["Bonechill Wastes",52,73,"Mamoswine, Zorua tunnels, and Tornadus zone."],["Whiteout Valley",55,88,"Starting snow route and Snowfields Camp area."],["Arena's Approach",21,68,"Machamp and late story arena route."],["Avalanche Slopes",15,81,"Abomasnow, Glaceon, Garchomp, and Piloswine route."],["Icebound Falls",30,94,"Lucario and Electabuzz route."],["Icepeak Arena",65,3,"Hisuian Avalugg Noble arena."],["Snowpoint Temple",66,3,"Regigigas and temple route."]],
+    Alpha:[["Alpha Chimecho",41,23.4,"Fixed alpha near Lake Acuity."],["Alpha Gallade",75.3,32.9,"Fixed alpha near the Pearl Settlement route."],["Alpha Gardevoir",78,40.7,"Fixed alpha near Heart's Crag."],["Alpha Mamoswine",58.2,44.5,"Fixed alpha near Avalugg's Legacy."],["Alpha Sneasel",46.7,45,"Fixed alpha near Avalugg's Legacy."],["Alpha Machamp",28.4,50.6,"Fixed alpha around Arena's Approach."],["Alpha Abomasnow",60.9,55.5,"Fixed alpha near Avalugg's Legacy."],["Alpha Swinub",44.5,57.3,"Fixed alpha near Bonechill Wastes."],["Alpha Glalie",53.8,60.5,"Fixed alpha near Bonechill Wastes."],["Alpha Piloswine",32.9,62.3,"Fixed alpha around Arena's Approach."],["Alpha Electabuzz",29.1,76.7,"Fixed alpha near Icebound Falls."],["Alpha Lucario",27.8,88,"Fixed alpha near Icebound Falls."],["Alpha Garchomp",12.2,90.9,"Fixed alpha near Avalanche Slopes."]],
+    Unown:[["Snowfall Hot Spring Unown",22.1,42.2,"Unown letter collectible."],["Avalugg's Legacy Unown",53.6,42.5,"Unown letter collectible."],["Heart's Crag Unown",85.1,43.9,"Unown letter collectible."],["Avalanche Slopes Unown",23.5,83.5,"Unown letter collectible."],["Icebound Falls Unown",34.1,84.7,"Unown letter collectible."]],
+    Point:[[59.2,11.6],[9.9,49.1],[19.2,54.6],[46.2,54.7],[63.8,61.6],[20.3,75]],
+    Story:[["Snowfields Camp Story",9.9,49.1,"Opening Alabaster Icelands expedition route."],["Pearl Settlement Story",68.8,33,"Pearl Clan story route."],["Icepeak Arena Story",62.9,10.6,"Fifth Noble route and Avalugg battle."]],
+    Character:[[46.7,30.5],[70.3,35.3],[34.9,49.2],[42.7,76],[48.7,87.8]],
+    Camp:[["Snowfields Camp",9.9,49.1,"Starting Alabaster Icelands base camp."],["Icepeak Camp",63.8,61.6,"Base camp northwest of Avalugg's Legacy and southeast of Glacier Terrace."]],
+    Gate:[["Snowpoint Temple Fast Travel",59.2,11.6,"Fast travel point."],["Snowfields Camp Fast Travel",9.9,49.1,"Fast travel point."],["Icepeak Camp Fast Travel",63.8,61.6,"Fast travel point."],["Arena's Approach Fast Travel",20.3,75,"Fast travel point."]],
+    Transition:[[59.2,11.6],[62.9,10.6]],
+    Cave:[[42.7,76]],
+    Arena:[["Icepeak Arena",62.9,10.6,"Hisuian Avalugg's Noble arena."]],
+    Noble:[["Hisuian Avalugg",62.9,10.6,"Noble Pokemon battle at Icepeak Arena."]],
+    Request:[[47.6,23.1],[38.1,75.4]],
+    Legendary:[["Uxie",48,18,"Post-game lake guardian at Lake Acuity."],["Regigigas",66,3,"Post-game plate mission in Snowpoint Temple."],["Giratina",52,82,"Post-game encounter route after the late-story boss sequence."],["Tornadus",52,73,"Appears in blizzard weather after Request 94 starts."]],
+    Farm:[[52,82],[18,80]]
   }
 };
+
+exactMapMarkerGroups["Obsidian Fieldlands"].Subarea.push(
+  ["Grandtree Arena",82.6,86.5,"Kleavor's Noble arena."],
+  ["Moss Rock",71,86,"Leafeon evolution landmark."],
+  ["Verity Cavern",20,43,"Lake guardian cavern."]
+);
+exactMapMarkerGroups["Crimson Mirelands"].Subarea.push(
+  ["Brava Arena",44.4,7.1,"Hisuian Lilligant's Noble arena."],
+  ["Valor Cavern",82,26,"Lake guardian cavern."]
+);
+exactMapMarkerGroups["Cobalt Coastlands"].Subarea.push(
+  ["Molten Arena",88,11,"Hisuian Arcanine's Noble arena."],
+  ["Tidal Passage",62,22,"Northern sea passage."],
+  ["Seaside Hollow",96,62,"Coastlands cave route."],
+  ["Lava Dome Sanctum",87,14,"Heatran chamber inside Firespit Island."],
+  ["Turnback Cave",18,24,"Giratina post-game cave route."]
+);
+exactMapMarkerGroups["Coronet Highlands"].Subarea.push(
+  ["Moonview Arena",26,7,"Hisuian Electrode's Noble arena."],
+  ["Wayward Cave",42,59,"Cave route with Gible line checks."],
+  ["Stone Portal",35,33,"Highlands route landmark."]
+);
+exactMapMarkerGroups["Alabaster Icelands"].Subarea.push(
+  ["Icepeak Cavern",63,9,"Cave route near Icepeak Arena."],
+  ["Acuity Cavern",48,18,"Lake guardian cavern."],
+  ["Ice Column Chamber",66,3,"Snowpoint Temple chamber."],
+  ["Ice Rock",48,49,"Glaceon evolution landmark."],
+  ["Secret Hollow",26,73,"Hidden cave in the southern route."],
+  ["Hibernal Cave",39,40,"Northwest cave passage."]
+);
+
+const namedMapMarkerIndex = Object.fromEntries(Object.entries(exactMapMarkerGroups).map(([region, groups]) => [
+  region,
+  Object.entries(groups).flatMap(([kind, entries]) => entries
+    .filter(entry => typeof entry[0] === "string" && typeof entry[1] === "number" && typeof entry[2] === "number")
+    .map(entry => [
+      kind,
+      entry[0],
+      region,
+      entry[3] || (exactMapMarkerText[kind]?.[1] || "Map marker."),
+      entry[1],
+      entry[2]
+    ]))
+]));
 
 const mapSubareaLabelOffsets = {
   "Obsidian Fieldlands":{
@@ -2073,8 +755,8 @@ const mapSubareaLabelOffsets = {
     "Ursa's Ring":[-12,20]
   },
   "Cobalt Coastlands":{
-    "Spring Path":[-38,18],
-    "Turnback Cave":[42,-22],
+    "Spring Path":[-42,20],
+    "Turnback Cave":[46,-24],
     "Veilstone Cape":[18,-18],
     "Tidal Passage":[-28,-18],
     "Seagrass Haven":[22,16],
@@ -2119,15 +801,74 @@ const mapSubareaLabelOffsets = {
   }
 };
 
+const fallbackMarkerNames = {
+  "Obsidian Fieldlands":{
+    Legendary:["Mesprit","Landorus","Shaymin"],
+    Noble:["Kleavor"],
+    Arena:["Grandtree Arena"],
+    Farm:["Alpha Blissey XP route","Horseshoe Plains research loop","Ramanas Island alpha loop"]
+  },
+  "Crimson Mirelands":{
+    Legendary:["Azelf","Enamorus"],
+    Noble:["Hisuian Lilligant"],
+    Arena:["Brava Arena"],
+    Farm:["Scarlet Bog Ursaluna digging route"]
+  },
+  "Cobalt Coastlands":{
+    Legendary:["Heatran","Thundurus","Manaphy and Phione"],
+    Noble:["Hisuian Arcanine"],
+    Arena:["Molten Arena"],
+    Farm:["Seagrass Haven pearl route","Growlithe route"]
+  },
+  "Coronet Highlands":{
+    Legendary:["Cresselia","Darkrai"],
+    Noble:["Hisuian Electrode"],
+    Arena:["Moonview Arena"],
+    Farm:["Ancient Quarry alpha loop","Fabled Spring night route"]
+  },
+  "Alabaster Icelands":{
+    Legendary:["Uxie","Regigigas","Giratina","Tornadus"],
+    Noble:["Hisuian Avalugg"],
+    Arena:["Icepeak Arena"],
+    Farm:["Alpha Garchomp and Lucario loop","Avalanche Slopes alpha loop"]
+  }
+};
+
+function nearestNamedMarker(region, kind, x, y, maxDistance = 16) {
+  const candidates = (namedMapMarkerIndex[region] || []).filter(point => point[0] === kind);
+  if (!candidates.length) return null;
+  const nearest = candidates
+    .map(point => ({point, distance:Math.hypot(point[4] - x, point[5] - y)}))
+    .sort((a,b) => a.distance - b.distance)[0];
+  return nearest && nearest.distance <= maxDistance ? nearest.point : null;
+}
+
+function fallbackMarkerName(region, kind, index, label, x, y) {
+  const fixedName = fallbackMarkerNames[region]?.[kind]?.[index];
+  if (fixedName) return fixedName;
+  const nearbyArea = nearestNamedMarker(region, "Subarea", x, y, 1000);
+  return nearbyArea ? `${nearbyArea[1]} ${label}` : `${region} ${label} ${index + 1}`;
+}
+
 function buildExactMapMarkers(region, groups) {
-  return Object.entries(groups).flatMap(([kind, entries]) => entries.map(entry => [
-    kind,
-    entry[0],
-    region,
-    entry[3] || (exactMapMarkerText[kind]?.[1] || "Map marker."),
-    entry[1],
-    entry[2]
-  ]));
+  return Object.entries(groups).flatMap(([kind, coords]) => {
+    const [label, detail] = exactMapMarkerText[kind] || [kind, "Map marker."];
+    return coords.map((entry, index) => {
+      const named = typeof entry[0] === "string";
+      const x = named ? entry[1] : entry[0];
+      const y = named ? entry[2] : entry[1];
+      const nearest = named ? null : nearestNamedMarker(region, kind, x, y);
+      const fallbackName = fallbackMarkerName(region, kind, index, label, x, y);
+      return [
+        kind,
+        named ? entry[0] : (nearest?.[1] || fallbackName),
+        named ? region : (nearest?.[2] || region),
+        named && entry[3] ? entry[3] : (nearest?.[3] || detail),
+        x,
+        y
+      ];
+    });
+  });
 }
 
 Object.entries(exactMapMarkerGroups).forEach(([region, groups]) => {
@@ -2355,7 +1096,7 @@ function renderMeta() {
 function itemSpriteName(name) {
   return name
     .toLowerCase()
-    .replace(/pok[eé]/g, "poke")
+    .replace(/pok[eÃ©]/g, "poke")
     .replace(/king's/g, "kings")
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "");
@@ -2364,7 +1105,7 @@ function itemSpriteName(name) {
 function pokemonDbItemSpriteName(name) {
   return name
     .toLowerCase()
-    .replace(/pok[eé]/g, "poke")
+    .replace(/pok[eÃ©]/g, "poke")
     .replace(/xp-candy/g, "exp-candy")
     .replace(/king's/g, "kings")
     .replace(/[^a-z0-9]+/g, "-")
@@ -3445,7 +2186,6 @@ function renderMap() {
   const enabled = new Set(mapControlInputs.length ? mapControlInputs.filter(i => i.checked).map(i => i.value) : mapData[region].map(point => point[0]));
   const points = mapData[region].filter(p => enabled.has(p[0]));
   $("regionMap").style.setProperty("--map-aspect", MAP_ASPECTS[region] || "1 / 1");
-  $("regionMap").classList.toggle("reference-map", Boolean(MAP_IMAGES[region]));
   const mapImage = MAP_IMAGES[region] ? `url('${MAP_IMAGES[region].replaceAll("'", "\\'")}')` : "linear-gradient(135deg, rgba(112, 166, 109, .18), rgba(90, 153, 199, .14))";
   $("regionMap").innerHTML = `<div id="mapLayer" class="map-layer" style="--map-image:${mapImage}"></div><div id="mapMarkerLayer" class="map-marker-layer">${points.map((p,i) => `<button class="marker" data-index="${i}" data-kind="${p[0]}" data-x="${p[4]}" data-y="${p[5]}" title="${p[1]}"${mapMarkerStyle(p, region)}>${mapMarkerLabel(p)}</button>`).join("")}</div>`;
   bindMapInteractions();
