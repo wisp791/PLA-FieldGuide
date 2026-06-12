@@ -26,12 +26,12 @@ const TYPE_CHART = {
 };
 
 const MAP_IMAGES = {
-  "Obsidian Fieldlands": "Obsidian Fieldlands Map.jpg",
-  "Crimson Mirelands": "Crimson Mirelands Map.jpg",
-  "Cobalt Coastlands": "Cobalt Coastlands Map.jpg",
-  "Coronet Highlands": "Coronet Highlands Map.jpg",
-  "Alabaster Icelands": "Alabaster Icelands-Map.jpg",
-  "Jubilife Village": "Jubilife Village Map.jpg"
+  "Obsidian Fieldlands": "assets/maps/reference/obsidian-fieldlands-reference.jpg",
+  "Crimson Mirelands": "assets/maps/reference/crimson-mirelands-reference.jpg",
+  "Cobalt Coastlands": "assets/maps/reference/cobalt-coastlands-reference.jpg",
+  "Coronet Highlands": "assets/maps/reference/coronet-highlands-reference.jpg",
+  "Alabaster Icelands": "assets/maps/reference/alabaster-icelands-reference.jpg",
+  "Jubilife Village": "assets/maps/reference/jubilife-village-reference.jpg"
 };
 
 const MAP_ASPECTS = {
@@ -39,8 +39,8 @@ const MAP_ASPECTS = {
   "Crimson Mirelands": "1 / 1",
   "Cobalt Coastlands": "1 / 1",
   "Coronet Highlands": "1 / 1",
-  "Alabaster Icelands": "1 / 1",
-  "Jubilife Village": "1 / 1"
+  "Alabaster Icelands": "1146 / 991",
+  "Jubilife Village": "954 / 948"
 };
 
 const MOVE_TYPE_MAP = {
@@ -3441,9 +3441,11 @@ function renderMap() {
   if (!$("regionMap") || !$("regionSelect")) return;
   const region = $("regionSelect").value;
   if (mapViewState.region !== region) resetMapView(region);
-  const enabled = new Set([...document.querySelectorAll(".map-controls input:checked")].map(i => i.value));
+  const mapControlInputs = [...document.querySelectorAll(".map-controls input")];
+  const enabled = new Set(mapControlInputs.length ? mapControlInputs.filter(i => i.checked).map(i => i.value) : mapData[region].map(point => point[0]));
   const points = mapData[region].filter(p => enabled.has(p[0]));
   $("regionMap").style.setProperty("--map-aspect", MAP_ASPECTS[region] || "1 / 1");
+  $("regionMap").classList.toggle("reference-map", Boolean(MAP_IMAGES[region]));
   const mapImage = MAP_IMAGES[region] ? `url('${MAP_IMAGES[region].replaceAll("'", "\\'")}')` : "linear-gradient(135deg, rgba(112, 166, 109, .18), rgba(90, 153, 199, .14))";
   $("regionMap").innerHTML = `<div id="mapLayer" class="map-layer" style="--map-image:${mapImage}"></div><div id="mapMarkerLayer" class="map-marker-layer">${points.map((p,i) => `<button class="marker" data-index="${i}" data-kind="${p[0]}" data-x="${p[4]}" data-y="${p[5]}" title="${p[1]}"${mapMarkerStyle(p, region)}>${mapMarkerLabel(p)}</button>`).join("")}</div>`;
   bindMapInteractions();
