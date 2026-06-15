@@ -26,22 +26,24 @@ const TYPE_CHART = {
 };
 
 const MAP_IMAGES = {
-  "Obsidian Fieldlands": "Obsidian Fieldlands Map.jpg",
-  "Crimson Mirelands": "Crimson Mirelands Map.jpg",
-  "Cobalt Coastlands": "Cobalt Coastlands Map.jpg",
-  "Coronet Highlands": "Coronet Highlands Map.jpg",
-  "Alabaster Icelands": "Alabaster Icelands-Map.jpg",
-  "Jubilife Village": "Jubilife Village Map.jpg"
+  "Obsidian Fieldlands": "assets/maps/reference/obsidian-fieldlands-reference.jpg",
+  "Crimson Mirelands": "assets/maps/reference/crimson-mirelands-reference.jpg",
+  "Cobalt Coastlands": "assets/maps/reference/cobalt-coastlands-reference.jpg",
+  "Coronet Highlands": "assets/maps/reference/coronet-highlands-reference.jpg",
+  "Alabaster Icelands": "assets/maps/reference/alabaster-icelands-reference.jpg",
+  "Jubilife Village": "assets/maps/reference/jubilife-village-reference.jpg"
 };
 
 const MAP_ASPECTS = {
-  "Obsidian Fieldlands": "1 / 1",
-  "Crimson Mirelands": "1 / 1",
-  "Cobalt Coastlands": "1 / 1",
-  "Coronet Highlands": "1 / 1",
-  "Alabaster Icelands": "1 / 1",
-  "Jubilife Village": "1 / 1"
+  "Obsidian Fieldlands": "774 / 774",
+  "Crimson Mirelands": "907 / 907",
+  "Cobalt Coastlands": "892 / 892",
+  "Coronet Highlands": "886 / 886",
+  "Alabaster Icelands": "1146 / 991",
+  "Jubilife Village": "954 / 948"
 };
+
+const MAP_REFERENCE_HITBOXES = true;
 
 const MOVE_TYPE_MAP = {
   "Absorb":"Grass","Acid Armor":"Poison","Acid Spray":"Poison","Aerial Ace":"Flying","Air Cutter":"Flying","Air Slash":"Flying","Ancient Power":"Rock","Aqua Jet":"Water","Aqua Tail":"Water","Astonish":"Ghost","Aura Sphere":"Fighting",
@@ -4955,7 +4957,7 @@ function renderCoverage() {
   ].map(([label, list]) => coverageGroup(label, list)).join("");
   if ($("defenseBreakdown")) $("defenseBreakdown").innerHTML = defensive.map(row => {
     const label = row.immune ? "Has immunity" : row.weak ? "Weak on team" : row.resist ? "Resisted" : "Neutral";
-    return `<div class="defense-row"><span>${typeChips([row.type])}</span><strong>${label}</strong><small>${row.weak} weak / ${row.resist} resist / ${row.immune} immune / ${row.neutral} neutral</small></div>`;
+    return `<details class="defense-row coverage-group-collapsible" open><summary><span>${typeChips([row.type])}</span><strong>${label}</strong></summary><small>${row.weak} weak / ${row.resist} resist / ${row.immune} immune / ${row.neutral} neutral</small></details>`;
   }).join("");
   renderTable("coverageTable", ["No.","Pokemon","Types","Best hit","Best move types"], rows
     .sort((a,b) => b.best - a.best || a.num - b.num)
@@ -4963,8 +4965,19 @@ function renderCoverage() {
 }
 
 function coverageGroup(label, list) {
-  const names = list.map(p => pokemonLink(p.name, "pokemon-inline-link")).join(", ");
-  return `<div class="coverage-group"><strong>${label}</strong><span>${list.length}</span><p>${names || "None"}</p></div>`;
+  const cards = list.map(coveragePokemonPlate).join("");
+  return `<details class="coverage-group coverage-group-collapsible" open><summary><strong>${label}</strong><span>${list.length}</span></summary><div class="coverage-pokemon-grid">${cards || `<p class="coverage-empty">None</p>`}</div></details>`;
+}
+
+function coveragePokemonPlate(pokemon) {
+  const dex = findPokemonByName(pokemon.name) || pokemon;
+  const stats = pokemonStats(dex.name);
+  const total = stats.length ? statTotal(stats) : "";
+  return `<a class="coverage-pokemon-plate" href="pokemon.html?pokemon=${encodeURIComponent(dex.name)}">
+    <img alt="" loading="lazy" ${pokemonSpriteAttrs(dex)}>
+    <span class="coverage-pokemon-name">${dex.name}</span>
+    <span class="coverage-pokemon-meta">${typeChips(dex.types, true)}${total ? `<b>BST ${total}</b>` : ""}</span>
+  </a>`;
 }
 
 function multiplierLabel(multiplier) {
@@ -5021,6 +5034,7 @@ function mapMarkerLabel(point) {
 }
 
 function mapMarkerStyle(point, region) {
+  if (MAP_REFERENCE_HITBOXES) return "";
   if (point[0] !== "Subarea") return "";
   const offset = mapSubareaLabelOffsets[region]?.[point[1]];
   if (!offset) return "";
@@ -5151,6 +5165,7 @@ function renderMap() {
   const mapControlInputs = [...document.querySelectorAll(".map-controls input")];
   const enabled = new Set(mapControlInputs.length ? mapControlInputs.filter(i => i.checked).map(i => i.value) : mapData[region].map(point => point[0]));
   const points = mapData[region].filter(p => enabled.has(p[0]));
+  $("regionMap").classList.add("reference-map");
   $("regionMap").style.setProperty("--map-aspect", MAP_ASPECTS[region] || "1 / 1");
   const mapImage = MAP_IMAGES[region] ? `url('${MAP_IMAGES[region].replaceAll("'", "\\'")}')` : "linear-gradient(135deg, rgba(112, 166, 109, .18), rgba(90, 153, 199, .14))";
   $("regionMap").innerHTML = `<div id="mapLayer" class="map-layer" style="--map-image:${mapImage}"></div><div id="mapMarkerLayer" class="map-marker-layer">${points.map((p,i) => `<button class="marker" data-index="${i}" data-kind="${p[0]}" data-x="${p[4]}" data-y="${p[5]}" title="${p[1]}"${mapMarkerStyle(p, region)}>${mapMarkerLabel(p)}</button>`).join("")}</div>`;
